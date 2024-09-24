@@ -63,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 0.5rem 0;
+    margin: 0.5rem 0 0.5rem 0;
     color: rgb(var(--black));
     line-height: 1.2;
 }
@@ -106,7 +106,7 @@ p {
 }
 
 .prose p {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 textarea {
@@ -176,6 +176,10 @@ pre>code {
 .markdown-alert .markdown-alert-title {
     /* 调整 alert title 行与下方内容的间距 */
     margin-bottom: 1em;
+}
+
+blockquote {
+    margin-top: -0.5em;
 }
 
 blockquote-no-alert {
