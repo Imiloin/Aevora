@@ -5,11 +5,13 @@ import sitemap from '@astrojs/sitemap';
 
 import remarkGithubAlerts from "remark-github-alerts";
 
+import customBlockquote from './src/scripts/remark-custom-blockquote.js';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://example.com',
     integrations: [mdx(), sitemap()],
     markdown: {
-        remarkPlugins: [remarkGithubAlerts],
+        remarkPlugins: [remarkGithubAlerts, customBlockquote],
     },
 });

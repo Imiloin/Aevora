@@ -173,10 +173,24 @@ pre>code {
     all: unset;
 }
 
-blockquote {
-    border-left: 4px solid var(--accent);
-    padding: 0 0 0 20px;
+.markdown-alert .markdown-alert-title {
+    /* 调整 alert title 行与下方内容的间距 */
+    margin-bottom: 1em;
+}
+
+blockquote-no-alert {
+    padding: 0 0 0 0px;
     margin: 0px;
+    font-size: 24px;
+}
+
+blockquote-no-alert svg {
+    width: 32px;
+    margin: 0px;
+}
+
+blockquote-no-alert p {
+    margin: 0 20px;
     font-size: 24px;
 }
 
