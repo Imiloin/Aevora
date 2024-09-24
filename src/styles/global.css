@@ -120,6 +120,32 @@ input {
 
 table {
     width: 100%;
+    border-collapse: collapse;
+    /* 确保表格边框合并 */
+}
+
+thead {
+    background-color: rgba(35, 55, 255, 0.1);
+    /* 设置标题行的背景颜色 */
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgb(var(--gray-light));
+    /* 添加底部边框 */
+}
+
+/* 设置交错背景色 */
+tr:nth-child(odd) {
+    background-color: rgba(var(--gray-light), 0.5);
+    /* 奇数行背景色 */
+}
+
+tr:nth-child(even) {
+    background-color: rgba(var(--gray-light), 0.2);
+    /* 偶数行背景色 */
 }
 
 img {
@@ -151,7 +177,7 @@ blockquote {
     border-left: 4px solid var(--accent);
     padding: 0 0 0 20px;
     margin: 0px;
-    font-size: 1.333em;
+    font-size: 24px;
 }
 
 hr {
