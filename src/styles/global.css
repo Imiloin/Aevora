@@ -179,19 +179,12 @@ pre>code {
 }
 
 blockquote-no-alert {
-    padding: 0 0 0 0px;
-    margin: 0px;
     font-size: 24px;
 }
 
 blockquote-no-alert svg {
     width: 32px;
-    margin: 0px;
-}
-
-blockquote-no-alert p {
-    margin: 0 20px;
-    font-size: 24px;
+    margin-bottom: -1em;
 }
 
 hr {
