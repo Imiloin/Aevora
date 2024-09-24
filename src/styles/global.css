@@ -4,6 +4,10 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import "remark-github-alerts/styles/github-colors-light.css";
+@import "remark-github-alerts/styles/github-colors-dark-class.css";
+@import "remark-github-alerts/styles/github-base.css";
+
 :root {
     --accent: #2337ff;
     --accent-dark: #000d8a;
@@ -124,15 +128,19 @@ img {
     border-radius: 8px;
 }
 
+/* in line code */
 code {
     padding: 2px 5px;
     background-color: rgb(var(--gray-light));
     border-radius: 2px;
+    font-size: 18px;
 }
 
+/* code blocks */
 pre {
     padding: 1.5em;
     border-radius: 8px;
+    font-size: 16px;
 }
 
 pre>code {
@@ -177,4 +185,23 @@ hr {
     clip-path: inset(50%);
     /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
     white-space: nowrap;
+}
+
+kbd {
+    margin: 0px 0.1em;
+    padding: 0.1em 0.6em;
+    border-radius: 3px;
+    border: 1px solid rgb(204, 204, 204);
+    color: rgb(51, 51, 51);
+    line-height: 1.4;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-size: 16px;
+    display: inline-block;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 0px 0px 2px #ffffff;
+    background-color: rgb(247, 247, 247);
+    -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-shadow: 0 1px 0 #fff;
 }

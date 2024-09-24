@@ -94,8 +94,6 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 
 ## Section links
 
-{% data reusables.repositories.section-links %}
-
 If you need to determine the anchor for a heading in a file you are editing, you can use the following basic rules:
 
 * Letters are converted to lower-case.
@@ -354,7 +352,7 @@ A footnote can also have multiple lines[^2].
 
 ## Alerts
 
-Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information. On {% data variables.product.product_name %}, they are displayed with distinctive colors and icons to indicate the significance of the content.
+Alerts are a Markdown extension based on the blockquote syntax that you can use to emphasize critical information. On GitHub, they are displayed with distinctive colors and icons to indicate the significance of the content.
 
 Use alerts only when they are crucial for user success and limit them to one or two per article to prevent overloading the reader. Additionally, you should avoid placing alerts consecutively. Alerts cannot be nested within other elements.
 
