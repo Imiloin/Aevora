@@ -68,25 +68,33 @@ import HeaderLink from "./HeaderLink.astro";
 
     h2 a,
     h2 a.active {
-        text-decoration: none;
-    }
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    nav a {
         padding: 1em 0.5em;
         color: var(--black);
         border-bottom: 4px solid transparent;
         text-decoration: none;
     }
-    nav a.active {
-        text-decoration: none;
-        border-bottom-color: var(--accent);
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative; /* 添加 position: relative; */
     }
+
+    .internal-links {
+        display: flex;
+        margin: 0 auto; /* 水平居中 */
+        position: absolute; /* 添加 position: absolute; */
+        left: 50%; /* 将左边界移动到页面中间 */
+        transform: translateX(-50%); /* 将元素本身向左移动50% */
+    }
+
     .social-links,
     .social-links a {
+        padding: 0.5em 0.5em;
+        color: var(--black);
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
         display: flex;
     }
     @media (max-width: 720px) {
