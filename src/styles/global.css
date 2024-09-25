@@ -24,6 +24,8 @@ body {
     font-family: 'UncutSans', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
     margin: 0;
     padding: 0;
+    margin-top: 60px;
+    /* 为页眉预留部分空间 */
     text-align: left;
     background: #FAFAFA;
     word-wrap: break-word;

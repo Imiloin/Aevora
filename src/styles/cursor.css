@@ -18,7 +18,7 @@
         will-change: transform;
     }
 
-    z-index: max-content;
+    z-index: 999;
 
     mix-blend-mode: difference;
 
