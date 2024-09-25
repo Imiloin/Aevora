@@ -4,17 +4,24 @@ import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
-    return posts.map((post) => ({
+    const headings = await Promise.all(
+        posts.map((post) => post.render().then((data) => data.headings)),
+    );
+    return posts.map((post, index) => ({
         params: { slug: post.slug },
-        props: post,
+        props: { post, headings: headings[index] },
     }));
 }
-type Props = CollectionEntry<"blog">;
 
-const post = Astro.props;
+type Props = {
+    post: CollectionEntry<"blog">;
+    headings: any;
+};
+
+const { post, headings } = Astro.props as Props;
 const { Content } = await post.render();
 ---
 
-<BlogPost {...post.data}>
+<BlogPost {...post.data} headings={headings}>
     <Content />
 </BlogPost>

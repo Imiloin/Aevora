@@ -1,0 +1,42 @@
+---
+import type { MarkdownHeading } from "astro";
+export interface HeadingHierarchy extends MarkdownHeading {
+    subheadings: HeadingHierarchy[];
+}
+const { heading } = Astro.props;
+---
+
+<li>
+    <a href={"#" + heading.slug}>
+        {heading.text}
+    </a>
+    {
+        heading.subheadings.length > 0 && (
+            <ul>
+                {heading.subheadings.map((subheading: any) => (
+                    <Astro.self heading={subheading} />
+                ))}
+            </ul>
+        )
+    }
+</li>
+
+<style>
+    li {
+        list-style: none;
+        padding-top: 0.5em;
+    }
+    ul {
+        list-style: none;
+        padding-left: 20px;
+    }
+    a {
+        display: block;
+        color: #b7b7b7;
+        text-decoration: none;
+        line-height: 1;
+    }
+    a.active {
+        color: #393939;
+    }
+</style>
