@@ -91,15 +91,30 @@ const hasToC = toc.length > 1;
             .toc {
                 font-size: 0.8em;
                 position: fixed;
-                width: 300px;
-                max-height: 80%;
+                width: 256px;
+                max-height: 70%;
                 overflow-y: auto;
                 background: rgba(250, 250, 250, 0.6);
                 transition: opacity 0.3s;
+                scrollbar-width: thin; /* Firefox */
+                scrollbar-gutter: stable; /* Ensure scrollbar space is reserved */
             }
             .toc.hidden {
                 opacity: 0;
                 pointer-events: none;
+            }
+            /* Hide scrollbar when not scrolling */
+            .toc {
+                scrollbar-color: transparent transparent; /* Hide scrollbar */
+            }
+            .toc:hover {
+                scrollbar-color: rgba(0, 0, 0, 0.2) transparent; /* Show scrollbar on hover */
+            }
+            /* Hide TOC on narrow screens */
+            @media (max-width: 1200px) {
+                .toc {
+                    display: none;
+                }
             }
         </style>
     </head>
