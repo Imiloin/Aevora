@@ -4,31 +4,6 @@ if (toc) {
     const headings = Array.from(
         mainElement?.querySelectorAll("h2, h3") || [],
     ) as HTMLElement[];
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const id = entry.target.getAttribute("id");
-                const tocLink = document.querySelector(
-                    `.toc a[href="#${id}"]`,
-                );
-                if (tocLink) {
-                    if (entry.intersectionRatio > 0.1) {
-                        tocLink.classList.add("active");
-                    } else {
-                        tocLink.classList.remove("active");
-                    }
-                }
-            });
-        },
-        {
-            rootMargin: "0px 0px -80% 0px",
-            threshold: [0.1, 0.5, 1],
-        },
-    );
-
-    headings.forEach((section) => {
-        observer.observe(section);
-    });
 
     let ticking = false;
     window.addEventListener("scroll", () => {
@@ -55,7 +30,7 @@ if (toc) {
                     const heading = headings[i];
                     if (
                         heading.offsetTop <=
-                        scrollTop + window.innerHeight / 2
+                        scrollTop + 50 /* 50px 是为了提前触发 */
                     ) {
                         currentActive = heading;
                     } else {
@@ -76,6 +51,11 @@ if (toc) {
                     );
                     if (tocLink) {
                         tocLink.classList.add("active");
+                        // 将当前活动的 TOC 链接滚动到可视范围内
+                        tocLink.scrollIntoView({
+                            behavior: "smooth",
+                            block: "nearest",
+                        });
                     }
                 }
 
