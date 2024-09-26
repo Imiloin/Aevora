@@ -99,9 +99,14 @@ const hasToC = toc.length > 1;
                 scrollbar-width: thin; /* Firefox */
                 scrollbar-gutter: stable; /* Ensure scrollbar space is reserved */
             }
-            .toc.hidden {
+            /* Hide TOC by default */
+            .toc {
                 opacity: 0;
                 pointer-events: none;
+            }
+            .toc.visible {
+                opacity: 1;
+                pointer-events: auto;
             }
             /* Hide scrollbar when not scrolling */
             .toc {

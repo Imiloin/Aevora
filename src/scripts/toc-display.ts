@@ -19,9 +19,9 @@ if (toc) {
                     scrollTop < firstHeadingTop ||
                     scrollTop > lastHeadingBottom
                 ) {
-                    toc.classList.add("hidden");
+                    toc.classList.remove("visible");
                 } else {
-                    toc.classList.remove("hidden");
+                    toc.classList.add("visible");
                 }
 
                 // 手动计算当前视口中的标题
