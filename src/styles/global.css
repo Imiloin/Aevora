@@ -11,6 +11,8 @@
 :root {
     --accent: #2337ff;
     --accent-dark: #000d8a;
+    --background: #fafafa;
+    --scrollbar: #e5e5e5;
     --black: 15, 18, 25;
     --gray: 96, 115, 159;
     --gray-light: 229, 233, 240;
@@ -27,7 +29,7 @@ body {
     margin-top: 60px;
     /* 为页眉预留部分空间 */
     text-align: left;
-    background: #FAFAFA;
+    background: var(--background);
     word-wrap: break-word;
     overflow-wrap: break-word;
     color: rgb(var(--gray-dark));
