@@ -4,10 +4,6 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-@import "remark-github-alerts/styles/github-colors-light.css";
-@import "remark-github-alerts/styles/github-colors-dark-class.css";
-@import "remark-github-alerts/styles/github-base.css";
-
 :root {
     --accent: #2337ff;
     --accent-dark: #000d8a;

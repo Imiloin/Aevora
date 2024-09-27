@@ -10,6 +10,10 @@ import type { MarkdownHeading } from "astro";
 import type { HeadingHierarchy } from "../components/TOC.astro";
 import TOC from "../components/TOC.astro";
 
+import "remark-github-alerts/styles/github-colors-light.css";
+import "remark-github-alerts/styles/github-colors-dark-class.css";
+import "remark-github-alerts/styles/github-base.css";
+
 type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
 
 const { title, description, pubDate, updatedDate, heroImage, headings } =
