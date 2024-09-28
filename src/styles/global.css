@@ -170,17 +170,20 @@ pre>code {
     margin-bottom: 0em;
 }
 
-blockquote {
-    margin-top: -0.5em;
+blockquote-no-alert {
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
-blockquote-no-alert {
-    font-size: 1.2em;
+blockquote-no-alert p {
+    margin: 0;
 }
 
 blockquote-no-alert svg {
     width: 32px;
-    margin-bottom: -1em;
+    padding: 0;
+    margin-left: -1em;
+    margin-bottom: 0.2em;
 }
 
 hr {
