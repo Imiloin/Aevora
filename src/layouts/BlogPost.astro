@@ -93,9 +93,11 @@ const hasToC = toc.length > 1;
                 font-style: italic;
             }
             .toc {
-                font-size: 0.8em;
+                font-size: 0.85em;
                 position: fixed;
+                margin-left: 40px;
                 width: 256px;
+                top: 6em; /* 将 TOC 下移 6em */
                 max-height: 70%;
                 overflow-y: auto;
                 background: rgba(250, 250, 250, 0.6);
@@ -145,11 +147,9 @@ const hasToC = toc.length > 1;
             {
                 hasToC && (
                     <nav>
-                        <ul>
-                            {toc.map((heading) => (
-                                <TOC heading={heading} />
-                            ))}
-                        </ul>
+                        {toc.map((heading) => (
+                            <TOC heading={heading} />
+                        ))}
                     </nav>
                 )
             }

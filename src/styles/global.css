@@ -20,18 +20,22 @@
         0 16px 32px rgba(var(--gray), 33%);
 }
 
+html {
+    font-size: 18px;
+}
+
 body {
     font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    margin-top: 60px;
+    margin-top: 2em;
     /* 为页眉预留部分空间 */
     text-align: left;
     background: var(--background);
     word-wrap: break-word;
     overflow-wrap: break-word;
     color: rgb(var(--gray-dark));
-    font-size: 20px;
+    font-size: 1em;
     line-height: 1.7;
 }
 
@@ -54,23 +58,23 @@ h6 {
 }
 
 h1 {
-    font-size: 3.052em;
+    font-size: 2.488em;
 }
 
 h2 {
-    font-size: 2.441em;
+    font-size: 2.074em;
 }
 
 h3 {
-    font-size: 1.953em;
+    font-size: 1.728em;
 }
 
 h4 {
-    font-size: 1.563em;
+    font-size: 1.44em;
 }
 
 h5 {
-    font-size: 1.25em;
+    font-size: 1.2em;
 }
 
 strong,
@@ -163,7 +167,7 @@ pre>code {
 
 .markdown-alert .markdown-alert-title {
     /* 调整 alert title 行与下方内容的间距 */
-    margin-bottom: 1em;
+    margin-bottom: 0em;
 }
 
 blockquote {
@@ -186,7 +190,7 @@ hr {
 
 @media (max-width: 720px) {
     body {
-        font-size: 18px;
+        font-size: 0.9rem;
     }
 
     main {
