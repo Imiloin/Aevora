@@ -230,3 +230,9 @@ kbd {
     -webkit-border-radius: 3px;
     text-shadow: 0 1px 0 #fff;
 }
+
+.footnotes {
+    border-top: 1px solid rgb(var(--gray-light));
+    margin-top: 2em;
+    padding-top: 0.5em;
+}

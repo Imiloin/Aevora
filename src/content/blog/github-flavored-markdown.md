@@ -414,9 +414,3 @@ For more information on backslashes, see Daring Fireball's "[Markdown Syntax](ht
 
 > [!NOTE]
 > The Markdown formatting will not be ignored in the title of an issue or a pull request.
-
-</br>
-
-------
-
-</br>
