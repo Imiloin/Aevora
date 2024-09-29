@@ -2,7 +2,7 @@ console.clear();
 
 const elCursor = document.querySelector(".cursor");
 
-const lerp = (curr, next, ratio = 0.3) => {
+const lerp = (curr, next, ratio = 0.1) => {
     const delta = next - curr;
     if (Math.abs(delta) < 0.01) return next;
     return curr + (next - curr) * ratio;
