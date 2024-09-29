@@ -9,15 +9,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const width = "960px";
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <style>
+        <style define:vars={{ width }}>
             main {
-                width: 960px;
+                width: var(--width);
             }
             ul {
                 display: flex;
@@ -58,12 +60,12 @@ const posts = (await getCollection("blog")).sort(
             }
             .title {
                 margin: 0;
-                color: rgb(var(--black));
+                color: var(--black);
                 line-height: 1;
             }
             .date {
                 margin: 0;
-                color: rgb(var(--gray));
+                color: var(--gray);
             }
             ul li a:hover h4,
             ul li a:hover .date {
@@ -149,6 +151,6 @@ const posts = (await getCollection("blog")).sort(
                 </ul>
             </section>
         </main>
-        <Footer />
+        <Footer width={width} />
     </body>
 </html>

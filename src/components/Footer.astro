@@ -1,5 +1,7 @@
 ---
 const today = new Date();
+
+const { width = "800px" } = Astro.props;
 ---
 
 <footer>
@@ -54,10 +56,10 @@ const today = new Date();
     </div>
 </footer>
 
-<style>
+<style define:vars={{ width }}>
     footer {
         background: var(--background);
-        color: rgb(var(--gray));
+        color: var(--gray);
         display: flex;
         justify-content: center;
         padding-bottom: 1em;
@@ -80,9 +82,9 @@ const today = new Date();
     }
     .social-links a {
         text-decoration: none;
-        color: rgb(var(--gray));
+        color: var(--gray);
     }
     .social-links a:hover {
-        color: rgb(var(--gray-dark));
+        color: var(--gray-800);
     }
 </style>

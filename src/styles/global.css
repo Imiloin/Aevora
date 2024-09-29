@@ -4,25 +4,18 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import url('./color.css');
 @import url('./font.css');
 
 :root {
-    --accent: #2337ff;
-    --accent-dark: #000d8a;
-    --background: #fafafa;
-    --scrollbar: #e5e5e5;
-    --black: 15, 18, 25;
-    --gray: 96, 115, 159;
-    --gray-light: 229, 233, 240;
-    --gray-dark: 34, 41, 57;
-    --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-    --box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-        0 16px 32px rgba(var(--gray), 33%);
+    font-size: 18px;
     --width: 800px;
 }
 
-html {
-    font-size: 18px;
+/* 修改选取文本的背景色 */
+::selection {
+    background: black;
+    color: white;
 }
 
 body {
@@ -35,7 +28,7 @@ body {
     background: var(--background);
     word-wrap: break-word;
     overflow-wrap: break-word;
-    color: rgb(var(--gray-dark));
+    color: var(--black);
     font-size: 1em;
     line-height: 1.7;
 }
@@ -54,7 +47,7 @@ h4,
 h5,
 h6 {
     margin: 0.5rem 0 0.5rem 0;
-    color: rgb(var(--black));
+    color: var(--black);
     line-height: 1.2;
 }
 
@@ -84,11 +77,13 @@ b {
 }
 
 a {
-    color: var(--accent);
+    color: var(--text);
+    text-decoration-color: var(--gray-600, var(--text));
 }
 
 a:hover {
-    color: var(--accent);
+    color: var(--text);
+    text-decoration-color: var(--gray-800, var(--text));
 }
 
 p {
@@ -115,27 +110,22 @@ table {
     /* 确保表格边框合并 */
 }
 
-thead {
-    background-color: rgba(35, 55, 255, 0.1);
-    /* 设置标题行的背景颜色 */
-}
-
 th,
 td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid rgb(var(--gray-light));
+    border-bottom: 1px solid var(--gray-300);
     /* 添加底部边框 */
 }
 
 /* 设置交错背景色 */
-tr:nth-child(odd) {
-    background-color: rgba(var(--gray-light), 0.5);
-    /* 奇数行背景色 */
+thead {
+    background-color: var(--gray-200) !important;
+    /* 设置标题行的背景颜色 */
 }
 
 tr:nth-child(even) {
-    background-color: rgba(var(--gray-light), 0.2);
+    background-color: var(--gray-200);
     /* 偶数行背景色 */
 }
 
@@ -148,7 +138,7 @@ img {
 /* in line code */
 code {
     padding: 2px 5px;
-    background-color: rgb(var(--gray-light));
+    background-color: var(--gray-300);
     border-radius: 2px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.9em;
@@ -189,7 +179,7 @@ blockquote-no-alert svg {
 
 hr {
     border: none;
-    border-top: 1px solid rgb(var(--gray-light));
+    border-top: 1px solid var(--gray-300);
 }
 
 @media (max-width: 720px) {
@@ -224,23 +214,24 @@ kbd {
     margin: 0px 0.1em;
     padding: 0.1em 0.6em;
     border-radius: 3px;
-    border: 1px solid rgb(204, 204, 204);
-    color: rgb(51, 51, 51);
+    border: 1px solid var(--gray-500);
+    color: var(--gray-800);
     line-height: 1.4;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8em;
     display: inline-block;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 0px 0px 2px #ffffff;
-    background-color: rgb(247, 247, 247);
-    -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
-    -webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 0px var(--shadow-color), inset 0px 0px 0px 2px var(--white);
+    background-color: var(--gray-200);
+    -moz-box-shadow: 0 1px 0px var(--shadow-color), 0 0 0 2px var(--white) inset;
+    -webkit-box-shadow: 0 1px 0px var(--shadow-color), 0 0 0 2px var(--white) inset;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 var(--white);
 }
 
 .footnotes {
-    border-top: 1px solid rgb(var(--gray-light));
+    border-top: 1px solid var(--gray-300);
     margin-top: 2em;
     padding-top: 0.5em;
 }

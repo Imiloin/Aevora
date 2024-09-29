@@ -37,7 +37,7 @@ const { heading } = Astro.props;
     }
     a {
         display: block;
-        color: #b7b7b7;
+        color: var(--gray-500);
         text-decoration: none;
         line-height: 1em;
         padding-top: 0.25em;
@@ -45,6 +45,6 @@ const { heading } = Astro.props;
         margin: 0;
     }
     a.active {
-        color: #393939;
+        color: var(--gray-800);
     }
 </style>
