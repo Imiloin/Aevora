@@ -89,16 +89,6 @@ const width = "960px";
                 background: inherit;
                 filter: blur(20px) brightness(80%) opacity(0.8);
             }
-            ul li img.background {
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                border-radius: 20px;
-                overflow: hidden;
-                z-index: -1;
-            }
             @media (max-width: 720px) {
                 ul {
                     gap: 0.5em;
@@ -136,7 +126,7 @@ const width = "960px";
                                         width={720}
                                         height={360}
                                         src={post.data.heroImage}
-                                        alt="background"
+                                        alt=""
                                     />
                                     <h4 class="title">{post.data.title}</h4>
                                     <p class="date">
