@@ -134,7 +134,15 @@ puts markdown.to_html
 
 您可以使用 **MathJax** 渲染 *LaTeX* 数学表达式。
 
-输入 `$$`, 然后按 <kbd>Return</kbd> 键将触发一个接受 *Tex / LaTex* 源代码的输入区域。以下是一个例子： V1×V2=∣∣∣∣∣i∂X∂u∂X∂vj∂Y∂u∂Y∂vk00∣∣∣∣∣V1×V2=|ijk∂X∂u∂Y∂u0∂X∂v∂Y∂v0|
+输入 `$$`, 然后按 <kbd>Return</kbd> 键将触发一个接受 *Tex / LaTex* 源代码的输入区域。以下是一个例子：
+
+$$
+\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+\mathbf{i} & \mathbf{j} & \mathbf{k} \\
+\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
+\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
+\end{vmatrix}
+$$
 
 在 markdown 源文件中，数学公式块是由 `$$` 标记包装的 *LaTeX* 表达式：
 
@@ -147,14 +155,6 @@ $$
 \end{vmatrix}
 $$
 ```
-
-$$
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
-\end{vmatrix}
-$$
 
 ### 表格
 
