@@ -20,10 +20,8 @@
 
 body {
     font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
-    margin: 0;
+    margin: 2em 0;
     padding: 0;
-    margin-top: 2em;
-    /* 为页眉预留部分空间 */
     text-align: left;
     background: var(--background);
     word-wrap: break-word;
@@ -37,7 +35,8 @@ main {
     width: var(--width);
     max-width: calc(100% - 2em);
     margin: auto;
-    padding: 3em 1em;
+    /* 3em top for the hanging header */
+    padding: 3em 1em 1em 1em;
 }
 
 h1,
