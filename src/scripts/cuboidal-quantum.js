@@ -16,11 +16,11 @@ function resizeCanvas() {
 function drawManifold(t) {
     ctx.clearRect(0, 0, w, h);
 
-    const numPoints = 20;
+    const numPoints = 15;
     const maxDist = 200;
     const radius = 150;
     const variance = 50;
-    const twist = 5;
+    const twist = 6;
     const color1 = "#393939";
     const color2 = "#a8a8a8";
 
