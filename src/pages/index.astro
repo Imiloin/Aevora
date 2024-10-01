@@ -5,28 +5,45 @@ import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 import "../styles/cursor.css";
+import "../styles/chat-container.css";
+import "../styles/typing-effect.css";
 ---
 
 <!doctype html>
 <html lang="en">
     <style>
         section {
-            scroll-snap-type: y mandatory;
-            scroll-snap-align: start;
-            height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            align-items: center; /* 垂直方向居中 */
+            height: 100vh;
         }
         canvas {
             display: block;
             width: 100%;
             height: 100%;
         }
+        .left-content {
+            justify-content: flex-start; /* 水平方向靠左 */
+            width: 600px;
+            max-width: calc(40% - 1em);
+            min-width: 500px;
+            margin-left: 10%;
+        }
+
+        @media (max-width: 768px) {
+            .left-content {
+                font-size: 0.8rem;
+                margin: auto;
+                align-items: center;
+                min-width: 400px;
+            }
+        }
 
         /* for test */
         .section-2 {
-            background-color: #34a853;
+            width: 100%;
+            margin: auto;
+            background-color: var(--green-400); /* change to your color */
         }
         .section-3 {
             background-color: #4285f4;
@@ -42,6 +59,7 @@ import "../styles/cursor.css";
     <script>
         import "../scripts/cuboidal-quantum.js";
         import "../scripts/cursor.js";
+        import "../scripts/typing-effect.js";
     </script>
 
     <body>
@@ -50,8 +68,30 @@ import "../styles/cursor.css";
             <canvas id="cuboidal-quantum-canvas"></canvas>
         </section>
         <section class="section-2">
-            <h1>Section 2</h1>
-            <p>Content for section 2</p>
+            <div class="left-content">
+                <div class="chat-container">
+                    <div class="type-container">
+                        <h2>
+                            <span
+                                class="txt-type"
+                                data-wait="4000"
+                                data-words='["Pleasure to meet you", "Check my blogs"]'
+                            ></span>
+                        </h2>
+                    </div>
+                    <div class="chatbubble-left">Hi there!</div>
+                    <div class="chatbubble-row">
+                        <div class="chatbubble-left">?</div>
+                        <div class="chatbubble-right">Ready</div>
+                    </div>
+                    <div class="chatbubble-right">Let's GO~</div>
+                    <p>
+                        Use the search bar to find the blog you are looking for.
+                        <br />
+                        Check out <a href="/blog">all blogs</a> here.
+                    </p>
+                </div>
+            </div>
         </section>
         <section class="section-3">
             <h1>Section 3</h1>

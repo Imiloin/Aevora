@@ -1,0 +1,57 @@
+.type-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* fake typing cursor */
+.txt-type {
+    border-right: 0.2em solid var(--white);
+    padding-right: 0.1em;
+    -webkit-animation: blink 1.5s infinite;
+    -moz-animation: blink 1.5s infinite;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        border-color: var(--white);
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: var(--white);
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        border-color: var(--white);
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: var(--white);
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        border-color: var(--white);
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: var(--white);
+    }
+}

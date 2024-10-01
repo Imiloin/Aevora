@@ -1,0 +1,77 @@
+.chat-container {
+    --chat-color: var(--indigo);
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--chat-color);
+    color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.chat-container h2 {
+    font-size: 2.5em;
+    font-family: 'HarmonyOSHans-Regular', system-ui, sans-serif;
+    font-weight: bold;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.chat-container a {
+    color: var(--white);
+    text-decoration-color: var(--white);
+}
+
+.chat-container p {
+    line-height: 1.5;
+}
+
+.chatbubble-left,
+.chatbubble-right {
+    --max-radius: calc(min(50vw, 50vh));
+    color: var(--chat-color);
+    background-color: var(--white);
+    font-size: 4em;
+    display: inline-block;
+    padding: calc(0.08 * var(--max-radius)) calc(0.1 * var(--max-radius));
+    margin: 10px 0;
+    font-weight: bold;
+    max-width: 70%;
+    transition: transform 0.3s ease;
+}
+
+.chatbubble-left {
+    text-align: left;
+    align-self: flex-start;
+    border-radius: var(--max-radius) var(--max-radius) var(--max-radius) 0;
+    /* 设置旋转中心 */
+    transform-origin: bottom left;
+}
+
+.chatbubble-right {
+    text-align: right;
+    align-self: flex-end;
+    border-radius: var(--max-radius) var(--max-radius) 0 var(--max-radius);
+    /* 设置旋转中心 */
+    transform-origin: bottom right;
+}
+
+.chatbubble-left:hover {
+    transform: rotate(-5deg);
+    /* 悬停时旋转 */
+}
+
+.chatbubble-right:hover {
+    transform: rotate(5deg);
+    /* 悬停时旋转 */
+}
+
+.chatbubble-row {
+    display: flex;
+    justify-content: space-between;
+    /* 设置气泡之间的间距 */
+    gap: 10px;
+    margin: 5px 0;
+}
