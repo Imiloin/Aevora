@@ -46,7 +46,7 @@ const width = "960px";
                 width: 75%;
             }
             ul li:first-child .title {
-                font-size: 2.369rem;
+                font-size: 2.074rem;
             }
             ul li img {
                 margin-bottom: 0.5rem;
@@ -94,14 +94,25 @@ const width = "960px";
                     gap: 0.5em;
                 }
                 ul li {
-                    width: 100%;
+                    width: 75%;
                     text-align: center;
+                    left: calc((100% - 75%) / 2);
+                }
+                ul li .title {
+                    font-size: 1.2em;
                 }
                 ul li:first-child {
                     margin-bottom: 0;
+                    left: 0;
                 }
                 ul li:first-child .title {
-                    font-size: 1.563em;
+                    font-size: 1.4em;
+                }
+                ul li:first-child img {
+                    width: 100%;
+                }
+                ul li:first-child img.shadow {
+                    left: 0;
                 }
             }
         </style>
