@@ -35,7 +35,7 @@
     background-color: var(--white);
     font-size: 4em;
     display: inline-block;
-    padding: calc(0.08 * var(--max-radius)) calc(0.1 * var(--max-radius));
+    padding: calc(0.05 * var(--max-radius)) calc(0.1 * var(--max-radius));
     margin: 10px 0;
     font-weight: bold;
     max-width: 70%;
