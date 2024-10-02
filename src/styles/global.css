@@ -10,6 +10,7 @@
 :root {
     font-size: 18px;
     --width: 800px;
+    --default-font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
 }
 
 /* 修改选取文本的背景色 */
@@ -19,7 +20,7 @@
 }
 
 body {
-    font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
+    font-family: var(--default-font-family);
     margin: 2em 0;
     padding: 0;
     text-align: left;
@@ -229,8 +230,31 @@ kbd {
     text-shadow: 0 1px 0 var(--white);
 }
 
+mark {
+    background-color: var(--blue-300);
+    color: var(--black);
+}
+
 .footnotes {
     border-top: 1px solid var(--gray-300);
     margin-top: 2em;
     padding-top: 0.5em;
+}
+
+/* 自定义滚动条样式 */
+html::-webkit-scrollbar {
+    width: 10px;
+    /* 设置滚动条宽度 */
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--gray-600);
+    /* 滚动条颜色 */
+    border-radius: 5px;
+    /* 滚动条圆角 */
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--background);
+    /* 滚动条轨道颜色 */
 }
