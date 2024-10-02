@@ -4,6 +4,9 @@
 # temp
 /temp/
 
+# pagefind
+public/pagefind/
+
 # build output
 dist/
 # generated types

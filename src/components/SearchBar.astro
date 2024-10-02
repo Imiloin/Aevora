@@ -1,0 +1,33 @@
+---
+import "../styles/pagefind-searchbar.css";
+---
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<div id="search"></div>
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+        // @ts-ignore
+        new PagefindUI({
+            element: "#search",
+            resetStyles: false,
+            showSubResults: true,
+        });
+    });
+</script>
+<style>
+    #search {
+        --pagefind-ui-scale: 1;
+        --pagefind-ui-primary: var(--blue-dark);
+        --pagefind-ui-fade: var(--gray-700);
+        --pagefind-ui-text: var(--text);
+        --pagefind-ui-background: var(--white);
+        --pagefind-ui-border: var(--gray-400);
+        --pagefind-ui-tag: var(--gray-400);
+        --pagefind-ui-border-width: 2px;
+        --pagefind-ui-border-radius: 8px;
+        --pagefind-ui-image-border-radius: 8px;
+        --pagefind-ui-image-box-ratio: 3 / 2;
+        --pagefind-ui-font: var(--default-font-family);
+    }
+</style>

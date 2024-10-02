@@ -1,0 +1,36 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SearchBar from "../components/SearchBar.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: calc(100vh - 4em);
+        }
+        main {
+            /* flex: 1 makes the main element take up the remaining space */
+            flex: 1;
+        }
+        html {
+            scrollbar-gutter: stable; /* 防止滚动条消失时页面抖动 */
+            overflow-y: scroll; /* 始终显示滚动条 */
+        }
+    </style>
+
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+    <body>
+        <Header />
+        <main>
+            <SearchBar />
+        </main>
+        <Footer />
+    </body>
+</html>

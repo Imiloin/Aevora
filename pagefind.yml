@@ -1,0 +1,4 @@
+# pagefind.yml
+site: dist
+output_subdir: pagefind
+glob: "**/*.{html}"

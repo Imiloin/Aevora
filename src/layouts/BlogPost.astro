@@ -128,7 +128,7 @@ const hasToC = toc.length > 1;
             }
             .toc:hover::-webkit-scrollbar-thumb {
                 border-radius: 4px;
-                background-color: var(--scrollbar);
+                background-color: var(--toc-scrollbar);
             }
             /* Hide TOC on narrow screens */
             @media (max-width: 1200px) {
@@ -152,14 +152,15 @@ const hasToC = toc.length > 1;
                 )
             }
         </div>
-        <main>
+        <main data-pagefind-body>
             <article>
-                <div class="hero-image">
+                <div class="hero-image" data-pagefind-ignore>
                     {
                         heroImage && (
                             <img
                                 width={800}
                                 height={400}
+                                data-pagefind-meta="image[src]"
                                 src={heroImage}
                                 alt=""
                             />

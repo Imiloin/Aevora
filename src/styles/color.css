@@ -197,7 +197,7 @@
 
     --gray: var(--gray-700);
     --background: var(--gray-100);
-    --scrollbar: var(--gray-300);
+    --toc-scrollbar: var(--gray-300);
     --underline-color: var(--gray-600);
 
     --accent: var(--blue-neon);
