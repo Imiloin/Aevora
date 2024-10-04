@@ -130,10 +130,12 @@ import "../styles/typing-effect.css";
         <div class="cursor-outer"></div>
         <div class="cursor-inner"></div>
     </div>
-    <script src="src/scripts/cursor.js" async></script>
-    <script src="src/scripts/cuboidal-quantum.js" defer></script>
-    <script src="src/scripts/typing-effect.js" defer></script>
-    <script src="src/scripts/clock.js" defer></script>
+    <script>
+        import "../scripts/clock.js";
+        import "../scripts/cuboidal-quantum.js";
+        import "../scripts/cursor.js";
+        import "../scripts/typing-effect.js";
+    </script>
 
     <body>
         <Header />
