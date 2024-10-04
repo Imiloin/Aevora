@@ -4,9 +4,9 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
+import "../styles/chat-container.css";
 import "../styles/clock.css";
 import "../styles/cursor.css";
-import "../styles/chat-container.css";
 import "../styles/link-button.css";
 import "../styles/typing-effect.css";
 ---
@@ -130,12 +130,10 @@ import "../styles/typing-effect.css";
         <div class="cursor-outer"></div>
         <div class="cursor-inner"></div>
     </div>
-    <script>
-        import "../scripts/clock.js";
-        import "../scripts/cuboidal-quantum.js";
-        import "../scripts/cursor.js";
-        import "../scripts/typing-effect.js";
-    </script>
+    <script src="src/scripts/cursor.js" async></script>
+    <script src="src/scripts/cuboidal-quantum.js" defer></script>
+    <script src="src/scripts/typing-effect.js" defer></script>
+    <script src="src/scripts/clock.js" defer></script>
 
     <body>
         <Header />
