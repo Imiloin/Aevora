@@ -2,16 +2,8 @@
     font-family: 'UncutSans';
     src:
         local('UncutSans'),
-        url('/fonts/UncutSans-Bold.woff2') format('woff2');
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: 'UncutSans';
-    src:
-        local('UncutSans'),
-        url('/fonts/UncutSans-Semibold.woff2') format('woff2');
-    font-weight: 600;
+        url('/fonts/UncutSans-Regular.woff2') format('woff2');
+    font-weight: 400;
 }
 
 @font-face {
@@ -20,14 +12,25 @@
         local('UncutSans'),
         url('/fonts/UncutSans-Medium.woff2') format('woff2');
     font-weight: 500;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'UncutSans';
     src:
         local('UncutSans'),
-        url('/fonts/UncutSans-Regular.woff2') format('woff2');
-    font-weight: 400;
+        url('/fonts/UncutSans-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UncutSans';
+    src:
+        local('UncutSans'),
+        url('/fonts/UncutSans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
@@ -36,6 +39,7 @@
         local('IBM Plex Mono'),
         url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
     font-weight: 400;
+    font-display: swap;
 }
 
 /* HarmonyOS Sans for Chinese characters */
