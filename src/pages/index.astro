@@ -54,20 +54,21 @@ import "../styles/typing-effect.css";
         }
 
         @media (max-width: 768px) {
-            .left-content {
-                font-size: 0.8rem;
+            .left-content,
+            .right-content {
                 margin: auto;
                 align-items: center;
                 min-width: 400px;
             }
+            section {
+                height: fit-content;
+                font-size: 0.8rem;
+                display: block;
+                align-items: column;
+            }
         }
 
         /* for test */
-        .section-2 {
-            width: 100%;
-            margin: auto;
-            background-color: var(--background);
-        }
         .section-3 {
             background-color: #4285f4;
         }
@@ -88,10 +89,8 @@ import "../styles/typing-effect.css";
 
     <body>
         <Header />
+        <canvas id="cuboidal-quantum-canvas"></canvas>
         <section>
-            <canvas id="cuboidal-quantum-canvas"></canvas>
-        </section>
-        <section class="section-2">
             <div class="left-content">
                 <div class="chat-container">
                     <div class="type-container">

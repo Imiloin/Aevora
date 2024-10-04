@@ -100,3 +100,21 @@
     max-width: calc(40% - 1em);
     transform: translateX(-100px);
 }
+
+@media (max-width: 768px) {
+    .centerDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 2em 0;
+    }
+
+    .rightDiv {
+        width: 100%;
+        max-width: none;
+        transform: translateX(0);
+        display: flex;
+        justify-content: center;
+    }
+}
