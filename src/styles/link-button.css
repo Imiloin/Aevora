@@ -6,7 +6,7 @@ button {
     background: transparent;
     padding: 0;
     font-size: 1rem;
-    font-family: inherit;
+    font-family: 'HarmonyOSHans-Regular', system-ui, sans-serif;
 }
 
 button.link-button {

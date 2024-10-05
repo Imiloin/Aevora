@@ -54,8 +54,7 @@ class TypeWriter {
 }
 
 
-// Init On DOM Load
-document.addEventListener('DOMContentLoaded', init);
+init();
 
 // Init App
 function init() {
