@@ -5,14 +5,39 @@ import HeaderLink from "./HeaderLink.astro";
 
 <header id="header">
     <nav>
-        <h2><a href="/">{SITE_TITLE}</a></h2>
+        <div class="title">
+            <a href="/">
+                <svg
+                    class="logo"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 128 128"
+                    width="28"
+                    height="28"
+                >
+                    <g>
+                        <path
+                            d="M47.8,45.6c-1.7,2.7-3.4,5.3-5.1,8c-3.3,5.2-5.9,10.8-6.9,17c-1.2,7.6,2.6,14.9,9.2,17.3c4.2,1.6,8.5,1.1,12.6-0.3
+                        c12.3-4.3,21.8-12.1,27.9-23.6c3-5.6,4-12.4,3-18.5c0.1-0.1,0.2-0.2,0.3-0.3c0.5,0.6,0.9,1.2,1.4,1.8c14,15.2,14.4,38.7,1,54.4
+                        c-13.7,16.1-39,18.6-55.2,5.2c-8.1-6.7-12.6-15.4-12.4-26.1c0.2-6.3,2.4-11.9,5.7-17.2C34,55.8,40.3,50.1,47.8,45.6z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M65.9,14.2c4.9,3.4,8.9,7.6,11.8,12.8c6.4,11.3,6.8,22.8,1,34.4c-4.8,9.8-12,17.4-21.8,22.4c-4.7,2.4-9.2,2-12.2-1.1
+                        c-2.3-2.4-3.1-5.3-3.2-8.6c-0.1-5.7,2-10.7,5.1-15.3c3.6-5.4,7.7-10.5,11.4-15.8c4.2-6.1,7.1-12.8,7.8-20.2
+                        C66.1,20.1,65.9,17.3,65.9,14.2z"
+                            fill="currentColor"></path>
+                    </g>
+                </svg>
+                <h2>{SITE_TITLE}</h2></a
+            >
+        </div>
         <div class="internal-links">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
         </div>
-        <div class="social-links">
-            <a href="https://m.webtoo.ls/@astro" target="_blank">
+        <div class="icon-links">
+            <a href="/search">
                 <span class="sr-only">Follow Astro on Mastodon</span>
                 <svg
                     viewBox="0 0 16 16"
@@ -21,33 +46,7 @@ import HeaderLink from "./HeaderLink.astro";
                     height="24"
                     ><path
                         fill="currentColor"
-                        d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"
-                    ></path></svg
-                >
-            </a>
-            <a href="https://twitter.com/astrodotbuild" target="_blank">
-                <span class="sr-only">Follow Astro on Twitter</span>
-                <svg
-                    viewBox="0 0 16 16"
-                    aria-hidden="true"
-                    width="24"
-                    height="24"
-                    ><path
-                        fill="currentColor"
-                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-                    ></path></svg
-                >
-            </a>
-            <a href="https://github.com/withastro/astro" target="_blank">
-                <span class="sr-only">Go to Astro's GitHub repo</span>
-                <svg
-                    viewBox="0 0 16 16"
-                    aria-hidden="true"
-                    width="24"
-                    height="24"
-                    ><path
-                        fill="currentColor"
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                        d="M12.7549 11.255H11.9649L11.6849 10.985C12.6649 9.845 13.2549 8.365 13.2549 6.755C13.2549 3.165 10.3449 0.255005 6.75488 0.255005C3.16488 0.255005 0.254883 3.165 0.254883 6.755C0.254883 10.345 3.16488 13.255 6.75488 13.255C8.36488 13.255 9.84488 12.665 10.9849 11.685L11.2549 11.965V12.755L16.2549 17.745L17.7449 16.255L12.7549 11.255ZM6.75488 11.255C4.26488 11.255 2.25488 9.245 2.25488 6.755C2.25488 4.26501 4.26488 2.255 6.75488 2.255C9.24488 2.255 11.2549 4.26501 11.2549 6.755C11.2549 9.245 9.24488 11.255 6.75488 11.255Z"
                     ></path></svg
                 >
             </a>
@@ -69,17 +68,22 @@ import HeaderLink from "./HeaderLink.astro";
         backdrop-filter: blur(10px); /* 毛玻璃效果 */
         -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
     }
-    h2 {
+
+    .title a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 14px;
+    }
+    .title h2 {
         margin: 0;
         font-size: 1em;
     }
-
     h2 a,
     h2 a.active {
         padding: 1em 0.5em;
         color: var(--black);
         border-bottom: 4px solid transparent;
-        text-decoration: none;
     }
 
     nav {
@@ -98,8 +102,8 @@ import HeaderLink from "./HeaderLink.astro";
         transform: translateX(-50%); /* 将元素本身向左移动50% */
     }
 
-    .social-links,
-    .social-links a {
+    .icon-links,
+    .icon-links a {
         font-size: 0.9em;
         padding: 0.5em 0.5em;
         color: var(--black);
@@ -107,9 +111,30 @@ import HeaderLink from "./HeaderLink.astro";
         text-decoration: none;
         display: flex;
     }
+    .icon-links a:hover {
+        animation: scale-up-dpwn 0.6s ease; /* 应用动画 */
+        color: var(--orange-neon);
+    }
+    @keyframes scale-up-dpwn {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .title h2 {
+            font-size: 0.9em;
+        }
+    }
     @media (max-width: 720px) {
-        .social-links {
-            display: none;
+        .icon-links {
+            scale: 0.8;
         }
         .internal-links {
             position: relative;
