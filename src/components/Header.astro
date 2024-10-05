@@ -152,10 +152,22 @@ import HeaderLink from "./HeaderLink.astro";
     /* 页眉在页面滚动时隐藏或显示 */
     let lastScrollTop = 0;
     const header = document.getElementById("header");
+    let isUserScrolling = false;
 
+    // 监听滚轮事件
+    window.addEventListener("wheel", () => {
+        isUserScrolling = true;
+    });
+
+    // 监听触摸滑动事件
+    window.addEventListener("touchmove", () => {
+        isUserScrolling = true;
+    });
+
+    // 监听滚动事件
     window.addEventListener("scroll", function () {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if (header) {
+        if (header && isUserScrolling) {
             if (scrollTop > lastScrollTop) {
                 // 向下滚动
                 header.style.transform = "translateY(-100%)";
@@ -165,5 +177,6 @@ import HeaderLink from "./HeaderLink.astro";
             }
         }
         lastScrollTop = scrollTop;
+        isUserScrolling = false; // 重置滚动状态
     });
 </script>
