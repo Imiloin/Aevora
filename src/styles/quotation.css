@@ -7,7 +7,7 @@
 .text-section {
     display: flex;
     flex-direction: column;
-    font-family: "HarmonyOSHans-Regular", system-ui, sans-serif;
+    font-family: var(--default-font-family);
     color: var(--blue);
     flex-grow: 1;
     margin-top: 1em;
