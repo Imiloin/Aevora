@@ -1,6 +1,8 @@
 import mdx from '@astrojs/mdx';
 import { defineConfig } from 'astro/config';
 
+import viteConfig from './vite.config.js';
+
 import sitemap from '@astrojs/sitemap';
 
 import rehypeMathjax from 'rehype-mathjax';
@@ -17,4 +19,5 @@ export default defineConfig({
         remarkPlugins: [remarkGithubAlerts, remarkMath, customBlockquote],
         rehypePlugins: [rehypeMathjax],
     },
+    vite: viteConfig,
 });

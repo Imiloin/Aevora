@@ -38,7 +38,7 @@ button {
 
             @while $i < 15 {
                 &:nth-child(#{$i}) {
-                    transition-delay: $i / 20 + s;
+                    transition-delay: calc($i / 20) + s;
                 }
 
                 $i: $i + 1;
