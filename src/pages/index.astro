@@ -26,6 +26,13 @@ import "../styles/typing-effect.css";
             -ms-overflow-style: none; /* IE and Edge */
         }
 
+        html,
+        body,
+        div,
+        * {
+            cursor: none !important;
+        }
+
         section {
             display: flex;
             align-items: center; /* 垂直方向居中 */
@@ -234,7 +241,7 @@ import "../styles/typing-effect.css";
                             <!-- end of mainClock funtialities_ -->
                         </div>
                     </div>
-                    <div class="button-container">
+                    <div data-expand class="button-container">
                         <a href="/blog/">
                             <button class="link-button">
                                 <span class="circle" aria-hidden="true">

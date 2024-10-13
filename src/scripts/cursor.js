@@ -32,15 +32,17 @@ function onMove(e) {
     point.x = e.clientX;
     point.y = e.clientY;
 
-    let target = e.target;
-    if (target && target.dataset) {
-        let size = 1;
-        if ("shrink" in target.dataset) {
-            size = 0.5;
-        } else if ("expand" in target.dataset) {
-            size = 2;
+    let target = e.target.closest("[data-shrink], [data-expand]");
+    if (target) {
+        let size = 0.5;  // less than 1 to avoid blur
+        if (target.hasAttribute("data-shrink")) {
+            size = 0.3;
+        } else if (target.hasAttribute("data-expand")) {
+            size = 1;
         }
         point.scale = size;
+    } else {
+        point.scale = 0.5;  // reset
     }
 }
 

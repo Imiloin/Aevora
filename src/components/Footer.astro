@@ -10,7 +10,7 @@ const { width = "800px" } = Astro.props;
             &copy; {today.getFullYear()} Imiloin. All rights reserved.
         </div>
         <div class="right social-links">
-            <a href="https://m.webtoo.ls/@astro" target="_blank">
+            <a data-shrink href="https://m.webtoo.ls/@astro" target="_blank">
                 <span class="sr-only">Follow Astro on Mastodon</span>
                 <svg
                     viewBox="0 0 16 16"
@@ -24,7 +24,11 @@ const { width = "800px" } = Astro.props;
                     ></path></svg
                 >
             </a>
-            <a href="https://twitter.com/astrodotbuild" target="_blank">
+            <a
+                data-shrink
+                href="https://twitter.com/astrodotbuild"
+                target="_blank"
+            >
                 <span class="sr-only">Follow Astro on Twitter</span>
                 <svg
                     viewBox="0 0 16 16"
@@ -38,7 +42,11 @@ const { width = "800px" } = Astro.props;
                     ></path></svg
                 >
             </a>
-            <a href="https://github.com/withastro/astro" target="_blank">
+            <a
+                data-shrink
+                href="https://github.com/withastro/astro"
+                target="_blank"
+            >
                 <span class="sr-only">Go to Astro's GitHub repo</span>
                 <svg
                     viewBox="0 0 16 16"
