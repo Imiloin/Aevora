@@ -19,6 +19,7 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "pagefind": "^1.1.1"
+    "pagefind": "^1.1.1",
+    "sass-embedded": "^1.79.5"
   }
 }
