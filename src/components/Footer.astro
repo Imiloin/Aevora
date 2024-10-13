@@ -88,4 +88,10 @@ const { width = "800px" } = Astro.props;
     .social-links a:hover {
         color: var(--gray-800);
     }
+
+    @media (max-width: 720px) {
+        .footer-content {
+            width: calc(100% - 2em);
+        }
+    }
 </style>

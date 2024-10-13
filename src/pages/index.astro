@@ -8,6 +8,7 @@ import "../styles/chat-container.css";
 import "../styles/clock.css";
 import "../styles/cursor.css";
 import "../styles/link-button.css";
+import "../styles/quotation.css";
 import "../styles/typing-effect.css";
 ---
 
@@ -37,6 +38,18 @@ import "../styles/typing-effect.css";
             width: 100%;
             height: 100%;
         }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            width: 80%;
+        }
+        .content.column {
+            flex-direction: column;
+        }
         .left-content,
         .right-content {
             width: 600px;
@@ -59,7 +72,7 @@ import "../styles/typing-effect.css";
             align-items: center;
             justify-content: center;
         }
-        .rightDiv {
+        .partDiv {
             position: relative;
             width: 600px;
             max-width: calc(40% - 1em);
@@ -72,7 +85,24 @@ import "../styles/typing-effect.css";
             transform: translateX(-55px) translateY(50px);
         }
 
-        @media (max-width: 1000px) {
+        .left-align {
+            align-self: flex-start;
+            text-align: left;
+            width: 100%; /* 确保元素占满父容器的宽度 */
+            margin-left: 10%;
+        }
+        .right-align {
+            align-self: flex-end;
+            text-align: right;
+            width: 100%; /* 确保元素占满父容器的宽度 */
+            margin-right: 10%;
+        }
+
+        @media (max-width: 1200px) {
+            .content {
+                margin: auto 1em;
+                width: calc(100% - 2em);
+            }
             .left-content,
             .right-content {
                 margin: auto;
@@ -92,7 +122,7 @@ import "../styles/typing-effect.css";
                 width: 100%;
                 margin: 2em 0;
             }
-            .rightDiv {
+            .partDiv {
                 width: 100%;
                 max-width: none;
                 display: flex;
@@ -107,6 +137,12 @@ import "../styles/typing-effect.css";
                 transform: translateX(0) translateY(0);
                 margin: 2em;
             }
+            .left-align {
+                margin-left: 20%;
+            }
+            .right-align {
+                margin-right: 20%;
+            }
         }
         @media (max-width: 720px) {
             .clock-container {
@@ -115,12 +151,14 @@ import "../styles/typing-effect.css";
             }
             .button-container {
                 margin: 0;
+                scale: 0.8;
             }
-        }
-
-        /* for test */
-        .section-3 {
-            background-color: #4285f4;
+            .left-align {
+                margin-left: 10%;
+            }
+            .right-align {
+                margin-right: 10%;
+            }
         }
     </style>
 
@@ -169,7 +207,7 @@ import "../styles/typing-effect.css";
                 </div>
             </div>
             <div class="centerDiv">
-                <div class="rightDiv">
+                <div class="partDiv">
                     <div class="clock-container">
                         <div class="clock" id="clock">
                             <!-- <img src="./svgs/starishShape.svg" alt=""> this is below svg, if anything goes wrong copy the code if this svg and past it below -->
@@ -209,10 +247,29 @@ import "../styles/typing-effect.css";
                 </div>
             </div>
         </section>
-        <section class="section-3">
-            <h1>Section 3</h1>
-            <p>Content for section 3</p>
+        <section>
+            <div class="content column">
+                <div class="quote-container">
+                    <div class="text-section left">
+                        <div class="small-text">BUILD YOUR WEB:</div>
+                        <div class="line"></div>
+                    </div>
+                    <div class="mid-text-container">
+                        <span class="main-text">"KEEP IT</span>
+                    </div>
+                    <div class="text-section right">
+                        <div class="small-text unselectable-spaces">#01</div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="right-align">
+                    <span class="main-text">SIMPLE AND</span>
+                </div>
+                <div>
+                    <span class="main-text">STUPID"</span>
+                </div>
+            </div>
         </section>
-        <Footer />
+        <Footer width="80%" />
     </body>
 </html>
