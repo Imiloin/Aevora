@@ -3,7 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import SearchBar from "../components/SearchBar.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+const title = "Search";
+const description = "Search for posts on this site.";
 ---
 
 <!doctype html>
@@ -24,7 +26,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
         }
     </style>
 
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={title} description={description} />
 
     <body>
         <Header />
