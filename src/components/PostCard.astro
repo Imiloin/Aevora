@@ -1,10 +1,10 @@
 ---
 import FormattedDate from "@components/FormattedDate.astro";
 
-const { post } = Astro.props;
+const { post, isFirstChild } = Astro.props;
 ---
 
-<li>
+<li class={isFirstChild ? "first-child" : ""}>
     <a href={`/blog/${post.slug}/`}>
         <img
             width={720}
@@ -30,15 +30,15 @@ const { post } = Astro.props;
         text-decoration: none;
         transition: 0.2s ease;
     }
-    li:first-child {
+    li.first-child {
         width: 100%;
         margin-bottom: 1rem;
         text-align: center;
     }
-    li:first-child img {
+    li.first-child img {
         width: 75%;
     }
-    li:first-child .title {
+    li.first-child .title {
         font-size: 2.074rem;
     }
     li img {
@@ -64,7 +64,7 @@ const { post } = Astro.props;
     li a:hover .date {
         color: var(--accent);
     }
-    li:first-child img.shadow {
+    li.first-child img.shadow {
         position: absolute;
         top: 0;
         left: calc((100% - 75%) / 2);
@@ -91,17 +91,17 @@ const { post } = Astro.props;
         li .title {
             font-size: 1.2em;
         }
-        li:first-child {
+        li.first-child {
             margin-bottom: 0;
             left: 0;
         }
-        li:first-child .title {
+        li.first-child .title {
             font-size: 1.4em;
         }
-        li:first-child img {
+        li.first-child img {
             width: 100%;
         }
-        li:first-child img.shadow {
+        li.first-child img.shadow {
             left: 0;
         }
     }

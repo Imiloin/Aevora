@@ -7,21 +7,39 @@ import { getCollection } from "astro:content";
 
 import blogConfig from "@configs/blog.json";
 
-const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
 const title = "Blog";
 const description = "Thoughts, stories, and ideas.";
 const width = "960px";
 
+// 获取当前页码
+const { page } = Astro.params;
+const currentPage = parseInt(page ?? "1", 10);
+
 // 分页逻辑
+const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
 const postsPerPage = blogConfig.nav.postsPerPage;
 const firstPagePosts = blogConfig.nav.firstPagePosts;
 const totalPages =
     Math.ceil((posts.length - firstPagePosts) / postsPerPage) + 1;
 
-const currentPage = 1;
+export async function getStaticPaths() {
+    const posts = (await getCollection("blog")).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    );
+
+    const postsPerPage = blogConfig.nav.postsPerPage;
+    const firstPagePosts = blogConfig.nav.firstPagePosts;
+    const totalPages =
+        Math.ceil((posts.length - firstPagePosts) / postsPerPage) + 1;
+
+    const paths = Array.from({ length: totalPages }, (_, i) => ({
+        params: { page: (i + 1).toString() },
+    }));
+    return paths;
+}
 ---
 
 <!doctype html>
