@@ -1,8 +1,8 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
 import Footer from "@components/Footer.astro";
-import FormattedDate from "@components/FormattedDate.astro";
 import Header from "@components/Header.astro";
+import PostCard from "@components/PostCard.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
@@ -30,90 +30,9 @@ const width = "960px";
                 margin: 0;
                 padding: 0;
             }
-            ul li {
-                width: calc(50% - 1rem);
-                position: relative;
-            }
-            ul li * {
-                text-decoration: none;
-                transition: 0.2s ease;
-            }
-            ul li:first-child {
-                width: 100%;
-                margin-bottom: 1rem;
-                text-align: center;
-            }
-            ul li:first-child img {
-                width: 75%;
-            }
-            ul li:first-child .title {
-                font-size: 2.074rem;
-            }
-            ul li img {
-                margin-bottom: 0.5rem;
-                border-radius: 12px;
-                &:hover {
-                    transform: scale(1.02);
-                }
-            }
-            ul li a {
-                display: block;
-            }
-            .title {
-                margin: 0;
-                color: var(--black);
-                line-height: 1;
-            }
-            .date {
-                margin: 0;
-                color: var(--gray);
-            }
-            ul li a:hover h4,
-            ul li a:hover .date {
-                color: var(--accent);
-            }
-            ul li:first-child img.shadow {
-                position: absolute;
-                top: 0;
-                left: calc((100% - 75%) / 2);
-                bottom: 0;
-                right: 0;
-            }
-            ul li img.shadow {
-                position: absolute;
-                overflow: hidden;
-                display: flex;
-                z-index: -2;
-            }
-            ul li a:hover img.shadow {
-                content: "";
-                background: inherit;
-                filter: blur(20px) brightness(80%) opacity(0.8);
-            }
             @media (max-width: 720px) {
                 ul {
                     gap: 0.5em;
-                }
-                ul li {
-                    width: 75%;
-                    text-align: center;
-                    left: calc((100% - 75%) / 2);
-                }
-                ul li .title {
-                    font-size: 1.2em;
-                }
-                ul li:first-child {
-                    margin-bottom: 0;
-                    left: 0;
-                }
-                ul li:first-child .title {
-                    font-size: 1.4em;
-                }
-                ul li:first-child img {
-                    width: 100%;
-                }
-                ul li:first-child img.shadow {
-                    left: 0;
                 }
             }
         </style>
@@ -123,33 +42,7 @@ const width = "960px";
         <main>
             <section>
                 <ul>
-                    {
-                        posts.map((post) => (
-                            <li>
-                                <a href={`/blog/${post.slug}/`}>
-                                    <img
-                                        width={720}
-                                        height={360}
-                                        src={post.data.heroImage}
-                                        alt=""
-                                        class="shadow"
-                                    />
-                                    <img
-                                        width={720}
-                                        height={360}
-                                        src={post.data.heroImage}
-                                        alt=""
-                                    />
-                                    <h4 class="title">{post.data.title}</h4>
-                                    <p class="date">
-                                        <FormattedDate
-                                            date={post.data.pubDate}
-                                        />
-                                    </p>
-                                </a>
-                            </li>
-                        ))
-                    }
+                    {posts.map((post) => <PostCard post={post} />)}
                 </ul>
             </section>
         </main>
