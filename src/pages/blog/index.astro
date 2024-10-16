@@ -11,13 +11,13 @@ const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const title = "Blog";
-const description = "Thoughts, stories, and ideas.";
-const width = "960px";
+const title = blogConfig.general.title;
+const description = blogConfig.general.description;
+const width = blogConfig.general.width;
 
 // 分页逻辑
-const postsPerPage = blogConfig.nav.postsPerPage;
-const firstPagePosts = blogConfig.nav.firstPagePosts;
+const postsPerPage = blogConfig.pagination.postsPerPage;
+const firstPagePosts = blogConfig.pagination.firstPagePosts;
 const totalPages =
     Math.ceil((posts.length - firstPagePosts) / postsPerPage) + 1;
 

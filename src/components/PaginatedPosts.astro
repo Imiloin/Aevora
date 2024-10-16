@@ -4,8 +4,8 @@ import blogConfig from "@configs/blog.json";
 
 const { posts, currentPage = 1, totalPages = 1 } = Astro.props;
 
-const postsPerPage = blogConfig.nav.postsPerPage;
-const firstPagePosts = blogConfig.nav.firstPagePosts;
+const postsPerPage = blogConfig.pagination.postsPerPage;
+const firstPagePosts = blogConfig.pagination.firstPagePosts;
 const start =
     currentPage === 1 ? 0 : firstPagePosts + (currentPage - 2) * postsPerPage;
 const end = currentPage === 1 ? firstPagePosts : start + postsPerPage;
