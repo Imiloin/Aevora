@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "pagefind": "^1.1.1",
-    "sass-embedded": "^1.79.5"
+    "sass-embedded": "^1.80.5"
   }
 }
