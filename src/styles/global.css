@@ -146,14 +146,39 @@ code {
 
 /* code blocks */
 pre {
-    padding: 1.5em;
+    padding: 1.5em 1em;
     border-radius: 8px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8em;
+    overflow-x: auto;
+    position: relative;
 }
 
 pre>code {
     all: unset;
+}
+
+pre>button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border: none;
+    color: var(--text);
+    background-color: var(--white);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px 12px 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+pre>button>svg>path {
+    fill: var(--gray-700);
+}
+
+pre>button:hover {
+    background-color: var(--gray-400);
 }
 
 .markdown-alert .markdown-alert-title {
