@@ -4,7 +4,6 @@
         local('UncutSans'),
         url('/fonts/UncutSans-Regular.woff2') format('woff2');
     font-weight: 400;
-    font-display: swap;
 }
 
 @font-face {
@@ -31,7 +30,6 @@
         local('UncutSans'),
         url('/fonts/UncutSans-Bold.woff2') format('woff2');
     font-weight: 700;
-    font-display: swap;
 }
 
 @font-face {
@@ -40,6 +38,40 @@
         local('IBM Plex Mono'),
         url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
     font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('/fonts/SourceCodePro-It.ttf.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    src: url('/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-weight: 700;
+    font-style: italic;
+    font-stretch: normal;
+    src: url('/fonts/SourceCodePro-BoldIt.ttf.woff2') format('woff2');
     font-display: swap;
 }
 

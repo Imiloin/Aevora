@@ -148,7 +148,7 @@ code {
 pre {
     padding: 1.5em 1em;
     border-radius: 8px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Code Pro', 'IBM Plex Mono', monospace;
     font-size: 0.8em;
     overflow-x: auto;
     position: relative;
