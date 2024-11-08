@@ -161,20 +161,11 @@ pre>code {
     margin-bottom: 0em;
 }
 
-blockquote-no-alert {
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-blockquote-no-alert p {
-    margin: 0;
-}
-
-blockquote-no-alert svg {
-    width: 32px;
-    padding: 0;
-    margin-left: -1em;
-    margin-bottom: 0.2em;
+blockquote {
+    border-left: 0.25em solid var(--gray-600);
+    color: var(--gray-700);
+    padding: 0 1rem;
+    margin: 0px;
 }
 
 hr {
