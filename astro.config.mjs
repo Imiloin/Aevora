@@ -16,6 +16,10 @@ export default defineConfig({
     markdown: {
         remarkPlugins: [remarkGithubAlerts, remarkMath],
         rehypePlugins: [rehypeMathjax],
+        syntaxHighlight: 'shiki',
+        shikiConfig: {
+            theme: 'github-light',
+        },
     },
     vite: viteConfig,
 });
