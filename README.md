@@ -9,10 +9,10 @@ In this Astro project, you will find the following folders and files:
 ```text
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
+│   ├── components/
+│   ├── content/
+│   ├── layouts/
+│   └── pages/
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
@@ -55,7 +55,7 @@ This project is licensed under the MIT License. Additionally, some borrowed code
 
 ## Acknowledgements
 
-This project is based on the official [Blog](https://astro.build/themes/details/blog/) theme.
+This project is adapted from the official [Blog](https://astro.build/themes/details/blog/) theme. The favicon and logo were created using AI and then manually redrawn in Adobe Illustrator.
 
 ## Credit
 
