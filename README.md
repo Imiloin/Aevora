@@ -36,9 +36,13 @@ npm run dev
 
 This will start a local development server that you can access at [localhost:4321](http://localhost:4321/).
 
+> Note: To ensure the search feature works properly, you might need to run `npm run build` before `npm run dev` to generate the index for Pagefind.
+
 ## Commands
 
-All commands should be run from the root of the project in your terminal (bash preferred).
+All commands should be run from the root of the project in your terminal.
+
+> It is recommended to **use Bash** for running these commands. If you are using Windows, consider installing Git Bash. Running `npm run build` in the Windows Command Prompt could lead to issues.
 
 | Command                   | Action                                                            |
 | :------------------------ | :---------------------------------------------------------------- |
