@@ -10,9 +10,12 @@ In this Astro project, you will find the following folders and files:
 ├── public/
 ├── src/
 │   ├── components/
+│   ├── configs/
 │   ├── content/
 │   ├── layouts/
-│   └── pages/
+│   ├── pages/
+│   ├── scripts/
+│   └── styles/
 ├── astro.config.mjs
 ├── README.md
 ├── package.json
@@ -55,7 +58,7 @@ All commands should be run from the root of the project in your terminal.
 
 ## License
 
-This project is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License and some fonts are licensed under the Open Font License.
+The content in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License, and certain fonts are licensed under the Open Font License.
 
 ## Acknowledgements
 
