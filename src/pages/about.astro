@@ -52,7 +52,7 @@ const description = "Learn more about Imiloin.";
             border: none;
             border-radius: 10px;
             text-decoration: none;
-            margin: 20px 0;
+            margin: 1em 0;
             display: inline-flex;
             align-items: center;
         }
@@ -75,6 +75,19 @@ const description = "Learn more about Imiloin.";
         nav ul li a {
             color: var(--white);
             text-decoration: none;
+        }
+
+        @media (max-width: 720px) {
+            .contact-section {
+                max-width: calc(100% - 4em);
+                padding: 20px;
+                border-radius: 40px;
+            }
+        }
+        @media (max-width: 636px) {
+            .contact-section p {
+                font-size: 1em;
+            }
         }
     </style>
     <BaseHead title={title} description={description} />
