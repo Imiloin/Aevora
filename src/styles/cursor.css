@@ -56,3 +56,7 @@ html {
 [data-expand] {
     cursor: none;
 }
+
+.cursor.hidden {
+    display: none;
+}
