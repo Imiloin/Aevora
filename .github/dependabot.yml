@@ -15,6 +15,7 @@ updates:
         # update all dependencies in one PR
         applies-to: version-updates
         patterns:
+        - "*astro*"
         - "*"
     open-pull-requests-limit: 5
     versioning-strategy: "auto"
