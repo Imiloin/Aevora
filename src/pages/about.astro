@@ -3,6 +3,8 @@ import BaseHead from "@components/BaseHead.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 
+import "@styles/email-button.scss";
+
 const title = "About";
 const description = "Learn more about Imiloin.";
 ---
@@ -82,12 +84,12 @@ const description = "Learn more about Imiloin.";
             <div class="contact-section">
                 <h1>Curious mind, open heart.</h1>
                 <p>Imiloin &nbsp; | &nbsp; Undergraduate @SJTU</p>
-                <a href="mailto:twinite@proton.me" class="email-button"
+                <a href="mailto:twinite@proton.me" class="email-button button"
                     >Email Me <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="var(--black)"
+                        stroke="currentColor"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"

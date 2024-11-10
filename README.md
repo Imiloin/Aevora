@@ -72,5 +72,6 @@ The following projects and resources were referenced or borrowed from:
 - Back to top component: <https://github.com/Spikeysanju/sanju.sh>
 - Button hover effect 1: <https://codepen.io/kathykato/pen/rZRaNe>
 - Button hover effect 2: <https://codepen.io/aaroniker/pen/bGGVMbY>
+- Button hover effect 3: <https://codepen.io/glasha_ch/pen/pVjpVO>
 - Pagination: <https://github.com/zeon-studio/astroplate>
 - Copy button for code blocks: <https://github.com/anurag-roy/astro-code-block>
