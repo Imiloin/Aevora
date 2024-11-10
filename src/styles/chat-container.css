@@ -75,3 +75,18 @@
     gap: 10px;
     margin: 5px 0;
 }
+
+@media (max-width: 720px) {
+    .chat-container {
+        padding: 20px 20px;
+    }
+
+    .chat-container h2 {
+        font-size: 1.8em;
+    }
+
+    .chatbubble-left,
+    .chatbubble-right {
+        font-size: 3em;
+    }
+}

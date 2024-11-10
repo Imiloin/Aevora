@@ -78,3 +78,13 @@
         font-size: 3rem;
     }
 }
+
+@media (max-width: 636px) {
+    .small-text {
+        font-size: 0.6rem;
+    }
+
+    .main-text {
+        font-size: 2rem;
+    }
+}

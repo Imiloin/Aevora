@@ -114,8 +114,7 @@ import "@styles/typing-effect.css";
             .right-content {
                 margin: auto;
                 align-items: center;
-                min-width: 400px;
-                max-width: calc(70% - 1em);
+                min-width: 600px;
             }
             section {
                 height: fit-content;
@@ -152,6 +151,10 @@ import "@styles/typing-effect.css";
             }
         }
         @media (max-width: 720px) {
+            .left-content,
+            .right-content {
+                min-width: 90%;
+            }
             .clock-container {
                 margin: 0;
                 scale: 0.6;
@@ -160,11 +163,10 @@ import "@styles/typing-effect.css";
                 margin: 0;
                 scale: 0.8;
             }
-            .left-align {
-                margin-left: 10%;
-            }
-            .right-align {
-                margin-right: 10%;
+        }
+        @media (max-width: 636px) {
+            .clock-container {
+                display: none;
             }
         }
     </style>

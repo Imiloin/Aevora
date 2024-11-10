@@ -17,12 +17,16 @@ function drawManifold(t) {
     ctx.clearRect(0, 0, w, h);
 
     const numPoints = 15;
-    const maxDist = 200;
-    const radius = 150;
+    const baseMaxDist = 200;
+    const baseRadius = 150;
     const variance = 50;
     const twist = 6;
     const color1 = "#393939";
     const color2 = "#a8a8a8";
+
+    // 动态调整半径以确保图形在画布内
+    const radius = Math.min(baseRadius, w / 2 - variance, h / 2 - variance);
+    const maxDist = baseMaxDist * radius / baseRadius;
 
     const points = [];
 
