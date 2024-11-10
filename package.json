@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.1.6",
     "astro": "^4.16.8",
     "rehype-mathjax": "^6.0.0",
+    "remark-gemoji": "^8.0.0",
     "remark-github-alerts": "^0.1.0",
     "remark-math": "^6.0.0"
   },
