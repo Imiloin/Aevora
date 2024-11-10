@@ -55,7 +55,7 @@ All commands should be run from the root of the project in your terminal.
 
 ## License
 
-This project is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License.
+This project is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License and some fonts are licensed under the Open Font License.
 
 ## Acknowledgements
 
