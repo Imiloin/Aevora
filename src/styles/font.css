@@ -35,47 +35,36 @@
 }
 
 @font-face {
-    font-family: 'IBM Plex Mono';
-    src:
-        local('IBM Plex Mono'),
-        url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
-    font-weight: 400;
+    font-family: 'Cascadia Mono';
+    src: url('/fonts/CascadiaMono.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Source Code Pro';
-    font-weight: 400;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('/fonts/SourceCodePro-Regular.ttf.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Source Code Pro';
-    font-weight: 400;
+    font-family: 'Cascadia Mono';
     font-style: italic;
-    font-stretch: normal;
-    src: url('/fonts/SourceCodePro-It.ttf.woff2') format('woff2');
+    src: url('/fonts/CascadiaMonoItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Source Code Pro';
-    font-weight: 700;
-    font-style: normal;
-    font-stretch: normal;
-    src: url('/fonts/SourceCodePro-Bold.ttf.woff2') format('woff2');
+    font-family: 'Cascadia Code';
+    src: url('/fonts/CascadiaCode.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Source Code Pro';
-    font-weight: 700;
+    font-family: 'Cascadia Code';
     font-style: italic;
-    font-stretch: normal;
-    src: url('/fonts/SourceCodePro-BoldIt.ttf.woff2') format('woff2');
+    src: url('/fonts/CascadiaCodeItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
     font-display: swap;
 }
 

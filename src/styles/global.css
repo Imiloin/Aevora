@@ -140,7 +140,7 @@ code {
     padding: 2px 5px;
     background-color: var(--gray-300);
     border-radius: 2px;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Cascadia Mono', monospace;
     font-size: 0.9em;
 }
 
@@ -148,7 +148,7 @@ code {
 pre {
     padding: 1.5em 1em;
     border-radius: 8px;
-    font-family: 'Source Code Pro', 'IBM Plex Mono', monospace;
+    font-family: 'Cascadia Code', monospace;
     font-size: 0.8em;
     overflow-x: auto;
     position: relative;
@@ -234,7 +234,7 @@ kbd {
     border: 1px solid var(--gray-500);
     color: var(--gray-800);
     line-height: 1.4;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Cascadia Mono', monospace;
     font-size: 0.8em;
     display: inline-block;
     --shadow-color: rgba(0, 0, 0, 0.2);
