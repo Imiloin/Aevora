@@ -4,21 +4,26 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+/* Import external CSS files */
 @import url('./color.css');
 @import url('./font.css');
 
+/* Define root variables */
 :root {
     font-size: 18px;
     --width: 800px;
-    --default-font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, -apple-system, Helvetica Neue, Arial, sans-serif;
+    --default-font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, "Microsoft Yahei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOSHans-Regular', monospace;
+    --code-font-family: 'Cascadia Code', var(--mono-font-family);
 }
 
-/* 修改选取文本的背景色 */
+/* Modify the background color of selected text */
 ::selection {
     background: black;
     color: white;
 }
 
+/* Global styles for body */
 body {
     font-family: var(--default-font-family);
     margin: 2rem 0;
@@ -32,6 +37,7 @@ body {
     line-height: 1.7;
 }
 
+/* Main container styles */
 main {
     width: var(--width);
     max-width: calc(100% - 2em);
@@ -40,6 +46,7 @@ main {
     padding: 3em 1em 1em 1em;
 }
 
+/* Heading styles */
 h1,
 h2,
 h3,
@@ -71,11 +78,13 @@ h5 {
     font-size: 1.2em;
 }
 
+/* Bold text styles */
 strong,
 b {
     font-weight: 700;
 }
 
+/* Link styles */
 a {
     color: var(--text);
     text-decoration-color: var(--gray-600, var(--text));
@@ -86,6 +95,7 @@ a:hover {
     text-decoration-color: var(--gray-800, var(--text));
 }
 
+/* Paragraph styles */
 p {
     margin-bottom: 1em;
 }
@@ -94,6 +104,7 @@ p {
     margin-bottom: 1em;
 }
 
+/* Form element styles */
 textarea {
     width: 100%;
     font-size: 0.8em;
@@ -103,52 +114,67 @@ input {
     font-size: 0.8em;
 }
 
+/* Table styles */
 table {
     font-size: 0.9em;
     width: 100%;
+    /* Ensure table borders are collapsed */
     border-collapse: collapse;
-    /* 确保表格边框合并 */
 }
 
 th,
 td {
     padding: 8px;
     text-align: left;
+    /* Add bottom border */
     border-bottom: 1px solid var(--gray-300);
-    /* 添加底部边框 */
 }
 
-/* 设置交错背景色 */
+/* Set alternating background colors for table rows */
 thead {
+    /* Set header row background color */
     background-color: var(--gray-200) !important;
-    /* 设置标题行的背景颜色 */
 }
 
 tr:nth-child(even) {
+    /* Even row background color */
     background-color: var(--gray-200);
-    /* 偶数行背景色 */
 }
 
+/* Image styles */
 img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-/* in line code */
+/* Remove extra dots from task list */
+.task-list-item {
+    /* Remove default list style */
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-left: -24px;
+}
+
+.task-list-item input[type="checkbox"] {
+    margin-right: 7px;
+}
+
+/* Inline code styles */
 code {
     padding: 2px 5px;
     background-color: var(--gray-300);
     border-radius: 2px;
-    font-family: 'Cascadia Mono', monospace;
+    font-family: var(--mono-font-family);
     font-size: 0.9em;
 }
 
-/* code blocks */
+/* Code block styles */
 pre {
     padding: 1.5em 1em;
     border-radius: 8px;
-    font-family: 'Cascadia Code', monospace;
+    font-family: var(--code-font-family);
     font-size: 0.8em;
     overflow-x: auto;
     position: relative;
@@ -181,11 +207,13 @@ pre>button:hover {
     background-color: var(--gray-400);
 }
 
+/* Markdown alert title styles */
 .markdown-alert .markdown-alert-title {
-    /* 调整 alert title 行与下方内容的间距 */
+    /* Adjust spacing between alert title and content */
     margin-bottom: 0em;
 }
 
+/* Blockquote styles */
 blockquote {
     border-left: 0.25em solid var(--gray-600);
     color: var(--gray-700);
@@ -193,11 +221,13 @@ blockquote {
     margin: 0px;
 }
 
+/* Horizontal rule styles */
 hr {
     border: none;
     border-top: 1px solid var(--gray-300);
 }
 
+/* Responsive styles for small screens */
 @media (max-width: 720px) {
     body {
         font-size: 0.9rem;
@@ -209,6 +239,7 @@ hr {
     }
 }
 
+/* Screen reader only styles */
 .sr-only {
     border: 0;
     padding: 0;
@@ -217,16 +248,16 @@ hr {
     height: 1px;
     width: 1px;
     overflow: hidden;
+    white-space: nowrap;
     /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
     clip: rect(1px 1px 1px 1px);
     /* maybe deprecated but we need to support legacy browsers */
     clip: rect(1px, 1px, 1px, 1px);
     /* modern browsers, clip-path works inwards from each corner */
     clip-path: inset(50%);
-    /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-    white-space: nowrap;
 }
 
+/* Keyboard key styles */
 kbd {
     margin: 0px 0.1em;
     padding: 0.1em 0.6em;
@@ -244,47 +275,31 @@ kbd {
     -webkit-box-shadow: 0 1px 0px var(--shadow-color), 0 0 0 2px var(--white) inset;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
-    text-shadow: 0 1px 0 var(--white);
 }
 
+/* Highlighted text styles */
 mark {
     background-color: var(--blue-300);
     color: var(--black);
 }
 
+/* Footnote styles */
 .footnotes {
     border-top: 1px solid var(--gray-300);
     margin-top: 2em;
     padding-top: 0.5em;
 }
 
-/* 自定义滚动条样式 */
+/* Custom scrollbar styles */
 html::-webkit-scrollbar {
     width: 10px;
-    /* 设置滚动条宽度 */
 }
 
 html::-webkit-scrollbar-thumb {
     background-color: var(--gray-600);
-    /* 滚动条颜色 */
     border-radius: 5px;
-    /* 滚动条圆角 */
 }
 
 html::-webkit-scrollbar-track {
     background: var(--background);
-    /* 滚动条轨道颜色 */
-}
-
-/* 删除 task list 多余的圆点 */
-.task-list-item {
-    /* 移除任务列表项的默认列表样式 */
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin-left: -24px;
-}
-
-.task-list-item input[type="checkbox"] {
-    margin-right: 7px;
 }
