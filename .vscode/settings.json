@@ -11,4 +11,11 @@
         "files.insertFinalNewline": true,
         "files.trimFinalNewlines": true,
     },
+    "markdownlint.lintWorkspaceGlobs": [
+        "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+        "!**/bower_components",
+        "!**/node_modules",
+        "!**/vendor",
+        "!**/.git"
+    ],
 }
