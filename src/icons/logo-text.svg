@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- by Imilion https://github.com/Imiloin/Aevora -->
+<svg
+    id="text"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 119.28 36"
+>
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #000;
+                stroke-miterlimit: 10;
+                stroke-width: 5px;
+            }
+        </style>
+    </defs>
+    <circle cx="3.78" cy="7" r="3.5"></circle>
+    <rect x="1.28" y="13" width="5" height="19"></rect>
+    <circle cx="50.78" cy="7" r="3.5"></circle>
+    <rect x="48.28" y="13" width="5" height="19"></rect>
+    <rect x="59.28" y="4" width="5" height="28"></rect>
+    <circle cx="93.78" cy="7" r="3.5"></circle>
+    <rect x="91.28" y="13" width="5" height="19"></rect>
+    <path
+        class="cls-1"
+        d="M13.53,32v-10c0-3.73,3.02-6.75,6.75-6.75s6.75,3.02,6.75,6.75c0-3.73,3.02-6.75,6.75-6.75s6.75,3.02,6.75,6.75v10"
+    ></path>
+    <line class="cls-1" x1="27.03" y1="22" x2="27.03" y2="32"
+    ></line>
+    <circle class="cls-1" cx="78.03" cy="22.5" r="7.25"
+    ></circle>
+    <path
+        class="cls-1"
+        d="M102.78,32v-10c0-3.87,3.13-7,7-7s7,3.13,7,7v10"
+    ></path>
+</svg>

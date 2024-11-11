@@ -11,9 +11,15 @@ const { post, isFirstChild } = Astro.props;
             height={360}
             src={post.data.heroImage}
             alt=""
-            class="shadow"
+            class="card shadow"
         />
-        <img width={720} height={360} src={post.data.heroImage} alt="" />
+        <img
+            width={720}
+            height={360}
+            src={post.data.heroImage}
+            alt=""
+            class="card"
+        />
         <h4 class="title">{post.data.title}</h4>
         <p class="date">
             <FormattedDate date={post.data.pubDate} />

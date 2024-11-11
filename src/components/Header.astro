@@ -1,68 +1,27 @@
 ---
 import HeaderLink from "@components/HeaderLink.astro";
+
+import logoBadge from "../icons/logo-badge.svg";
+import logoText from "../icons/logo-text.svg";
 ---
 
 <header id="header">
     <nav>
         <div class="title">
             <a data-expand href="/" aria-label="Return to Home">
-                <svg
-                    class="logo-icon"
-                    aria-label="Logo-icon"
-                    id="icon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 46.55 36"
-                >
-                    <path
-                        d="M29.55,24.14v-4.48h4.23v4.48c-.46,.03-.93,0-1.39,0h-2.83Z"
-                    ></path>
-                    <path
-                        d="M14.17,24.14c-.46,0-.94,.03-1.39,0v-4.48h4.23v4.48h-2.83Z"
-                    ></path>
-                    <path
-                        d="M46.42,4.47c-.32-2.94-2.93-4.79-5.81-4.43-1.92,.24-3.13,1.76-4.52,2.96l-2,1.73c-.41,.36-.84,.69-1.17,1.13-3.22-1.44-6.43-2.21-9.65-2.25-3.22,.03-6.43,.81-9.65,2.25-.33-.44-.76-.77-1.17-1.13l-2-1.73C9.07,1.81,7.86,.29,5.94,.05,3.06-.32,.45,1.54,.13,4.47c-.14,1.29-.2,7.12,.01,8.36,.37,2.1,4,2.13,4.46,.12,.18-.8,.08-1.79,.08-2.61V6.2c0-.75-.04-1.51,0-2.26,.55,.29,.99,.68,1.45,1.09,1.97,1.87,4.77,4.33,6.94,6,2.82-1.88,6.52-2.89,10.21-2.92,3.69,.02,7.38,1.03,10.21,2.92,2.16-1.67,4.97-4.13,6.94-6,.47-.41,.9-.81,1.45-1.09,.03,.75,0,1.5,0,2.26v4.15c0,.82-.11,1.81,.08,2.61,.46,2.01,4.09,1.98,4.46-.12,.22-1.24,.16-7.07,.01-8.36Z"
-                    ></path>
-                    <path
-                        d="M42.05,19.65c-.69,8.82-8.97,13.92-17.23,11.26-.5-.16-.99-.37-1.5-.49h-.07c-.51,.12-1,.33-1.5,.49-8.26,2.67-16.54-2.44-17.23-11.26-1.44,0-2.89-.04-4.33,0,0,2.26,.46,4.37,1.37,6.43,3.31,7.3,11.95,11.3,19.72,9.48,1.26-.3,1.67-.41,2.01-.4,.34-.01,.75,.11,2.01,.4,7.77,1.82,16.41-2.18,19.72-9.48,.91-2.06,1.38-4.17,1.37-6.43-1.44-.04-2.89,0-4.33,0Z"
-                    ></path>
-                </svg><svg
-                    class="logo-text"
+                <img
+                    src={logoBadge.src}
+                    alt="logo-badge"
+                    aria-label="logo-badge"
+                    class="logo-badge"
+                />
+                <img
+                    src={logoText.src}
+                    alt="logo-text"
                     aria-label="Logo-text"
-                    id="text"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 119.28 36"
-                >
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: none;
-                                stroke: #000;
-                                stroke-miterlimit: 10;
-                                stroke-width: 5px;
-                            }
-                        </style>
-                    </defs>
-                    <circle cx="3.78" cy="7" r="3.5"></circle>
-                    <rect x="1.28" y="13" width="5" height="19"></rect>
-                    <circle cx="50.78" cy="7" r="3.5"></circle>
-                    <rect x="48.28" y="13" width="5" height="19"></rect>
-                    <rect x="59.28" y="4" width="5" height="28"></rect>
-                    <circle cx="93.78" cy="7" r="3.5"></circle>
-                    <rect x="91.28" y="13" width="5" height="19"></rect>
-                    <path
-                        class="cls-1"
-                        d="M13.53,32v-10c0-3.73,3.02-6.75,6.75-6.75s6.75,3.02,6.75,6.75c0-3.73,3.02-6.75,6.75-6.75s6.75,3.02,6.75,6.75v10"
-                    ></path>
-                    <line class="cls-1" x1="27.03" y1="22" x2="27.03" y2="32"
-                    ></line>
-                    <circle class="cls-1" cx="78.03" cy="22.5" r="7.25"
-                    ></circle>
-                    <path
-                        class="cls-1"
-                        d="M102.78,32v-10c0-3.87,3.13-7,7-7s7,3.13,7,7v10"
-                    ></path>
-                </svg></a
-            >
+                    class="logo-text"
+                />
+            </a>
         </div>
         <div class="nav-links">
             <HeaderLink href="/">Home</HeaderLink>
@@ -110,8 +69,9 @@ import HeaderLink from "@components/HeaderLink.astro";
         text-decoration: none;
         gap: 14px;
     }
-    .logo-icon,
+    .logo-badge,
     .logo-text {
+        border-radius: 0;
         height: 1.1rem;
     }
 

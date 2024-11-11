@@ -145,7 +145,7 @@ tr:nth-child(even) {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: min(8px, 10vw, 10vh);
 }
 
 /* Remove extra dots from task list */
