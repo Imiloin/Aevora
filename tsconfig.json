@@ -14,6 +14,9 @@
       "@configs/*": [
         "src/configs/*"
       ],
+      "@icons/*": [
+        "src/icons/*"
+      ],
       "@layouts/*": [
         "src/layouts/*"
       ],
