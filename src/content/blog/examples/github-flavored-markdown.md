@@ -2,7 +2,7 @@
 title: Github Flavored Markdown
 description: Create sophisticated formatting for your prose and code on GitHub with simple syntax.
 pubDate: 'Sep 23, 2024'
-heroImage: '/blog-placeholder-flux-2.jpg'
+heroImage: '/examples/github-flavored-markdown.jpg'
 ---
 
 This article is ported from the [GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) with some modifications.
@@ -220,7 +220,7 @@ You can display an image by adding <kbd>!</kbd> and wrapping the alt text in `[ 
 
 `![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)`
 
-![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/base-octocat.svg)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/examples/base-octocat.svg)
 
 GitHub supports embedding images into your issues, pull requests, discussions, comments and `.md` files. You can display an image from your repository, add a link to an online image, or upload an image. For more information, see "[Uploading assets](#uploading-assets)."
 
