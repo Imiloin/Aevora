@@ -174,4 +174,13 @@ import logoText from "@icons/logo-text.svg";
         lastScrollTop = scrollTop;
         isUserScrolling = false; // 重置滚动状态
     });
+
+    // 监听 TOC 链接的点击事件
+    document.querySelectorAll(".toc a").forEach((link) => {
+        if (header) {
+            link.addEventListener("click", () => {
+                header.style.transform = "translateY(-100%)";
+            });
+        }
+    });
 </script>
