@@ -91,10 +91,10 @@ import HeaderLink from "@components/HeaderLink.astro";
         padding: 0 1em;
         background: var(--translucent); /* 半透明背景 */
         position: fixed; /* 固定在页面顶部 */
-        max-width: calc(100% - 2em);
+        max-width: calc(100vw - 2em);
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         transition: transform 0.3s ease; /* 添加过渡效果 */
         z-index: 998; /* 确保 header 在最上层，仅位于光标层下方 */
         backdrop-filter: blur(10px); /* 毛玻璃效果 */
