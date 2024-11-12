@@ -1,6 +1,6 @@
 # Aevora
 
-This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and supports Markdown and MDX for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/).
+This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and supports Markdown and MDX for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/) (template only site: [aevora.netlify.app](https://aevora.netlify.app/)).
 
 ## Project Structure
 
