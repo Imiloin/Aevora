@@ -144,25 +144,16 @@ import logoText from "@icons/logo-text.svg";
 </style>
 
 <script>
+    const header = document.getElementById("header");
+
     /* 页眉在页面滚动时隐藏或显示 */
     let lastScrollTop = 0;
-    const header = document.getElementById("header");
-    let isUserScrolling = false;
-
-    // 监听滚轮事件
-    window.addEventListener("wheel", () => {
-        isUserScrolling = true;
-    });
-
-    // 监听触摸滑动事件
-    window.addEventListener("touchmove", () => {
-        isUserScrolling = true;
-    });
+    let isTOCClick = false;
 
     // 监听滚动事件
     window.addEventListener("scroll", function () {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if (header && isUserScrolling) {
+        if (header && !isTOCClick) {
             if (scrollTop > lastScrollTop) {
                 // 向下滚动
                 header.style.transform = "translateY(-100%)";
@@ -172,13 +163,14 @@ import logoText from "@icons/logo-text.svg";
             }
         }
         lastScrollTop = scrollTop;
-        isUserScrolling = false; // 重置滚动状态
+        isTOCClick = false; // 重置 TOC 点击状态
     });
 
     // 监听 TOC 链接的点击事件
     document.querySelectorAll(".toc a").forEach((link) => {
         if (header) {
             link.addEventListener("click", () => {
+                isTOCClick = true;
                 header.style.transform = "translateY(-100%)";
             });
         }
