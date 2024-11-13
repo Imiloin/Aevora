@@ -56,13 +56,13 @@ All commands should be run from the root of the project in your terminal.
 | `npm run astro ...`       | Executes Astro CLI commands, such as `astro add` or `astro check` |
 | `npm run astro -- --help` | Displays help for using the Astro CLI                             |
 
-In Windows, if you encounter the
+If you encounter the following error:
 
 ```text
 Failed to run pagefind via the npx wrapper: Error: Failed to install either of [pagefind_extended, pagefind]. Most likely the platform windows-x64 is not yet a supported architecture.
 ```
 
-error, try downloading a release binary directly from <https://github.com/CloudCannon/pagefind/releases> and place the executable in the `node_modules/@pagefind/windows-x64/bin/` directory.
+it is most likely a network issue. Try fixing your network connection and reinstall the package by running `npm install pagefind --force`.
 
 ## License
 
