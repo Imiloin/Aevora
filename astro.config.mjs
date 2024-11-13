@@ -11,6 +11,11 @@ import remarkMath from 'remark-math';
 
 import rehypeMathjax from 'rehype-mathjax';
 
+import {
+    transformerNotationDiff,
+    transformerNotationHighlight,
+} from '@shikijs/transformers';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://imiloin.netlify.app/',
@@ -21,6 +26,10 @@ export default defineConfig({
         syntaxHighlight: 'shiki',
         shikiConfig: {
             theme: 'github-light',
+            transformers: [
+                transformerNotationDiff(),
+                transformerNotationHighlight(),
+            ],
         },
     },
     vite: viteConfig,

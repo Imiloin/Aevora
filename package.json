@@ -21,6 +21,7 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
+    "@shikijs/transformers": "^1.22.2",
     "sass-embedded": "^1.80.6"
   }
 }

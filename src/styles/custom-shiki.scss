@@ -1,0 +1,66 @@
+/* Ensure empty lines do not occupy height */
+pre>code .line:empty {
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+/* Custom styles for diff lines */
+pre.has-diff {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+pre.has-diff .line {
+    /* let each line take the full width */
+    display: inline-block;
+    /* has-diff and has-highlighted at the same time, use 3ch */
+    padding-left: 3ch !important;
+    width: calc(100% - 3ch) !important;
+}
+
+pre.has-diff .line.diff.add {
+    background-color: var(--green-100);
+    position: relative;
+}
+
+pre.has-diff .line.diff.add::before {
+    content: '+';
+    color: var(--green-700);
+    position: absolute;
+    left: 1ch;
+    user-select: none;
+}
+
+pre.has-diff .line.diff.remove {
+    background-color: var(--red-100);
+    position: relative;
+}
+
+pre.has-diff .line.diff.remove::before {
+    content: '-';
+    color: var(--red-700);
+    position: absolute;
+    left: 1ch;
+    user-select: none;
+}
+
+/* Custom styles for highlighted lines */
+pre.has-highlighted {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+pre.has-highlighted .line {
+    /* let each line take the full width */
+    display: inline-block;
+    padding-left: 1em;
+    width: calc(100% - 1em);
+}
+
+pre.has-highlighted .line.highlighted {
+    background-color: var(--orange-100);
+    position: relative;
+}
