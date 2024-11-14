@@ -76,7 +76,7 @@ This project is adapted from the official [Blog](https://astro.build/themes/deta
 
 The following projects and resources were referenced or borrowed from:
 
-- Cursor effect: <https://codepen.io/team/keyframers/pen/zYZVOzr>
+- Cursor effect at index page: <https://codepen.io/team/keyframers/pen/zYZVOzr>
 - Cuboidal quantum at index page: <https://websim.ai/p/idlv9t1mcfkvn67ls8aj>
 - Typing effect: <https://codepen.io/bradtraversy/pen/jeNjwP>
 - Dynamic clock: <https://github.com/XengShi/materialYouNewTab>
@@ -85,4 +85,3 @@ The following projects and resources were referenced or borrowed from:
 - Button hover effect 2: <https://codepen.io/aaroniker/pen/bGGVMbY>
 - Button hover effect 3: <https://codepen.io/glasha_ch/pen/pVjpVO>
 - Pagination: <https://github.com/zeon-studio/astroplate>
-- Copy button for code blocks: <https://github.com/anurag-roy/astro-code-block>
