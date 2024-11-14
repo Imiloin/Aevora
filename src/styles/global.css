@@ -12,9 +12,9 @@
 :root {
     font-size: 18px;
     --width: 800px;
-    --default-font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, "Microsoft Yahei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
-    --chinese-font-family: 'HarmonyOSHans-Regular', var(--default-font-family);
-    --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOSHans-Regular', monospace;
+    --default-font-family: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
+    --chinese-font-family: 'HarmonyOS Sans SC', var(--default-font-family);
+    --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOS Sans SC', monospace;
     --code-font-family: 'Cascadia Code', var(--mono-font-family);
 }
 

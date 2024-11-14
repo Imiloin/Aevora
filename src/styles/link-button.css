@@ -6,7 +6,7 @@ button {
     background: transparent;
     padding: 0;
     font-size: 1rem;
-    font-family: 'HarmonyOSHans-Regular', system-ui, sans-serif;
+    font-family: var(--chinese-font-family);
     font-weight: 700;
 }
 

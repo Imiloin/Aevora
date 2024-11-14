@@ -13,7 +13,7 @@
 
 .chat-container h2 {
     font-size: 2.5em;
-    font-family: 'HarmonyOSHans-Regular', system-ui, sans-serif;
+    font-family: var(--chinese-font-family);
     font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
