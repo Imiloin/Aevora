@@ -13,6 +13,7 @@
     font-size: 18px;
     --width: 800px;
     --default-font-family: 'UncutSans', 'HarmonyOSHans-Regular', system-ui, "Microsoft Yahei", "PingFang SC", "WenQuanYi Micro Hei", sans-serif;
+    --chinese-font-family: 'HarmonyOSHans-Regular', var(--default-font-family);
     --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOSHans-Regular', monospace;
     --code-font-family: 'Cascadia Code', var(--mono-font-family);
 }
@@ -53,6 +54,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: var(--chinese-font-family);
     margin: 0.5rem 0 0.5rem 0;
     color: var(--black);
     line-height: 1.2;
@@ -171,40 +173,9 @@ code {
 }
 
 /* Code block styles */
-pre {
-    padding: 1.5em 1em;
-    border-radius: 8px;
-    font-family: var(--code-font-family);
-    font-size: 0.8em;
-    overflow-x: auto;
-    position: relative;
-}
-
-pre>code {
-    all: unset;
-}
-
-pre>button {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    border: none;
-    color: var(--text);
-    background-color: var(--white);
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 8px 12px 7px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-pre>button>svg>path {
-    fill: var(--gray-700);
-}
-
-pre>button:hover {
-    background-color: var(--gray-400);
+.expressive-code {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Markdown alert title styles */

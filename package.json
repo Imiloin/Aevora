@@ -13,7 +13,9 @@
     "@astrojs/mdx": "^3.1.9",
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
+    "@expressive-code/plugin-line-numbers": "^0.38.3",
     "astro": "^4.16.10",
+    "astro-expressive-code": "^0.38.3",
     "pagefind": "^1.2.0",
     "rehype-mathjax": "^6.0.0",
     "remark-gemoji": "^8.0.0",
@@ -21,7 +23,6 @@
     "remark-math": "^6.0.0"
   },
   "devDependencies": {
-    "@shikijs/transformers": "^1.22.2",
     "sass-embedded": "^1.80.6"
   }
 }
