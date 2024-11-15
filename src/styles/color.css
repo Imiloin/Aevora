@@ -203,7 +203,7 @@
 
     --translucent: rgba(250, 250, 250, 0.6);
 
-    --shadow: 96, 115, 159;
+    --shadow: 168, 168, 168;
     --box-shadow: 0 2px 6px rgba(var(--shadow), 25%), 0 8px 24px rgba(var(--shadow), 33%),
         0 16px 32px rgba(var(--shadow), 33%);
 }
