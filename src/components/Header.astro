@@ -175,4 +175,14 @@ import logoText from "@icons/logo-text.svg";
             });
         }
     });
+
+    // 监听脚注链接的点击事件
+    document.querySelectorAll("a.data-footnote-backref").forEach((link) => {
+        if (header) {
+            link.addEventListener("click", () => {
+                isTOCClick = true;
+                header.style.transform = "translateY(-100%)";
+            });
+        }
+    });
 </script>
