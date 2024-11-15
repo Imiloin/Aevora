@@ -14,6 +14,8 @@ export default defineEcConfig({
         borderColor: 'transparent',
         borderRadius: '8px',
         borderWidth: '0px',
+        scrollbarThumbColor: 'var(--gray-300)',
+        scrollbarThumbHoverColor: 'var(--gray-500)',
         frames: {
             editorActiveTabBackground: 'var(--white)',
             editorActiveTabBorderColor: 'transparent',
