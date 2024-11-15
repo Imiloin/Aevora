@@ -6,10 +6,13 @@ import astroExpressiveCode from 'astro-expressive-code';
 
 import viteConfig from './vite.config.js';
 
+import { processBibliographyPath } from './src/plugins/process-bibliography-path.mjs';
+
 import remarkGemoji from "remark-gemoji";
 import remarkGithubAlerts from "remark-github-alerts";
 import remarkMath from 'remark-math';
 
+import rehypeCitation from 'rehype-citation';
 import rehypeMathjax from 'rehype-mathjax';
 
 // https://astro.build/config
@@ -17,8 +20,18 @@ export default defineConfig({
     site: 'https://imiloin.netlify.app/',
     integrations: [astroExpressiveCode(), mdx(), sitemap()],
     markdown: {
-        remarkPlugins: [remarkGemoji, remarkGithubAlerts, remarkMath],
-        rehypePlugins: [rehypeMathjax],
+        remarkPlugins: [
+            processBibliographyPath,
+            remarkGemoji,
+            remarkGithubAlerts,
+            remarkMath,
+        ],
+        rehypePlugins: [
+            [rehypeCitation,
+                { "linkCitations": true, "csl": "./src/csl/acm-sig-proceedings.csl" }
+            ],
+            rehypeMathjax,
+        ],
     },
     vite: viteConfig,
 });

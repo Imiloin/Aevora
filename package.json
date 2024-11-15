@@ -17,6 +17,7 @@
     "astro": "^4.16.10",
     "astro-expressive-code": "^0.38.3",
     "pagefind": "^1.2.0",
+    "rehype-citation": "^2.2.2",
     "rehype-mathjax": "^6.0.0",
     "remark-gemoji": "^8.0.0",
     "remark-github-alerts": "^0.1.0",

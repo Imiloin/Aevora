@@ -279,6 +279,23 @@ mark {
     color: var(--black);
 }
 
+/* Citation styles */
+.csl-entry {
+    display: flex;
+    align-items: flex-start;
+    /* Adjust spacing between entries */
+    margin-bottom: 0.5em;
+}
+
+.csl-left-margin {
+    flex-shrink: 0;
+    width: 2em;
+}
+
+.csl-right-inline {
+    flex-grow: 1;
+}
+
 /* Footnote styles */
 .footnotes {
     border-top: 1px solid var(--gray-300);
