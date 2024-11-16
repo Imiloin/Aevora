@@ -159,6 +159,9 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: min(8px, 10vw, 10vh);
+    /* Center the image horizontally */
+    display: block;
+    margin: 0 auto;
 }
 
 /* Remove extra dots from task list */
