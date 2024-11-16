@@ -28,7 +28,10 @@ export default defineConfig({
         ],
         rehypePlugins: [
             [rehypeCitation,
-                { "linkCitations": true, "csl": "./src/csl/acm-sig-proceedings.csl" }
+                {
+                    "linkCitations": true,
+                    "csl": "./src/csl/association-for-computing-machinery.csl"
+                }
             ],
             rehypeMathjax,
         ],
