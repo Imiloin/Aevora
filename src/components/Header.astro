@@ -166,18 +166,8 @@ import logoText from "@icons/logo-text.svg";
         isTOCClick = false; // 重置 TOC 点击状态
     });
 
-    // 监听 TOC 链接的点击事件
-    document.querySelectorAll(".toc a").forEach((link) => {
-        if (header) {
-            link.addEventListener("click", () => {
-                isTOCClick = true;
-                header.style.transform = "translateY(-100%)";
-            });
-        }
-    });
-
-    // 监听脚注链接的点击事件
-    document.querySelectorAll("a.data-footnote-backref").forEach((link) => {
+    // 监听页面内跳转的点击事件
+    document.querySelectorAll('a[href*="#"]').forEach((link) => {
         if (header) {
             link.addEventListener("click", () => {
                 isTOCClick = true;
