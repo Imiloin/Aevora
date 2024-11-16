@@ -1,4 +1,5 @@
 import path from 'path';
+import { visit } from 'unist-util-visit';
 
 export function processBibliographyPath() {
     // All remark and rehype plugins return a separate function
@@ -17,5 +18,14 @@ export function processBibliographyPath() {
         const relativeRootBibliographyPath = path.relative(rootDir, absoluteBibliographyPath);
 
         file.data.astro.frontmatter.bibliography = relativeRootBibliographyPath;
+
+        // Add "References" heading at the end of the document if `bibliography` is set
+        visit(tree, 'root', (node) => {
+            node.children.push({
+                type: 'heading',
+                depth: 2,
+                children: [{ type: 'text', value: 'References' }]
+            });
+        });
     }
 }

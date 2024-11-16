@@ -20,5 +20,3 @@ Here's an example in ACM format:
 - Supports standard citations [@Nash1950{pp. iv, vi-xi, (xv)-(xvii)}];
 - You probably don't want in-text citation with a note style;
 - and multiple citations [see @Nash1950 pp 12-13; @Nash1951]
-
-## References
