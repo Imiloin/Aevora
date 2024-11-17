@@ -20,7 +20,7 @@ const { post, isFirstChild } = Astro.props;
             alt=""
             class="card"
         />
-        <h4 class="title">{post.data.title}</h4>
+        <h5 class="title">{post.data.title}</h5>
         <p class="date">
             <FormattedDate date={post.data.pubDate} />
         </p>
@@ -45,7 +45,7 @@ const { post, isFirstChild } = Astro.props;
         width: 75%;
     }
     li.first-child .title {
-        font-size: 2.074rem;
+        font-size: 1.728em;
     }
     li img {
         margin-bottom: 0.5rem;
@@ -57,16 +57,16 @@ const { post, isFirstChild } = Astro.props;
     li a {
         display: block;
     }
-    .title {
+    li .title {
         margin: 0;
         color: var(--black);
-        line-height: 1;
+        line-height: 1.2;
     }
     .date {
         margin: 0;
         color: var(--gray);
     }
-    li a:hover h4,
+    li a:hover h5,
     li a:hover .date {
         color: var(--accent);
     }
