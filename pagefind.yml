@@ -2,3 +2,5 @@
 site: dist
 output_subdir: pagefind
 glob: "**/*.{html}"
+exclude_selectors:
+  - "[style*='display: none']" # Exclude elements with display: none
