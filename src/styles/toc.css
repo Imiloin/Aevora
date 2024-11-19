@@ -1,0 +1,56 @@
+.toc {
+    font-size: 0.85em;
+    position: fixed;
+    margin-left: 40px;
+    width: 256px;
+    /* 将 TOC 下移 6em */
+    top: 6em;
+    max-height: 70%;
+    overflow-y: auto;
+    background: var(--translucent);
+    transition: opacity 0.3s;
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: 8px;
+    /* Ensure scrollbar space is reserved */
+    scrollbar-gutter: stable;
+}
+
+/* Hide TOC by default */
+.toc {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.toc.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hide scrollbar by default */
+.toc::-webkit-scrollbar {
+    width: 8px;
+    height: 0;
+}
+
+/* Show scrollbar on hover */
+.toc:hover::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.toc:hover::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: var(--background);
+}
+
+.toc:hover::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--toc-scrollbar);
+}
+
+/* Hide TOC on narrow screens */
+@media (max-width: 1200px) {
+    .toc {
+        display: none;
+    }
+}
