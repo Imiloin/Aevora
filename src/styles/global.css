@@ -101,14 +101,25 @@ b {
 article a {
     color: var(--text);
     text-decoration: none;
+}
 
-    &[href] {
-        box-shadow: 0px -1.5px 0px var(--gray-600) inset;
-        transition: all 0.3s ease;
+article a[href^="#"] {
+    /* Internal link style */
+    box-shadow: 0px -1.5px 0px var(--gray-600) inset;
+    transition: all 0.2s ease;
 
-        &:hover {
-            box-shadow: 0px calc(-1rem * 1) 0px rgba(var(--shadow), 33%) inset;
-        }
+    &:hover {
+        box-shadow: 0px calc(-1rem * 1) 0px var(--internal-link-color) inset;
+    }
+}
+
+article a[href^="http"] {
+    /* External link style */
+    box-shadow: 0px -1.5px 0px var(--gray-600) inset;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0px calc(-1rem * 1) 0px var(--external-link-color) inset;
     }
 }
 
@@ -169,16 +180,16 @@ img {
 }
 
 /* Remove extra dots from task list */
-.task-list-item {
+li.task-list-item {
     /* Remove default list style */
-    list-style-type: none;
-    display: flex;
-    align-items: center;
+    list-style: none;
     margin-left: -24px;
 }
 
-.task-list-item input[type="checkbox"] {
+li.task-list-item input[type="checkbox"] {
+    float: left;
     margin-right: 7px;
+    margin-top: 0.65em;
 }
 
 /* Inline code styles */
