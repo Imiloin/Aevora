@@ -42,6 +42,7 @@ const { post, isFirstChild } = Astro.props;
         text-align: center;
     }
     li.first-child img {
+        box-shadow: 0 4px 8px rgba(var(--shadow), 25%);
         width: 75%;
     }
     li.first-child .title {
@@ -50,8 +51,10 @@ const { post, isFirstChild } = Astro.props;
     li img {
         margin-bottom: 0.5rem;
         border-radius: 12px;
+        box-shadow: 0 0 8px rgba(var(--shadow), 50%);
         &:hover {
             transform: scale(1.02);
+            box-shadow: none;
         }
     }
     li a {
