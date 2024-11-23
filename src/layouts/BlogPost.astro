@@ -62,12 +62,29 @@ const hasToC = toc.length > 1;
                 max-width: 100%;
                 margin: 0;
             }
+            .hero-image {
+                position: relative;
+            }
             .hero-image img {
                 width: 960px;
                 display: block;
                 margin: 0 auto;
                 border-radius: 12px;
                 box-shadow: var(--box-shadow);
+                position: relative;
+                z-index: 1;
+            }
+            .hero-image img.shadow {
+                overflow: hidden;
+                display: flex;
+                /* Place the shadow below the image */
+                z-index: -2;
+                filter: blur(12px) brightness(80%) opacity(0.8);
+                /* Position the shadow absolutely */
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
             }
             .prose {
                 width: var(--width);
@@ -114,8 +131,11 @@ const hasToC = toc.length > 1;
                     {
                         heroImage && (
                             <img
-                                width={800}
-                                height={400}
+                                src={heroImage}
+                                alt=""
+                                class="shadow"
+                            />
+                            <img
                                 data-pagefind-meta="image[src]"
                                 src={heroImage}
                                 alt=""
