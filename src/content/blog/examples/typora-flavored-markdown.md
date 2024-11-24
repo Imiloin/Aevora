@@ -2,7 +2,7 @@
 title: 'Typora 的 Markdown 语法'
 description: 'Typora 的 Markdown 语法特性，用于测试中文博客支持'
 pubDate: 'Jan 1, 2016'
-heroImage: '/examples/typora-flavored-markdown.jpg'
+heroImage: './typora-flavored-markdown.jpg'
 ---
 
 [English Original Version](https://support.typoraio.cn/Markdown-Reference/) [Help Improve the Translation](https://github.com/typora/wiki-website)

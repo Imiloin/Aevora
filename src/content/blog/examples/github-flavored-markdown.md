@@ -2,7 +2,7 @@
 title: Github Flavored Markdown
 description: Create sophisticated formatting for your prose and code on GitHub with simple syntax.
 pubDate: 'Sep 23, 2024'
-heroImage: '/examples/github-flavored-markdown.jpg'
+heroImage: './github-flavored-markdown.jpg'
 ---
 
 This article is ported from the [GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) with some modifications.

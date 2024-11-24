@@ -1,19 +1,20 @@
 ---
 import FormattedDate from "@components/FormattedDate.astro";
+import { Image } from "astro:assets";
 
 const { post, isFirstChild } = Astro.props;
 ---
 
 <li class={isFirstChild ? "first-child" : ""}>
     <a href={`/blog/${post.slug}/`}>
-        <img
+        <Image
             width={720}
             height={360}
             src={post.data.heroImage}
             alt=""
             class="card shadow"
         />
-        <img
+        <Image
             width={720}
             height={360}
             src={post.data.heroImage}

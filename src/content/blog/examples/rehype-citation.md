@@ -2,7 +2,7 @@
 title: 'Citation Example'
 description: 'Example of how to use the citation plugin.'
 pubDate: 'Nov 15 2024'
-heroImage: '/examples/rehype-citation.jpg'
+heroImage: './rehype-citation.jpg'
 bibliography: './citation-example.bib'
 ---
 
