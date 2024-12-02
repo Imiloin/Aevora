@@ -156,6 +156,21 @@ td {
     text-align: left;
 }
 
+th[align="left"],
+td[align="left"] {
+    text-align: left;
+}
+
+th[align="center"],
+td[align="center"] {
+    text-align: center;
+}
+
+th[align="right"],
+td[align="right"] {
+    text-align: right;
+}
+
 thead {
     /* Set header row background color */
     background-color: var(--gray-200);

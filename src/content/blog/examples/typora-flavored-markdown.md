@@ -33,7 +33,7 @@ heroImage: './typora-flavored-markdown.jpg'
 ###### 这是六级标题
 ```
 
-在 Typora 中，输入 <kbd>＃</kbd> 后跟标题内容，按下 <kbd>Return</kbd> 键将创建标题。
+在 Typora 中，输入 <kbd>#</kbd> 后跟标题内容，按下 <kbd>Return</kbd> 键将创建标题。
 
 ### 引用文字
 
@@ -59,7 +59,7 @@ Markdown 使用电子邮件样式 <kbd>></kbd> 字符进行块引用。它们表
 
 ### 列表
 
-输入 `* list item 1` 将创建一个无序列表，该 `*` 符号可以替换为 `+` 或 `-`.
+输入 `* list item 1` 将创建一个无序列表，该 `*` 符号可以替换为 `+` 或 `-`。
 
 输入 `1. list item 1` 将创建一个有序列表，其 markdown 源代码如下：
 
@@ -173,9 +173,14 @@ $$
 | Content Cell  | Content Cell  |
 ```
 
-您还可以在表格中包括内联 Markdown 语法，例如链接、粗体、斜体或删除线。
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
-最后，通过在标题行中包含冒号：您可以将文本定义为左对齐，右对齐或居中对齐：
+您还可以在表格中包括内联 markdown 语法，例如链接、粗体、斜体或删除线。
+
+最后，通过在标题行中包含冒号 `:`，您可以将文本定义为左对齐，右对齐或居中对齐：
 
 ```markdown
 | Left-Aligned  | Center Aligned  | Right Aligned |
@@ -184,6 +189,12 @@ $$
 | col 2 is      | centered        |   $12 |
 | zebra stripes | are neat        |    $1 |
 ```
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
 
 最左侧的冒号表示左对齐的列; 最右侧的冒号表示右对齐的列; 两侧的冒号表示中心对齐的列。
 
@@ -219,19 +230,19 @@ Typora 现在支持 [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/)�
 
 ### 图表 (Sequence, Flowchart and Mermaid)
 
-Typora 支持, [sequence](https://bramp.github.io/js-sequence-diagrams/), [flowchart](http://flowchart.js.org/) and [mermaid](https://knsv.github.io/mermaid/#mermaid), 使用前要先从偏好设置面板启用该功能。
+Typora 支持 [sequence](https://bramp.github.io/js-sequence-diagrams/), [flowchart](http://flowchart.js.org/) 和 [mermaid](https://knsv.github.io/mermaid/#mermaid), 使用前要先从偏好设置面板启用该功能。
 
-详细信息请参阅此 [文档](http://support.typora.io/Draw-Diagrams-With-Markdown/)
+详细信息请参阅此[文档](http://support.typora.io/Draw-Diagrams-With-Markdown/)。
 
 ## Span 元素
 
-在您输入后 Span 元素会被立即解析并呈现。在这些 span 元素上移动光标会将这些元素扩展为 markdown 源代码。以下将解释这些 span 元素的语法。
+在您输入后，span 元素会被立即解析并呈现。在这些 span 元素上移动光标会将这些元素扩展为 markdown 源代码。以下将解释这些 span 元素的语法。
 
 ### 链接
 
 Markdown 支持两种类型的链接：内联和引用。
 
-在这两种样式中，链接文本都写在 [方括号] 内。
+在这两种样式中，链接文本都写在 `[方括号]` 内。
 
 要创建内联链接，请在链接文本的结束方括号后立即使用一组常规括号。在常规括号内，输入 URL 地址，以及可选的用引号括起来的链接标题。例如：
 
@@ -251,7 +262,7 @@ This is [an example](http://example.com/"Title") inline link. (`<p>This is <a hr
 
 **您可以将常规括号内的 href 设置为文档内的某一个标题**，这将创建一个书签，允许您在单击后跳转到该部分。例如：
 
-<kbd>Command</kbd> (在 Windows 上：<kbd>Ctrl</kbd>) + 单击[此链接](https://support.typoraio.cn/zh/Markdown-Reference/#块元素)将跳转到标题 `块元素` 处。要查看如何编写，请移动光标或按住 <kbd>⌘</kbd> 键单击以将元素展开为 Markdown 源代码。
+<kbd>Command</kbd> (在 Windows 上：<kbd>Ctrl</kbd>) + 单击[此链接](#块元素)将跳转到标题 `块元素` 处。要查看如何编写，请移动光标或按住 <kbd>⌘</kbd> 键单击以将元素展开为 markdown 源代码。
 
 #### 参考链接
 
@@ -278,11 +289,11 @@ This is [an example](http://example.com/) reference-style link.
 [Google]: http://google.com/
 ```
 
-在 Typora 中单击链接将其展开以进行编辑，<kbd>command</kbd> + 单击将在 Web 浏览器中打开超链接。
+在 Typora 中单击链接将其展开以进行编辑，<kbd>Command</kbd> + 单击将在 Web 浏览器中打开超链接。
 
 ### URL 网址
 
-Typora 允许您将 URL 作为链接插入，用 `<` 括号括起来 `>`。
+Typora 允许您将 URL 作为链接插入，用 `<括号括起来>`。
 
 `<i@typora.io>` 成为 [i@typora.io](mailto:i@typora.io).
 
@@ -298,9 +309,9 @@ Typora 也将自动链接标准 URL。例如：<www.google.com>.
 ![替代文字](/path/to/img.jpg "可选标题")
 ```
 
-您可以使用拖放操作从图像文件或浏览器来插入图像。并通过单击图像修改 markdown 源代码。如果图像在拖放时与当前编辑文档位于同一目录或子目录中，则将使用相对路径。
+您可以使用拖放操作从图像文件或浏览器来插入图像，并通过单击图像修改 markdown 源代码。如果图像在拖放时与当前编辑文档位于同一目录或子目录中，则将使用相对路径。
 
-有关图像的更多提示，请阅读 <http://support.typora.io//Images/>
+有关图像的更多提示，请阅读 <http://support.typora.io//Images/>。
 
 ### 强调（斜体）
 
@@ -332,7 +343,7 @@ GFM 将忽略单词中的下划线，这通常用在代码和名称中，如下�
 
 \*这个文字被文字星号包围\*
 
-Typora建议使用 `*` 号.
+Typora 建议使用 `*` 号.
 
 ### 粗体
 
@@ -354,10 +365,10 @@ Typora 建议使用 `**` 号。
 
 ### 代码
 
-要指示代码范围，请使用反引号（`）进行包裹。与预格式化的代码块不同，代码跨度表示正常段落中的代码。例如：
+要指示代码范围，请使用反引号 `` ` `` 进行包裹。与预格式化的代码块不同，代码跨度表示正常段落中的代码。例如：
 
 ```markdown
-使用`printf()`函数。
+使用 `printf()` 函数。
 ```
 
 将产生：
@@ -366,7 +377,7 @@ Typora 建议使用 `**` 号。
 
 ### 删除线
 
-GFM通过添加语法来创建删除线文本，标准的 Markdown 中缺少该文本。
+GFM 通过添加语法来创建删除线文本，标准的 markdown 中缺少该特性。
 
 `~~错误的文字。~~` 变成 ~~错误的文字。~~
 
@@ -374,7 +385,7 @@ GFM通过添加语法来创建删除线文本，标准的 Markdown 中缺少该�
 
 下划线由原始 HTML 提供支持。
 
-`<u>下划线</u>` 变成<u>下划线</u>
+`<u>下划线</u>` 变成<u>下划线</u>。
 
 ### 内联数学公式
 
@@ -384,19 +395,19 @@ GFM通过添加语法来创建删除线文本，标准的 Markdown 中缺少该�
 
 ### 下标
 
-要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `~` 来包裹下标内容，例如：`H~2~O`, `X~long\ text~`/
+要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `~` 来包裹下标内容，例如：`H~2~O`, `X~long\ text~`。
 
 ### 上标
 
-要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `^` 来包裹上标内容，例如： `X^2^`。
+要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `^` 来包裹上标内容，例如：`X^2^`。
 
 ### 高亮
 
-要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `==` 来包裹高亮内容，例如： `==highlight==`。
+要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后用 `==` 来包裹高亮内容，例如：`==highlight==`。
 
 ## HTML
 
-您可以使用 HTML 来设置纯 Markdown 不支持的内容，例如， `<span style="color:red">this text is red</span>` 用于添加红色文本。
+您可以使用 HTML 来设置纯 markdown 不支持的内容，例如，`<span style="color:red">this text is red</span>` 用于添加红色文本。
 
 ### 嵌入内容
 
@@ -405,8 +416,6 @@ GFM通过添加语法来创建删除线文本，标准的 Markdown 中缺少该�
 ```markdown
 <iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='http://codepen.io/jeangontijo/embed/OxVywj/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 ```
-
-<iframe height='265' scrolling='no' title='Fancy Animated SVG Menu' src='http://codepen.io/jeangontijo/embed/OxVywj/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'></iframe>
 
 ### 视频
 
