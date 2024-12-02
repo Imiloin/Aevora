@@ -113,7 +113,7 @@ article a[href^="#"] {
     }
 }
 
-article a[href^="http"] {
+article a {
     /* External link style */
     box-shadow: 0px -1.5px 0px var(--gray-600) inset;
     transition: all 0.3s ease;
@@ -209,6 +209,10 @@ li.task-list-item input[type="checkbox"] {
     float: left;
     margin-right: 7px;
     margin-top: 0.65em;
+
+    @media (max-width: 636px) {
+        margin-top: 0.56em;
+    }
 }
 
 /* Inline code styles */
