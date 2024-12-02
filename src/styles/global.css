@@ -154,19 +154,26 @@ th,
 td {
     padding: 8px;
     text-align: left;
-    /* Add bottom border */
+}
+
+thead {
+    /* Set header row background color */
+    background-color: var(--gray-200);
+}
+
+tr {
+    /* Add bottom border to all rows */
     border-bottom: 1px solid var(--gray-300);
 }
 
-/* Set alternating background colors for table rows */
-thead {
-    /* Set header row background color */
-    background-color: var(--gray-200) !important;
+thead>tr {
+    /* Add darker top border to header row */
+    border-top: 1px solid var(--gray-400);
 }
 
-tr:nth-child(even) {
-    /* Even row background color */
-    background-color: var(--gray-200);
+tbody>tr:last-child {
+    /* Add darker bottom border to last row */
+    border-bottom: 1px solid var(--gray-400);
 }
 
 /* Image styles */
