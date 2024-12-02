@@ -1,7 +1,7 @@
 ---
 title: 'Typora 的 Markdown 语法'
 description: 'Typora 的 Markdown 语法特性，用于测试中文博客支持'
-pubDate: 'Jan 1, 2016'
+pubDate: 'Jan 1, 2022'
 heroImage: './typora-flavored-markdown.jpg'
 ---
 
@@ -23,7 +23,7 @@ heroImage: './typora-flavored-markdown.jpg'
 
 ### 标题
 
-标题在行的开头使用 1-6 个 `＃` 字符，对应于标题级别 1-6。例如：
+标题在行的开头使用 1-6 个 `#` 字符，对应于标题级别 1-6。例如：
 
 ```markdown
 # 这是一级标题
@@ -33,11 +33,11 @@ heroImage: './typora-flavored-markdown.jpg'
 ###### 这是六级标题
 ```
 
-在 Typora 中，输入 <kbd>#</kbd> 后跟标题内容，按下 <kbd>Return</kbd> 键将创建标题。
+在 Typora 中，输入 `#` 后跟标题内容，按下 <kbd>Return</kbd> 键将创建标题。
 
 ### 引用文字
 
-Markdown 使用电子邮件样式 <kbd>></kbd> 字符进行块引用。它们表示为：
+Markdown 使用电子邮件样式 `>` 字符进行块引用。它们表示为：
 
 ```markdown
 > 这是一个有两段的块引用。这是第一段。
@@ -55,7 +55,7 @@ Markdown 使用电子邮件样式 <kbd>></kbd> 字符进行块引用。它们表
 
 > 这是另一个只有一个段落的块引用。有三个空行分隔两个块引用。
 
-在 Typora 中，只需输入 <kbd>></kbd> 后跟引用内容即可生成块引用。Typora 将为您插入正确的 <kbd>></kbd> 或换行符。通过添加额外级别的 <kbd>></kbd> 允许在块引用内嵌入另一个块引用。
+在 Typora 中，只需输入 `>` 后跟引用内容即可生成块引用。Typora 将为您插入正确的 `>` 或换行符。通过添加额外级别的 `>` 允许在块引用内嵌入另一个块引用。
 
 ### 列表
 
@@ -134,7 +134,7 @@ puts markdown.to_html
 
 您可以使用 **MathJax** 渲染 *LaTeX* 数学表达式。
 
-输入 `$$`, 然后按 <kbd>Return</kbd> 键将触发一个接受 *Tex / LaTex* 源代码的输入区域。以下是一个例子：
+输入 `$$`，然后按 <kbd>Return</kbd> 键将触发一个接受 *Tex / LaTex* 源代码的输入区域。以下是一个例子：
 
 $$
 \mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
@@ -158,7 +158,7 @@ $$
 
 ### 表格
 
-输入 `| First Header | Second Header |` 并按下 <kbd>return</kbd> 键将创建一个包含两列的表。
+输入 `| First Header | Second Header |` 并按下 <kbd>Return</kbd> 键将创建一个包含两列的表。
 
 创建表后，焦点在该表上将弹出一个表格工具栏，您可以在其中调整表格，对齐或删除表格。您还可以使用上下文菜单来复制和添加/删除列/行。
 
@@ -196,7 +196,7 @@ $$
 | col 2 is      | centered        |   $12 |
 | zebra stripes | are neat        |    $1 |
 
-最左侧的冒号表示左对齐的列; 最右侧的冒号表示右对齐的列; 两侧的冒号表示中心对齐的列。
+最左侧的冒号表示左对齐的列；最右侧的冒号表示右对齐的列；两侧的冒号表示中心对齐的列。
 
 ### 脚注
 
@@ -230,7 +230,7 @@ Typora 现在支持 [YAML Front Matter](http://jekyllrb.com/docs/frontmatter/)�
 
 ### 图表 (Sequence, Flowchart and Mermaid)
 
-Typora 支持 [sequence](https://bramp.github.io/js-sequence-diagrams/), [flowchart](http://flowchart.js.org/) 和 [mermaid](https://knsv.github.io/mermaid/#mermaid), 使用前要先从偏好设置面板启用该功能。
+Typora 支持 [sequence](https://bramp.github.io/js-sequence-diagrams/), [flowchart](http://flowchart.js.org/) 和 [mermaid](https://knsv.github.io/mermaid/#mermaid)，使用前要先从偏好设置面板启用该功能。
 
 详细信息请参阅此[文档](http://support.typora.io/Draw-Diagrams-With-Markdown/)。
 
@@ -297,7 +297,7 @@ Typora 允许您将 URL 作为链接插入，用 `<括号括起来>`。
 
 `<i@typora.io>` 成为 [i@typora.io](mailto:i@typora.io).
 
-Typora 也将自动链接标准 URL。例如：<www.google.com>.
+Typora 也将自动链接标准 URL。例如：www.google.com.
 
 ### 图片
 
@@ -389,9 +389,9 @@ GFM 通过添加语法来创建删除线文本，标准的 markdown 中缺少该
 
 ### 内联数学公式
 
-要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后使用 `$` 来包裹 TeX 命令，例如： `$\lim_{x \to \infty} \exp(-x) = 0$` 将呈现为 LaTeX 命令 $\lim_{x \to \infty} \exp(-x) = 0$。
+要使用此功能，首先，请在 `偏好设置` 面板 -> `Markdown 扩展语法` 选项卡中启用它。然后使用 `$` 来包裹 TeX 命令，例如：`$\lim_{x \to \infty} \exp(-x) = 0$` 将呈现为 LaTeX 命令 $\lim_{x \to \infty} \exp(-x) = 0$。
 
-要触发内联公式的预览提示功能：输入 <kbd>$</kbd>, 然后按 <kbd>ESC</kbd> 键, 然后输入 TeX 命令。
+要触发内联公式的预览提示功能：输入 <kbd>$</kbd>，然后按 <kbd>ESC</kbd> 键，然后输入 TeX 命令。
 
 ### 下标
 

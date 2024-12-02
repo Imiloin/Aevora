@@ -208,6 +208,11 @@ img[src$=".webp"] {
     border-radius: min(8px, 10vw, 10vh);
 }
 
+img[src$=".gif"] {
+    /* No border-radius for GIF images */
+    border-radius: 0;
+}
+
 img[src$=".svg"] {
     /* No border-radius for SVG images */
     border-radius: 0;
