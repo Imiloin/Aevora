@@ -34,6 +34,7 @@ export default defineEcConfig({
         textMarkers: {
             inlineMarkerBorderWidth: '0px',
             lineMarkerAccentWidth: '0px',
+            lineMarkerLabelPaddingInline: '0.3rem',
             defaultChroma: '55',
             defaultLuminance: '95%',
         },
