@@ -107,6 +107,7 @@
     --brown-700: #793A1C;
     --brown-800: #51230D;
     --brown-900: #2A1003;
+
     --white-core: #ffffff;
     --white-tint-dark: #f6f6f6;
     --white-tint-muted: #f3f3f3;
@@ -158,6 +159,12 @@
     --red-highlight: #ff9a8c;
     --red-neon: #db1e04;
 
+    --proof-green: #00a67d;
+    --proof-medium-blue: #0082d0;
+    --proof-red: #f22c3d;
+    --proof-golden: #ea9100;
+
+
     /* apple iOS scheme */
     --systemGray-1: rgb(142, 142, 147);
     --systemGray-2: rgb(174, 174, 178);
@@ -201,11 +208,15 @@
 
     --accent: var(--blue-neon);
 
+    --mark: #d7e9ff;
+
     --translucent: rgba(250, 250, 250, 0.6);
 
     --internal-link-color: rgba(0, 122, 255, 0.25);
     --external-link-color: rgba(255, 45, 85, 0.25);
 
-    --shadow: 168, 168, 168;
+    --shadow: 168,
+        168,
+        168;
     --box-shadow: 0 8px 16px rgba(var(--shadow), 25%);
 }

@@ -336,7 +336,7 @@ kbd {
 
 /* Highlighted text styles */
 mark {
-    background-color: var(--blue-300);
+    background-color: var(--mark);
     color: var(--black);
 }
 
