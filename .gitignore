@@ -9,6 +9,7 @@
 
 # pagefind
 public/pagefind/
+public/_astro/
 
 # copilot
 .github/copilot-instructions.md
