@@ -11,12 +11,18 @@ updates:
     schedule:
       interval: "monthly"
     groups:
-      all-dependencies:
-        # update all dependencies in one PR
+      astro-dependencies:
+        # group astro related dependencies in one PR
         applies-to: version-updates
         patterns:
-        - "*astro*"
-        - "*"
+          - "*astro*"
+      other-dependencies:
+        # group other dependencies in one PR
+        applies-to: version-updates
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "*astro*"
     open-pull-requests-limit: 5
     versioning-strategy: "auto"
     commit-message:
