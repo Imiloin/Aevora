@@ -179,9 +179,24 @@ import "@styles/typing-effect.css";
     </div>
     <script>
         import "@scripts/clock.js";
-        import "@scripts/cuboidal-quantum.js";
         import "@scripts/cursor.js";
         import "@scripts/typing-effect.js";
+
+        // Import CuboidalQuantum class
+        import CuboidalQuantum from "@scripts/cuboidal-quantum.js";
+
+        // Initialize with custom config
+        new CuboidalQuantum("cuboidal-quantum-canvas", {
+            numPoints: 15,
+            baseMaxDist: 200,
+            baseRadius: 150,
+            variance: 50,
+            twist: 6,
+            color1: "#393939",
+            color2: "#a8a8a8",
+            rotationSpeed: 0.005,
+            cameraSpeed: 0.002,
+        });
     </script>
 
     <body>
