@@ -6,7 +6,7 @@ const { post, isFirstChild } = Astro.props;
 ---
 
 <li class={isFirstChild ? "first-child" : ""}>
-    <a href={`/blog/${post.slug}/`}>
+    <a href={`/blog/${post.id}/`}>
         <Image
             width={720}
             height={360}

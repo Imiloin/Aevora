@@ -5,10 +5,10 @@ import { type CollectionEntry, getCollection, render } from "astro:content";
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
     const headings = await Promise.all(
-        posts.map((post) => post.render().then((data) => data.headings)),
+        posts.map((post) => render(post).then((data) => data.headings)),
     );
     return posts.map((post, index) => ({
-        params: { slug: post.slug },
+        params: { slug: post.id },
         props: { post, headings: headings[index] },
     }));
 }
