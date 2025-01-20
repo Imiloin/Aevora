@@ -1,0 +1,166 @@
+---
+import BaseHead from "@components/BaseHead.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import { getCollection } from "astro:content";
+
+import blogConfig from "@configs/blog.json";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    const series = new Set();
+
+    // fetch all series
+    posts.forEach((post) => {
+        if (post.data.series) {
+            post.data.series.forEach((entry) => series.add(entry));
+        }
+    });
+
+    return Array.from(series).map((series) => ({
+        params: { series },
+        props: { series },
+    }));
+}
+
+const { series } = Astro.params as { series: string };
+
+// fetch all posts in the series
+const posts = (await getCollection("blog"))
+    .filter((post) => post.data.series?.includes(series))
+    .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+
+const title = `${series} - Series`;
+const description = `Articles in series: ${series}`;
+const width = blogConfig.general.width;
+---
+
+<!doctype html>
+<html lang="zh">
+    <head>
+        <BaseHead title={title} description={description} />
+        <style define:vars={{ width }}>
+            main {
+                width: var(--width);
+                display: flex;
+                flex-direction: column; /* Change to column layout */
+                justify-content: center;
+            }
+            .series-title {
+                text-align: center;
+                margin: 2rem 0;
+                width: 100%;
+            }
+            .post-card {
+                width: calc(100% - 2rem); /* Adjust width */
+                border-bottom: 1px solid var(--gray-300); /* Add bottom border to separate cards */
+                overflow: hidden;
+                text-decoration: none; /* Ensure links have no underline */
+                color: inherit; /* Ensure text color is inherited */
+                display: flex; /* Flex layout for card */
+                align-items: center;
+                padding: 1rem 0; /* Add padding for spacing */
+                position: relative; /* For positioning the arrow */
+                padding-right: 2rem; /* Add padding to the right to make space for the arrow */
+                &:hover {
+                    box-shadow: none;
+                    background-color: var(--gray-200);
+                }
+            }
+            .post-card.first-card {
+                border-top: 1px solid var(--gray-300); /* Add top border to first card */
+            }
+            .post-card img {
+                width: 160px; /* Fixed width for image */
+                height: auto;
+                border-radius: 4px;
+                margin: 0 2rem 0 1rem; /* Add margin for spacing */
+            }
+            .post-card-content {
+                flex: 1; /* Allow content to take remaining space */
+            }
+            .post-card-title {
+                font-size: 1.5em;
+                margin: 0.5rem 0;
+            }
+            .post-card-date {
+                font-size: 0.875em;
+                color: var(--gray-700);
+            }
+            .post-card-description {
+                font-size: 1em;
+                color: var(--text);
+                margin-top: 0.5rem;
+            }
+            .post-card-arrow {
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 12px; /* Adjusted width */
+                height: 12px; /* Adjusted height */
+                fill: var(--gray-800);
+            }
+            @media (max-width: 720px) {
+                .main {
+                    font-size: 0.9rem; /* Adjust font size for small screens */
+                }
+                .post-card {
+                    width: 100%;
+                    flex-direction: column; /* Stack image and content vertically on small screens */
+                    padding-right: 0; /* Adjust padding for small screens */
+                }
+                .post-card img {
+                    width: calc(100% - 2rem);
+                    border-radius: 8px;
+                    margin: 1rem 2rem;
+                }
+                .post-card-content {
+                    text-align: left; /* Ensure text is left-aligned on small screens */
+                    width: calc(100% - 2rem);
+                }
+                .post-card-arrow {
+                    display: none; /* Hide arrow on small screens */
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1 class="series-title">Series: {series}</h1>
+            {
+                posts.map((post, index) => (
+                    <a
+                        href={`/blog/${post.id}`}
+                        class={`post-card ${index === 0 ? "first-card" : ""}`}
+                    >
+                        <img
+                            src={post.data.heroImage.src}
+                            alt={post.data.title}
+                        />
+                        <div class="post-card-content">
+                            <h2 class="post-card-title">{post.data.title}</h2>
+                            <p class="post-card-date">
+                                {new Date(
+                                    post.data.pubDate,
+                                ).toLocaleDateString()}
+                            </p>
+                            <p class="post-card-description">
+                                {post.data.description}
+                            </p>
+                        </div>
+                        <svg
+                            class="post-card-arrow"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 35.62 35.62"
+                        >
+                            <polygon points="9.38 0 9.38 5.25 26.66 5.25 0 31.88 3.75 35.62 30.38 8.96 30.38 26.25 35.62 26.25 35.62 0 9.38 0" />
+                        </svg>
+                    </a>
+                ))
+            }
+        </main>
+        <Footer width={width} />
+    </body>
+</html>

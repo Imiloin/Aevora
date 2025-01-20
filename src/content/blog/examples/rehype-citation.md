@@ -4,6 +4,7 @@ description: 'Example of how to use the citation plugin.'
 pubDate: 'Nov 15 2024'
 heroImage: './rehype-citation.jpg'
 bibliography: './citation-example.bib'
+series: ['Examples']
 ---
 
 This file is copied from the [rehype-citation](https://rehype-citation.netlify.app/) example.
