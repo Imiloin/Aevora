@@ -20,7 +20,7 @@ import "remark-github-alerts/styles/github-base.css";
 
 type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
 
-const { title, description, pubDate, updatedDate, heroImage, series, headings } =
+const { title, description, pubDate, heroImage, series, headings } =
     Astro.props as Props;
 
 function createHeadingHierarchy(headings: MarkdownHeading[]) {
@@ -144,14 +144,6 @@ const hasToC = toc.length > 1;
                     <div class="title">
                         <div class="date">
                             <FormattedDate date={pubDate} />
-                            {
-                                updatedDate && (
-                                    <div class="last-updated-on">
-                                        Last updated on{" "}
-                                        <FormattedDate date={updatedDate} />
-                                    </div>
-                                )
-                            }
                         </div>
                         <h1>{title}</h1>
                         <div style="text-align: center;">
