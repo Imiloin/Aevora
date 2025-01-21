@@ -12,7 +12,7 @@
     --gray-600: #A8A8A8;
     --gray-700: #747474;
     --gray-800: #393939;
-    --gray-850: #171717;
+    --gray-850: #080808;
     --gray-900: #000000;
     --red-050: #FFF7F6;
     --red-100: #FFEDEB;
@@ -199,6 +199,8 @@
     --yellow-dark: rgb(255, 214, 10);
 
     /* other */
+
+    /* GitHub text color */
     --text: #1f2328;
 
     --gray: var(--gray-700);
@@ -208,7 +210,8 @@
 
     --accent: var(--blue-neon);
 
-    --mark: #d7e9ff;
+    --mark-background-color: #fff2ca;
+    --mark-color: #543a26;
 
     --translucent: rgba(250, 250, 250, 0.6);
 

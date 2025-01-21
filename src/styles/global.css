@@ -33,7 +33,7 @@ body {
     background: var(--background);
     word-wrap: break-word;
     overflow-wrap: break-word;
-    color: var(--black);
+    color: var(--gray-850);
     font-size: 1em;
     line-height: 1.7;
 }
@@ -55,7 +55,7 @@ h4,
 h5,
 h6 {
     font-family: var(--chinese-font-family);
-    color: var(--black);
+    color: var(--gray-850);
     line-height: 1.2;
 }
 
@@ -272,10 +272,14 @@ code {
 
 /* Blockquote styles */
 blockquote {
-    border-left: 0.25em solid var(--gray-600);
+    border-left: 0.25em solid var(--gray-500);
     color: var(--gray-700);
     padding: 0 1rem;
-    margin: 0px;
+    margin: 1rem 0;
+}
+
+blockquote footer {
+    margin-top: 0.5rem;
 }
 
 /* Horizontal rule styles */
@@ -336,8 +340,9 @@ kbd {
 
 /* Highlighted text styles */
 mark {
-    background-color: var(--mark);
-    color: var(--black);
+    background-color: var(--mark-background-color);
+    color: var(--mark-color);
+    vertical-align: baseline;
 }
 
 /* Citation styles */
