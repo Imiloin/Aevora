@@ -24,13 +24,13 @@ if (toc) {
                     toc.classList.add("visible");
                 }
 
-                // 手动计算当前视口中的标题
+                // Calculate the heading currently in the viewport
                 let currentActive: HTMLElement | null = null;
                 for (let i = 0; i < headings.length; i++) {
                     const heading = headings[i];
                     if (
                         heading.offsetTop <=
-                        scrollTop + 50 /* 50px 是为了提前触发 */
+                        scrollTop + 50 /* 50px to trigger early */
                     ) {
                         currentActive = heading;
                     } else {
@@ -38,7 +38,7 @@ if (toc) {
                     }
                 }
 
-                // 设置相应的 TOC 链接为 active
+                // Set the corresponding TOC link to active
                 document
                     .querySelectorAll(".toc a")
                     .forEach((link) => {
@@ -51,7 +51,7 @@ if (toc) {
                     );
                     if (tocLink) {
                         tocLink.classList.add("active");
-                        // 将当前活动的 TOC 链接滚动到可视范围内
+                        // Scroll the currently active TOC link into view
                         tocLink.scrollIntoView({
                             behavior: "smooth",
                             block: "nearest",

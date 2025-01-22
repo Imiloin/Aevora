@@ -1,15 +1,15 @@
 console.clear();
 
-// 检测是否为触屏设备
+// Detect if it is a touch device
 function isTouchDevice() {
     return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 }
 
-// 等待 DOM 内容加载完成后再执行脚本
+// Wait for the DOM content to be fully loaded before executing the script
 document.addEventListener('DOMContentLoaded', () => {
     const elCursor = document.querySelector(".cursor");
 
-    // 如果是触屏设备，则不执行后续代码并完全隐藏光标
+    // If it is a touch device, do not execute the subsequent code and completely hide the cursor
     if (isTouchDevice()) {
         if (elCursor) {
             elCursor.classList.add('hidden');

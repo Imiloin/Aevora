@@ -39,7 +39,7 @@
     display: inline-block;
     width: 20vw;
     user-select: none;
-    /* 防止空格被选中 */
+    /* Prevent selection */
 }
 
 .line {

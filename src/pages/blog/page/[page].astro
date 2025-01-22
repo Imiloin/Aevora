@@ -11,11 +11,11 @@ const title = blogConfig.general.title;
 const description = blogConfig.general.description;
 const width = blogConfig.general.width;
 
-// 获取当前页码
+// Get the current page number
 const { page } = Astro.params;
 const currentPage = parseInt(page ?? "1", 10);
 
-// 分页逻辑
+// Pagination logic
 const posts = (await getCollection("blog")).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );

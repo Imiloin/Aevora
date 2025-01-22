@@ -50,16 +50,16 @@ import logoText from "@icons/logo-text.svg";
     header {
         margin: 0;
         padding: 1em 1em;
-        background: var(--translucent); /* 半透明背景 */
-        position: fixed; /* 固定在页面顶部 */
+        background: var(--translucent); /* Translucent background */
+        position: fixed; /* Fixed at the top of the page */
         max-width: calc(100vw - 2em);
         top: 0;
         left: 0;
         width: 100vw;
-        transition: transform 0.3s ease; /* 添加过渡效果 */
-        z-index: 998; /* 确保 header 在最上层，仅位于光标层下方 */
-        backdrop-filter: blur(10px); /* 毛玻璃效果 */
-        -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+        transition: transform 0.3s ease; /* Add transition effect */
+        z-index: 998; /* Ensure header is on top, just below the cursor layer */
+        backdrop-filter: blur(10px); /* Frosted glass effect */
+        -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
     }
 
     .title {
@@ -81,16 +81,18 @@ import logoText from "@icons/logo-text.svg";
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: relative; /* 添加 position: relative; */
+        position: relative; /* Add position: relative; */
     }
 
     .nav-links {
         font-size: 0.9em;
         display: flex;
-        margin: 0 auto; /* 水平居中 */
-        position: absolute; /* 添加 position: absolute; */
-        left: 50%; /* 将左边界移动到页面中间 */
-        transform: translateX(-50%); /* 将元素本身向左移动50% */
+        margin: 0 auto; /* Center the links */
+        position: absolute;
+        left: 50%; /* Move the left boundary to the center of the page */
+        transform: translateX(
+            -50%
+        ); /* Move the element itself 50% to the left */
     }
 
     .icon-links,
@@ -104,7 +106,7 @@ import logoText from "@icons/logo-text.svg";
         align-items: center;
     }
     .icon-links a:hover {
-        animation: scale-up-dpwn 0.6s ease; /* 应用动画 */
+        animation: scale-up-dpwn 0.6s ease; /* Apply animation */
         color: var(--orange-neon);
     }
     @keyframes scale-up-dpwn {
@@ -147,27 +149,27 @@ import logoText from "@icons/logo-text.svg";
 <script>
     const header = document.getElementById("header");
 
-    /* 页眉在页面滚动时隐藏或显示 */
+    /* Hide or show the header when scrolling the page */
     let lastScrollTop = 0;
     let isTOCClick = false;
 
-    // 监听滚动事件
+    // Listen for scroll events
     window.addEventListener("scroll", function () {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
         if (header && !isTOCClick) {
             if (scrollTop > lastScrollTop) {
-                // 向下滚动
+                // Scrolling down
                 header.style.transform = "translateY(-100%)";
             } else {
-                // 向上滚动
+                // Scrolling up
                 header.style.transform = "translateY(0)";
             }
         }
         lastScrollTop = scrollTop;
-        isTOCClick = false; // 重置 TOC 点击状态
+        isTOCClick = false; // Reset TOC click status
     });
 
-    // 监听页面内跳转的点击事件
+    // Listen for click events on in-page links
     document.querySelectorAll('a[href*="#"]').forEach((link) => {
         if (header) {
             link.addEventListener("click", () => {

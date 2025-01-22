@@ -3,7 +3,7 @@
     position: fixed;
     margin-left: 40px;
     width: 256px;
-    /* 将 TOC 下移 6em */
+    /* move TOC down 6em */
     top: 6em;
     max-height: 70%;
     overflow-y: auto;

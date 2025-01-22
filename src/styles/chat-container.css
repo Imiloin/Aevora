@@ -46,7 +46,6 @@
     text-align: left;
     align-self: flex-start;
     border-radius: var(--max-radius) var(--max-radius) var(--max-radius) 0;
-    /* 设置旋转中心 */
     transform-origin: bottom left;
 }
 
@@ -54,24 +53,20 @@
     text-align: right;
     align-self: flex-end;
     border-radius: var(--max-radius) var(--max-radius) 0 var(--max-radius);
-    /* 设置旋转中心 */
     transform-origin: bottom right;
 }
 
 .chatbubble-left:hover {
     transform: rotate(-5deg);
-    /* 悬停时旋转 */
 }
 
 .chatbubble-right:hover {
     transform: rotate(5deg);
-    /* 悬停时旋转 */
 }
 
 .chatbubble-row {
     display: flex;
     justify-content: space-between;
-    /* 设置气泡之间的间距 */
     gap: 10px;
     margin: 5px 0;
 }
