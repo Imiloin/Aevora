@@ -66,7 +66,9 @@ it is most likely a network issue. Try fixing your network connection and reinst
 
 ## License
 
-The content in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License, and certain fonts are licensed under the Open Font License.
+The content in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License.
+
+Uncut Sans and Cascadia Code font are licensed under the SIL Open Font License, Version 1.1. HarmonyOS Sans font is licensed under HarmonyOS Sans Fonts License Agreement.
 
 ## Acknowledgements
 
