@@ -52,6 +52,7 @@ All commands should be run from the root of the project in your terminal.
 | `npm install`             | Installs project dependencies                                     |
 | `npm run dev`             | Starts the local development server at `localhost:4321`           |
 | `npm run build`           | Builds production site and outputs it to `./dist/`                |
+| `npm run clean`           | Removes the `./dist/` directory and dumped cache in `public/`     |
 | `npm run preview`         | Previews build locally before deployment                          |
 | `npm run astro ...`       | Executes Astro CLI commands, such as `astro add` or `astro check` |
 | `npm run astro -- --help` | Displays help for using the Astro CLI                             |
