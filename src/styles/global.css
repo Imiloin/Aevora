@@ -426,6 +426,9 @@ mark {
 /* Custom scrollbar styles */
 html::-webkit-scrollbar {
     width: 10px;
+    /* vertical scrollbar */
+    height: 10px;
+    /* horizontal scrollbar */
 }
 
 html::-webkit-scrollbar-thumb {
