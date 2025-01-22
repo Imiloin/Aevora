@@ -97,12 +97,6 @@ h5 {
     margin-top: 1em;
 }
 
-.prose> :where(:not([style*="display: none"])):first-child:not(:where(h1, h2, h3, h4, h5, h6)),
-.prose>[style*="display: none"]~ :where(:not([style*="display: none"])):first-of-type:not(:where(h1, h2, h3, h4, h5, h6)) {
-    /* Keep original margin for other first visible elements */
-    margin-top: initial;
-}
-
 .prose h2 {
     font-size: 1.75em;
     margin-top: 1.6em;
