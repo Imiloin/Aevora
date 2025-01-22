@@ -53,16 +53,16 @@ const width = blogConfig.general.width;
                 width: 100%;
             }
             .post-card {
-                width: calc(100% - 2rem); /* Adjust width */
+                width: calc(100% - 4rem); /* Adjust width */
                 border-bottom: 1px solid var(--gray-300); /* Add bottom border to separate cards */
                 overflow: hidden;
                 text-decoration: none; /* Ensure links have no underline */
                 color: inherit; /* Ensure text color is inherited */
                 display: flex; /* Flex layout for card */
                 align-items: center;
-                padding: 1rem 0; /* Add padding for spacing */
+                padding: 1rem 4rem 1rem 0; /* Add padding for spacing */
                 position: relative; /* For positioning the arrow */
-                padding-right: 2rem; /* Add padding to the right to make space for the arrow */
+
                 &:hover {
                     box-shadow: none;
                     background-color: var(--gray-200);
