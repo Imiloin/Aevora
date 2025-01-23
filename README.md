@@ -1,6 +1,8 @@
 # Aevora
 
-This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and supports Markdown and MDX for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/) (template only site: [aevora.netlify.app](https://aevora.netlify.app/)).
+This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and supports Markdown and MDX for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/) (template only demo: [aevora.netlify.app](https://aevora.netlify.app/)).
+
+This repository holds the open-source codebase for my blog's structure and design. It includes all the necessary components, layouts, and configurations, excluding the blog post content itself, which is maintained in a separate, private repository.
 
 ## Project Structure
 
@@ -29,9 +31,9 @@ Any static assets, such as images, are located in the `public/` directory.
 
 ## Getting Started
 
-To install and set up Astro on your machine, follow the instructions in the [Astro Documentation](https://docs.astro.build/en/install-and-setup/).
+First, you need to have some prerequisites installed. Check [Astro Documentation](https://docs.astro.build/en/install-and-setup/#prerequisites) for more information.
 
-Once you have Astro installed, clone this repository and run the following commands:
+After that, clone this repository and run the following commands:
 
 ```bash
 npm install
