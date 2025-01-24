@@ -285,8 +285,43 @@ li.task-list-item input[type="checkbox"] {
     margin-top: 0.65em;
 
     @media (max-width: 636px) {
+        margin-left: 5px;
+        margin-right: 6px;
         margin-top: 0.56em;
     }
+}
+
+/* List item styles */
+ol li,
+ul li {
+    margin-top: 0.5rem;
+}
+
+.prose {
+
+    /* Reset margin only for first direct child of top-level lists */
+    >ol,
+    >ul {
+        >li:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    /* Nested list styles */
+    margin-top: 0.5rem;
+}
+
+ol ol li,
+ul ul li,
+ol ul li,
+ul ol li {
+    /* Keep margin for all nested list items */
+    margin-top: 0.5rem;
 }
 
 /* Inline code styles */
