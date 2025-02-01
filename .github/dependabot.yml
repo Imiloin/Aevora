@@ -16,6 +16,7 @@ updates:
         applies-to: version-updates
         patterns:
           - "*astro*"
+          - "@expressive-code*"
       other-dependencies:
         # group other dependencies in one PR
         applies-to: version-updates
@@ -23,6 +24,7 @@ updates:
           - "*"
         exclude-patterns:
           - "*astro*"
+          - "@expressive-code*"
     open-pull-requests-limit: 5
     versioning-strategy: "auto"
     commit-message:
