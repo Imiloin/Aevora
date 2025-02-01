@@ -3,7 +3,7 @@ import { defineEcConfig } from 'astro-expressive-code'
 
 export default defineEcConfig({
     // set expressive-code configuration options here
-    themes: 'github-light',
+    themes: ['github-light'],
     plugins: [pluginLineNumbers()],
     defaultProps: {
         // Disable line numbers by default
