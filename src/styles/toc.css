@@ -1,10 +1,10 @@
 .toc {
-    font-size: 0.85em;
+    font-size: 0.9em;
     position: fixed;
     margin-left: 40px;
     width: 256px;
-    /* move TOC down 6em */
-    top: 6em;
+    /* move TOC down 8em */
+    top: 8em;
     max-height: 70%;
     overflow-y: auto;
     background: var(--translucent);

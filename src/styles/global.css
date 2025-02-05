@@ -10,7 +10,7 @@
 
 /* Define root variables */
 :root {
-    font-size: 18px;
+    font-size: 17px;
     --width: 800px;
     --default-font-family: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
     --chinese-font-family: 'HarmonyOS Sans SC', var(--default-font-family);
@@ -35,7 +35,7 @@ body {
     overflow-wrap: break-word;
     color: var(--gray-850);
     font-size: 1em;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 /* Main container styles */
