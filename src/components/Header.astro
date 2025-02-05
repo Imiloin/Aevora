@@ -33,10 +33,10 @@ import logoText from "@icons/logo-text.svg";
         <div class="icon-links">
             <a data-expand href="/search" aria-label="Search">
                 <svg
-                    viewBox="0 0 16 16"
+                    viewBox="0 0 18 18"
                     aria-hidden="true"
-                    width="24"
-                    height="24"
+                    height="1.1rem"
+                    class="icon-search"
                     ><path
                         fill="currentColor"
                         d="M12.7549 11.255H11.9649L11.6849 10.985C12.6649 9.845 13.2549 8.365 13.2549 6.755C13.2549 3.165 10.3449 0.255005 6.75488 0.255005C3.16488 0.255005 0.254883 3.165 0.254883 6.755C0.254883 10.345 3.16488 13.255 6.75488 13.255C8.36488 13.255 9.84488 12.665 10.9849 11.685L11.2549 11.965V12.755L16.2549 17.745L17.7449 16.255L12.7549 11.255ZM6.75488 11.255C4.26488 11.255 2.25488 9.245 2.25488 6.755C2.25488 4.26501 4.26488 2.255 6.75488 2.255C9.24488 2.255 11.2549 4.26501 11.2549 6.755C11.2549 9.245 9.24488 11.255 6.75488 11.255Z"
@@ -97,10 +97,9 @@ import logoText from "@icons/logo-text.svg";
 
     .icon-links,
     .icon-links a {
-        height: 1.1em;
         margin-right: 10%;
         color: var(--gray-850);
-        border-bottom: 4px solid transparent;
+        border-bottom: none;
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -108,6 +107,8 @@ import logoText from "@icons/logo-text.svg";
     .icon-links a:hover {
         animation: scale-up-dpwn 0.6s ease; /* Apply animation */
         color: var(--orange-neon);
+    }
+    .icon-search {
     }
     @keyframes scale-up-dpwn {
         0% {
