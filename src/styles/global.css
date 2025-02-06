@@ -159,7 +159,7 @@ article a {
 
 article a[href^="#"] {
     /* Internal link style */
-    box-shadow: 0px -1.5px 0px var(--gray-600) inset;
+    box-shadow: 0px -1.2px 0px var(--gray-600) inset;
     transition: all 0.2s ease;
 
     &:hover {
@@ -169,7 +169,7 @@ article a[href^="#"] {
 
 article a {
     /* External link style */
-    box-shadow: 0px -1.5px 0px var(--gray-600) inset;
+    box-shadow: 0px -1.2px 0px var(--gray-600) inset;
     transition: all 0.3s ease;
 
     &:hover {
