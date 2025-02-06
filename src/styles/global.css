@@ -34,17 +34,25 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     color: var(--gray-850);
-    font-size: 1em;
+    font-size: 1rem;
     line-height: 1.65;
 }
 
 /* Main container styles */
 main {
     width: var(--width);
-    max-width: calc(100% - 2em);
     margin: auto;
     /* 3em top for the hanging header */
     padding: 3em 1em 1em 1em;
+}
+
+.prose {
+    width: var(--width);
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 1em;
+    /* blog text color */
+    color: var(--text);
 }
 
 /* Heading styles */

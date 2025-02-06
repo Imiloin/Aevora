@@ -60,9 +60,8 @@ const hasToC = toc.length > 1;
         <BaseHead title={title} description={description} image={heroImage.src}/>
         <style>
             main {
+                /* to fully display heroimage which is wider than prose */
                 width: calc(100% - 2em);
-                max-width: 100%;
-                margin: 0;
             }
             .hero-image {
                 position: relative;
@@ -87,14 +86,6 @@ const hasToC = toc.length > 1;
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
-            }
-            .prose {
-                width: var(--width);
-                max-width: calc(100% - 2em);
-                margin: auto;
-                padding: 1em;
-                /* main text color */
-                color: var(--text);
             }
             .title {
                 text-align: center;
