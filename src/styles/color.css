@@ -11,6 +11,7 @@
     --gray-500: #CDCDCD;
     --gray-600: #A8A8A8;
     --gray-700: #747474;
+    --gray-750: #616161;
     --gray-800: #393939;
     --gray-825: #171717;
     --gray-850: #080808;
@@ -38,9 +39,11 @@
     --green-900: #193718;
     --blue-050: #F4FBFF;
     --blue-100: #E5F1FF;
+    --blue-150: #EFF2F7;
     --blue-200: #CBDCFF;
     --blue-300: #AFC1FF;
     --blue-400: #7989FF;
+    --blue-450: #3269D6;
     --blue-500: #3C46FF;
     --blue-600: #0000FF;
     --blue-700: #0404AC;
