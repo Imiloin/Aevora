@@ -46,6 +46,11 @@ export async function getStaticPaths() {
 <html lang="en">
     <head>
         <BaseHead title={title} description={description} />
+        <style define:vars={{ width }}>
+            main {
+                width: var(--width);
+            }
+        </style>
     </head>
     <body>
         <Header />
