@@ -64,6 +64,8 @@ h6 {
     font-weight: 600;
     color: var(--gray-850);
     line-height: 1.2;
+    /* Disable ligatures for headings */
+    font-variant-ligatures: none;
 }
 
 h1,
