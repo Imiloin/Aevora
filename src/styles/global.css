@@ -13,7 +13,6 @@
     font-size: 17px;
     --width: 800px;
     --default-font-family: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
-    --chinese-font-family: 'HarmonyOS Sans SC', var(--default-font-family);
     --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOS Sans SC', monospace;
     --code-font-family: 'Cascadia Code', var(--mono-font-family);
 }
@@ -62,7 +61,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: var(--chinese-font-family);
+    font-weight: 600;
     color: var(--gray-850);
     line-height: 1.2;
 }

@@ -13,8 +13,6 @@
 
 .chat-container h2 {
     font-size: 2.5em;
-    font-family: var(--chinese-font-family);
-    font-weight: 700;
     color: var(--white);
     margin-bottom: 20px;
 }
@@ -37,7 +35,7 @@
     display: inline-block;
     padding: calc(0.05 * var(--max-radius)) calc(0.1 * var(--max-radius));
     margin: 10px 0;
-    font-weight: bold;
+    font-weight: 600;
     max-width: 70%;
     transition: transform 0.3s ease;
 }

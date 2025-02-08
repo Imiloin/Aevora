@@ -40,7 +40,6 @@ export default defineEcConfig({
         },
         codeFontFamily: 'var(--code-font-family)',
         codeFontSize: '0.8rem',
-        uiFontFamily: 'var(--chinese-font-family)',
         // uiLineHeight: '1.5',
         uiPaddingBlock: '0.25rem',
     },

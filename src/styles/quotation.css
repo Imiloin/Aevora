@@ -27,19 +27,19 @@
 }
 
 .main-text {
-    font-size: 6rem;
-    font-weight: bold;
+    font-size: 5.5rem;
+    font-weight: 600;
     line-height: 1;
     margin: 0 10px;
     color: var(--blue);
 }
 
 .unselectable-spaces::before {
+    /* Prevent selection */
     content: " ";
     display: inline-block;
     width: 20vw;
     user-select: none;
-    /* Prevent selection */
 }
 
 .line {
@@ -61,11 +61,11 @@
     }
 
     .main-text {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .unselectable-spaces::before {
-        width: 0;
+        width: 10vw;
     }
 }
 
