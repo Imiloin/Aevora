@@ -263,7 +263,7 @@ This is [an example](http://example.com/"Title") inline link. (`<p>This is <a hr
 
 **您可以将常规括号内的 href 设置为文档内的某一个标题**，这将创建一个书签，允许您在单击后跳转到该部分。例如：
 
-<kbd>Command</kbd> (在 Windows 上：<kbd>Ctrl</kbd>) + 单击[此链接](#块元素)将跳转到标题 `块元素` 处。要查看如何编写，请移动光标或按住 <kbd>⌘</kbd> 键单击以将元素展开为 markdown 源代码。
+<kbd>Command</kbd> (在 Windows 上：<kbd>Ctrl</kbd>) + 单击[此链接](#块元素)将跳转到标题 `块元素` 处。要查看如何编写，请移动光标或按住 <kbd>Command</kbd> 键单击以将元素展开为 markdown 源代码。
 
 #### 参考链接
 
