@@ -289,12 +289,13 @@ li.task-list-item {
 li.task-list-item input[type="checkbox"] {
     float: left;
     margin-right: 7px;
-    margin-top: 0.65em;
+    --checkbox-margin-top: 0.56em;
+    margin-top: var(--checkbox-margin-top);
 
     @media (max-width: 636px) {
         margin-left: 5px;
         margin-right: 6px;
-        margin-top: 0.56em;
+        margin-top: calc(var(--checkbox-margin-top) * 0.9);
     }
 }
 
