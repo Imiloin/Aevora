@@ -49,7 +49,7 @@
 }
 
 /* Hide TOC on narrow screens */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
     .toc {
         display: none;
     }
