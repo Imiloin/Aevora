@@ -40,6 +40,7 @@ body {
 /* Main container styles */
 main {
     width: var(--width);
+    max-width: calc(100% - 2em);
     margin: auto;
     /* 3em top for the hanging header */
     padding: 3em 1em 1em 1em;
