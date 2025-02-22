@@ -445,20 +445,30 @@ mark {
 }
 
 /* Citation styles */
+.csl-bib-body {
+    /* citation list displayed as a table */
+    display: table;
+}
+
 .csl-entry {
-    display: flex;
-    align-items: flex-start;
-    /* Adjust spacing between entries */
-    margin-bottom: 0.5em;
+    display: table-row;
+    /* Ensure the entry takes the full width */
+    width: 100%;
 }
 
 .csl-left-margin {
-    flex-shrink: 0;
-    width: 2em;
+    display: table-cell;
+    text-align: right;
+    /* Add some space between number and text */
+    padding-right: 0.5em;
 }
 
 .csl-right-inline {
-    flex-grow: 1;
+    display: table-cell;
+    /* Adjust spacing between entries */
+    padding-bottom: 0.5em;
+    /* Allow the content to take the remaining space */
+    width: auto;
 }
 
 /* Footnote styles */
