@@ -89,7 +89,7 @@ The following projects and resources were referenced or borrowed from:
 - Typing effect: <https://codepen.io/bradtraversy/pen/jeNjwP>
 - Dynamic clock: <https://github.com/XengShi/materialYouNewTab>
 - Back to top component: <https://github.com/Spikeysanju/sanju.sh>
-- Button hover effect 1: <https://codepen.io/kathykato/pen/rZRaNe>
+- Button hover effect 1: <https://uiverse.io/cssbuttons-io/brown-otter-21>
 - Button hover effect 2: <https://codepen.io/aaroniker/pen/bGGVMbY>
 - Button hover effect 3: <https://codepen.io/glasha_ch/pen/pVjpVO>
 - Pagination: <https://github.com/zeon-studio/astroplate>
