@@ -223,5 +223,4 @@
     --external-link-color: rgba(255, 45, 85, 0.25);
 
     --shadow: 168, 168, 168;
-    --box-shadow: 0 8px 16px rgba(var(--shadow), 25%);
 }

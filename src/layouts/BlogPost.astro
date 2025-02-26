@@ -71,7 +71,6 @@ const hasToC = toc.length > 1;
                 display: block;
                 margin: 0 auto;
                 border-radius: 12px;
-                box-shadow: var(--box-shadow);
                 position: relative;
                 z-index: 1;
             }
@@ -80,7 +79,7 @@ const hasToC = toc.length > 1;
                 display: flex;
                 /* Place the shadow below the image */
                 z-index: -2;
-                filter: blur(12px) brightness(80%) opacity(0.8);
+                filter: blur(8px) brightness(50%) opacity(0.5);
                 /* Position the shadow absolutely */
                 position: absolute;
                 top: 0;
@@ -95,7 +94,7 @@ const hasToC = toc.length > 1;
                 font-size: 2.8em;
             }
             .date {
-                margin: 0.5em 0;
+                margin: 1em 0;
                 color: var(--gray);
             }
             .last-updated-on {
