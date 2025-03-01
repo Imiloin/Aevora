@@ -41,6 +41,7 @@ export default defineEcConfig({
         codeFontFamily: 'var(--code-font-family)',
         codeFontSize: '0.8rem',
         // uiLineHeight: '1.5',
+        uiFontFamily: 'var(--default-font-family)',
         uiPaddingBlock: '0.25rem',
     },
 })
