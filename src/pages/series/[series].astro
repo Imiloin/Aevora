@@ -1,6 +1,7 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
 import Footer from "@components/Footer.astro";
+import FormattedDate from "@components/FormattedDate.astro";
 import Header from "@components/Header.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
@@ -145,9 +146,7 @@ const width = blogConfig.general.width;
                         <div class="post-card-content">
                             <h2 class="post-card-title">{post.data.title}</h2>
                             <p class="post-card-date">
-                                {new Date(
-                                    post.data.pubDate,
-                                ).toLocaleDateString()}
+                                <FormattedDate date={post.data.pubDate} />
                             </p>
                             <p class="post-card-description">
                                 {post.data.description}
