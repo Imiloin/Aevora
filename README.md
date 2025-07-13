@@ -1,6 +1,6 @@
 # Aevora
 
-This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and supports Markdown and MDX for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/) (template only demo: [aevora.netlify.app](https://aevora.netlify.app/)).
+This is my personal blog website built with [Astro](https://astro.build/). It features a clean and modern design, and uses markdown for content creation. See the website live at [imiloin.netlify.app](https://imiloin.netlify.app/) (template only demo: [aevora.netlify.app](https://aevora.netlify.app/)).
 
 This repository holds the open-source codebase for my blog's structure and design. It includes all the necessary components, layouts, and configurations, excluding the blog post content itself, which is maintained in a separate, private repository.
 
@@ -25,13 +25,13 @@ In this Astro project, you will find the following folders and files:
 └── tsconfig.json
 ```
 
-Blog posts are stored as `.md` or `.mdx` files in the `src/content/blog/` directory.
+Blog posts are stored as `.md` files in the `src/content/blog/` directory.
 
 Any static assets, such as images, are located in the `public/` directory.
 
 ## Getting Started
 
-First, you need to have some prerequisites installed. Check [Astro Documentation](https://docs.astro.build/en/install-and-setup/#prerequisites) for more information.
+First, some prerequisites are required. Check [Astro Documentation](https://docs.astro.build/en/install-and-setup/#prerequisites) for more information.
 
 After that, clone this repository and run the following commands:
 

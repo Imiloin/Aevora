@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import astroExpressiveCode from 'astro-expressive-code';
 
@@ -18,7 +17,7 @@ import rehypeMathjax from 'rehype-mathjax';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://imiloin.netlify.app/',
-    integrations: [astroExpressiveCode(), mdx(), sitemap()],
+    integrations: [astroExpressiveCode(), sitemap()],
     markdown: {
         remarkPlugins: [
             processBibliographyPath,
