@@ -5,8 +5,12 @@ import Header from "@components/Header.astro";
 
 import "@styles/email-button.scss";
 
+import aboutConfig from "@configs/about.json";
+
 const title = "About";
-const description = "Learn more about Imiloin.";
+const description = `Learn more about ${aboutConfig.basic.name}.`;
+
+const { basic, links } = aboutConfig;
 ---
 
 <!doctype html>
@@ -95,9 +99,9 @@ const description = "Learn more about Imiloin.";
         <Header />
         <main>
             <div class="contact-section">
-                <h1>Curious mind, open heart.</h1>
-                <p>Imiloin &nbsp; | &nbsp; Undergraduate @SJTU</p>
-                <a href="mailto:twinite@proton.me" class="email-button button"
+                <h1>{basic.bio}</h1>
+                <p>{basic.name} &nbsp; | &nbsp; {basic.status}</p>
+                <a href={`mailto:${basic.email}`} class="email-button button"
                     >Email Me <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -115,9 +119,9 @@ const description = "Learn more about Imiloin.";
                 <nav>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Resume</a></li>
+                        <li><a href={links.resume}>Resume</a></li>
                         <li>
-                            <a href="https://github.com/Imiloin/">GitHub</a>
+                            <a href={links.github}>GitHub</a>
                         </li>
                     </ul>
                 </nav>
