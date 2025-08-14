@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && npx pagefind && rm -rf public/pagefind && cp -r dist/pagefind/ public/ && cp -r dist/_astro/ public/",
-    "clean": "rm -rf dist/* public/_astro/ public/pagefind/ && rm -f node_modules/.astro/data-store.json",
+    "clean": "rm -rf dist/* public/_astro/ public/pagefind/ && rm -f .astro/data-store.json node_modules/.astro/data-store.json",
     "preview": "astro preview",
     "astro": "astro"
   },
