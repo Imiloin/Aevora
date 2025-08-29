@@ -1,11 +1,11 @@
 {
-    "general": {
-        "title": "Blog",
-        "description": "Thoughts, stories, and ideas.",
-        "width": "960px"
-    },
-    "pagination": {
-        "postsPerPage": 6,
-        "firstPagePosts": 5
-    }
+  "general": {
+    "title": "Blog",
+    "description": "Thoughts, stories, and ideas.",
+    "width": "960px"
+  },
+  "pagination": {
+    "postsPerPage": 6,
+    "firstPagePosts": 5
+  }
 }
