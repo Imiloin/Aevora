@@ -35,6 +35,12 @@ body {
     color: var(--gray-850);
     font-size: 1rem;
     line-height: 1.65;
+    /* Enable Uncut Sans OpenType features:
+      ss02 (Alternate Y and y),
+      ss03 (Alternative Q, Ø, and ø),
+      ss08 (Alternate arrows)
+    */
+    font-feature-settings: "ss02" on, "ss03" on, "ss08" on;
 }
 
 /* Main container styles */
