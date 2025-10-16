@@ -1,0 +1,24 @@
+/* Print page styles */
+@page {
+    margin: 2em;
+    background: var(--background) !important;
+}
+
+@media print {
+
+    /* Hide header when printing */
+    #header {
+        display: none !important;
+    }
+
+    /* Replace box-shadow with border-bottom to avoid PDF rendering artifacts */
+    .prose a {
+        box-shadow: none !important;
+        border-bottom: 1.2px solid var(--gray-600);
+    }
+
+    /* Avoid "bold" math formulas in print */
+    mjx-container[jax="SVG"] :is(use[data-c], path[data-c]) {
+        stroke-width: 0 !important;
+    }
+}
