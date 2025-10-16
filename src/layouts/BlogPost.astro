@@ -59,10 +59,6 @@ const hasToC = toc.length > 1;
     <head>
         <BaseHead title={title} description={description} image={heroImage.src}/>
         <style>
-            main {
-                /* to fully display heroimage which is wider than prose */
-                width: calc(100% - 2em);
-            }
             .hero-image {
                 position: relative;
             }
@@ -86,12 +82,12 @@ const hasToC = toc.length > 1;
                 left: 50%;
                 transform: translateX(-50%);
             }
-            .title {
+            .article-header {
                 text-align: center;
                 line-height: 1;
-            }
-            .title .title-h1 {
-                font-size: 2.8em;
+                margin: 2em auto 0;
+                width: var(--width);
+                max-width: calc(100% - 2em);
             }
             .date {
                 margin: 1em 0;
@@ -138,17 +134,18 @@ const hasToC = toc.length > 1;
                         )
                     }
                 </div>
-                <div class="prose">
-                    <div class="title">
-                        <div class="date">
-                            <FormattedDate date={pubDate} />
-                        </div>
-                        <h1 class="title-h1">{title}</h1>
-                        <div style="text-align: center;">
-                            <SeriesLinks series={series} />
-                        </div>
-                        <hr />
+                <div class="article-header">
+                    <div class="date">
+                        <FormattedDate date={pubDate} />
                     </div>
+                    <h1 class="title-h1">{title}</h1>
+                    <div style="text-align: center;">
+                        <SeriesLinks series={series} />
+                    </div>
+                    <hr />
+                    <div style="height: 1em;"></div>
+                </div>
+                <div class="prose">
                     <slot />
                 </div>
             </article>

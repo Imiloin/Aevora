@@ -45,7 +45,8 @@ body {
 
 /* Main container styles */
 main {
-    width: var(--width);
+    /* to fully display heroimage which is wider than prose */
+    width: calc(100% - 2em);
     max-width: calc(100% - 2em);
     margin: auto;
     /* 3em top for the hanging header */
@@ -56,7 +57,6 @@ main {
     width: var(--width);
     max-width: calc(100% - 2em);
     margin: auto;
-    padding: 1em;
     /* blog text color */
     color: var(--text);
 }
@@ -110,7 +110,7 @@ h5 {
 .prose> :where(:not([style*="display: none"])):first-child:where(h1, h2, h3, h4, h5, h6),
 .prose>[style*="display: none"]~ :where(:not([style*="display: none"])):first-of-type:where(h1, h2, h3, h4, h5, h6) {
     /* Reset margin for first visible heading in prose */
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 .prose h2 {

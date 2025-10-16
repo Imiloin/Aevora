@@ -21,7 +21,9 @@ const { series } = Astro.props;
             <div class="series-links">
                 {series.map((entry: string, index: number) => (
                     <>
-                        <a href={`/series/${entry}`}>{entry}</a>
+                        <a class="series-link" href={`/series/${entry}`}>
+                            {entry}
+                        </a>
                         {index < series.length - 1 && (
                             <span class="separator">/</span>
                         )}
@@ -53,7 +55,7 @@ const { series } = Astro.props;
         color: var(--white);
     }
 
-    a {
+    .series-link {
         color: var(--white);
         text-decoration: none;
         padding: 0.25rem;

@@ -24,6 +24,11 @@ const description = "Search for posts on this site.";
             scrollbar-gutter: stable; /* Prevent page jitter when scrollbar disappears */
             overflow-y: scroll; /* Always show scrollbar */
         }
+        .search-bar {
+            width: var(--width);
+            max-width: calc(100% - 2em);
+            margin: 2em auto;
+        }
     </style>
 
     <BaseHead title={title} description={description} />
@@ -31,7 +36,9 @@ const description = "Search for posts on this site.";
     <body>
         <Header />
         <main>
-            <SearchBar />
+            <div class="search-bar">
+                <SearchBar />
+            </div>
         </main>
         <Footer />
     </body>
