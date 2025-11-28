@@ -113,7 +113,7 @@ import aboutConfig from "@configs/about.json";
         </text>
     </svg>
 
-    <span class="license-card__content">
+    <div class="license-card__content">
         <p class="license-card__title">
             {title}
         </p>
@@ -165,15 +165,16 @@ import aboutConfig from "@configs/about.json";
                     <a
                         href={currentPageUrl}
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         {currentPageUrl}
                     </a>
                 ) : (
                     <span class="license-card__value">Current page</span>
                 )
-            }   
+            }
             </span>
         </p>
-    </span>
+    </div>
 
 </section>
