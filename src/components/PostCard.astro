@@ -1,117 +1,105 @@
 ---
-import FormattedDate from "@components/FormattedDate.astro";
-import { Image } from "astro:assets";
+import FormattedDate from '@components/FormattedDate.astro';
+import { Image } from 'astro:assets';
 
 const { post, isFirstChild } = Astro.props;
 ---
 
-<li class={isFirstChild ? "first-child" : ""}>
-    <a href={`/blog/${post.id}/`}>
-        <Image
-            width={720}
-            height={360}
-            src={post.data.heroImage}
-            alt=""
-            class="card shadow"
-        />
-        <Image
-            width={720}
-            height={360}
-            src={post.data.heroImage}
-            alt=""
-            class="card"
-        />
-        <h5 class="title">{post.data.title}</h5>
-        <p class="date">
-            <FormattedDate date={post.data.pubDate} />
-        </p>
-    </a>
+<li class={isFirstChild ? 'first-child' : ''}>
+  <a href={`/blog/${post.id}/`}>
+    <Image width={720} height={360} src={post.data.heroImage} alt="" class="card shadow" />
+    <Image width={720} height={360} src={post.data.heroImage} alt="" class="card" />
+    <h5 class="title">{post.data.title}</h5>
+    <p class="date">
+      <FormattedDate date={post.data.pubDate} />
+    </p>
+  </a>
 </li>
 
 <style>
+  li {
+    width: calc(50% - 1rem);
+    position: relative;
+  }
+  li * {
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  li.first-child {
+    width: 75%;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  li.first-child img {
+    box-shadow: 0 4px 8px rgba(var(--shadow), 25%);
+  }
+  li.first-child .title {
+    font-size: 1.728em;
+  }
+  li img {
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(var(--shadow), 50%);
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: none;
+    }
+  }
+  li a {
+    display: block;
+  }
+  li .title {
+    margin: 0;
+    color: var(--gray-850);
+    line-height: 1.2;
+    font-size: 1.3em;
+  }
+  .date {
+    margin: 0;
+    color: var(--gray);
+  }
+  li a:hover h5,
+  li a:hover .date {
+    color: var(--accent);
+  }
+  li.first-child img.shadow {
+    position: absolute;
+  }
+  li img.shadow {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    z-index: -2;
+  }
+  li a:hover img.shadow {
+    content: '';
+    background: inherit;
+    filter: blur(20px) brightness(80%) opacity(0.8);
+  }
+  @media (max-width: 720px) {
     li {
-        width: calc(50% - 1rem);
-        position: relative;
-    }
-    li * {
-        text-decoration: none;
-        transition: 0.2s ease;
-    }
-    li.first-child {
-        width: 75%;
-        margin-bottom: 1rem;
-        text-align: center;
-        position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    li.first-child img {
-        box-shadow: 0 4px 8px rgba(var(--shadow), 25%);
-    }
-    li.first-child .title {
-        font-size: 1.728em;
-    }
-    li img {
-        margin-bottom: 0.5rem;
-        border-radius: 12px;
-        box-shadow: 0 0 8px rgba(var(--shadow), 50%);
-        &:hover {
-            transform: scale(1.02);
-            box-shadow: none;
-        }
-    }
-    li a {
-        display: block;
+      width: 75%;
+      text-align: center;
+      left: calc((100% - 75%) / 2);
     }
     li .title {
-        margin: 0;
-        color: var(--gray-850);
-        line-height: 1.2;
-        font-size: 1.3em;
+      font-size: 1.2em;
     }
-    .date {
-        margin: 0;
-        color: var(--gray);
+    li.first-child {
+      margin-bottom: 0;
+      left: 0;
     }
-    li a:hover h5,
-    li a:hover .date {
-        color: var(--accent);
+    li.first-child .title {
+      font-size: 1.4em;
+    }
+    li.first-child img {
+      width: 100%;
     }
     li.first-child img.shadow {
-        position: absolute;
+      left: 0;
     }
-    li img.shadow {
-        position: absolute;
-        overflow: hidden;
-        display: flex;
-        z-index: -2;
-    }
-    li a:hover img.shadow {
-        content: "";
-        background: inherit;
-        filter: blur(20px) brightness(80%) opacity(0.8);
-    }
-    @media (max-width: 720px) {
-        li {
-            width: 75%;
-            text-align: center;
-            left: calc((100% - 75%) / 2);
-        }
-        li .title {
-            font-size: 1.2em;
-        }
-        li.first-child {
-            margin-bottom: 0;
-            left: 0;
-        }
-        li.first-child .title {
-            font-size: 1.4em;
-        }
-        li.first-child img {
-            width: 100%;
-        }
-        li.first-child img.shadow {
-            left: 0;
-        }
-    }
+  }
 </style>

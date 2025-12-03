@@ -1,45 +1,45 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
-import SearchBar from "@components/SearchBar.astro";
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import SearchBar from '@components/SearchBar.astro';
 
-const title = "Search";
-const description = "Search for posts on this site.";
+const title = 'Search';
+const description = 'Search for posts on this site.';
 ---
 
 <!doctype html>
 <html lang="en">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: calc(100vh - 4em);
-        }
-        main {
-            /* flex: 1 makes the main element take up the remaining space */
-            flex: 1;
-        }
-        html {
-            scrollbar-gutter: stable; /* Prevent page jitter when scrollbar disappears */
-            overflow-y: scroll; /* Always show scrollbar */
-        }
-        .search-bar {
-            width: var(--width);
-            max-width: calc(100% - 2em);
-            margin: 2em auto;
-        }
-    </style>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 4em);
+    }
+    main {
+      /* flex: 1 makes the main element take up the remaining space */
+      flex: 1;
+    }
+    html {
+      scrollbar-gutter: stable; /* Prevent page jitter when scrollbar disappears */
+      overflow-y: scroll; /* Always show scrollbar */
+    }
+    .search-bar {
+      width: var(--width);
+      max-width: calc(100% - 2em);
+      margin: 2em auto;
+    }
+  </style>
 
-    <BaseHead title={title} description={description} />
+  <BaseHead title={title} description={description} />
 
-    <body>
-        <Header />
-        <main>
-            <div class="search-bar">
-                <SearchBar />
-            </div>
-        </main>
-        <Footer />
-    </body>
+  <body>
+    <Header />
+    <main>
+      <div class="search-bar">
+        <SearchBar />
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>

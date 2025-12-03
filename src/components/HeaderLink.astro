@@ -1,53 +1,48 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types';
 
-type Props = HTMLAttributes<"a">;
+type Props = HTMLAttributes<'a'>;
 
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
 const subpath = pathname.match(/[^\/]+/g);
-const isActive = href === pathname || href === "/" + subpath?.[0];
+const isActive = href === pathname || href === '/' + subpath?.[0];
 ---
 
-<a
-    data-expand
-    href={href}
-    class:list={[className, { active: isActive }]}
-    {...props}
->
-    <slot />
+<a data-expand href={href} class:list={[className, { active: isActive }]} {...props}>
+  <slot />
 </a>
 <style>
-    a {
-        box-shadow: none !important;
-        padding: 1em 1em;
-        -webkit-align-items: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        background-color: var(--systemGray-6);
-        border-radius: 200px;
-        box-sizing: border-box;
-        color: var(--gray-850);
-        display: inline-flex;
-        height: 1.2em;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        outline: none;
-        text-align: center;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        white-space: nowrap;
-        --hover-color: var(--orange-neon);
-    }
-    a:hover {
-        color: var(--hover-color);
-    }
-    a.active {
-        color: var(--white);
-        background-color: var(--hover-color);
-    }
+  a {
+    box-shadow: none !important;
+    padding: 1em 1em;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: var(--systemGray-6);
+    border-radius: 200px;
+    box-sizing: border-box;
+    color: var(--gray-850);
+    display: inline-flex;
+    height: 1.2em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    outline: none;
+    text-align: center;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    white-space: nowrap;
+    --hover-color: var(--orange-neon);
+  }
+  a:hover {
+    color: var(--hover-color);
+  }
+  a.active {
+    color: var(--white);
+    background-color: var(--hover-color);
+  }
 </style>

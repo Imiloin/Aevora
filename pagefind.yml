@@ -1,6 +1,6 @@
 # pagefind.yml
 site: dist
 output_subdir: pagefind
-glob: "**/*.{html}"
+glob: '**/*.{html}'
 exclude_selectors:
   - "[style*='display: none']" # Exclude elements with display: none

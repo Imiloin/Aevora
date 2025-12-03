@@ -1,13 +1,12 @@
 ---
-import PostCard from "@components/PostCard.astro";
-import blogConfig from "@configs/blog.json";
+import PostCard from '@components/PostCard.astro';
+import blogConfig from '@configs/blog.json';
 
 const { posts, currentPage = 1, totalPages = 1 } = Astro.props;
 
 const postsPerPage = blogConfig.pagination.postsPerPage;
 const firstPagePosts = blogConfig.pagination.firstPagePosts;
-const start =
-    currentPage === 1 ? 0 : firstPagePosts + (currentPage - 2) * postsPerPage;
+const start = currentPage === 1 ? 0 : firstPagePosts + (currentPage - 2) * postsPerPage;
 const end = currentPage === 1 ? firstPagePosts : start + postsPerPage;
 const paginatedPosts = posts.slice(start, end);
 
@@ -17,207 +16,162 @@ const hasNextPage = totalPages > currentPage;
 
 let pageList: (number | string)[] = [];
 for (let i = 1; i <= totalPages; i++) {
-    if (
-        i === 1 ||
-        i === totalPages ||
-        (i >= currentPage - 2 && i <= currentPage + 2)
-    ) {
-        pageList.push(i);
-    } else if (i === currentPage - 3 || i === currentPage + 3) {
-        pageList.push("...");
-    }
+  if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+    pageList.push(i);
+  } else if (i === currentPage - 3 || i === currentPage + 3) {
+    pageList.push('...');
+  }
 }
 ---
 
 <style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  @media (max-width: 720px) {
     ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+      gap: 0.5em;
     }
-    @media (max-width: 720px) {
-        ul {
-            gap: 0.5em;
-        }
-    }
+  }
 
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 2em;
-        gap: 0.5em;
-    }
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border-width: 0;
-    }
-    .arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0.25em;
-        padding: 0.375em 0.5em;
-        color: var(--text);
-    }
-    .arrow.inactive {
-        color: var(--gray-400);
-    }
-    .arrow.active:hover {
-        background-color: var(--gray-400);
-    }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+    gap: 0.5em;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    padding: 0.375em 0.5em;
+    color: var(--text);
+  }
+  .arrow.inactive {
+    color: var(--gray-400);
+  }
+  .arrow.active:hover {
+    background-color: var(--gray-400);
+  }
 
-    .index {
-        border-radius: 0.25em;
-        padding: 0.5em 1em;
-        text-decoration: none;
-    }
-    .index.index-dots {
-        cursor: default;
-    }
-    .index.index-current {
-        background-color: var(--gray-850);
-        color: var(--white);
-    }
-    .index.index-other {
-        color: var(--text);
-    }
-    .index.index-other:hover {
-        background-color: var(--gray-400);
-    }
+  .index {
+    border-radius: 0.25em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+  }
+  .index.index-dots {
+    cursor: default;
+  }
+  .index.index-current {
+    background-color: var(--gray-850);
+    color: var(--white);
+  }
+  .index.index-other {
+    color: var(--text);
+  }
+  .index.index-other:hover {
+    background-color: var(--gray-400);
+  }
 </style>
 
 <section>
-    <ul>
-        {
-            paginatedPosts.map((post, index) => (
-                <PostCard
-                    post={post}
-                    isFirstChild={currentPage === 1 && index === 0}
-                />
-            ))
-        }
-    </ul>
+  <ul>
     {
-        totalPages > 1 && (
-            <nav aria-label="Pagination">
-                {/* previous */}
-                {hasPrevPage ? (
-                    <a
-                        href={
-                            indexPageLink
-                                ? `/blog`
-                                : `/blog/page/${currentPage - 1}`
-                        }
-                        class="arrow active"
-                    >
-                        <span class="sr-only">Previous</span>
-                        <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            height="30"
-                            width="30"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                    </a>
-                ) : (
-                    <span class="arrow inactive">
-                        <span class="sr-only">Previous</span>
-                        <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            height="30"
-                            width="30"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                    </span>
-                )}
-
-                {/* page index */}
-                {pageList.map((pagination, index) =>
-                    pagination === "..." ? (
-                        <span class="index index-dots">{pagination}</span>
-                    ) : pagination === currentPage ? (
-                        <span aria-current="page" class="index index-current">
-                            {pagination}
-                        </span>
-                    ) : (
-                        <a
-                            href={
-                                pagination === 1
-                                    ? `/blog`
-                                    : `/blog/page/${pagination}`
-                            }
-                            aria-current="page"
-                            class="index index-other"
-                        >
-                            {pagination}
-                        </a>
-                    ),
-                )}
-
-                {/* next page */}
-                {hasNextPage ? (
-                    <a
-                        href={`/blog/page/${currentPage + 1}`}
-                        class="arrow active"
-                    >
-                        <span class="sr-only">Next</span>
-                        <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            height="30"
-                            width="30"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                    </a>
-                ) : (
-                    <span class="arrow inactive">
-                        <span class="sr-only">Next</span>
-                        <svg
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            height="30"
-                            width="30"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"
-                            />
-                        </svg>
-                    </span>
-                )}
-            </nav>
-        )
+      paginatedPosts.map((post, index) => (
+        <PostCard post={post} isFirstChild={currentPage === 1 && index === 0} />
+      ))
     }
+  </ul>
+  {
+    totalPages > 1 && (
+      <nav aria-label="Pagination">
+        {/* previous */}
+        {hasPrevPage ? (
+          <a href={indexPageLink ? `/blog` : `/blog/page/${currentPage - 1}`} class="arrow active">
+            <span class="sr-only">Previous</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        ) : (
+          <span class="arrow inactive">
+            <span class="sr-only">Previous</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+        )}
+
+        {/* page index */}
+        {pageList.map((pagination, index) =>
+          pagination === '...' ? (
+            <span class="index index-dots">{pagination}</span>
+          ) : pagination === currentPage ? (
+            <span aria-current="page" class="index index-current">
+              {pagination}
+            </span>
+          ) : (
+            <a
+              href={pagination === 1 ? `/blog` : `/blog/page/${pagination}`}
+              aria-current="page"
+              class="index index-other"
+            >
+              {pagination}
+            </a>
+          )
+        )}
+
+        {/* next page */}
+        {hasNextPage ? (
+          <a href={`/blog/page/${currentPage + 1}`} class="arrow active">
+            <span class="sr-only">Next</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        ) : (
+          <span class="arrow inactive">
+            <span class="sr-only">Next</span>
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
+              <path
+                fill-rule="evenodd"
+                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </span>
+        )}
+      </nav>
+    )
+  }
 </section>

@@ -1,66 +1,66 @@
 button {
-    --background: var(--gray-850);
-    --font-size: 1em;
-    --duration: 0.44s;
-    --shadow-hover: 0 0 10px 1px var(--gray-850);
-    --font-shadow: var(--font-size);
-    padding: 16px 32px;
-    font-weight: 500;
-    line-height: var(--font-size);
-    border-radius: 24px;
-    display: block;
-    outline: none;
-    appearance: none;
-    border: none;
-    text-decoration: none;
-    font-size: var(--font-size);
-    letter-spacing: 0.5px;
-    background: var(--background);
-    color: var(--white);
-    transform: translateY(var(--y)) translateZ(0);
-    transition:
-        transform var(--duration) ease,
-        box-shadow var(--duration) ease;
-    cursor: pointer;
+  --background: var(--gray-850);
+  --font-size: 1em;
+  --duration: 0.44s;
+  --shadow-hover: 0 0 10px 1px var(--gray-850);
+  --font-shadow: var(--font-size);
+  padding: 16px 32px;
+  font-weight: 500;
+  line-height: var(--font-size);
+  border-radius: 24px;
+  display: block;
+  outline: none;
+  appearance: none;
+  border: none;
+  text-decoration: none;
+  font-size: var(--font-size);
+  letter-spacing: 0.5px;
+  background: var(--background);
+  color: var(--white);
+  transform: translateY(var(--y)) translateZ(0);
+  transition:
+    transform var(--duration) ease,
+    box-shadow var(--duration) ease;
+  cursor: pointer;
 
-    div {
-        display: flex;
-        overflow: hidden;
-        text-shadow: 0 var(--font-shadow) 0 var(--white);
+  div {
+    display: flex;
+    overflow: hidden;
+    text-shadow: 0 var(--font-shadow) 0 var(--white);
 
-        span {
-            display: block;
-            backface-visibility: hidden;
-            font-style: normal;
-            transition: transform var(--duration) ease;
-            transform: translateY(var(--m)) translateZ(0);
-            $i: 1;
+    span {
+      display: block;
+      backface-visibility: hidden;
+      font-style: normal;
+      transition: transform var(--duration) ease;
+      transform: translateY(var(--m)) translateZ(0);
+      $i: 1;
 
-            @while $i < 15 {
-                &:nth-child(#{$i}) {
-                    transition-delay: calc($i / 20) + s;
-                }
-
-                $i: $i + 1;
-            }
+      @while $i < 15 {
+        &:nth-child(#{$i}) {
+          transition-delay: calc($i / 20) + s;
         }
+
+        $i: $i + 1;
+      }
     }
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-hover);
+
+    span {
+      --m: calc(var(--font-size) * -1);
+    }
+  }
+
+  &.reverse {
+    --font-shadow: calc(var(--font-size) * -1);
 
     &:hover {
-        box-shadow: var(--shadow-hover);
-
-        span {
-            --m: calc(var(--font-size) * -1);
-        }
+      span {
+        --m: calc(var(--font-size));
+      }
     }
-
-    &.reverse {
-        --font-shadow: calc(var(--font-size) * -1);
-
-        &:hover {
-            span {
-                --m: calc(var(--font-size));
-            }
-        }
-    }
+  }
 }

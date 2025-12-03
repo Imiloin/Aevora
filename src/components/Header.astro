@@ -1,187 +1,180 @@
 ---
-import HeaderLink from "@components/HeaderLink.astro";
+import HeaderLink from '@components/HeaderLink.astro';
 
-import logoBadge from "@icons/logo-badge.svg";
-import logoText from "@icons/logo-text.svg";
+import logoBadge from '@icons/logo-badge.svg';
+import logoText from '@icons/logo-text.svg';
 ---
 
 <header id="header">
-    <nav>
-        <div class="title">
-            <a data-expand href="/" aria-label="Return to Home">
-                <img
-                    src={logoBadge.src}
-                    height="1.1rem"
-                    alt="logo-badge"
-                    aria-label="logo-badge"
-                    class="logo-badge"
-                />
-                <img
-                    src={logoText.src}
-                    height="1.1rem"
-                    alt="logo-text"
-                    aria-label="Logo-text"
-                    class="logo-text"
-                />
-            </a>
-        </div>
-        <div class="nav-links">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
-        </div>
-        <div class="icon-links">
-            <a data-expand href="/search" aria-label="Search">
-                <svg
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    aria-hidden="true"
-                    height="1.1rem"
-                    class="icon-search"
-                    ><path
-                        d="M13.8333 13.8333L10.7022 10.7022M10.7022 10.7022C11.607 9.79738 12.1667 8.54738 12.1667 7.16667C12.1667 4.40525 9.9281 2.16667 7.16667 2.16667C4.40525 2.16667 2.16667 4.40525 2.16667 7.16667C2.16667 9.9281 4.40525 12.1667 7.16667 12.1667C8.54738 12.1667 9.79738 11.607 10.7022 10.7022Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                    </path>
-                </svg>
-            </a>
-        </div>
-    </nav>
+  <nav>
+    <div class="title">
+      <a data-expand href="/" aria-label="Return to Home">
+        <img
+          src={logoBadge.src}
+          height="1.1rem"
+          alt="logo-badge"
+          aria-label="logo-badge"
+          class="logo-badge"
+        />
+        <img
+          src={logoText.src}
+          height="1.1rem"
+          alt="logo-text"
+          aria-label="Logo-text"
+          class="logo-text"
+        />
+      </a>
+    </div>
+    <div class="nav-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+    <div class="icon-links">
+      <a data-expand href="/search" aria-label="Search">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" height="1.1rem" class="icon-search"
+          ><path
+            d="M13.8333 13.8333L10.7022 10.7022M10.7022 10.7022C11.607 9.79738 12.1667 8.54738 12.1667 7.16667C12.1667 4.40525 9.9281 2.16667 7.16667 2.16667C4.40525 2.16667 2.16667 4.40525 2.16667 7.16667C2.16667 9.9281 4.40525 12.1667 7.16667 12.1667C8.54738 12.1667 9.79738 11.607 10.7022 10.7022Z"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+          </path>
+        </svg>
+      </a>
+    </div>
+  </nav>
 </header>
 <style>
-    header {
-        margin: 0;
-        padding: 1em 1em;
-        background: var(--translucent); /* Translucent background */
-        position: fixed; /* Fixed at the top of the page */
-        max-width: calc(100vw - 2em);
-        top: 0;
-        left: 0;
-        width: 100vw;
-        transition: transform 0.3s ease; /* Add transition effect */
-        z-index: 998; /* Ensure header is on top, just below the cursor layer */
-        backdrop-filter: blur(10px); /* Frosted glass effect */
-        -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
-    }
+  header {
+    margin: 0;
+    padding: 1em 1em;
+    background: var(--translucent); /* Translucent background */
+    position: fixed; /* Fixed at the top of the page */
+    max-width: calc(100vw - 2em);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transition: transform 0.3s ease; /* Add transition effect */
+    z-index: 998; /* Ensure header is on top, just below the cursor layer */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  }
 
+  .title {
+    margin-left: 10%;
+  }
+  .title a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 14px;
+  }
+  .logo-badge,
+  .logo-text {
+    border-radius: 0;
+    height: 1.1rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Add position: relative; */
+  }
+
+  .nav-links {
+    font-size: 0.9em;
+    display: flex;
+    margin: 0 auto; /* Center the links */
+    position: absolute;
+    left: 50%; /* Move the left boundary to the center of the page */
+    transform: translateX(-50%); /* Move the element itself 50% to the left */
+  }
+
+  .icon-links,
+  .icon-links a {
+    margin-right: 10%;
+    color: var(--gray-850);
+    border-bottom: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .icon-links a:hover {
+    animation: scale-up-dpwn 0.6s ease; /* Apply animation */
+    color: var(--orange-neon);
+  }
+  .icon-search {
+  }
+  @keyframes scale-up-dpwn {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 1000px) {
     .title {
-        margin-left: 10%;
+      margin-left: 1rem;
     }
-    .title a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        gap: 14px;
+    .icon-links {
+      margin-right: 1rem;
     }
-    .logo-badge,
+  }
+  @media (max-width: 720px) {
+    .title {
+      scale: 0.8;
+      margin-left: 0rem;
+    }
+    .icon-links {
+      scale: 0.8;
+      margin-right: 0rem;
+    }
+  }
+  @media (max-width: 636px) {
     .logo-text {
-        border-radius: 0;
-        height: 1.1rem;
+      display: none;
     }
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: relative; /* Add position: relative; */
-    }
-
-    .nav-links {
-        font-size: 0.9em;
-        display: flex;
-        margin: 0 auto; /* Center the links */
-        position: absolute;
-        left: 50%; /* Move the left boundary to the center of the page */
-        transform: translateX(
-            -50%
-        ); /* Move the element itself 50% to the left */
-    }
-
-    .icon-links,
-    .icon-links a {
-        margin-right: 10%;
-        color: var(--gray-850);
-        border-bottom: none;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-    }
-    .icon-links a:hover {
-        animation: scale-up-dpwn 0.6s ease; /* Apply animation */
-        color: var(--orange-neon);
-    }
-    .icon-search {
-    }
-    @keyframes scale-up-dpwn {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .title {
-            margin-left: 1rem;
-        }
-        .icon-links {
-            margin-right: 1rem;
-        }
-    }
-    @media (max-width: 720px) {
-        .title {
-            scale: 0.8;
-            margin-left: 0rem;
-        }
-        .icon-links {
-            scale: 0.8;
-            margin-right: 0rem;
-        }
-    }
-    @media (max-width: 636px) {
-        .logo-text {
-            display: none;
-        }
-    }
+  }
 </style>
 
 <script>
-    const header = document.getElementById("header");
+  const header = document.getElementById('header');
 
-    /* Hide or show the header when scrolling the page */
-    let lastScrollTop = 0;
-    let isTOCClick = false;
+  /* Hide or show the header when scrolling the page */
+  let lastScrollTop = 0;
+  let isTOCClick = false;
 
-    // Listen for scroll events
-    window.addEventListener("scroll", function () {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        if (header && !isTOCClick) {
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                header.style.transform = "translateY(-100%)";
-            } else {
-                // Scrolling up
-                header.style.transform = "translateY(0)";
-            }
-        }
-        lastScrollTop = scrollTop;
-        isTOCClick = false; // Reset TOC click status
-    });
+  // Listen for scroll events
+  window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (header && !isTOCClick) {
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up
+        header.style.transform = 'translateY(0)';
+      }
+    }
+    lastScrollTop = scrollTop;
+    isTOCClick = false; // Reset TOC click status
+  });
 
-    // Listen for click events on in-page links
-    document.querySelectorAll('a[href*="#"]').forEach((link) => {
-        if (header) {
-            link.addEventListener("click", () => {
-                isTOCClick = true;
-                header.style.transform = "translateY(-100%)";
-            });
-        }
-    });
+  // Listen for click events on in-page links
+  document.querySelectorAll('a[href*="#"]').forEach((link) => {
+    if (header) {
+      link.addEventListener('click', () => {
+        isTOCClick = true;
+        header.style.transform = 'translateY(-100%)';
+      });
+    }
+  });
 </script>

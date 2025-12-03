@@ -1,87 +1,87 @@
 #clock {
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  position: relative;
 }
 
 #clock svg {
-    position: absolute;
-    animation: clockAnm 1s;
+  position: absolute;
+  animation: clockAnm 1s;
 }
 
 @keyframes clockAnm {
-    from {
-        transform: rotate(40deg);
-    }
+  from {
+    transform: rotate(40deg);
+  }
 
-    to {
-        transform: rotate(0deg);
-    }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .clock .centerPoint {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .clock .centerPoint .sui {
-    position: absolute;
-    width: 20px;
-    height: 100px;
-    background-color: var(--gray-700);
-    top: -90px;
-    transform-origin: bottom;
-    border-radius: 10px;
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background-color: var(--gray-700);
+  top: -90px;
+  transform-origin: bottom;
+  border-radius: 10px;
 }
 
 #hour {
-    height: 80px;
-    top: -70px;
-    background-color: var(--gray-800);
-    transform: rotate(90deg);
+  height: 80px;
+  top: -70px;
+  background-color: var(--gray-800);
+  transform: rotate(90deg);
 }
 
 #hour::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 30px;
-    background-color: var(--gray-800);
-    bottom: -10px;
-    border-radius: 100px;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background-color: var(--gray-800);
+  bottom: -10px;
+  border-radius: 100px;
 }
 
 #minute {
-    z-index: 9 !important;
+  z-index: 9 !important;
 }
 
 #minute::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 30px;
-    background-color: var(--gray-700);
-    bottom: -10px;
-    border-radius: 100px;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background-color: var(--gray-700);
+  bottom: -10px;
+  border-radius: 100px;
 }
 
 #second {
-    background-color: #00000000;
+  background-color: #00000000;
 }
 
 #second::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: var(--gray-600);
-    top: -28px;
-    border-radius: 100%;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--gray-600);
+  top: -28px;
+  border-radius: 100%;
 }

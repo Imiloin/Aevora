@@ -1,13 +1,13 @@
 ---
-import BaseHead from "@components/BaseHead.astro";
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
 
-import "@styles/email-button.scss";
+import '@styles/email-button.scss';
 
-import aboutConfig from "@configs/about.json";
+import aboutConfig from '@configs/about.json';
 
-const title = "About";
+const title = 'About';
 const description = `Learn more about ${aboutConfig.basic.name}.`;
 
 const { basic, links } = aboutConfig;
@@ -15,118 +15,116 @@ const { basic, links } = aboutConfig;
 
 <!doctype html>
 <html lang="en">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: calc(100vh - 4em);
-        }
-        main {
-            display: flex;
-            /* flex: 1 makes the main element take up the remaining space */
-            flex: 1;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 4em);
+    }
+    main {
+      display: flex;
+      /* flex: 1 makes the main element take up the remaining space */
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
-        .contact-section {
-            background-color: var(--gray-825);
-            width: var(--width);
-            max-width: calc(100vw - 100px - 8em);
-            color: var(--white);
-            text-align: center;
-            padding: 50px;
-            border-radius: 50px;
-        }
+    .contact-section {
+      background-color: var(--gray-825);
+      width: var(--width);
+      max-width: calc(100vw - 100px - 8em);
+      color: var(--white);
+      text-align: center;
+      padding: 50px;
+      border-radius: 50px;
+    }
 
-        .contact-section h1 {
-            color: var(--white);
-            font-size: 2.5em;
-        }
+    .contact-section h1 {
+      color: var(--white);
+      font-size: 2.5em;
+    }
 
-        .contact-section p {
-            font-size: 1.2em;
-        }
+    .contact-section p {
+      font-size: 1.2em;
+    }
 
-        .email-button {
-            background-color: var(--white);
-            color: var(--gray-850);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            text-decoration: none;
-            margin: 1em 0;
-            display: inline-flex;
-            align-items: center;
-        }
-        .email-button svg {
-            margin-left: 10px;
-            width: 1em;
-            height: 1em;
-        }
+    .email-button {
+      background-color: var(--white);
+      color: var(--gray-850);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 1em 0;
+      display: inline-flex;
+      align-items: center;
+    }
+    .email-button svg {
+      margin-left: 10px;
+      width: 1em;
+      height: 1em;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
 
-        nav ul li a {
-            color: var(--white);
-            text-decoration: none;
-        }
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
+    }
 
-        @media (max-width: 720px) {
-            .contact-section {
-                max-width: calc(100% - 4em);
-                padding: 20px;
-                border-radius: 40px;
-            }
-        }
-        @media (max-width: 636px) {
-            .contact-section p {
-                font-size: 1em;
-            }
-        }
-    </style>
-    <BaseHead title={title} description={description} />
-    <body>
-        <Header />
-        <main>
-            <div class="contact-section">
-                <h1>{basic.bio}</h1>
-                <p>{basic.name} &nbsp; | &nbsp; {basic.status}</p>
-                <a href={`mailto:${basic.email}`} class="email-button button"
-                    >Email Me <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path
-                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                        ></path><polyline points="22,6 12,13 2,6"
-                        ></polyline></svg
-                    ></a
-                >
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href={links.resume}>Resume</a></li>
-                        <li>
-                            <a href={links.github}>GitHub</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </main>
-        <Footer width="900px" />
-    </body>
+    @media (max-width: 720px) {
+      .contact-section {
+        max-width: calc(100% - 4em);
+        padding: 20px;
+        border-radius: 40px;
+      }
+    }
+    @media (max-width: 636px) {
+      .contact-section p {
+        font-size: 1em;
+      }
+    }
+  </style>
+  <BaseHead title={title} description={description} />
+  <body>
+    <Header />
+    <main>
+      <div class="contact-section">
+        <h1>{basic.bio}</h1>
+        <p>{basic.name} &nbsp; | &nbsp; {basic.status}</p>
+        <a href={`mailto:${basic.email}`} class="email-button button"
+          >Email Me <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+          ></a
+        >
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href={links.resume}>Resume</a></li>
+            <li>
+              <a href={links.github}>GitHub</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+    <Footer width="900px" />
+  </body>
 </html>

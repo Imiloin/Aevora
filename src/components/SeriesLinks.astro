@@ -3,74 +3,72 @@ const { series } = Astro.props;
 ---
 
 {
-    series && series.length > 0 && (
-        <div class="series">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-            </svg>
-            <div class="series-links">
-                {series.map((entry: string, index: number) => (
-                    <>
-                        <a class="series-link" href={`/series/${entry}`}>
-                            {entry}
-                        </a>
-                        {index < series.length - 1 && (
-                            <span class="separator">/</span>
-                        )}
-                    </>
-                ))}
-            </div>
-        </div>
-    )
+  series && series.length > 0 && (
+    <div class="series">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+      </svg>
+      <div class="series-links">
+        {series.map((entry: string, index: number) => (
+          <>
+            <a class="series-link" href={`/series/${entry}`}>
+              {entry}
+            </a>
+            {index < series.length - 1 && <span class="separator">/</span>}
+          </>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 <style>
-    .series {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        margin: 0.5rem 0 1.5rem 0;
-        background-color: var(--gray-850);
-        border-radius: 1.5rem;
-        font-size: 0.9em;
-    }
+  .series {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 1.5rem 0;
+    background-color: var(--gray-850);
+    border-radius: 1.5rem;
+    font-size: 0.9em;
+  }
 
-    .series-links {
-        display: flex;
-        color: var(--white);
-    }
+  .series-links {
+    display: flex;
+    color: var(--white);
+  }
 
-    svg {
-        color: var(--white);
-    }
+  svg {
+    color: var(--white);
+  }
 
-    .series-link {
-        color: var(--white);
-        text-decoration: none;
-        padding: 0.25rem;
-        box-shadow: none;
-        border-radius: 0.2rem;
+  .series-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.25rem;
+    box-shadow: none;
+    border-radius: 0.2rem;
 
-        transition: all 0.3s ease;
-        &:hover {
-            box-shadow: none;
-            background-color: var(--gray-800);
-        }
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: none;
+      background-color: var(--gray-800);
     }
+  }
 
-    .separator {
-        color: var(--white);
-        padding: 0.25rem;
-    }
+  .separator {
+    color: var(--white);
+    padding: 0.25rem;
+  }
 </style>

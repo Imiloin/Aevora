@@ -11,55 +11,59 @@
 
 /* Define root variables */
 :root {
-    font-size: 17px;
-    --width: 800px;
-    --default-font-family: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
-    --mono-font-family: 'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOS Sans SC', monospace;
-    --code-font-family: 'Cascadia Code', var(--mono-font-family);
+  font-size: 17px;
+  --width: 800px;
+  --default-font-family: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
+  --mono-font-family:
+    'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOS Sans SC', monospace;
+  --code-font-family: 'Cascadia Code', var(--mono-font-family);
 }
 
 /* Modify the background color of selected text */
 ::selection {
-    background: black;
-    color: white;
+  background: black;
+  color: white;
 }
 
 /* Global styles for body */
 body {
-    font-family: var(--default-font-family);
-    margin: 2rem 0;
-    padding: 0;
-    text-align: left;
-    background: var(--background);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    color: var(--gray-850);
-    font-size: 1rem;
-    line-height: 1.65;
-    /* Enable Uncut Sans OpenType features:
+  font-family: var(--default-font-family);
+  margin: 2rem 0;
+  padding: 0;
+  text-align: left;
+  background: var(--background);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: var(--gray-850);
+  font-size: 1rem;
+  line-height: 1.65;
+  /* Enable Uncut Sans OpenType features:
       ss02 (Alternate Y and y),
       ss03 (Alternative Q, Ø, and ø),
       ss08 (Alternate arrows)
     */
-    font-feature-settings: "ss02" on, "ss03" on, "ss08" on;
+  font-feature-settings:
+    'ss02' on,
+    'ss03' on,
+    'ss08' on;
 }
 
 /* Main container styles */
 main {
-    /* to fully display heroimage which is wider than prose */
-    width: calc(100% - 2em);
-    max-width: calc(100% - 2em);
-    margin: auto;
-    /* 3em top for the hanging header */
-    padding: 3em 1em 1em 1em;
+  /* to fully display heroimage which is wider than prose */
+  width: calc(100% - 2em);
+  max-width: calc(100% - 2em);
+  margin: auto;
+  /* 3em top for the hanging header */
+  padding: 3em 1em 1em 1em;
 }
 
 .prose {
-    width: var(--width);
-    max-width: calc(100% - 2em);
-    margin: auto;
-    /* blog text color */
-    color: var(--text);
+  width: var(--width);
+  max-width: calc(100% - 2em);
+  margin: auto;
+  /* blog text color */
+  color: var(--text);
 }
 
 /* Heading styles */
@@ -69,224 +73,226 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 600;
-    color: var(--gray-850);
-    line-height: 1.2;
-    /* Disable ligatures for headings */
-    font-variant-ligatures: none;
+  font-weight: 600;
+  color: var(--gray-850);
+  line-height: 1.2;
+  /* Disable ligatures for headings */
+  font-variant-ligatures: none;
 }
 
 h1,
 h2 {
-    margin: 1rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    margin: 0.5rem 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 h1 {
-    font-size: 2.488em;
+  font-size: 2.488em;
 }
 
 h2 {
-    font-size: 2.074em;
+  font-size: 2.074em;
 }
 
 h3 {
-    font-size: 1.728em;
+  font-size: 1.728em;
 }
 
 h4 {
-    font-size: 1.44em;
+  font-size: 1.44em;
 }
 
 h5 {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
-.prose> :where(:not([style*="display: none"])):first-child:where(h1, h2, h3, h4, h5, h6),
-.prose>[style*="display: none"]~ :where(:not([style*="display: none"])):first-of-type:where(h1, h2, h3, h4, h5, h6) {
-    /* Reset margin for first visible heading in prose */
-    margin-top: 0.5em;
+.prose > :where(:not([style*='display: none'])):first-child:where(h1, h2, h3, h4, h5, h6),
+.prose
+  > [style*='display: none']
+  ~ :where(:not([style*='display: none'])):first-of-type:where(h1, h2, h3, h4, h5, h6) {
+  /* Reset margin for first visible heading in prose */
+  margin-top: 0.5em;
 }
 
 .prose h2 {
-    font-size: 1.75em;
-    margin-top: 1.6em;
-    margin-bottom: 0.6em;
-    line-height: inherit;
+  font-size: 1.75em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: inherit;
 }
 
 .prose h3 {
-    font-size: 1.5em;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    line-height: inherit;
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: inherit;
 }
 
 .prose h4 {
-    font-size: 1.25em;
-    margin-top: 1.4em;
-    margin-bottom: 0.4em;
-    line-height: inherit;
+  font-size: 1.25em;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  line-height: inherit;
 }
 
 .prose h5 {
-    font-size: 1em;
-    margin-top: 1.3em;
-    margin-bottom: 0.3em;
-    line-height: inherit;
+  font-size: 1em;
+  margin-top: 1.3em;
+  margin-bottom: 0.3em;
+  line-height: inherit;
 }
 
 .prose h6 {
-    font-size: 0.833em;
-    margin-top: 1.2em;
-    margin-bottom: 0.2em;
-    line-height: inherit;
+  font-size: 0.833em;
+  margin-top: 1.2em;
+  margin-bottom: 0.2em;
+  line-height: inherit;
 }
 
-.prose h2+h3,
-.prose h3+h4,
-.prose h4+h5,
-.prose h5+h6 {
-    /* Adjust margins when headings are consecutive */
-    margin-top: 0em;
+.prose h2 + h3,
+.prose h3 + h4,
+.prose h4 + h5,
+.prose h5 + h6 {
+  /* Adjust margins when headings are consecutive */
+  margin-top: 0em;
 }
 
-.prose :where(h2, h3, h4, h5, h6)+ :where(h2, h3, h4, h5, h6) {
-    /* For any heading followed by another heading */
-    margin-top: 0.5em;
+.prose :where(h2, h3, h4, h5, h6) + :where(h2, h3, h4, h5, h6) {
+  /* For any heading followed by another heading */
+  margin-top: 0.5em;
 }
 
 /* Bold text styles */
 strong,
 b {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 /* Link styles */
 article a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-article a[href^="#"] {
-    /* Internal link style */
-    box-shadow: 0px -1.2px 0px var(--gray-600) inset;
-    transition: all 0.2s ease;
+article a[href^='#'] {
+  /* Internal link style */
+  box-shadow: 0px -1.2px 0px var(--gray-600) inset;
+  transition: all 0.2s ease;
 
-    &:hover {
-        box-shadow: 0px calc(-1rem * 1) 0px var(--internal-link-color) inset;
-    }
+  &:hover {
+    box-shadow: 0px calc(-1rem * 1) 0px var(--internal-link-color) inset;
+  }
 }
 
 article a {
-    /* External link style */
-    box-shadow: 0px -1.2px 0px var(--gray-600) inset;
-    transition: all 0.3s ease;
+  /* External link style */
+  box-shadow: 0px -1.2px 0px var(--gray-600) inset;
+  transition: all 0.3s ease;
 
-    &:hover {
-        box-shadow: 0px calc(-1rem * 1) 0px var(--external-link-color) inset;
-    }
+  &:hover {
+    box-shadow: 0px calc(-1rem * 1) 0px var(--external-link-color) inset;
+  }
 }
 
 /* Paragraph styles */
 p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .prose p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /* Form element styles */
 textarea {
-    width: 100%;
-    font-size: 0.8em;
+  width: 100%;
+  font-size: 0.8em;
 }
 
 input {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 /* Table styles */
 table {
-    font-size: 0.9em;
-    width: 100%;
-    /* Ensure table borders are collapsed */
-    border-collapse: collapse;
+  font-size: 0.9em;
+  width: 100%;
+  /* Ensure table borders are collapsed */
+  border-collapse: collapse;
 }
 
 th,
 td {
-    padding: 8px;
-    text-align: left;
+  padding: 8px;
+  text-align: left;
 }
 
-th[align="left"],
-td[align="left"] {
-    text-align: left;
+th[align='left'],
+td[align='left'] {
+  text-align: left;
 }
 
-th[align="center"],
-td[align="center"] {
-    text-align: center;
+th[align='center'],
+td[align='center'] {
+  text-align: center;
 }
 
-th[align="right"],
-td[align="right"] {
-    text-align: right;
+th[align='right'],
+td[align='right'] {
+  text-align: right;
 }
 
 thead {
-    /* Set header row background color */
-    background-color: var(--gray-200);
+  /* Set header row background color */
+  background-color: var(--gray-200);
 }
 
 tr {
-    /* Add bottom border to all rows */
-    border-bottom: 1px solid var(--gray-300);
+  /* Add bottom border to all rows */
+  border-bottom: 1px solid var(--gray-300);
 }
 
-thead>tr {
-    /* Add darker top border to header row */
-    border-top: 1px solid var(--gray-400);
+thead > tr {
+  /* Add darker top border to header row */
+  border-top: 1px solid var(--gray-400);
 }
 
-tbody>tr:last-child {
-    /* Add darker bottom border to last row */
-    border-bottom: 1px solid var(--gray-400);
+tbody > tr:last-child {
+  /* Add darker bottom border to last row */
+  border-bottom: 1px solid var(--gray-400);
 }
 
 /* Image styles */
 img {
-    max-width: 100%;
-    height: auto;
-    /* Center the image horizontally */
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  /* Center the image horizontally */
+  display: block;
+  margin: 0 auto;
 }
 
-img[src$=".png"],
-img[src$=".jpg"],
-img[src$=".jpeg"],
-img[src$=".webp"] {
-    /* Add border-radius for bitmap images */
-    border-radius: min(8px, 10vw, 10vh);
+img[src$='.png'],
+img[src$='.jpg'],
+img[src$='.jpeg'],
+img[src$='.webp'] {
+  /* Add border-radius for bitmap images */
+  border-radius: min(8px, 10vw, 10vh);
 }
 
-img[src$=".gif"] {
-    /* No border-radius for GIF images */
-    border-radius: 0;
+img[src$='.gif'] {
+  /* No border-radius for GIF images */
+  border-radius: 0;
 }
 
-img[src$=".svg"] {
-    /* No border-radius for SVG images */
-    border-radius: 0;
+img[src$='.svg'] {
+  /* No border-radius for SVG images */
+  border-radius: 0;
 }
 
 /* Figure and Figcaption styles */
@@ -301,246 +307,245 @@ img[src$=".svg"] {
 </figure>
 */
 figure {
-    display: block;
-    margin: 2rem auto;
-    text-align: center;
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
 }
 
 figcaption {
-    display: inline-grid;
-    grid-template-columns: max-content auto;
-    gap: 0.4em;
-    text-align: left;
-    margin-top: 0.8em;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.9em;
-    color: var(--gray-700);
-    line-height: 1.5;
-    max-width: 100%;
-    align-items: baseline;
+  display: inline-grid;
+  grid-template-columns: max-content auto;
+  gap: 0.4em;
+  text-align: left;
+  margin-top: 0.8em;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  color: var(--gray-700);
+  line-height: 1.5;
+  max-width: 100%;
+  align-items: baseline;
 }
 
 /* Initialize counter in body */
 body {
-    counter-reset: figure-counter;
+  counter-reset: figure-counter;
 }
 
 figcaption::before {
-    counter-increment: figure-counter;
-    content: "Fig. " counter(figure-counter) " ";
-    font-weight: 700;
-    white-space: nowrap;
+  counter-increment: figure-counter;
+  content: 'Fig. ' counter(figure-counter) ' ';
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 /* Reset margins for paragraphs inside figcaption to prevent misalignment */
 figcaption > p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Remove extra dots from task list */
 li.task-list-item {
-    /* Remove default list style */
-    list-style: none;
-    margin-left: -24px;
+  /* Remove default list style */
+  list-style: none;
+  margin-left: -24px;
 }
 
-li.task-list-item input[type="checkbox"] {
-    float: left;
-    margin-right: 7px;
-    --checkbox-margin-top: 0.56em;
-    margin-top: var(--checkbox-margin-top);
+li.task-list-item input[type='checkbox'] {
+  float: left;
+  margin-right: 7px;
+  --checkbox-margin-top: 0.56em;
+  margin-top: var(--checkbox-margin-top);
 
-    @media (max-width: 636px) {
-        margin-left: 5px;
-        margin-right: 6px;
-        margin-top: calc(var(--checkbox-margin-top) * 0.9);
-    }
+  @media (max-width: 636px) {
+    margin-left: 5px;
+    margin-right: 6px;
+    margin-top: calc(var(--checkbox-margin-top) * 0.9);
+  }
 }
 
 /* List item styles */
 ol li,
 ul li {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .prose {
-
-    /* Reset margin only for first direct child of top-level lists */
-    >ol,
-    >ul {
-        >li:first-child {
-            margin-top: 0;
-        }
+  /* Reset margin only for first direct child of top-level lists */
+  > ol,
+  > ul {
+    > li:first-child {
+      margin-top: 0;
     }
+  }
 }
 
 ol ol,
 ul ul,
 ol ul,
 ul ol {
-    /* Nested list styles */
-    margin-top: 0.5rem;
+  /* Nested list styles */
+  margin-top: 0.5rem;
 }
 
 ol ol li,
 ul ul li,
 ol ul li,
 ul ol li {
-    /* Keep margin for all nested list items */
-    margin-top: 0.5rem;
+  /* Keep margin for all nested list items */
+  margin-top: 0.5rem;
 }
 
 /* Inline code styles */
 code {
-    padding: 2px 5px;
-    background-color: var(--gray-300);
-    border-radius: 2px;
-    font-family: var(--mono-font-family);
-    font-size: 0.9em;
+  padding: 2px 5px;
+  background-color: var(--gray-300);
+  border-radius: 2px;
+  font-family: var(--mono-font-family);
+  font-size: 0.9em;
 }
 
 /* Code block styles */
 .expressive-code {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Code block copy button styles */
 .expressive-code .copy button {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
 }
 
 .expressive-code .copy .feedback {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .expressive-code .copy button::after {
-    margin: 0.3rem !important;
+  margin: 0.3rem !important;
 }
 
 /* Blockquote styles */
 blockquote {
-    border-left: 0.25em solid var(--gray-500);
-    color: var(--gray-700);
-    padding: 0 1rem;
-    margin: 1rem 0;
+  border-left: 0.25em solid var(--gray-500);
+  color: var(--gray-700);
+  padding: 0 1rem;
+  margin: 1rem 0;
 }
 
 blockquote footer {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 /* Horizontal rule styles */
 hr {
-    border: none;
-    border-top: 1px solid var(--gray-300);
+  border: none;
+  border-top: 1px solid var(--gray-300);
 }
 
 /* Responsive styles for small screens */
 @media (max-width: 720px) {
-    body {
-        font-size: 0.9rem;
-        margin: 3rem 0;
-    }
+  body {
+    font-size: 0.9rem;
+    margin: 3rem 0;
+  }
 
-    main {
-        padding: 1em;
-    }
+  main {
+    padding: 1em;
+  }
 }
 
 /* Screen reader only styles */
 .sr-only {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-    clip: rect(1px 1px 1px 1px);
-    /* maybe deprecated but we need to support legacy browsers */
-    clip: rect(1px, 1px, 1px, 1px);
-    /* modern browsers, clip-path works inwards from each corner */
-    clip-path: inset(50%);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(1px 1px 1px 1px);
+  /* maybe deprecated but we need to support legacy browsers */
+  clip: rect(1px, 1px, 1px, 1px);
+  /* modern browsers, clip-path works inwards from each corner */
+  clip-path: inset(50%);
 }
 
 /* Keyboard key styles */
 kbd {
-    margin: 0 0.2em;
-    padding: 0.1em 0.4em 0 0.4em;
-    border-radius: 3px;
-    border: 1px solid var(--gray-500);
-    color: var(--gray-800);
-    line-height: 1.3;
-    font-family: 'Cascadia Mono', monospace;
-    font-size: 0.8em;
-    display: inline-block;
-    --shadow-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 0px var(--shadow-color);
-    -moz-box-shadow: 0 1px 0px var(--shadow-color);
-    -webkit-box-shadow: 0 1px 0px var(--shadow-color);
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
+  margin: 0 0.2em;
+  padding: 0.1em 0.4em 0 0.4em;
+  border-radius: 3px;
+  border: 1px solid var(--gray-500);
+  color: var(--gray-800);
+  line-height: 1.3;
+  font-family: 'Cascadia Mono', monospace;
+  font-size: 0.8em;
+  display: inline-block;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 0px var(--shadow-color);
+  -moz-box-shadow: 0 1px 0px var(--shadow-color);
+  -webkit-box-shadow: 0 1px 0px var(--shadow-color);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
 /* Highlighted text styles */
 mark {
-    background-color: var(--mark-background-color);
-    color: var(--mark-color);
-    vertical-align: baseline;
+  background-color: var(--mark-background-color);
+  color: var(--mark-color);
+  vertical-align: baseline;
 }
 
 /* Citation styles */
 .csl-bib-body {
-    /* citation list displayed as a table */
-    display: table;
+  /* citation list displayed as a table */
+  display: table;
 }
 
 .csl-entry {
-    display: table-row;
-    /* Ensure the entry takes the full width */
-    width: 100%;
+  display: table-row;
+  /* Ensure the entry takes the full width */
+  width: 100%;
 }
 
 .csl-left-margin {
-    display: table-cell;
-    text-align: right;
-    /* Add some space between number and text */
-    padding-right: 0.5em;
+  display: table-cell;
+  text-align: right;
+  /* Add some space between number and text */
+  padding-right: 0.5em;
 }
 
 .csl-right-inline {
-    display: table-cell;
-    /* Adjust spacing between entries */
-    padding-bottom: 0.5em;
-    /* Allow the content to take the remaining space */
-    width: auto;
+  display: table-cell;
+  /* Adjust spacing between entries */
+  padding-bottom: 0.5em;
+  /* Allow the content to take the remaining space */
+  width: auto;
 }
 
 /* Footnote styles */
 .footnotes {
-    border-top: 1px solid var(--gray-300);
-    margin-top: 2em;
-    padding-top: 0.5em;
+  border-top: 1px solid var(--gray-300);
+  margin-top: 2em;
+  padding-top: 0.5em;
 }
 
 /* Custom scrollbar styles */
 html::-webkit-scrollbar {
-    width: 10px;
-    /* vertical scrollbar */
-    height: 10px;
-    /* horizontal scrollbar */
+  width: 10px;
+  /* vertical scrollbar */
+  height: 10px;
+  /* horizontal scrollbar */
 }
 
 html::-webkit-scrollbar-thumb {
-    background-color: var(--gray-600);
-    border-radius: 5px;
+  background-color: var(--gray-600);
+  border-radius: 5px;
 }
 
 html::-webkit-scrollbar-track {
-    background: var(--background);
+  background: var(--background);
 }
