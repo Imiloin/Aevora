@@ -1,0 +1,11 @@
+# Deep Directories and Build Files
+dist/
+.astro/
+node_modules/
+public/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Blog Content
+src/content/blog/
