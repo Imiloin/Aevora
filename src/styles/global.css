@@ -371,12 +371,6 @@ code {
     margin: 0.3rem !important;
 }
 
-/* Markdown alert title styles */
-.markdown-alert .markdown-alert-title {
-    /* Adjust spacing between alert title and content */
-    margin-bottom: 0em;
-}
-
 /* Blockquote styles */
 blockquote {
     border-left: 0.25em solid var(--gray-500);
