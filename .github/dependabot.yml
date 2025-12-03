@@ -6,26 +6,26 @@
 version: 2
 updates:
   # Maintain dependencies for npm
-  - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm'
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     groups:
       astro-dependencies:
         # group astro related dependencies in one PR
         applies-to: version-updates
         patterns:
-          - "*astro*"
-          - "@expressive-code*"
+          - '*astro*'
+          - '@expressive-code*'
       other-dependencies:
         # group other dependencies in one PR
         applies-to: version-updates
         patterns:
-          - "*"
+          - '*'
         exclude-patterns:
-          - "*astro*"
-          - "@expressive-code*"
+          - '*astro*'
+          - '@expressive-code*'
     open-pull-requests-limit: 5
-    versioning-strategy: "auto"
+    versioning-strategy: 'auto'
     commit-message:
-      prefix: "chore"
+      prefix: 'chore'

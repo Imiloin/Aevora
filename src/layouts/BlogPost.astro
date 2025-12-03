@@ -1,55 +1,54 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import BaseHead from "@components/BaseHead.astro";
+import BaseHead from '@components/BaseHead.astro';
 import SeriesLinks from '@components/SeriesLinks.astro';
-import Footer from "@components/Footer.astro";
-import FormattedDate from "@components/FormattedDate.astro";
-import Header from "@components/Header.astro";
-import ScrollProgress from "@components/ScrollProgress.astro";
-import LicenseCard from "@components/LicenseCard.astro";
+import Footer from '@components/Footer.astro';
+import FormattedDate from '@components/FormattedDate.astro';
+import Header from '@components/Header.astro';
+import ScrollProgress from '@components/ScrollProgress.astro';
+import LicenseCard from '@components/LicenseCard.astro';
 
-import type { MarkdownHeading } from "astro";
-import type { HeadingHierarchy } from "@components/TOC.astro";
-import TOC from "@components/TOC.astro";
+import type { MarkdownHeading } from 'astro';
+import type { HeadingHierarchy } from '@components/TOC.astro';
+import TOC from '@components/TOC.astro';
 
-import "@styles/toc.css";
+import '@styles/toc.css';
 
-import "remark-github-alerts/styles/github-colors-light.css";
-import "remark-github-alerts/styles/github-colors-dark-class.css";
-import "remark-github-alerts/styles/github-base.css";
+import 'remark-github-alerts/styles/github-colors-light.css';
+import 'remark-github-alerts/styles/github-colors-dark-class.css';
+import 'remark-github-alerts/styles/github-base.css';
 
-type Props = CollectionEntry<"blog">["data"] & { headings: MarkdownHeading[] };
+type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] };
 
-const { title, description, pubDate, heroImage, series, headings } =
-    Astro.props as Props;
+const { title, description, pubDate, heroImage, series, headings } = Astro.props as Props;
 
 function createHeadingHierarchy(headings: MarkdownHeading[]) {
-    const topLevelHeadings: HeadingHierarchy[] = [];
+  const topLevelHeadings: HeadingHierarchy[] = [];
 
-    headings.forEach((heading) => {
-        if (heading.depth > 3) {
-            return;
-        }
-        if (heading.depth < 2) {
-            return;
-        }
-        const h = {
-            ...heading,
-            subheadings: [],
-        };
+  headings.forEach((heading) => {
+    if (heading.depth > 3) {
+      return;
+    }
+    if (heading.depth < 2) {
+      return;
+    }
+    const h = {
+      ...heading,
+      subheadings: [],
+    };
 
-        if (h.depth === 2) {
-            topLevelHeadings.push(h);
-        } else {
-            let parent = topLevelHeadings[topLevelHeadings.length - 1];
-            if (parent) {
-                parent.subheadings.push(h);
-            }
-        }
-    });
+    if (h.depth === 2) {
+      topLevelHeadings.push(h);
+    } else {
+      let parent = topLevelHeadings[topLevelHeadings.length - 1];
+      if (parent) {
+        parent.subheadings.push(h);
+      }
+    }
+  });
 
-    return topLevelHeadings;
+  return topLevelHeadings;
 }
 
 const toc: HeadingHierarchy[] = createHeadingHierarchy(headings ?? []);
@@ -57,105 +56,101 @@ const hasToC = toc.length > 1;
 ---
 
 <html lang="zh">
-    <head>
-        <BaseHead title={title} description={description} image={heroImage.src}/>
-        <style>
-            .hero-image {
-                position: relative;
-            }
-            .hero-image img {
-                width: 960px;
-                display: block;
-                margin: 0 auto;
-                border-radius: 12px;
-                position: relative;
-                z-index: 1;
-            }
-            .hero-image img.shadow {
-                overflow: hidden;
-                display: flex;
-                /* Place the shadow below the image */
-                z-index: -2;
-                filter: blur(8px) brightness(50%) opacity(0.5);
-                /* Position the shadow absolutely */
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .article-header {
-                text-align: center;
-                line-height: 1;
-                margin: 2em auto 0;
-                width: var(--width);
-                max-width: calc(100% - 2em);
-            }
-            .date {
-                margin: 1em 0;
-                color: var(--gray);
-            }
-            .last-updated-on {
-                font-style: italic;
-            }
-        </style>
-    </head>
+  <head>
+    <BaseHead title={title} description={description} image={heroImage.src} />
+    <style>
+      .hero-image {
+        position: relative;
+      }
+      .hero-image img {
+        width: 960px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-image img.shadow {
+        overflow: hidden;
+        display: flex;
+        /* Place the shadow below the image */
+        z-index: -2;
+        filter: blur(8px) brightness(50%) opacity(0.5);
+        /* Position the shadow absolutely */
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .article-header {
+        text-align: center;
+        line-height: 1;
+        margin: 2em auto 0;
+        width: var(--width);
+        max-width: calc(100% - 2em);
+      }
+      .date {
+        margin: 1em 0;
+        color: var(--gray);
+      }
+      .last-updated-on {
+        font-style: italic;
+      }
+    </style>
+  </head>
 
-    <body>
-        <Header />
-        <div class="toc" id="toc">
-            {
-                hasToC && (
-                    <nav>
-                        {toc.map((heading) => (
-                            <TOC heading={heading} />
-                        ))}
-                    </nav>
-                )
-            }
+  <body>
+    <Header />
+    <div class="toc" id="toc">
+      {
+        hasToC && (
+          <nav>
+            {toc.map((heading) => (
+              <TOC heading={heading} />
+            ))}
+          </nav>
+        )
+      }
+    </div>
+    <main data-pagefind-body>
+      <article>
+        <div class="hero-image" data-pagefind-ignore>
+          {
+            heroImage && (
+              <>
+                <Image width={960} height={480} src={heroImage} alt="" class="shadow" />
+                <Image
+                  width={960}
+                  height={480}
+                  data-pagefind-meta="image[src]"
+                  src={heroImage}
+                  alt=""
+                />
+              </>
+            )
+          }
         </div>
-        <main data-pagefind-body>
-            <article>
-                <div class="hero-image" data-pagefind-ignore>
-                    {
-                        heroImage && (
-                            <Image
-                                width={960}
-                                height={480}
-                                src={heroImage}
-                                alt=""
-                                class="shadow"
-                            />
-                            <Image
-                                width={960}
-                                height={480}
-                                data-pagefind-meta="image[src]"
-                                src={heroImage}
-                                alt=""
-                            />
-                        )
-                    }
-                </div>
-                <div class="article-header">
-                    <div class="date">
-                        <FormattedDate date={pubDate} />
-                    </div>
-                    <h1 class="title-h1">{title}</h1>
-                    <div style="text-align: center;">
-                        <SeriesLinks series={series} />
-                    </div>
-                    <hr />
-                    <div style="height: 1em;"></div>
-                </div>
-                <div class="prose">
-                    <slot />
-                    <LicenseCard title={title} pageUrl={Astro.url.href} />
-                </div>
-            </article>
-        </main>
-        <Footer />
-        <ScrollProgress />
-        <script>
-            import "@scripts/toc-display.ts";
-        </script>
-    </body>
+        <div class="article-header">
+          <div class="date">
+            <FormattedDate date={pubDate} />
+          </div>
+          <h1 class="title-h1">{title}</h1>
+          <div style="text-align: center;">
+            <SeriesLinks series={series} />
+          </div>
+          <hr />
+          <div style="height: 1em;"></div>
+        </div>
+        <div class="prose">
+          <slot />
+          <LicenseCard title={title} pageUrl={Astro.url.href} />
+        </div>
+      </article>
+    </main>
+    <Footer />
+    <ScrollProgress />
+    <script>
+      import '@scripts/toc-display.ts';
+    </script>
+  </body>
 </html>

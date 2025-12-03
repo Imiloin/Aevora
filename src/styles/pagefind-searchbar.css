@@ -1,26 +1,26 @@
 .pagefind-ui__search-clear {
-    font-family: var(--default-font-family) !important;
-    border: none;
+  font-family: var(--default-font-family) !important;
+  border: none;
 }
 
 .pagefind-ui__search-input {
-    font-family: var(--default-font-family);
-    font-weight: 400 !important;
+  font-family: var(--default-font-family);
+  font-weight: 400 !important;
 }
 
 .pagefind-ui__search-input:focus {
-    /* do not change the border color when clicked */
-    outline: none;
+  /* do not change the border color when clicked */
+  outline: none;
 }
 
 .pagefind-ui__button {
-    font-family: var(--default-font-family) !important;
-    font-weight: 400 !important;
-    background: var(--background) !important;
-    transition: background-color 0.2s ease;
+  font-family: var(--default-font-family) !important;
+  font-weight: 400 !important;
+  background: var(--background) !important;
+  transition: background-color 0.2s ease;
 }
 
 .pagefind-ui__button:hover {
-    border: var(--pagefind-ui-border-width) solid var(--pagefind-ui-border) !important;
-    background: var(--gray-200) !important;
+  border: var(--pagefind-ui-border-width) solid var(--pagefind-ui-border) !important;
+  background: var(--gray-200) !important;
 }

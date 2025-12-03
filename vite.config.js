@@ -7,17 +7,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export default defineConfig({
-    css: {
-        preprocessorOptions: {
-            scss: {
-                // Use Dart Sass's modern API to avoid deprecated API warnings
-                api: 'modern'
-            }
-        }
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // Use Dart Sass's modern API to avoid deprecated API warnings
+        api: 'modern',
+      },
     },
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, 'src')
-        }
-    }
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
 });
