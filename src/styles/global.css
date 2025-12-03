@@ -170,7 +170,7 @@ b {
 
 /* Link styles */
 article a {
-    color: var(--text);
+    color: inherit;
     text-decoration: none;
 }
 
@@ -287,6 +287,55 @@ img[src$=".gif"] {
 img[src$=".svg"] {
     /* No border-radius for SVG images */
     border-radius: 0;
+}
+
+/* Figure and Figcaption styles */
+/* add figure in the following format:
+<figure>
+  <img src="..." alt="..."/>
+  <figcaption>
+  
+  Caption text here.
+  
+  </figcaption>
+</figure>
+*/
+figure {
+    display: block;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+figcaption {
+    display: inline-grid;
+    grid-template-columns: max-content auto;
+    gap: 0.4em;
+    text-align: left;
+    margin-top: 0.8em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    color: var(--gray-700);
+    line-height: 1.5;
+    max-width: 100%;
+    align-items: baseline;
+}
+
+/* Initialize counter in body */
+body {
+    counter-reset: figure-counter;
+}
+
+figcaption::before {
+    counter-increment: figure-counter;
+    content: "Fig. " counter(figure-counter) " ";
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Reset margins for paragraphs inside figcaption to prevent misalignment */
+figcaption > p {
+    margin: 0;
 }
 
 /* Remove extra dots from task list */
