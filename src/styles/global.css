@@ -300,9 +300,9 @@ img[src$='.svg'] {
 <figure>
   <img src="..." alt="..."/>
   <figcaption>
-  
+
   Caption text here.
-  
+
   </figcaption>
 </figure>
 */
@@ -441,6 +441,71 @@ blockquote footer {
 hr {
   border: none;
   border-top: 1px solid var(--gray-300);
+}
+
+/* Details and Summary styles */
+details {
+  box-sizing: border-box;
+
+  /* Transition for the animation */
+  transition: all 0.3s ease-out;
+
+  /* Some extra styling */
+  background: var(--gray-050);
+  border-radius: 10px;
+  overflow: hidden;
+
+  &[open] {
+    /* Remove background when open */
+    background: var(--background);
+    summary {
+      /* Rotate custom arrow */
+      &::before {
+        transform: rotate(-135deg) translate(-30%, 0%);
+      }
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 8px 16px;
+  color: var(--gray-750);
+
+  /* Transition for the animation */
+  transition: margin 0.3s ease-out;
+
+  /* Extra styling */
+  cursor: pointer;
+  font-size: 0.9em;
+
+  /* Remove the default arrow */
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Add custom arrow */
+  &::before {
+    content: '';
+    display: block;
+
+    height: 6px;
+    flex: 0 0 6px;
+
+    margin-right: 16px;
+
+    border-right: 2px solid var(--gray-900);
+    border-bottom: 2px solid var(--gray-900);
+
+    transition: all 0.3s;
+    transform: rotate(45deg) translate(0, -30%);
+  }
 }
 
 /* Responsive styles for small screens */
