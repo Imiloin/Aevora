@@ -17,6 +17,7 @@ import rehypeMathjax from 'rehype-mathjax';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://imiloin.netlify.app/',
+  trailingSlash: 'always',
   integrations: [astroExpressiveCode(), sitemap()],
   markdown: {
     remarkPlugins: [processBibliographyPath, remarkGemoji, remarkGithubAlerts, remarkMath],

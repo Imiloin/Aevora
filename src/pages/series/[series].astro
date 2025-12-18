@@ -138,7 +138,7 @@ const width = blogConfig.general.width;
       <h1 class="series-title">Series: {name}</h1>
       {
         posts.map((post, index) => (
-          <a href={`/blog/${post.id}`} class={`post-card ${index === 0 ? 'first-card' : ''}`}>
+          <a href={`/blog/${post.id}/`} class={`post-card ${index === 0 ? 'first-card' : ''}`}>
             <Image width={720} height={360} src={post.data.heroImage} alt={post.data.title} />
             <div class="post-card-content">
               <h2 class="post-card-title">{post.data.title}</h2>

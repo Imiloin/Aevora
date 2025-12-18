@@ -23,7 +23,7 @@ const { series } = Astro.props;
       <div class="series-links">
         {series.map((entry: string, index: number) => (
           <>
-            <a class="series-link" href={`/series/${slugify(entry)}`}>
+            <a class="series-link" href={`/series/${slugify(entry)}/`}>
               {entry}
             </a>
             {index < series.length - 1 && <span class="separator">/</span>}

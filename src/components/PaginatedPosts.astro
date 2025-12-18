@@ -105,7 +105,10 @@ for (let i = 1; i <= totalPages; i++) {
       <nav aria-label="Pagination">
         {/* previous */}
         {hasPrevPage ? (
-          <a href={indexPageLink ? `/blog` : `/blog/page/${currentPage - 1}`} class="arrow active">
+          <a
+            href={indexPageLink ? `/blog/` : `/blog/page/${currentPage - 1}/`}
+            class="arrow active"
+          >
             <span class="sr-only">Previous</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
               <path
@@ -138,7 +141,7 @@ for (let i = 1; i <= totalPages; i++) {
             </span>
           ) : (
             <a
-              href={pagination === 1 ? `/blog` : `/blog/page/${pagination}`}
+              href={pagination === 1 ? `/blog/` : `/blog/page/${pagination}/`}
               aria-current="page"
               class="index index-other"
             >
@@ -149,7 +152,7 @@ for (let i = 1; i <= totalPages; i++) {
 
         {/* next page */}
         {hasNextPage ? (
-          <a href={`/blog/page/${currentPage + 1}`} class="arrow active">
+          <a href={`/blog/page/${currentPage + 1}/`} class="arrow active">
             <span class="sr-only">Next</span>
             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" height="30" width="30">
               <path
