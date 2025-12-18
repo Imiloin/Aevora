@@ -12,7 +12,8 @@
       "@icons/*": ["src/icons/*"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"],
-      "@scripts/*": ["src/scripts/*"]
+      "@scripts/*": ["src/scripts/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }

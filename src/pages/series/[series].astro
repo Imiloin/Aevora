@@ -3,6 +3,7 @@ import BaseHead from '@components/BaseHead.astro';
 import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import Header from '@components/Header.astro';
+import { slugify } from '@utils/slug';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
@@ -10,30 +11,34 @@ import blogConfig from '@configs/blog.json';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  const series = new Set();
+  const seriesMap = new Map();
 
-  // fetch all series
+  // fetch all series and map them to slugs
   posts.forEach((post) => {
     if (post.data.series) {
-      post.data.series.forEach((entry) => series.add(entry));
+      post.data.series.forEach((name) => {
+        const slug = slugify(name);
+        seriesMap.set(slug, name);
+      });
     }
   });
 
-  return Array.from(series).map((series) => ({
-    params: { series },
-    props: { series },
+  return Array.from(seriesMap.entries()).map(([slug, name]) => ({
+    params: { series: slug },
+    props: { name },
   }));
 }
 
 const { series } = Astro.params as { series: string };
+const { name } = Astro.props as { name: string };
 
 // fetch all posts in the series
 const posts = (await getCollection('blog'))
-  .filter((post) => post.data.series?.includes(series))
+  .filter((post) => post.data.series?.some((s) => slugify(s) === series))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 
-const title = `${series} - Series`;
-const description = `Articles in series: ${series}`;
+const title = `${name} - Series`;
+const description = `Articles in series: ${name}`;
 const width = blogConfig.general.width;
 ---
 
@@ -130,7 +135,7 @@ const width = blogConfig.general.width;
   <body>
     <Header />
     <main>
-      <h1 class="series-title">Series: {series}</h1>
+      <h1 class="series-title">Series: {name}</h1>
       {
         posts.map((post, index) => (
           <a href={`/blog/${post.id}`} class={`post-card ${index === 0 ? 'first-card' : ''}`}>
