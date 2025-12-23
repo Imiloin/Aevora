@@ -14,5 +14,11 @@
     "!**/vendor",
     "!**/.git",
     "!**/.github"
-  ]
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[bibtex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop"
+  }
 }
