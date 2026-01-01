@@ -31,7 +31,7 @@
     "pagefind": "^1.4.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "sass-embedded": "^1.93.3"
+    "sass-embedded": "^1.97.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
