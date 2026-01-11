@@ -213,8 +213,8 @@
 
   --accent: var(--blue-neon);
 
-  --mark-background-color: #fff2ca;
-  --mark-color: #543a26;
+  --mark-background-color: var(--yellow);
+  --mark-color: var(--black);
 
   --translucent: rgba(250, 250, 250, 0.6);
 
