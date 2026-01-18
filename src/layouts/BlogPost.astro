@@ -19,9 +19,11 @@ import 'remark-github-alerts/styles/github-colors-light.css';
 import 'remark-github-alerts/styles/github-colors-dark-class.css';
 import 'remark-github-alerts/styles/github-base.css';
 
-type Props = CollectionEntry<'blog'>['data'] & { headings: MarkdownHeading[] };
+type Props = CollectionEntry<'blog'>['data'] & {
+  headings: MarkdownHeading[];
+};
 
-const { title, description, pubDate, heroImage, series, headings } = Astro.props as Props;
+const { title, description, pubDate, updatedDate, heroImage, series, headings } = Astro.props;
 
 function createHeadingHierarchy(headings: MarkdownHeading[]) {
   const topLevelHeadings: HeadingHierarchy[] = [];
@@ -90,11 +92,19 @@ const hasToC = toc.length > 1;
         max-width: calc(100% - 2em);
       }
       .date {
-        margin: 1em 0;
-        color: var(--gray);
+        color: var(--gray-700);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+      }
+      .date-separator {
+        color: var(--gray-600);
+        user-select: none;
       }
       .last-updated-on {
-        font-style: italic;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
       }
     </style>
   </head>
@@ -133,6 +143,16 @@ const hasToC = toc.length > 1;
         <div class="article-header">
           <div class="date">
             <FormattedDate date={pubDate} />
+            {
+              updatedDate && (
+                <>
+                  <span class="date-separator">&bull;</span>
+                  <span class="last-updated-on">
+                    Updated on <FormattedDate date={updatedDate} />
+                  </span>
+                </>
+              )
+            }
           </div>
           <h1 class="title-h1">{title}</h1>
           <div style="text-align: center;">
