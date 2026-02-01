@@ -29,9 +29,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "pagefind": "^1.4.0",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "sass-embedded": "^1.97.1"
+    "sass-embedded": "^1.97.3"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
