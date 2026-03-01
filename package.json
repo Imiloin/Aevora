@@ -19,7 +19,7 @@
     "@expressive-code/plugin-line-numbers": "^0.41.7",
     "astro": "^5.18.0",
     "astro-expressive-code": "^0.41.7",
-    "rehype-citation": "^2.3.1",
+    "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
     "remark-gemoji": "^8.0.0",
     "remark-github-alerts": "^0.1.1",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.3.0",
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
