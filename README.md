@@ -61,15 +61,7 @@ All commands should be run from the root of the project in your terminal.
 | `npm run astro ...`       | Executes Astro CLI commands, such as `astro add` or `astro check` |
 | `npm run astro -- --help` | Displays help for using the Astro CLI                             |
 
-> For deployments to platforms like Netlify, consider setting the build command to `npm run clean && npm run build` and the publish directory to `dist/`.
-
-If you encounter the following error:
-
-```text
-Failed to run pagefind via the npx wrapper: Error: Failed to install either of [pagefind_extended, pagefind]. Most likely the platform windows-x64 is not yet a supported architecture.
-```
-
-it is most likely a network issue. Try fixing your network connection and reinstall the package by running `npm install pagefind --force`.
+> For deployments to Netlify, use `netlify.toml` to configure the build process.
 
 ## License
 
