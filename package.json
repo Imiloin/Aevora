@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && npx pagefind && rm -rf public/pagefind && cp -r dist/pagefind public/ && cp -r dist/_astro public/",
-    "clean": "rm -rf dist/* public/_astro/ public/pagefind/ && rm -f .astro/data-store.json node_modules/.astro/data-store.json",
+    "clean": "rm -rf dist/* public/_astro/ public/pagefind/ .astro/ node_modules/.astro/",
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
@@ -14,10 +14,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.15",
-    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
     "@expressive-code/plugin-line-numbers": "^0.41.7",
-    "astro": "^5.18.0",
+    "astro": "^6.0.4",
     "astro-expressive-code": "^0.41.7",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
