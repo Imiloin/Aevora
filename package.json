@@ -14,10 +14,10 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
     "@expressive-code/plugin-line-numbers": "^0.41.7",
-    "astro": "^6.0.4",
+    "astro": "^6.1.2",
     "astro-expressive-code": "^0.41.7",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
