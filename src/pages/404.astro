@@ -14,20 +14,6 @@ const description = "Seems like you're lost. Let's get you back on track.";
       flex-direction: column;
       min-height: calc(100vh - 4em);
     }
-    main {
-      display: flex;
-      /* flex: 1 makes the main element take up the remaining space */
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .huge {
-      font-size: 8em;
-      font-weight: 700;
-      color: var(--gray-850);
-      line-height: 1.4;
-    }
   </style>
   <script>
     document.querySelectorAll('button').forEach((button) => {
@@ -42,9 +28,9 @@ const description = "Seems like you're lost. Let's get you back on track.";
     });
   </script>
 
-  <main>
+  <main class="flex flex-1 flex-col items-center justify-center">
     <div>
-      <span class="huge">404</span>
+      <span class="text-[8em] leading-[1.4] font-bold text-[var(--gray-850)]">404</span>
     </div>
     <div><h1>Page Not Found</h1></div>
     <div>
@@ -54,7 +40,7 @@ const description = "Seems like you're lost. Let's get you back on track.";
     </div>
     <br />
     <div>
-      <a href="/" style="text-decoration: none;"><button>Back to Home</button></a>
+      <a href="/" class="no-underline"><button>Back to Home</button></a>
     </div>
   </main>
 </BaseLayout>

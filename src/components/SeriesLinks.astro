@@ -7,15 +7,18 @@ const { series } = Astro.props;
 
 {
   series && series.length > 0 && (
-    <div class="series">
+    <div class="series [margin:0.5rem_0_1.5rem_0] inline-flex items-center gap-2 rounded-3xl bg-[var(--gray-850)] px-4 py-2 text-[0.9em]">
       <Folder />
-      <div class="series-links">
+      <div class="flex text-white">
         {series.map((entry: string, index: number) => (
           <>
-            <a class="series-link" href={`/series/${slugify(entry)}/`}>
+            <a
+              class="rounded-sm p-1 text-white no-underline shadow-none transition-all duration-300 ease-in-out hover:bg-[var(--gray-800)] hover:shadow-none"
+              href={`/series/${slugify(entry)}/`}
+            >
               {entry}
             </a>
-            {index < series.length - 1 && <span class="separator">/</span>}
+            {index < series.length - 1 && <span class="p-1 text-white">/</span>}
           </>
         ))}
       </div>
@@ -24,42 +27,7 @@ const { series } = Astro.props;
 }
 
 <style>
-  .series {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0 1.5rem 0;
-    background-color: var(--gray-850);
-    border-radius: 1.5rem;
-    font-size: 0.9em;
-  }
-
-  .series-links {
-    display: flex;
-    color: var(--white);
-  }
-
   .series :global(svg) {
     color: var(--white);
-  }
-
-  .series-link {
-    color: var(--white);
-    text-decoration: none;
-    padding: 0.25rem;
-    box-shadow: none;
-    border-radius: 0.2rem;
-
-    transition: all 0.3s ease;
-    &:hover {
-      box-shadow: none;
-      background-color: var(--gray-800);
-    }
-  }
-
-  .separator {
-    color: var(--white);
-    padding: 0.25rem;
   }
 </style>

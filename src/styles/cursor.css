@@ -23,6 +23,14 @@
   mix-blend-mode: difference;
 
   transform: translate(-50%, -50%);
+
+  /* Hide until first mouse move to prevent flash at (0,0) */
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  &.visible {
+    opacity: 1;
+  }
 }
 
 .cursor-outer {
@@ -48,15 +56,16 @@ span.stroke {
   -webkit-text-fill-color: transparent;
 }
 
-/* Only hide the native cursor on devices with a fine pointer (mouse/trackpad) */
+/* Only hide the native cursor on devices with a fine pointer (mouse/trackpad).
+   Uses a 1x1 transparent SVG instead of cursor:none to work around
+   Chrome compositing bugs with backdrop-filter. */
 @media (pointer: fine) {
-  html {
-    cursor: none;
-  }
-
-  [data-shrink],
-  [data-expand] {
-    cursor: none;
+  html,
+  html * {
+    cursor:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'/%3E") 0
+        0,
+      none !important;
   }
 }
 

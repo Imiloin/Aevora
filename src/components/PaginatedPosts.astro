@@ -22,21 +22,6 @@ const hasNextPage = totalPages > currentPage;
 ---
 
 <style>
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  @media (max-width: 720px) {
-    ul {
-      gap: 0.5em;
-    }
-  }
-
   .arrow {
     display: flex;
     align-items: center;
@@ -79,7 +64,7 @@ const hasNextPage = totalPages > currentPage;
 </style>
 
 <section>
-  <ul>
+  <ul class="m-0 flex list-none flex-wrap gap-8 p-0 max-[720px]:gap-2">
     {
       paginatedPosts.map((post, index) => (
         <PostCard post={post} isFirstChild={currentPage === 1 && index === 0} />

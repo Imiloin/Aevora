@@ -18,8 +18,11 @@ import ChevronUp from '@components/icons/ChevronUp.astro';
  */
 ---
 
-<div id="progress-container">
-  <svg id="progress-circle" viewBox="0 0 36 36">
+<div
+  id="progress-container"
+  class="fixed right-5 bottom-5 flex size-[50px] cursor-pointer items-center justify-center max-[960px]:hidden"
+>
+  <svg id="progress-circle" class="absolute size-full -rotate-90" viewBox="0 0 36 36">
     <path
       class="circle-bg"
       d="M18 2.0845
@@ -39,25 +42,7 @@ import ChevronUp from '@components/icons/ChevronUp.astro';
 </div>
 
 <style>
-  #progress-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #progress-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-  }
-
+  /* SVG stroke styles — must remain in CSS (no Tailwind equivalent) */
   .circle-bg {
     fill: none;
     stroke: var(--gray-300);
@@ -75,13 +60,6 @@ import ChevronUp from '@components/icons/ChevronUp.astro';
   #progress-container :global(.lucide-chevron-up) {
     position: relative;
     z-index: 1;
-  }
-
-  /* hide ScrollProgress on narrow screens */
-  @media (max-width: 960px) {
-    #progress-container {
-      display: none;
-    }
   }
 </style>
 

@@ -13,23 +13,14 @@ const description = 'Search for posts on this site.';
       flex-direction: column;
       min-height: calc(100vh - 4em);
     }
-    main {
-      /* flex: 1 makes the main element take up the remaining space */
-      flex: 1;
-    }
     html {
-      scrollbar-gutter: stable; /* Prevent page jitter when scrollbar disappears */
-      overflow-y: scroll; /* Always show scrollbar */
-    }
-    .search-bar {
-      width: var(--width);
-      max-width: calc(100% - 2em);
-      margin: 2em auto;
+      scrollbar-gutter: stable;
+      overflow-y: scroll;
     }
   </style>
 
-  <main>
-    <div class="search-bar">
+  <main class="flex-1">
+    <div class="mx-auto my-8 w-[var(--width)] max-w-[calc(100%-2em)]">
       <SearchBar />
     </div>
   </main>

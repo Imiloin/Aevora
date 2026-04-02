@@ -7,7 +7,10 @@ interface Props {
 const { size = 18, class: className } = Astro.props;
 ---
 
-<span class:list={['cc-icons', className]} aria-hidden="true">
+<span
+  class:list={['inline-flex gap-1 align-text-bottom text-[var(--gray-700)]', className]}
+  aria-hidden="true"
+>
   <!-- CC icon -->
   <svg width={size} height={size} viewBox="0 0 30 30">
     <path
@@ -33,12 +36,3 @@ const { size = 18, class: className } = Astro.props;
       fill="currentColor"></path>
   </svg>
 </span>
-
-<style>
-  .cc-icons {
-    display: inline-flex;
-    gap: 0.25rem;
-    vertical-align: text-bottom;
-    color: var(--gray-700);
-  }
-</style>

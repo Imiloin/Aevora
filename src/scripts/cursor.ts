@@ -50,6 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
   update();
 
   function onMove(e: MouseEvent): void {
+    // Show cursor on first move (hidden initially to prevent flash at top-left)
+    if (!elCursor!.classList.contains('visible')) {
+      // Jump to mouse position immediately before showing
+      current.x = e.clientX;
+      current.y = e.clientY;
+      elCursor!.classList.add('visible');
+    }
+
     point.x = e.clientX;
     point.y = e.clientY;
 

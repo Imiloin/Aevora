@@ -19,89 +19,30 @@ const { basic, links } = aboutConfig;
       flex-direction: column;
       min-height: calc(100vh - 4em);
     }
-    main {
-      display: flex;
-      /* flex: 1 makes the main element take up the remaining space */
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .contact-section {
-      background-color: var(--gray-825);
-      width: var(--width);
-      max-width: calc(100vw - 100px - 8em);
-      color: var(--white);
-      text-align: center;
-      padding: 50px;
-      border-radius: 50px;
-    }
-
-    .contact-section h1 {
-      color: var(--white);
-      font-size: 2.5em;
-    }
-
-    .contact-section p {
-      font-size: 1.2em;
-    }
-
-    .email-button {
-      background-color: var(--white);
-      color: var(--gray-850);
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      text-decoration: none;
-      margin: 1em 0;
-      display: inline-flex;
-      align-items: center;
-    }
     .email-button :global(svg) {
       margin-left: 10px;
     }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: var(--white);
-      text-decoration: none;
-    }
-
-    @media (max-width: 720px) {
-      .contact-section {
-        max-width: calc(100% - 4em);
-        padding: 20px;
-        border-radius: 40px;
-      }
-    }
-    @media (max-width: 636px) {
-      .contact-section p {
-        font-size: 1em;
-      }
-    }
   </style>
 
-  <main>
-    <div class="contact-section">
-      <h1>{basic.bio}</h1>
-      <p>{basic.name} &nbsp; | &nbsp; {basic.status}</p>
-      <a href={`mailto:${basic.email}`} class="email-button button">Email Me <Envelope /></a>
+  <main class="flex flex-1 flex-col items-center justify-center">
+    <div
+      class="contact-section w-[var(--width)] max-w-[calc(100vw-100px-8em)] rounded-[50px] bg-[var(--gray-825)] p-[50px] text-center text-white max-[720px]:max-w-[calc(100%-4em)] max-[720px]:rounded-[40px] max-[720px]:p-5"
+    >
+      <h1 class="text-[2.5em] text-white">{basic.bio}</h1>
+      <p class="text-[1.2em] max-[636px]:text-base">{basic.name} &nbsp; | &nbsp; {basic.status}</p>
+      <a
+        href={`mailto:${basic.email}`}
+        class="email-button button my-4 inline-flex items-center rounded-[10px] border-none bg-white px-5 py-2.5 text-[var(--gray-850)] no-underline"
+        >Email Me <Envelope /></a
+      >
       <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href={links.resume}>Resume</a></li>
-          <li>
-            <a href={links.github}>GitHub</a>
+        <ul class="list-none p-0">
+          <li class="mx-[15px] inline"><a class="text-white no-underline" href="/">Home</a></li>
+          <li class="mx-[15px] inline">
+            <a class="text-white no-underline" href={links.resume}>Resume</a>
+          </li>
+          <li class="mx-[15px] inline">
+            <a class="text-white no-underline" href={links.github}>GitHub</a>
           </li>
         </ul>
       </nav>

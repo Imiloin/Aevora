@@ -14,66 +14,12 @@ const hasPageUrl = Boolean(currentPageUrl);
 ---
 
 <style>
-  /* Container */
-  .license-card {
-    position: relative;
-    margin: 2rem auto 0;
-    padding: 1rem;
-    border-radius: 8px;
-    background-color: color-mix(in srgb, var(--gray-050) 80%, transparent);
-    color: var(--gray-850);
-    width: var(--width);
-    max-width: calc(100% - 2rem);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
   .license-card__bg {
     position: absolute;
     right: -10px;
     top: -30px;
-    width: 200px;
-    height: 200px;
     opacity: 0.07;
     pointer-events: none;
-  }
-
-  .license-card__content {
-    padding: 0 0.5rem;
-  }
-
-  .license-card__title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0.4rem 0;
-  }
-
-  .license-card__meta {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 0.75rem;
-    row-gap: 0.4rem;
-    font-size: 0.9rem;
-    align-items: center;
-    margin: 0.4rem 0;
-  }
-
-  .license-card__pair {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-  }
-
-  .license-card__label {
-    color: var(--gray-600);
-    white-space: nowrap;
-  }
-
-  .license-card__link {
-    font-size: 0.9rem;
-    margin: 0.4rem 0;
   }
 
   @media (max-width: 750px) {
@@ -81,11 +27,26 @@ const hasPageUrl = Boolean(currentPageUrl);
       display: none;
     }
   }
+
+  /* LicenseCard link styling */
+  section a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 -1px 0 currentColor inset;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--gray-600);
+    }
+  }
 </style>
 
-<section class="license-card" aria-label="License information">
+<section
+  class="relative mx-auto mt-8 box-border flex w-[var(--width)] max-w-[calc(100%-2em)] flex-col gap-[0.4rem] overflow-hidden rounded-lg bg-[color-mix(in_srgb,var(--gray-050)_80%,transparent)] p-4 text-[var(--gray-850)]"
+  aria-label="License information"
+>
   <!-- Light watermark CC-like background -->
-  <svg class="license-card__bg" viewBox="0 0 120 120" aria-hidden="true">
+  <svg class="license-card__bg size-[200px]" viewBox="0 0 120 120" aria-hidden="true">
     <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="10"></circle>
     <text
       x="50%"
@@ -100,32 +61,32 @@ const hasPageUrl = Boolean(currentPageUrl);
     </text>
   </svg>
 
-  <div class="license-card__content">
-    <p class="license-card__title">
+  <div class="px-2">
+    <p class="my-[0.4rem] text-base font-semibold">
       {title}
     </p>
 
-    <p class="license-card__meta">
-      <span class="license-card__pair">
-        <span class="license-card__label">Author</span>
-        <span class="license-card__value">{aboutConfig.basic.name}</span>
+    <p class="my-[0.4rem] flex flex-wrap items-center gap-x-3 gap-y-[0.4rem] text-[0.9rem]">
+      <span class="inline-flex items-center gap-[0.35rem]">
+        <span class="whitespace-nowrap text-[var(--gray-600)]">Author</span>
+        <span>{aboutConfig.basic.name}</span>
       </span>
-      <span class="license-card__pair">
-        <span class="license-card__label">License</span>
-        <span class="license-card__value">
+      <span class="inline-flex items-center gap-[0.35rem]">
+        <span class="whitespace-nowrap text-[var(--gray-600)]">License</span>
+        <span>
           <CCLicense />
           <a href={licenseUrl} target="_blank" rel="noopener noreferrer"> CC BY-NC-SA 4.0 </a>
         </span>
       </span>
 
-      <p class="license-card__link">
+      <p class="my-[0.4rem] text-[0.9rem]">
         {
           hasPageUrl ? (
             <a href={currentPageUrl} target="_blank" rel="noopener noreferrer">
               {currentPageUrl}
             </a>
           ) : (
-            <span class="license-card__value">Current page</span>
+            <span>Current page</span>
           )
         }
       </p>
