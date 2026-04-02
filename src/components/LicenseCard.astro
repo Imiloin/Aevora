@@ -1,6 +1,6 @@
 ---
 import aboutConfig from '@configs/about.json';
-import CCIcons from '@components/icons/CCIcons.astro';
+import CCLicense from '@components/icons/CCLicense.astro';
 
 const licenseUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
 
@@ -113,7 +113,7 @@ const hasPageUrl = Boolean(currentPageUrl);
       <span class="license-card__pair">
         <span class="license-card__label">License</span>
         <span class="license-card__value">
-          <CCIcons />
+          <CCLicense />
           <a href={licenseUrl} target="_blank" rel="noopener noreferrer"> CC BY-NC-SA 4.0 </a>
         </span>
       </span>

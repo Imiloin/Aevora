@@ -1,6 +1,6 @@
 ---
 import { slugify } from '@utils/slug';
-import FolderIcon from '@components/icons/FolderIcon.astro';
+import Folder from '@components/icons/Folder.astro';
 
 const { series } = Astro.props;
 ---
@@ -8,7 +8,7 @@ const { series } = Astro.props;
 {
   series && series.length > 0 && (
     <div class="series">
-      <FolderIcon />
+      <Folder />
       <div class="series-links">
         {series.map((entry: string, index: number) => (
           <>

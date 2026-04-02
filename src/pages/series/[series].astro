@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import ArrowIcon from '@components/icons/ArrowIcon.astro';
+import ArrowUpRight from '@components/icons/ArrowUpRight.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import { slugify } from '@utils/slug';
 import { getSortedPosts } from '@utils/posts';
@@ -146,7 +146,7 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
             </p>
             <p class="post-card-description">{post.data.description}</p>
           </div>
-          <ArrowIcon class="post-card-arrow" />
+          <ArrowUpRight class="post-card-arrow" />
         </a>
       ))
     }

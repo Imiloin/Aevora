@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
-import EnvelopeIcon from '@components/icons/EnvelopeIcon.astro';
+import Envelope from '@components/icons/Envelope.astro';
 
 import '@styles/email-button.scss';
 
@@ -95,7 +95,7 @@ const { basic, links } = aboutConfig;
     <div class="contact-section">
       <h1>{basic.bio}</h1>
       <p>{basic.name} &nbsp; | &nbsp; {basic.status}</p>
-      <a href={`mailto:${basic.email}`} class="email-button button">Email Me <EnvelopeIcon /></a>
+      <a href={`mailto:${basic.email}`} class="email-button button">Email Me <Envelope /></a>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
