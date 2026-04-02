@@ -1,5 +1,6 @@
 ---
 import HeaderLink from '@components/HeaderLink.astro';
+import SearchIcon from '@components/icons/SearchIcon.astro';
 
 import logoBadge from '@icons/logo-badge.svg';
 import logoText from '@icons/logo-text.svg';
@@ -32,16 +33,7 @@ import logoText from '@icons/logo-text.svg';
     </div>
     <div class="icon-links">
       <a data-expand href="/search/" aria-label="Search">
-        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" height="1.1rem" class="icon-search"
-          ><path
-            d="M13.8333 13.8333L10.7022 10.7022M10.7022 10.7022C11.607 9.79738 12.1667 8.54738 12.1667 7.16667C12.1667 4.40525 9.9281 2.16667 7.16667 2.16667C4.40525 2.16667 2.16667 4.40525 2.16667 7.16667C2.16667 9.9281 4.40525 12.1667 7.16667 12.1667C8.54738 12.1667 9.79738 11.607 10.7022 10.7022Z"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-          </path>
-        </svg>
+        <SearchIcon class="icon-search" />
       </a>
     </div>
   </nav>
@@ -105,8 +97,6 @@ import logoText from '@icons/logo-text.svg';
   .icon-links a:hover {
     animation: scale-up-dpwn 0.6s ease; /* Apply animation */
     color: var(--orange-neon);
-  }
-  .icon-search {
   }
   @keyframes scale-up-dpwn {
     0% {

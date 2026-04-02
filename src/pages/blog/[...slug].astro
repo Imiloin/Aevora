@@ -1,5 +1,7 @@
 ---
 import BlogPost from '@layouts/BlogPost.astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
+import type { MarkdownHeading } from 'astro';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -17,8 +19,8 @@ export async function getStaticPaths() {
 
 type Props = {
   post: CollectionEntry<'blog'>;
-  Content: any;
-  headings: any[];
+  Content: AstroComponentFactory;
+  headings: MarkdownHeading[];
 };
 
 const { post, Content, headings } = Astro.props;

@@ -1,15 +1,12 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import SearchBar from '@components/SearchBar.astro';
 
 const title = 'Search';
 const description = 'Search for posts on this site.';
 ---
 
-<!doctype html>
-<html lang="en">
+<BaseLayout title={title} description={description}>
   <style>
     body {
       display: flex;
@@ -31,15 +28,9 @@ const description = 'Search for posts on this site.';
     }
   </style>
 
-  <BaseHead title={title} description={description} />
-
-  <body>
-    <Header />
-    <main>
-      <div class="search-bar">
-        <SearchBar />
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <main>
+    <div class="search-bar">
+      <SearchBar />
+    </div>
+  </main>
+</BaseLayout>

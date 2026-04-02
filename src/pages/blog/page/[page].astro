@@ -1,60 +1,38 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import PaginatedPosts from '@components/PaginatedPosts.astro';
-import { getCollection } from 'astro:content';
-
 import blogConfig from '@configs/blog.json';
+import { getSortedPosts } from '@utils/posts';
+import { getPaginationInfo } from '@utils/pagination';
 
 const title = blogConfig.general.title;
 const description = blogConfig.general.description;
 const width = blogConfig.general.width;
 
-// Get the current page number
 const { page } = Astro.params;
 const currentPage = parseInt(page ?? '1', 10);
 
-// Pagination logic
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
-
-const postsPerPage = blogConfig.pagination.postsPerPage;
-const firstPagePosts = blogConfig.pagination.firstPagePosts;
-const totalPages = Math.ceil((posts.length - firstPagePosts) / postsPerPage) + 1;
+const posts = await getSortedPosts();
+const { totalPages } = getPaginationInfo(posts.length);
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  );
+  const posts = await getSortedPosts();
+  const { totalPages } = getPaginationInfo(posts.length);
 
-  const postsPerPage = blogConfig.pagination.postsPerPage;
-  const firstPagePosts = blogConfig.pagination.firstPagePosts;
-  const totalPages = Math.ceil((posts.length - firstPagePosts) / postsPerPage) + 1;
-
-  const paths = Array.from({ length: totalPages }, (_, i) => ({
+  return Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
   }));
-  return paths;
 }
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-    <style define:vars={{ width }}>
-      main {
-        width: var(--width);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <main>
-      <PaginatedPosts posts={posts} currentPage={currentPage} totalPages={totalPages} />
-    </main>
-    <Footer width={width} />
-  </body>
-</html>
+<BaseLayout title={title} description={description} footerWidth={width}>
+  <style define:vars={{ width }}>
+    main {
+      width: var(--width);
+    }
+  </style>
+
+  <main>
+    <PaginatedPosts posts={posts} currentPage={currentPage} totalPages={totalPages} />
+  </main>
+</BaseLayout>

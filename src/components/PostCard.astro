@@ -1,6 +1,12 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import FormattedDate from '@components/FormattedDate.astro';
 import { Image } from 'astro:assets';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  isFirstChild: boolean;
+}
 
 const { post, isFirstChild } = Astro.props;
 ---

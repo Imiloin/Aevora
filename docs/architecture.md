@@ -27,7 +27,7 @@ Frontmatter schema (Zod-validated):
 | `src/pages/series/[series].astro`  | Archive pages by series tag                                                                          |
 | `src/pages/about.astro`            | About page                                                                                           |
 | `src/pages/search.astro`           | Pagefind search page                                                                                 |
-| `src/pages/rss.xml.js`             | RSS feed                                                                                             |
+| `src/pages/rss.xml.ts`             | RSS feed                                                                                             |
 | `src/pages/404.astro`              | Custom 404 page                                                                                      |
 
 Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `src/configs/blog.json`).
@@ -78,13 +78,15 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 
 ## Key Config Files
 
-| File                     | Purpose                                       |
-| ------------------------ | --------------------------------------------- |
-| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins |
-| `ec.config.mjs`          | Expressive Code theme and styling             |
-| `vite.config.js`         | SCSS config, path aliases                     |
-| `src/consts.ts`          | Site title and description                    |
-| `src/configs/blog.json`  | Pagination and layout settings                |
-| `src/configs/about.json` | Author info for about page                    |
-| `pagefind.yml`           | Search indexing configuration                 |
-| `netlify.toml`           | Netlify build and deploy settings             |
+| File                     | Purpose                                             |
+| ------------------------ | --------------------------------------------------- |
+| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins       |
+| `ec.config.mjs`          | Expressive Code theme and styling                   |
+| `vite.config.js`         | SCSS config, path aliases                           |
+| `src/configs/site.json`  | Site title and description                          |
+| `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings        |
+| `src/configs/about.json` | Author info for about page                          |
+| `src/configs/home.json`  | Homepage config (canvas, typing effect, quote text) |
+| `src/configs/index.ts`   | Typed barrel re-export for all configs              |
+| `pagefind.yml`           | Search indexing configuration                       |
+| `netlify.toml`           | Netlify build and deploy settings                   |

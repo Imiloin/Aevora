@@ -1,17 +1,17 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
-import BaseHead from '@components/BaseHead.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import SeriesLinks from '@components/SeriesLinks.astro';
-import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
-import Header from '@components/Header.astro';
 import ScrollProgress from '@components/ScrollProgress.astro';
 import LicenseCard from '@components/LicenseCard.astro';
 
 import type { MarkdownHeading } from 'astro';
 import type { HeadingHierarchy } from '@components/TOC.astro';
 import TOC from '@components/TOC.astro';
+
+import blogConfig from '@configs/blog.json';
 
 import '@styles/toc.css';
 
@@ -24,15 +24,17 @@ type Props = CollectionEntry<'blog'>['data'] & {
 };
 
 const { title, description, pubDate, updatedDate, heroImage, series, headings } = Astro.props;
+const { width: heroWidth, height: heroHeight } = blogConfig.heroImage;
+const { minDepth: tocMinDepth, maxDepth: tocMaxDepth } = blogConfig.toc;
 
 function createHeadingHierarchy(headings: MarkdownHeading[]) {
   const topLevelHeadings: HeadingHierarchy[] = [];
 
   headings.forEach((heading) => {
-    if (heading.depth > 3) {
+    if (heading.depth > tocMaxDepth) {
       return;
     }
-    if (heading.depth < 2) {
+    if (heading.depth < tocMinDepth) {
       return;
     }
     const h = {
@@ -40,7 +42,7 @@ function createHeadingHierarchy(headings: MarkdownHeading[]) {
       subheadings: [],
     };
 
-    if (h.depth === 2) {
+    if (h.depth === tocMinDepth) {
       topLevelHeadings.push(h);
     } else {
       let parent = topLevelHeadings[topLevelHeadings.length - 1];
@@ -57,9 +59,8 @@ const toc: HeadingHierarchy[] = createHeadingHierarchy(headings ?? []);
 const hasToC = toc.length > 1;
 ---
 
-<html lang="zh">
-  <head>
-    <BaseHead title={title} description={description} image={heroImage.src} />
+<BaseLayout title={title} description={description} image={heroImage.src} lang="zh">
+  <Fragment slot="head">
     <style>
       .hero-image {
         position: relative;
@@ -106,71 +107,72 @@ const hasToC = toc.length > 1;
         align-items: center;
         gap: 0.35em;
       }
-    </style>
-  </head>
-
-  <body>
-    <Header />
-    <div class="toc" id="toc">
-      {
-        hasToC && (
-          <nav>
-            {toc.map((heading) => (
-              <TOC heading={heading} />
-            ))}
-          </nav>
-        )
+      .prose hr + * {
+        margin-top: 1em;
       }
-    </div>
-    <main data-pagefind-body>
-      <article>
-        <div class="hero-image" data-pagefind-ignore>
+    </style>
+  </Fragment>
+
+  <div class="toc" id="toc">
+    {
+      hasToC && (
+        <nav>
+          {toc.map((heading) => (
+            <TOC heading={heading} />
+          ))}
+        </nav>
+      )
+    }
+  </div>
+  <main data-pagefind-body>
+    <article>
+      <div class="hero-image" data-pagefind-ignore>
+        {
+          heroImage && (
+            <>
+              <Image width={heroWidth} height={heroHeight} src={heroImage} alt="" class="shadow" />
+              <Image
+                width={heroWidth}
+                height={heroHeight}
+                data-pagefind-meta="image[src]"
+                src={heroImage}
+                alt=""
+              />
+            </>
+          )
+        }
+      </div>
+      <div class="article-header">
+        <div class="date">
+          <FormattedDate date={pubDate} />
           {
-            heroImage && (
+            updatedDate && (
               <>
-                <Image width={960} height={480} src={heroImage} alt="" class="shadow" />
-                <Image
-                  width={960}
-                  height={480}
-                  data-pagefind-meta="image[src]"
-                  src={heroImage}
-                  alt=""
-                />
+                <span class="date-separator">&bull;</span>
+                <span class="last-updated-on">
+                  Updated on <FormattedDate date={updatedDate} />
+                </span>
               </>
             )
           }
         </div>
-        <div class="article-header">
-          <div class="date">
-            <FormattedDate date={pubDate} />
-            {
-              updatedDate && (
-                <>
-                  <span class="date-separator">&bull;</span>
-                  <span class="last-updated-on">
-                    Updated on <FormattedDate date={updatedDate} />
-                  </span>
-                </>
-              )
-            }
-          </div>
-          <h1 class="title-h1">{title}</h1>
-          <div style="text-align: center;">
-            <SeriesLinks series={series} />
-          </div>
-          <hr />
-          <div style="height: 1em;"></div>
+        <h1 class="title-h1">{title}</h1>
+        <div style="text-align: center;">
+          <SeriesLinks series={series} />
         </div>
-        <div class="prose">
-          <slot />
-          <LicenseCard title={title} pageUrl={Astro.url.href} />
-        </div>
-      </article>
-    </main>
-    <Footer />
+        <hr />
+      </div>
+      <div class="prose">
+        <slot />
+        <LicenseCard title={title} pageUrl={Astro.url.href} />
+      </div>
+    </article>
+  </main>
+
+  <Fragment slot="after-footer">
     <ScrollProgress />
     <script>
       import '@scripts/toc-display.ts';
     </script>
-  </body>
-</html>
+  </Fragment>
+</BaseLayout>
