@@ -55,11 +55,14 @@ Processing chain configured in `astro.config.mjs`:
 
 ## Styling
 
-- Custom CSS/SCSS, no CSS framework
+- **Tailwind CSS v4** — via `@tailwindcss/vite` plugin, configured in `src/styles/tailwind.css`
+  - Preflight (base reset) is intentionally excluded to avoid conflicts with existing `global.css`
+  - Custom breakpoints: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1400px
+  - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
+  - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`
 - Fonts: Uncut Sans (body), Cascadia Code (monospace), HarmonyOS Sans (CJK fallback)
-- Responsive breakpoints: 1200px, 720px, 636px
-- SCSS preprocessing via Vite's modern API (`vite.config.js`)
+- All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
 
 ## Path Aliases
@@ -82,7 +85,7 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 | ------------------------ | --------------------------------------------------- |
 | `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins       |
 | `ec.config.mjs`          | Expressive Code theme and styling                   |
-| `vite.config.js`         | SCSS config, path aliases                           |
+| `vite.config.js`         | Tailwind plugin, path aliases                       |
 | `src/configs/site.json`  | Site title and description                          |
 | `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings        |
 | `src/configs/about.json` | Author info for about page                          |

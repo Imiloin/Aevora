@@ -30,30 +30,13 @@ const hasNextPage = totalPages > currentPage;
     margin: 0;
     padding: 0;
   }
+
   @media (max-width: 720px) {
     ul {
       gap: 0.5em;
     }
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2em;
-    gap: 0.5em;
-  }
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
   .arrow {
     display: flex;
     align-items: center;
@@ -61,31 +44,37 @@ const hasNextPage = totalPages > currentPage;
     border-radius: 0.25em;
     padding: 0.375em 0.5em;
     color: var(--text);
-  }
-  .arrow.inactive {
-    color: var(--gray-400);
-  }
-  .arrow.active:hover {
-    background-color: var(--gray-400);
+
+    &.inactive {
+      color: var(--gray-400);
+    }
+
+    &.active:hover {
+      background-color: var(--gray-400);
+    }
   }
 
   .index {
     border-radius: 0.25em;
     padding: 0.5em 1em;
     text-decoration: none;
-  }
-  .index.index-dots {
-    cursor: default;
-  }
-  .index.index-current {
-    background-color: var(--gray-850);
-    color: var(--white);
-  }
-  .index.index-other {
-    color: var(--text);
-  }
-  .index.index-other:hover {
-    background-color: var(--gray-400);
+
+    &.index-dots {
+      cursor: default;
+    }
+
+    &.index-current {
+      background-color: var(--gray-850);
+      color: var(--white);
+    }
+
+    &.index-other {
+      color: var(--text);
+
+      &:hover {
+        background-color: var(--gray-400);
+      }
+    }
   }
 </style>
 
@@ -99,7 +88,7 @@ const hasNextPage = totalPages > currentPage;
   </ul>
   {
     totalPages > 1 && (
-      <nav aria-label="Pagination">
+      <nav aria-label="Pagination" class="mt-8 flex items-center justify-center gap-2">
         {/* previous */}
         {hasPrevPage ? (
           <a

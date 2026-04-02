@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 
-import '@styles/404-button.scss';
+import '@styles/404-button.css';
 
 const title = 'Page Not Found';
 const description = "Seems like you're lost. Let's get you back on track.";
@@ -32,14 +32,13 @@ const description = "Seems like you're lost. Let's get you back on track.";
   <script>
     document.querySelectorAll('button').forEach((button) => {
       button.innerHTML =
-        '<div><span>' +
+        '<div>' +
         button.textContent
           ?.trim()
-          .trim()
           .split('')
-          .map((char) => (char === ' ' ? '&nbsp;' : char))
-          .join('</span><span>') +
-        '</span></div>';
+          .map((char, i) => `<span style="--i:${i + 1}">${char === ' ' ? '&nbsp;' : char}</span>`)
+          .join('') +
+        '</div>';
     });
   </script>
 

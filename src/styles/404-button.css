@@ -34,15 +34,8 @@ button {
       font-style: normal;
       transition: transform var(--duration) ease;
       transform: translateY(var(--m)) translateZ(0);
-      $i: 1;
-
-      @while $i < 15 {
-        &:nth-child(#{$i}) {
-          transition-delay: calc($i / 20) + s;
-        }
-
-        $i: $i + 1;
-      }
+      /* Staggered delay via --i custom property set in JS */
+      transition-delay: calc(var(--i, 0) * 0.05s);
     }
   }
 

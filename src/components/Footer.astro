@@ -6,29 +6,20 @@ const today = new Date();
 const { width = '800px' } = Astro.props;
 ---
 
-<footer>
+<footer class="flex justify-center" style={`background: var(--background); color: var(--gray);`}>
   <div class="footer-content">
-    <div class="left">
+    <div class="text-left">
       &copy; {today.getFullYear()} Imiloin. All rights reserved.
     </div>
-    <div class="right astro">
-      Powered by<a
-        data-shrink
-        href="https://astro.build"
-        class="icon-links"
-        aria-label="Astro website"><AstroLogo /></a
+    <div class="astro text-right">
+      Powered by<a data-shrink href="https://astro.build" aria-label="Astro website"
+        ><AstroLogo /></a
       >.
     </div>
   </div>
 </footer>
 
 <style define:vars={{ width }}>
-  footer {
-    background: var(--background);
-    color: var(--gray);
-    display: flex;
-    justify-content: center;
-  }
   .footer-content {
     display: flex;
     justify-content: space-between;
@@ -37,27 +28,22 @@ const { width = '800px' } = Astro.props;
     width: var(--width);
     max-width: calc(100% - 2em);
   }
-  .left {
-    text-align: left;
-  }
-  .right {
-    text-align: right;
-  }
 
   .astro a {
     text-decoration: none;
     color: var(--gray);
+
+    &:hover {
+      color: var(--gray-800);
+    }
   }
-  .astro a:hover {
-    color: var(--gray-800);
-  }
-  /* AstroLogo size/alignment is set via its component props */
 
   @media (max-width: 720px) {
     .footer-content {
       width: calc(100% - 2em);
     }
   }
+
   @media (max-width: 636px) {
     .footer-content {
       font-size: 0.8em;

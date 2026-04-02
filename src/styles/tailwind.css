@@ -1,0 +1,17 @@
+/* Tailwind CSS v4 — import theme and utilities only, skip preflight
+   to avoid conflicts with existing global.css base styles. */
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
+
+/* Custom theme: breakpoints and font families matching existing design tokens */
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1400px;
+
+  --font-sans: 'UncutSans', 'HarmonyOS Sans SC', system-ui, sans-serif;
+  --font-mono:
+    'Cascadia Mono', 'JetBrains Mono', 'Consolas', 'Courier New', 'HarmonyOS Sans SC', monospace;
+}

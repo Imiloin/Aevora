@@ -8,6 +8,7 @@ import { homeConfig, siteConfig } from '@configs/index';
 import '@styles/chat-container.css';
 import '@styles/clock.css';
 import '@styles/cursor.css';
+import '@styles/home.css';
 import '@styles/link-button.css';
 import '@styles/quotation.css';
 import '@styles/typing-effect.css';
@@ -15,164 +16,9 @@ import '@styles/typing-effect.css';
 
 <!doctype html>
 <html lang="en">
-  <style>
-    /* hide scrollbar */
-    html::-webkit-scrollbar {
-      display: none;
-    }
-    html {
-      scrollbar-width: none; /* Firefox */
-    }
-    html {
-      -ms-overflow-style: none; /* IE and Edge */
-    }
-
-    html,
-    body,
-    div,
-    * {
-      cursor: none !important;
-    }
-
-    section {
-      display: flex;
-      align-items: center;
-      height: 100vh;
-      justify-content: space-between;
-      gap: 1em;
-    }
-    canvas {
-      display: block;
-      width: 100%;
-      height: 100vh;
-    }
-
-    .content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 10%;
-      margin-right: 10%;
-      width: 80%;
-    }
-    .content.column {
-      flex-direction: column;
-    }
-    .left-content,
-    .right-content {
-      width: 600px;
-      max-width: calc(40% - 1em);
-      min-width: 500px;
-    }
-    .left-content {
-      text-align: left;
-      justify-content: flex-start;
-      margin-left: 10%;
-    }
-    .right-content {
-      text-align: right;
-      justify-content: flex-end;
-      margin-right: 10%;
-    }
-
-    .centerDiv {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .partDiv {
-      position: relative;
-      width: 600px;
-      max-width: calc(40% - 1em);
-    }
-
-    .clock-container {
-      transform: translateX(-100px) translateY(-50px);
-    }
-    .button-container {
-      transform: translateX(-68px) translateY(50px);
-    }
-
-    .left-align {
-      align-self: flex-start;
-      text-align: left;
-      width: 100%;
-      margin-left: 10%;
-    }
-    .right-align {
-      align-self: flex-end;
-      text-align: right;
-      width: 100%;
-      margin-right: 10%;
-    }
-
-    @media (max-width: 1200px) {
-      .content {
-        margin: auto 1em;
-        width: calc(100% - 2em);
-      }
-      .left-content,
-      .right-content {
-        margin: auto;
-        align-items: center;
-        min-width: 600px;
-      }
-      section {
-        height: fit-content;
-        font-size: 0.8rem;
-        display: block;
-        align-items: column;
-      }
-      .centerDiv {
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin: 2em 0;
-      }
-      .partDiv {
-        width: 100%;
-        max-width: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .clock-container {
-        transform: translateX(0) translateY(0);
-        margin: 2em;
-      }
-      .button-container {
-        transform: translateX(0) translateY(0);
-        margin: 2em;
-      }
-      .left-align {
-        margin-left: 20%;
-      }
-      .right-align {
-        margin-right: 20%;
-      }
-    }
-    @media (max-width: 720px) {
-      .left-content,
-      .right-content {
-        min-width: 90%;
-      }
-      .clock-container {
-        margin: 0;
-        scale: 0.6;
-      }
-      .button-container {
-        margin: 0;
-        scale: 0.8;
-      }
-    }
-    @media (max-width: 636px) {
-      .clock-container {
-        display: none;
-      }
-    }
-  </style>
-
-  <BaseHead title={siteConfig.title} description={siteConfig.description} />
+  <head>
+    <BaseHead title={siteConfig.title} description={siteConfig.description} />
+  </head>
 
   <div class="cursor">
     <div class="cursor-outer"></div>

@@ -48,13 +48,16 @@ span.stroke {
   -webkit-text-fill-color: transparent;
 }
 
-html {
-  cursor: none;
-}
+/* Only hide the native cursor on devices with a fine pointer (mouse/trackpad) */
+@media (pointer: fine) {
+  html {
+    cursor: none;
+  }
 
-[data-shrink],
-[data-expand] {
-  cursor: none;
+  [data-shrink],
+  [data-expand] {
+    cursor: none;
+  }
 }
 
 .cursor.hidden {

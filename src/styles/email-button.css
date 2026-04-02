@@ -4,9 +4,6 @@
   background-position: top center;
   cursor: pointer;
   transition-property: background, color;
-}
-
-.button {
   position: relative;
   background-clip: padding-box;
   overflow: hidden;
