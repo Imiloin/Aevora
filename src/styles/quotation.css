@@ -66,7 +66,7 @@
   justify-content: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .text-section {
     margin-top: 0.5em;
   }
@@ -76,13 +76,13 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .text-section {
     margin-top: 0;
   }
 }
 
-@media (max-width: 636px) {
+@media (max-width: 640px) {
   .small-text {
     font-size: 0.6rem;
   }

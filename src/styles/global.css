@@ -100,7 +100,7 @@ hr {
 }
 
 /* Responsive styles for small screens */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   body {
     font-size: 0.9rem;
     margin: 3rem 0;

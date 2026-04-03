@@ -64,7 +64,7 @@ const hasNextPage = totalPages > currentPage;
 </style>
 
 <section>
-  <ul class="m-0 flex list-none flex-wrap gap-8 p-0 max-[720px]:gap-2">
+  <ul class="m-0 flex list-none flex-wrap gap-8 p-0 max-md:gap-2">
     {
       paginatedPosts.map((post, index) => (
         <PostCard post={post} isFirstChild={currentPage === 1 && index === 0} />

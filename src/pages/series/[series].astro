@@ -55,7 +55,7 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
       transform: translateY(-50%);
       color: var(--gray-800);
     }
-    @media (max-width: 720px) {
+    @media (max-width: 768px) {
       main {
         font-size: 0.9rem;
       }
@@ -72,7 +72,7 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
         <a
           href={`/blog/${post.id}/`}
           class:list={[
-            'post-card relative flex w-[calc(100%-4rem)] items-center overflow-hidden border-b border-[var(--gray-300)] py-4 pr-16 pl-0 text-inherit no-underline hover:bg-[var(--gray-200)] hover:shadow-none max-[720px]:w-full max-[720px]:flex-col max-[720px]:pr-0',
+            'post-card relative flex w-[calc(100%-4rem)] items-center overflow-hidden border-b border-[var(--gray-300)] py-4 pr-16 pl-0 text-inherit no-underline hover:bg-[var(--gray-200)] hover:shadow-none max-md:w-full max-md:flex-col max-md:pr-0',
             index === 0 && 'border-t border-[var(--gray-300)]',
           ]}
         >
@@ -81,9 +81,9 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
             height={seriesImgHeight}
             src={post.data.heroImage}
             alt={post.data.title}
-            class="my-0 mr-8 ml-4 h-auto w-[160px] rounded max-[720px]:mx-8 max-[720px]:my-4 max-[720px]:w-[calc(100%-2rem)] max-[720px]:rounded-lg"
+            class="my-0 mr-8 ml-4 h-auto w-[160px] rounded max-md:mx-8 max-md:my-4 max-md:w-[calc(100%-2rem)] max-md:rounded-lg"
           />
-          <div class="flex-1 max-[720px]:w-[calc(100%-2rem)] max-[720px]:text-left">
+          <div class="flex-1 max-md:w-[calc(100%-2rem)] max-md:text-left">
             <h2 class="my-2 text-[1.2em] leading-normal">{post.data.title}</h2>
             <p class="text-sm text-[var(--gray-700)]">
               <FormattedDate date={post.data.pubDate} />

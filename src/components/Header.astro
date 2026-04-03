@@ -11,7 +11,7 @@ import logoText from '@icons/logo-text.svg';
   class="fixed top-0 left-0 z-[998] m-0 w-screen max-w-[calc(100vw-2em)] bg-[var(--translucent)] p-4 backdrop-blur-[10px] transition-transform duration-300 ease-in-out"
 >
   <nav class="relative flex items-center justify-between">
-    <div class="title ml-[10%] max-[720px]:ml-0 max-[720px]:scale-[0.8] max-lg:ml-4">
+    <div class="title ml-[10%] max-lg:ml-4 max-md:ml-0 max-md:scale-[0.8]">
       <a
         data-expand
         href="/"
@@ -30,7 +30,7 @@ import logoText from '@icons/logo-text.svg';
           height="1.1rem"
           alt="logo-text"
           aria-label="Logo-text"
-          class="h-[1.1rem] rounded-none max-[636px]:hidden"
+          class="h-[1.1rem] rounded-none max-sm:hidden"
         />
       </a>
     </div>
@@ -39,9 +39,7 @@ import logoText from '@icons/logo-text.svg';
       <HeaderLink href="/blog/">Blog</HeaderLink>
       <HeaderLink href="/about/">About</HeaderLink>
     </div>
-    <div
-      class="icon-links mr-[10%] flex items-center max-[720px]:mr-0 max-[720px]:scale-[0.8] max-lg:mr-4"
-    >
+    <div class="icon-links mr-[10%] flex items-center max-lg:mr-4 max-md:mr-0 max-md:scale-[0.8]">
       <a
         data-expand
         href="/search/"

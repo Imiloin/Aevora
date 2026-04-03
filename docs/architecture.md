@@ -57,7 +57,8 @@ Processing chain configured in `astro.config.mjs`:
 
 - **Tailwind CSS v4** — via `@tailwindcss/vite` plugin, configured in `src/styles/tailwind.css`
   - Preflight (base reset) is intentionally excluded to avoid conflicts with existing `global.css`
-  - Custom breakpoints: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1400px
+  - Standardized breakpoints: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1400px
+  - Use `max-sm:`, `max-md:`, `max-lg:`, `max-xl:`, `max-2xl:` variants — no arbitrary breakpoints
   - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
   - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`
