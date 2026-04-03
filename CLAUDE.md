@@ -19,6 +19,11 @@ See [docs/architecture.md](docs/architecture.md) for full details including cont
 
 Maintain a high-quality project architecture. Do not put all code into a single file; separate maintainable modules or components, and refactor as needed.
 
+## Naming Conventions
+
+- **Files**: Astro components/layouts use PascalCase (`PostCard.astro`); everything else uses kebab-case (`blog.json`, `toc-display.ts`, `global.css`). Scripts use `.ts` only.
+- **Code**: camelCase for variables/functions, PascalCase for types/interfaces, kebab-case for CSS classes.
+
 ## Code Style
 
 - Prettier: 100-char width, 2-space indent, single quotes, trailing commas (ES5), semicolons

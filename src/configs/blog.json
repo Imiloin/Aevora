@@ -7,5 +7,17 @@
   "pagination": {
     "postsPerPage": 6,
     "firstPagePosts": 5
+  },
+  "heroImage": {
+    "width": 960,
+    "height": 480
+  },
+  "seriesImage": {
+    "width": 720,
+    "height": 360
+  },
+  "toc": {
+    "minDepth": 2,
+    "maxDepth": 3
   }
 }

@@ -1,20 +1,27 @@
 // ES6 Class
 class TypeWriter {
-  constructor(txtElement, words, wait = 3000) {
+  txtElement: HTMLElement;
+  words: string[];
+  txt: string;
+  wordIndex: number;
+  wait: number;
+  isDeleting: boolean;
+
+  constructor(txtElement: HTMLElement, words: string[], wait: number = 3000) {
     this.txtElement = txtElement;
     this.words = words;
     this.txt = '';
     this.wordIndex = 0;
-    this.wait = parseInt(wait, 10);
+    this.wait = wait;
     this.type();
     this.isDeleting = false;
   }
 
-  type() {
+  type(): void {
     // Current index of word
-    const current = this.wordIndex % this.words.length;
+    const current: number = this.wordIndex % this.words.length;
     // Get full text of current word
-    const fullTxt = this.words[current];
+    const fullTxt: string = this.words[current];
 
     // Check if deleting
     if (this.isDeleting) {
@@ -29,7 +36,7 @@ class TypeWriter {
     this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
     // Initial Type Speed
-    let typeSpeed = 150;
+    let typeSpeed: number = 150;
 
     if (this.isDeleting) {
       typeSpeed /= 2;
@@ -56,10 +63,12 @@ class TypeWriter {
 init();
 
 // Init App
-function init() {
-  const txtElement = document.querySelector('.txt-type');
-  const words = JSON.parse(txtElement.getAttribute('data-words'));
+function init(): void {
+  const txtElement = document.querySelector('.txt-type') as HTMLElement | null;
+  if (!txtElement) return;
+  const wordsAttr = txtElement.getAttribute('data-words');
+  if (!wordsAttr) return;
+  const words: string[] = JSON.parse(wordsAttr);
   const wait = txtElement.getAttribute('data-wait');
-  // Init TypeWriter
-  new TypeWriter(txtElement, words, wait);
+  new TypeWriter(txtElement, words, wait ? parseInt(wait, 10) : 3000);
 }

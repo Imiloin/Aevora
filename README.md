@@ -9,18 +9,20 @@ This repository holds the open-source codebase for my blog's structure and desig
 In this Astro project, you will find the following folders and files:
 
 ```text
+├── docs/                # Architecture and command documentation
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── configs/
-│   ├── content/
-│   ├── layouts/
-│   ├── pages/
-│   ├── plugins/
-│   ├── scripts/
-│   └── styles/
+│   ├── components/      # Astro components (includes icons/ subdirectory)
+│   ├── configs/         # JSON configs with typed barrel export
+│   ├── content/         # Blog posts (markdown)
+│   ├── icons/           # Raw SVG files imported as image assets
+│   ├── layouts/         # Page layouts (BaseLayout, BlogPost)
+│   ├── pages/           # Route pages
+│   ├── plugins/         # Custom remark/rehype plugins
+│   ├── scripts/         # TypeScript client-side scripts
+│   ├── styles/          # Global CSS, Tailwind config, prose styles
+│   └── utils/           # Shared utilities (pagination, posts, slug)
 ├── astro.config.mjs
-├── README.md
 ├── package.json
 └── tsconfig.json
 ```
@@ -31,7 +33,7 @@ Any static assets, such as images, are located in the `public/` directory.
 
 ## Getting Started
 
-First, some prerequisites are required. Check [Astro Documentation](https://docs.astro.build/en/install-and-setup/#prerequisites) for more information.
+Some prerequisites are required. Check [Astro Documentation](https://docs.astro.build/en/install-and-setup/#prerequisites) for more information.
 
 After that, clone this repository and run the following commands:
 
@@ -61,7 +63,7 @@ All commands should be run from the root of the project in your terminal.
 | `npm run astro ...`       | Executes Astro CLI commands, such as `astro add` or `astro check` |
 | `npm run astro -- --help` | Displays help for using the Astro CLI                             |
 
-> For deployments to Netlify, use `netlify.toml` to configure the build process.
+For deployments to Netlify, use `netlify.toml` to configure the build process.
 
 ## License
 

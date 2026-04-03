@@ -1,7 +1,7 @@
 {
   "name": "aevora",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -17,13 +17,15 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@expressive-code/plugin-line-numbers": "^0.41.7",
+    "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.2",
     "astro-expressive-code": "^0.41.7",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
     "remark-gemoji": "^8.0.0",
     "remark-github-alerts": "^0.1.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
     "husky": "^9.1.7",
@@ -31,7 +33,7 @@
     "pagefind": "^1.4.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
-    "sass-embedded": "^1.98.0"
+    "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

@@ -1,4 +1,5 @@
 ---
+import ChevronUp from '@components/icons/ChevronUp.astro';
 // Source:
 // https://github.com/Spikeysanju/sanju.sh/blob/main/src/components/misc/scroll-progress.astro
 
@@ -17,8 +18,11 @@
  */
 ---
 
-<div id="progress-container">
-  <svg id="progress-circle" viewBox="0 0 36 36">
+<div
+  id="progress-container"
+  class="fixed right-5 bottom-5 flex size-[50px] cursor-pointer items-center justify-center max-lg:hidden"
+>
+  <svg id="progress-circle" class="absolute size-full -rotate-90" viewBox="0 0 36 36">
     <path
       class="circle-bg"
       d="M18 2.0845
@@ -34,42 +38,11 @@
             a 15.9155 15.9155 0 0 1 0 -31.831"
     ></path>
   </svg>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    class="lucide lucide-chevron-up"
-  >
-    <path d="m18 15-6-6-6 6"></path>
-  </svg>
+  <ChevronUp />
 </div>
 
 <style>
-  #progress-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #progress-circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-  }
-
+  /* SVG stroke styles — must remain in CSS (no Tailwind equivalent) */
   .circle-bg {
     fill: none;
     stroke: var(--gray-300);
@@ -84,16 +57,9 @@
     transition: stroke-dasharray 0.3s;
   }
 
-  .lucide-chevron-up {
+  #progress-container :global(.lucide-chevron-up) {
     position: relative;
     z-index: 1;
-  }
-
-  /* hide ScrollProgress on narrow screens */
-  @media (max-width: 960px) {
-    #progress-container {
-      display: none;
-    }
   }
 </style>
 

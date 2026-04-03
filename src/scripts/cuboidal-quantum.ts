@@ -2,8 +2,33 @@
     Reference: https://websim.ai/p/idlv9t1mcfkvn67ls8aj
 */
 
+interface CuboidalQuantumConfig {
+  numPoints: number;
+  baseMaxDist: number;
+  baseRadius: number;
+  variance: number;
+  twist: number;
+  color1: string;
+  color2: string;
+  rotationSpeed: number;
+  cameraSpeed: number;
+}
+
+interface Point2D {
+  x: number;
+  y: number;
+}
+
 class CuboidalQuantum {
-  constructor(canvasId, config = {}) {
+  config: CuboidalQuantumConfig;
+  canvas: HTMLCanvasElement;
+  ctx: CanvasRenderingContext2D;
+  w: number;
+  h: number;
+  cameraAngle: number;
+  t: number;
+
+  constructor(canvasId: string, config: Partial<CuboidalQuantumConfig> = {}) {
     // Default configuration
     this.config = {
       numPoints: 15,
@@ -18,8 +43,8 @@ class CuboidalQuantum {
       ...config, // Override defaults with provided config
     };
 
-    this.canvas = document.getElementById(canvasId);
-    this.ctx = this.canvas.getContext('2d');
+    this.canvas = document.getElementById(canvasId) as HTMLCanvasElement;
+    this.ctx = this.canvas.getContext('2d')!;
     this.w = 0;
     this.h = 0;
     this.cameraAngle = 0;
@@ -36,25 +61,25 @@ class CuboidalQuantum {
     this.loop();
   }
 
-  resizeCanvas() {
+  resizeCanvas(): void {
     this.w = this.canvas.width = window.innerWidth;
     this.h = this.canvas.height = window.innerHeight;
   }
 
-  drawManifold(t) {
+  drawManifold(t: number): void {
     const { numPoints, baseMaxDist, baseRadius, variance, twist, color1, color2 } = this.config;
     this.ctx.clearRect(0, 0, this.w, this.h);
 
-    const radius = Math.min(baseRadius, this.w / 2 - variance, this.h / 2 - variance);
-    const maxDist = (baseMaxDist * radius) / baseRadius;
+    const radius: number = Math.min(baseRadius, this.w / 2 - variance, this.h / 2 - variance);
+    const maxDist: number = (baseMaxDist * radius) / baseRadius;
 
-    const points = [];
+    const points: Point2D[] = [];
 
     for (let i = 0; i < numPoints; i++) {
-      const angle = (i / numPoints) * Math.PI * 2;
-      const r = radius + variance * Math.sin(angle * twist + t);
-      const x = r * Math.cos(angle);
-      const y = r * Math.sin(angle);
+      const angle: number = (i / numPoints) * Math.PI * 2;
+      const r: number = radius + variance * Math.sin(angle * twist + t);
+      const x: number = r * Math.cos(angle);
+      const y: number = r * Math.sin(angle);
       points.push({ x, y });
     }
 
@@ -65,17 +90,17 @@ class CuboidalQuantum {
 
     for (let i = 0; i < numPoints; i++) {
       for (let j = 0; j < numPoints; j++) {
-        const p1 = points[i];
-        const p2 = points[j];
+        const p1: Point2D = points[i];
+        const p2: Point2D = points[j];
 
-        const dist = Math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2);
+        const dist: number = Math.sqrt((p2.x - p1.x) ** 2 + (p2.y - p1.y) ** 2);
 
         if (dist < maxDist) {
           this.ctx.beginPath();
           this.ctx.moveTo(this.w / 2 + p1.x, this.h / 2 + p1.y);
           this.ctx.lineTo(this.w / 2 + p2.x, this.h / 2 + p2.y);
 
-          const gradient = this.ctx.createLinearGradient(
+          const gradient: CanvasGradient = this.ctx.createLinearGradient(
             this.w / 2 + p1.x,
             this.h / 2 + p1.y,
             this.w / 2 + p2.x,
@@ -94,7 +119,7 @@ class CuboidalQuantum {
     this.ctx.restore();
   }
 
-  loop() {
+  loop(): void {
     const { rotationSpeed, cameraSpeed } = this.config;
 
     this.drawManifold(this.t);

@@ -3,6 +3,9 @@ import type { MarkdownHeading } from 'astro';
 export interface HeadingHierarchy extends MarkdownHeading {
   subheadings: HeadingHierarchy[];
 }
+interface Props {
+  heading: HeadingHierarchy;
+}
 const { heading } = Astro.props;
 ---
 
@@ -13,7 +16,7 @@ const { heading } = Astro.props;
   {
     heading.subheadings.length > 0 && (
       <ul>
-        {heading.subheadings.map((subheading: any) => (
+        {heading.subheadings.map((subheading: HeadingHierarchy) => (
           <Astro.self heading={subheading} />
         ))}
       </ul>

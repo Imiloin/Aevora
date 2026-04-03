@@ -27,7 +27,7 @@
 }
 
 .main-text {
-  font-size: 5.5rem;
+  font-size: clamp(2rem, 5vw + 1rem, 5.5rem);
   font-weight: 700;
   line-height: 1;
   margin: 0 10px;
@@ -66,13 +66,9 @@
   justify-content: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .text-section {
     margin-top: 0.5em;
-  }
-
-  .main-text {
-    font-size: 4.5rem;
   }
 
   .unselectable-spaces::before {
@@ -80,22 +76,14 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .text-section {
     margin-top: 0;
   }
-
-  .main-text {
-    font-size: 3rem;
-  }
 }
 
-@media (max-width: 636px) {
+@media (max-width: 640px) {
   .small-text {
     font-size: 0.6rem;
-  }
-
-  .main-text {
-    font-size: 2rem;
   }
 }

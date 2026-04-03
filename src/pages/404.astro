@@ -1,71 +1,46 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
-import '@styles/404-button.scss';
+import '@styles/404-button.css';
 
 const title = 'Page Not Found';
 const description = "Seems like you're lost. Let's get you back on track.";
 ---
 
-<!doctype html>
-<html lang="en">
+<BaseLayout title={title} description={description}>
   <style>
     body {
       display: flex;
       flex-direction: column;
       min-height: calc(100vh - 4em);
     }
-    main {
-      display: flex;
-      /* flex: 1 makes the main element take up the remaining space */
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .huge {
-      font-size: 8em;
-      font-weight: 700;
-      color: var(--gray-850);
-      line-height: 1.4;
-    }
   </style>
   <script>
     document.querySelectorAll('button').forEach((button) => {
       button.innerHTML =
-        '<div><span>' +
+        '<div>' +
         button.textContent
           ?.trim()
-          .trim()
           .split('')
-          .map((char) => (char === ' ' ? '&nbsp;' : char))
-          .join('</span><span>') +
-        '</span></div>';
+          .map((char, i) => `<span style="--i:${i + 1}">${char === ' ' ? '&nbsp;' : char}</span>`)
+          .join('') +
+        '</div>';
     });
   </script>
 
-  <BaseHead title={title} description={description} />
-
-  <body>
-    <Header />
-    <main>
-      <div>
-        <span class="huge">404</span>
-      </div>
-      <div><h1>Page Not Found</h1></div>
-      <div>
-        <p>
-          The page you are looking for may have been removed, renamed, or is temporarily
-          unavailable.
-        </p>
-      </div>
-      <br />
-      <div>
-        <a href="/" style="text-decoration: none;"><button>Back to Home</button></a>
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <main class="flex flex-1 flex-col items-center justify-center">
+    <div>
+      <span class="text-[8em] leading-[1.4] font-bold text-[var(--gray-850)]">404</span>
+    </div>
+    <div><h1>Page Not Found</h1></div>
+    <div>
+      <p>
+        The page you are looking for may have been removed, renamed, or is temporarily unavailable.
+      </p>
+    </div>
+    <br />
+    <div>
+      <a href="/" class="no-underline"><button>Back to Home</button></a>
+    </div>
+  </main>
+</BaseLayout>

@@ -27,7 +27,7 @@ Frontmatter schema (Zod-validated):
 | `src/pages/series/[series].astro`  | Archive pages by series tag                                                                          |
 | `src/pages/about.astro`            | About page                                                                                           |
 | `src/pages/search.astro`           | Pagefind search page                                                                                 |
-| `src/pages/rss.xml.js`             | RSS feed                                                                                             |
+| `src/pages/rss.xml.ts`             | RSS feed                                                                                             |
 | `src/pages/404.astro`              | Custom 404 page                                                                                      |
 
 Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `src/configs/blog.json`).
@@ -55,12 +55,24 @@ Processing chain configured in `astro.config.mjs`:
 
 ## Styling
 
-- Custom CSS/SCSS, no CSS framework
+- **Tailwind CSS v4** — via `@tailwindcss/vite` plugin, configured in `src/styles/tailwind.css`
+  - Preflight (base reset) is intentionally excluded to avoid conflicts with existing `global.css`
+  - Standardized breakpoints: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1400px
+  - Use `max-sm:`, `max-md:`, `max-lg:`, `max-xl:`, `max-2xl:` variants — no arbitrary breakpoints
+  - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
+  - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`
 - Fonts: Uncut Sans (body), Cascadia Code (monospace), HarmonyOS Sans (CJK fallback)
-- Responsive breakpoints: 1200px, 720px, 636px
-- SCSS preprocessing via Vite's modern API (`vite.config.js`)
+- Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.)
+- All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
+
+## Icons
+
+Two separate icon directories serve different purposes:
+
+- `src/icons/` — raw SVG files imported as image assets (e.g., `logo-badge.svg`, `logo-text.svg`)
+- `src/components/icons/` — Astro components wrapping inline SVGs, accepting `class?` and `size?` props
 
 ## Path Aliases
 
@@ -78,13 +90,15 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 
 ## Key Config Files
 
-| File                     | Purpose                                       |
-| ------------------------ | --------------------------------------------- |
-| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins |
-| `ec.config.mjs`          | Expressive Code theme and styling             |
-| `vite.config.js`         | SCSS config, path aliases                     |
-| `src/consts.ts`          | Site title and description                    |
-| `src/configs/blog.json`  | Pagination and layout settings                |
-| `src/configs/about.json` | Author info for about page                    |
-| `pagefind.yml`           | Search indexing configuration                 |
-| `netlify.toml`           | Netlify build and deploy settings             |
+| File                     | Purpose                                             |
+| ------------------------ | --------------------------------------------------- |
+| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins       |
+| `ec.config.mjs`          | Expressive Code theme and styling                   |
+| `vite.config.js`         | Tailwind plugin, path aliases                       |
+| `src/configs/site.json`  | Site title and description                          |
+| `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings        |
+| `src/configs/about.json` | Author info for about page                          |
+| `src/configs/home.json`  | Homepage config (canvas, typing effect, quote text) |
+| `src/configs/index.ts`   | Typed barrel re-export for all configs              |
+| `pagefind.yml`           | Search indexing configuration                       |
+| `netlify.toml`           | Netlify build and deploy settings                   |
