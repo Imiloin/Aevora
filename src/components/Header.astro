@@ -71,35 +71,5 @@ import logoText from '@icons/logo-text.svg';
 </style>
 
 <script>
-  const header = document.getElementById('header');
-
-  /* Hide or show the header when scrolling the page */
-  let lastScrollTop = 0;
-  let isTOCClick = false;
-
-  // Listen for scroll events
-  window.addEventListener('scroll', function () {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    if (header && !isTOCClick) {
-      if (scrollTop > lastScrollTop) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
-      } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
-      }
-    }
-    lastScrollTop = scrollTop;
-    isTOCClick = false; // Reset TOC click status
-  });
-
-  // Listen for click events on in-page links
-  document.querySelectorAll('a[href*="#"]').forEach((link) => {
-    if (header) {
-      link.addEventListener('click', () => {
-        isTOCClick = true;
-        header.style.transform = 'translateY(-100%)';
-      });
-    }
-  });
+  import '@scripts/header-scroll.ts';
 </script>

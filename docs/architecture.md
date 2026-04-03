@@ -67,6 +67,13 @@ Processing chain configured in `astro.config.mjs`:
 - All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
 
+## Icons
+
+Two separate icon directories serve different purposes:
+
+- `src/icons/` — raw SVG files imported as image assets (e.g., `logo-badge.svg`, `logo-text.svg`)
+- `src/components/icons/` — Astro components wrapping inline SVGs, accepting `class?` and `size?` props
+
 ## Path Aliases
 
 Defined in both `tsconfig.json` and `vite.config.js`:
