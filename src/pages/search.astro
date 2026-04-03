@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
 import SearchBar from '@components/SearchBar.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 const title = 'Search';
 const description = 'Search for posts on this site.';
@@ -20,7 +20,7 @@ const description = 'Search for posts on this site.';
   </style>
 
   <main class="flex-1">
-    <div class="mx-auto my-8 w-[var(--width)] max-w-[calc(100%-2em)]">
+    <div class="mx-auto my-8 w-(--width) max-w-[calc(100%-2em)]">
       <SearchBar />
     </div>
   </main>

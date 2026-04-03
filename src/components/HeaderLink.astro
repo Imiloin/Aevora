@@ -15,9 +15,9 @@ const isActive =
   data-expand
   href={href}
   class:list={[
-    'inline-flex h-[2.2em] items-center justify-center rounded-full bg-[var(--systemGray-6)] px-[1em] text-center whitespace-nowrap text-[var(--gray-850)] no-underline shadow-none! outline-none hover:text-[var(--orange-neon)]',
+    'inline-flex h-[2.2em] items-center justify-center rounded-full bg-(--systemGray-6) px-[1em] text-center whitespace-nowrap text-(--gray-850) no-underline shadow-none! outline-none hover:text-(--orange-neon)',
     className,
-    isActive && 'bg-[var(--orange-neon)]! text-white!',
+    isActive && 'bg-(--orange-neon)! text-white!',
   ]}
   {...props}
 >

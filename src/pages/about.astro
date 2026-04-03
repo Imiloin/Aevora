@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
 import Envelope from '@components/icons/Envelope.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 import '@styles/email-button.css';
 
@@ -26,22 +26,22 @@ const { basic, links } = aboutConfig;
 
   <main class="flex flex-1 flex-col items-center justify-center">
     <div
-      class="contact-section w-[var(--width)] max-w-[calc(100vw-100px-8em)] rounded-[50px] bg-[var(--gray-825)] p-[50px] text-center text-white max-md:max-w-[calc(100%-4em)] max-md:rounded-[40px] max-md:p-5"
+      class="contact-section w-(--width) max-w-[calc(100vw-100px-8em)] rounded-[50px] bg-(--gray-825) p-12.5 text-center text-white max-md:max-w-[calc(100%-4em)] max-md:rounded-[40px] max-md:p-5"
     >
       <h1 class="text-[2.5em] text-white">{basic.bio}</h1>
       <p class="text-[1.2em] max-sm:text-base">{basic.name} &nbsp; | &nbsp; {basic.status}</p>
       <a
         href={`mailto:${basic.email}`}
-        class="email-button button my-4 inline-flex items-center rounded-[10px] border-none bg-white px-5 py-2.5 text-[var(--gray-850)] no-underline"
+        class="email-button button my-4 inline-flex items-center rounded-[10px] border-none bg-white px-5 py-2.5 text-(--gray-850) no-underline"
         >Email Me <Envelope /></a
       >
       <nav>
         <ul class="list-none p-0">
-          <li class="mx-[15px] inline"><a class="text-white no-underline" href="/">Home</a></li>
-          <li class="mx-[15px] inline">
+          <li class="mx-3.75 inline"><a class="text-white no-underline" href="/">Home</a></li>
+          <li class="mx-3.75 inline">
             <a class="text-white no-underline" href={links.resume}>Resume</a>
           </li>
-          <li class="mx-[15px] inline">
+          <li class="mx-3.75 inline">
             <a class="text-white no-underline" href={links.github}>GitHub</a>
           </li>
         </ul>

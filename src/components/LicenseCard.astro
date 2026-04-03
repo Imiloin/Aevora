@@ -42,11 +42,11 @@ const hasPageUrl = Boolean(currentPageUrl);
 </style>
 
 <section
-  class="relative mx-auto mt-8 box-border flex w-[var(--width)] max-w-[calc(100%-2em)] flex-col gap-[0.4rem] overflow-hidden rounded-lg bg-[color-mix(in_srgb,var(--gray-050)_80%,transparent)] p-4 text-[var(--gray-850)]"
+  class="relative mx-auto mt-8 box-border flex w-(--width) max-w-[calc(100%-2em)] flex-col gap-[0.4rem] overflow-hidden rounded-lg bg-[color-mix(in_srgb,var(--gray-050)_80%,transparent)] p-4 text-(--gray-850)"
   aria-label="License information"
 >
   <!-- Light watermark CC-like background -->
-  <svg class="license-card__bg size-[200px]" viewBox="0 0 120 120" aria-hidden="true">
+  <svg class="license-card__bg size-50" viewBox="0 0 120 120" aria-hidden="true">
     <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" stroke-width="10"></circle>
     <text
       x="50%"
@@ -68,11 +68,11 @@ const hasPageUrl = Boolean(currentPageUrl);
 
     <p class="my-[0.4rem] flex flex-wrap items-center gap-x-3 gap-y-[0.4rem] text-[0.9rem]">
       <span class="inline-flex items-center gap-[0.35rem]">
-        <span class="whitespace-nowrap text-[var(--gray-600)]">Author</span>
+        <span class="whitespace-nowrap text-(--gray-600)">Author</span>
         <span>{aboutConfig.basic.name}</span>
       </span>
       <span class="inline-flex items-center gap-[0.35rem]">
-        <span class="whitespace-nowrap text-[var(--gray-600)]">License</span>
+        <span class="whitespace-nowrap text-(--gray-600)">License</span>
         <span>
           <CCLicense />
           <a href={licenseUrl} target="_blank" rel="noopener noreferrer"> CC BY-NC-SA 4.0 </a>

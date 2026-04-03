@@ -59,6 +59,11 @@ Processing chain configured in `astro.config.mjs`:
   - Preflight (base reset) is intentionally excluded to avoid conflicts with existing `global.css`
   - Standardized breakpoints: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1400px
   - Use `max-sm:`, `max-md:`, `max-lg:`, `max-xl:`, `max-2xl:` variants — no arbitrary breakpoints
+  - Use canonical classes:
+    - Spacing: `p-4` (16px), `m-6` (24px), etc. — no arbitrary values like `p-[18px]`
+    - Vars: `text-(--gray-700)` — no arbitrary values like `text-[var(--gray-700)]`
+    - Sizes: `m-[0.5rem_0_1.5rem_0]` — no arbitrary values like `[margin:0.5rem_0_1.5rem_0]`
+    - etc.
   - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
   - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`

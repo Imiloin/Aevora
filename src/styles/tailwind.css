@@ -4,7 +4,7 @@
 @import 'tailwindcss/utilities' layer(utilities);
 
 /* Custom theme: breakpoints and font families matching existing design tokens */
-@theme {
+:root {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;

@@ -114,13 +114,13 @@ const hasToC = toc.length > 1;
           )
         }
       </div>
-      <div class="mx-auto mt-8 w-[var(--width)] max-w-[calc(100%-2em)] text-center leading-none">
-        <div class="inline-flex items-center gap-2 text-[var(--gray-700)]">
+      <div class="mx-auto mt-8 w-(--width) max-w-[calc(100%-2em)] text-center leading-none">
+        <div class="inline-flex items-center gap-2 text-(--gray-700)">
           <FormattedDate date={pubDate} />
           {
             updatedDate && (
               <>
-                <span class="text-[var(--gray-600)] select-none">&bull;</span>
+                <span class="text-(--gray-600) select-none">&bull;</span>
                 <span class="inline-flex items-center gap-[0.35em]">
                   Updated on <FormattedDate date={updatedDate} />
                 </span>

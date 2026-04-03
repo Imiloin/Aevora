@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import ArrowUpRight from '@components/icons/ArrowUpRight.astro';
 import FormattedDate from '@components/FormattedDate.astro';
-import { slugify } from '@utils/slug';
+import ArrowUpRight from '@components/icons/ArrowUpRight.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import { getSortedPosts } from '@utils/posts';
+import { slugify } from '@utils/slug';
 import { Image } from 'astro:assets';
 
 import blogConfig from '@configs/blog.json';
@@ -72,8 +72,8 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
         <a
           href={`/blog/${post.id}/`}
           class:list={[
-            'post-card relative flex w-[calc(100%-4rem)] items-center overflow-hidden border-b border-[var(--gray-300)] py-4 pr-16 pl-0 text-inherit no-underline hover:bg-[var(--gray-200)] hover:shadow-none max-md:w-full max-md:flex-col max-md:pr-0',
-            index === 0 && 'border-t border-[var(--gray-300)]',
+            'post-card relative flex w-[calc(100%-4rem)] items-center overflow-hidden border-b border-(--gray-300) py-4 pr-16 pl-0 text-inherit no-underline hover:bg-(--gray-200) hover:shadow-none max-md:w-full max-md:flex-col max-md:pr-0',
+            index === 0 && 'border-t border-(--gray-300)',
           ]}
         >
           <Image
@@ -81,14 +81,14 @@ const { width: seriesImgWidth, height: seriesImgHeight } = blogConfig.seriesImag
             height={seriesImgHeight}
             src={post.data.heroImage}
             alt={post.data.title}
-            class="my-0 mr-8 ml-4 h-auto w-[160px] rounded max-md:mx-8 max-md:my-4 max-md:w-[calc(100%-2rem)] max-md:rounded-lg"
+            class="my-0 mr-8 ml-4 h-auto w-40 rounded max-md:mx-8 max-md:my-4 max-md:w-[calc(100%-2rem)] max-md:rounded-lg"
           />
           <div class="flex-1 max-md:w-[calc(100%-2rem)] max-md:text-left">
             <h2 class="my-2 text-[1.2em] leading-normal">{post.data.title}</h2>
-            <p class="text-sm text-[var(--gray-700)]">
+            <p class="text-sm text-(--gray-700)">
               <FormattedDate date={post.data.pubDate} />
             </p>
-            <p class="mt-2 text-base text-[var(--text)]">{post.data.description}</p>
+            <p class="mt-2 text-base text-(--text)">{post.data.description}</p>
           </div>
           <ArrowUpRight class="post-card-arrow" />
         </a>
