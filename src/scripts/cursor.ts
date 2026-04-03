@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const point: CursorPoint = { x: 0, y: 0, scale: 1 };
   const current: CursorPoint = { x: 0, y: 0, scale: 1 };
 
-  function update(): void {
+  const update = (): void => {
     current.x = lerp(current.x, point.x);
     current.y = lerp(current.y, point.y);
     current.scale = lerp(current.scale, point.scale, 0.1);
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     elCursor.style.setProperty('--lag-y', String(current.y));
     elCursor.style.setProperty('--lag-scale', String(current.scale));
     requestAnimationFrame(update);
-  }
+  };
 
   update();
 
-  function onMove(e: MouseEvent): void {
+  const onMove = (e: MouseEvent): void => {
     // Show cursor on first move (hidden initially to prevent flash at top-left)
     if (!elCursor.classList.contains('visible')) {
       // Jump to mouse position immediately before showing
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       point.scale = 0.5; // reset
     }
-  }
+  };
 
   document.addEventListener('mousemove', onMove);
 });

@@ -5,15 +5,14 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "typeRoots": ["node_modules/@types", "node_modules/astro/types"],
-    "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@configs/*": ["src/configs/*"],
-      "@icons/*": ["src/icons/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@styles/*": ["src/styles/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@utils/*": ["src/utils/*"]
+      "@components/*": ["./src/components/*"],
+      "@configs/*": ["./src/configs/*"],
+      "@icons/*": ["./src/icons/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@scripts/*": ["./src/scripts/*"],
+      "@utils/*": ["./src/utils/*"]
     }
   }
 }
