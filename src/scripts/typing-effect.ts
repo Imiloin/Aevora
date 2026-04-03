@@ -64,9 +64,11 @@ init();
 
 // Init App
 function init(): void {
-  const txtElement: HTMLElement = document.querySelector('.txt-type') as HTMLElement;
-  const words: string[] = JSON.parse(txtElement.getAttribute('data-words')!);
-  const wait: string | null = txtElement.getAttribute('data-wait');
-  // Init TypeWriter
-  new TypeWriter(txtElement, words, wait ? parseInt(wait, 10) : undefined);
+  const txtElement = document.querySelector('.txt-type') as HTMLElement | null;
+  if (!txtElement) return;
+  const wordsAttr = txtElement.getAttribute('data-words');
+  if (!wordsAttr) return;
+  const words: string[] = JSON.parse(wordsAttr);
+  const wait = txtElement.getAttribute('data-wait');
+  new TypeWriter(txtElement, words, wait ? parseInt(wait, 10) : 3000);
 }

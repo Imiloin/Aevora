@@ -1,5 +1,3 @@
-console.clear();
-
 // Detect if it is a touch device
 function isTouchDevice(): boolean {
   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -23,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  if (!elCursor) return;
+
   const lerp = (curr: number, next: number, ratio: number = 0.1): number => {
     const delta: number = next - curr;
     if (Math.abs(delta) < 0.01) return next;
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     current.y = lerp(current.y, point.y);
     current.scale = lerp(current.scale, point.scale, 0.1);
 
-    elCursor!.style.setProperty('--x', String(point.x));
-    elCursor!.style.setProperty('--y', String(point.y));
-    elCursor!.style.setProperty('--scale', String(point.scale));
+    elCursor.style.setProperty('--x', String(point.x));
+    elCursor.style.setProperty('--y', String(point.y));
+    elCursor.style.setProperty('--scale', String(point.scale));
 
-    elCursor!.style.setProperty('--lag-x', String(current.x));
-    elCursor!.style.setProperty('--lag-y', String(current.y));
-    elCursor!.style.setProperty('--lag-scale', String(current.scale));
+    elCursor.style.setProperty('--lag-x', String(current.x));
+    elCursor.style.setProperty('--lag-y', String(current.y));
+    elCursor.style.setProperty('--lag-scale', String(current.scale));
     requestAnimationFrame(update);
   }
 
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function onMove(e: MouseEvent): void {
     // Show cursor on first move (hidden initially to prevent flash at top-left)
-    if (!elCursor!.classList.contains('visible')) {
+    if (!elCursor.classList.contains('visible')) {
       // Jump to mouse position immediately before showing
       current.x = e.clientX;
       current.y = e.clientY;
-      elCursor!.classList.add('visible');
+      elCursor.classList.add('visible');
     }
 
     point.x = e.clientX;

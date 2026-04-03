@@ -1,11 +1,16 @@
-setInterval(() => {
-  const currentTime: Date = new Date();
-  const hours: number = currentTime.getHours();
-  const minutes: number = currentTime.getMinutes();
-  const seconds: number = currentTime.getSeconds();
-  const hour_rotate_angle: number = 30 * hours + minutes / 2;
-  (document.getElementById('second') as HTMLElement).style.transform = `rotate(${seconds * 6}deg)`;
-  (document.getElementById('minute') as HTMLElement).style.transform = `rotate(${minutes * 6}deg)`;
-  (document.getElementById('hour') as HTMLElement).style.transform =
-    `rotate(${hour_rotate_angle}deg)`;
-}, 1000);
+const secondEl = document.getElementById('second');
+const minuteEl = document.getElementById('minute');
+const hourEl = document.getElementById('hour');
+
+if (secondEl && minuteEl && hourEl) {
+  setInterval(() => {
+    const currentTime = new Date();
+    const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+    const seconds = currentTime.getSeconds();
+    const hourRotateAngle = 30 * hours + minutes / 2;
+    secondEl.style.transform = `rotate(${seconds * 6}deg)`;
+    minuteEl.style.transform = `rotate(${minutes * 6}deg)`;
+    hourEl.style.transform = `rotate(${hourRotateAngle}deg)`;
+  }, 1000);
+}
