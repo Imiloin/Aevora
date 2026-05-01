@@ -18,7 +18,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@expressive-code/plugin-line-numbers": "^0.41.7",
     "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.2",
+    "astro": "^6.2.1",
     "astro-expressive-code": "^0.41.7",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
