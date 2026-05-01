@@ -24,7 +24,7 @@ Maintain a high-quality project architecture. Do not put all code into a single 
 - **Files**: Astro components/layouts use PascalCase (`PostCard.astro`); everything else uses kebab-case (`blog.json`, `toc-display.ts`, `global.css`). Scripts use `.ts` only.
 - **Code**: camelCase for variables/functions, PascalCase for types/interfaces, kebab-case for CSS classes.
 
-## Code Style
+## Syntax
 
 - Prettier: 100-char width, 2-space indent, single quotes, trailing commas (ES5), semicolons
 - Husky pre-commit hook runs lint-staged (auto-formats changed files)
@@ -34,9 +34,26 @@ Maintain a high-quality project architecture. Do not put all code into a single 
 
 After writing code, run `npm run format` to format the code.
 
+## Styling
+
+- Use Tailwind classes for styling (custom CSS as last resort)
+- Use inline CSS only for dynamic values
+- Avoid Tailwind `!` important modifier, achieve specificity via `@layer` or conditional classes
+
 ## Documentation
 
 After modifying the code, check whether `README.md`, the documentation under `docs/`, even `CLAUDE.md` need to be updated. When adding new features or making significant changes, also create or update the relevant documentation under `docs/`.
+
+## Think Before Coding
+
+Don't assume. Don't hide confusion. Surface tradeoffs.
+
+Before implementing:
+
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
 
 ## Important Note
 
