@@ -1,0 +1,201 @@
+/*
+  Theming for the Pagefind modular components (pagefind-input,
+  pagefind-summary, pagefind-results) used inside .aevora-search.
+
+  Component theming flows through --pf-* CSS variables. Result rows
+  use a custom template with .aev-* classes so we don't have to fight
+  the high-specificity :is(*,#) selectors that ship in the bundled
+  pagefind-component-ui.css.
+*/
+
+.aevora-search {
+  /* Colors */
+  --pf-text: var(--gray-850);
+  --pf-text-secondary: var(--gray-700);
+  --pf-text-muted: var(--gray-700);
+  --pf-background: var(--white);
+  --pf-border: var(--gray-400);
+  --pf-border-focus: var(--gray-600);
+  --pf-hover: var(--gray-200);
+  --pf-mark: var(--blue-neon);
+  --pf-skeleton: var(--gray-300);
+  --pf-skeleton-shine: var(--gray-200);
+
+  /* Shadows */
+  --pf-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --pf-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Focus ring */
+  --pf-outline-focus: var(--gray-600);
+  --pf-outline-width: 0.5px;
+
+  /* Typography */
+  --pf-font: var(--default-font-family);
+  --pf-input-font-size: 1rem;
+  --pf-summary-font-size: 0.85rem;
+
+  /* Sizing */
+  --pf-input-height: 48px;
+  --pf-border-radius: 8px;
+  --pf-results-gap: 0px;
+
+  /* Custom search icon (matches the magnifier in the site header) */
+  --pf-icon-search: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.8333 13.8333L10.7022 10.7022M10.7022 10.7022C11.607 9.79738 12.1667 8.54738 12.1667 7.16667C12.1667 4.40525 9.9281 2.16667 7.16667 2.16667C4.40525 2.16667 2.16667 4.40525 2.16667 7.16667C2.16667 9.9281 4.40525 12.1667 7.16667 12.1667C8.54738 12.1667 9.79738 11.607 10.7022 10.7022Z' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  /* Tunable thumbnail size; reused by .aev-subresults indent */
+  --aev-thumb-width: 96px;
+  --aev-thumb-height: 48px;
+  --aev-thumb-gap: 1rem;
+}
+
+/* Vertical rhythm between input / summary / results blocks */
+.aevora-search pagefind-input {
+  display: block;
+}
+.aevora-search pagefind-summary {
+  display: block;
+  margin-top: 1.25rem;
+  min-height: 1.25rem;
+}
+.aevora-search pagefind-results {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Result row -- minimal, no card chrome */
+.aev-result {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-300);
+}
+.aev-result:first-child {
+  border-top: none;
+}
+
+.aev-result-link {
+  display: flex;
+  gap: var(--aev-thumb-gap);
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.aev-result-link:hover {
+  background: var(--gray-200);
+}
+.aev-result-link:focus-visible {
+  outline: 2px solid var(--blue-neon);
+  outline-offset: 2px;
+}
+
+.aev-result-image {
+  width: var(--aev-thumb-width);
+  height: var(--aev-thumb-height);
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--gray-300);
+}
+
+.aev-result-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.aev-result-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-850);
+  line-height: 1.3;
+}
+
+.aev-result-excerpt {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  line-height: 1.5;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mark highlights in both top-level and sub-result excerpts */
+.aev-result-excerpt mark,
+.aev-subresult-excerpt mark {
+  background: transparent;
+  color: var(--blue-neon);
+  font-weight: 500;
+}
+
+/* Sub-results -- indented to align with the title text */
+.aev-subresults {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 calc(var(--aev-thumb-width) + var(--aev-thumb-gap));
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.aev-subresult {
+  margin: 0;
+}
+
+.aev-subresult-link {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+.aev-subresult-link:hover {
+  background: var(--gray-200);
+}
+.aev-subresult-link:focus-visible {
+  outline: 2px solid var(--blue-neon);
+  outline-offset: 2px;
+}
+
+.aev-subresult-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-850);
+  line-height: 1.3;
+}
+.aev-subresult-title::before {
+  content: '#';
+  color: var(--gray-600);
+  margin-right: 0.35rem;
+}
+
+.aev-subresult-excerpt {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--gray-700);
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .aevora-search {
+    --pf-input-height: 42px;
+    --pf-input-font-size: 0.95rem;
+    --aev-thumb-width: 72px;
+    --aev-thumb-height: 36px;
+    --aev-thumb-gap: 0.75rem;
+  }
+  .aev-result-title {
+    font-size: 0.95rem;
+  }
+}
