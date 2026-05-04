@@ -1,38 +1,61 @@
 ---
-import '@styles/pagefind-searchbar.css';
+import '@styles/pagefind.css';
+
+/*
+  Result template for <pagefind-results>. Kept as a raw string so the
+  Astro/TS language server doesn't try to parse the {{ ... }} pagefind
+  template tokens as TSX expressions.
+
+  Syntax reference: https://pagefind.app/docs/components/
+*/
+const resultTemplate = `
+<li class="aev-result">
+  <a class="aev-result-link"
+     href="{{ meta.url | default(url) | safeUrl }}"
+     id="{{ aria.result_id }}"
+     aria-labelledby="{{ aria.title_id }}"
+     {{#if excerpt}}aria-describedby="{{ aria.excerpt_id }}"{{/if}}>
+    {{#if meta.image}}
+    <img class="aev-result-image"
+         src="{{ meta.image }}"
+         alt="{{ meta.image_alt | default(meta.title) }}"
+         loading="lazy" />
+    {{/if}}
+    <div class="aev-result-body">
+      <p class="aev-result-title" id="{{ aria.title_id }}">{{ meta.title }}</p>
+      {{#if excerpt}}
+      <p class="aev-result-excerpt" id="{{ aria.excerpt_id }}">{{+ excerpt +}}</p>
+      {{/if}}
+    </div>
+  </a>
+  {{#if sub_results}}
+  <ul class="aev-subresults">
+    {{#each sub_results as sub}}
+    <li class="aev-subresult">
+      <a class="aev-subresult-link"
+         href="{{ sub.url | safeUrl }}"
+         id="{{ sub.aria.result_id }}"
+         aria-labelledby="{{ sub.aria.title_id }}"
+         {{#if sub.excerpt}}aria-describedby="{{ sub.aria.excerpt_id }}"{{/if}}>
+        <span class="aev-subresult-title" id="{{ sub.aria.title_id }}">{{ sub.title }}</span>
+        {{#if sub.excerpt}}
+        <span class="aev-subresult-excerpt" id="{{ sub.aria.excerpt_id }}">{{+ sub.excerpt +}}</span>
+        {{/if}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</li>
+`;
 ---
 
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-<script src="/pagefind/pagefind-ui.js" is:inline></script>
-<div id="search"></div>
-<script>
-  window.addEventListener('DOMContentLoaded', (event) => {
-    // @ts-ignore
-    new PagefindUI({
-      element: '#search',
-      resetStyles: false,
-      showSubResults: true,
-    });
-  });
-</script>
-<style>
-  #search {
-    --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: var(--blue-neon);
-    --pagefind-ui-fade: var(--gray-700);
-    --pagefind-ui-text: var(--text);
-    --pagefind-ui-background: var(--white);
-    --pagefind-ui-border: var(--gray-400);
-    --pagefind-ui-tag: var(--gray-400);
-    --pagefind-ui-border-width: 2px;
-    --pagefind-ui-border-radius: 8px;
-    --pagefind-ui-image-border-radius: 8px;
-    --pagefind-ui-image-box-ratio: 3 / 2;
-    --pagefind-ui-font: var(--default-font-family);
-  }
-  @media (max-width: 768px) {
-    #search {
-      --pagefind-ui-scale: 0.8;
-    }
-  }
-</style>
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-component-ui.js" type="module" is:inline></script>
+<div class="aevora-search">
+  <pagefind-input placeholder="Search." autofocus></pagefind-input>
+  <pagefind-summary></pagefind-summary>
+  <pagefind-results>
+    <script type="text/pagefind-template" is:inline set:html={resultTemplate} />
+  </pagefind-results>
+</div>
