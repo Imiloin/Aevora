@@ -40,6 +40,21 @@ After writing code, run `npm run format` to format the code.
 - Use inline CSS only for dynamic values
 - Avoid Tailwind `!` important modifier, achieve specificity via `@layer` or conditional classes
 
+## Code Intelligence
+
+Prefer LSP over Grep/Glob/Read for code navigation, currently TypeScript is supported, but Astro files are not.
+
+- `goToDefinition` / `goToImplementation` to jump to source
+- `findReferences` to see all usages across the codebase
+- `workspaceSymbol` to find where something is defined
+- `documentSymbol` to list all symbols in a file
+- `hover` for type info without reading the file
+- `incomingCalls` / `outgoingCalls` for call hierarchy
+
+Use Grep/Glob only for text/pattern searches (comments, strings, config values) where LSP doesn't help.
+
+After writing or editing code, check LSP diagnostics before moving on. Fix any type errors or missing imports immediately.
+
 ## Documentation
 
 After modifying the code, check whether `README.md`, the documentation under `docs/`, even `CLAUDE.md` need to be updated. When adding new features or making significant changes, also create or update the relevant documentation under `docs/`.
@@ -59,7 +74,7 @@ Before implementing:
 
 Please think from first principles. You must not always assume that the solutions and ideas the user provide are completely correct; always remain cautious. Start from the original requirements and problems. If the motivation or objective of any requirement is unclear, stop and use `AskUserQuestion` tool.
 
-When you need to modify or refactor the solution, you must follow these principles:
+You must follow these principles:
 
 - Reduce compatibility-driven or patch-style solutions, and focus on code robustness
 - Do not over-engineer; keep to the shortest implementation path
