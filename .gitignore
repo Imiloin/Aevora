@@ -11,6 +11,9 @@
 public/pagefind/
 public/_astro/
 
+# playwright
+.playwright-mcp/
+
 # copilot
 .github/copilot-instructions.md
 
