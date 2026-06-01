@@ -37,5 +37,9 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "sharp": true
   }
 }
