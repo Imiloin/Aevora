@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import astroExpressiveCode from 'astro-expressive-code';
+import { unified } from '@astrojs/markdown-remark';
 
 import viteConfig from './vite.config.js';
 
@@ -20,17 +21,19 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [astroExpressiveCode(), sitemap()],
   markdown: {
-    remarkPlugins: [processBibliographyPath, remarkGemoji, remarkGithubAlerts, remarkMath],
-    rehypePlugins: [
-      [
-        rehypeCitation,
-        {
-          linkCitations: true,
-          csl: './src/csl/association-for-computing-machinery.csl',
-        },
+    processor: unified({
+      remarkPlugins: [processBibliographyPath, remarkGemoji, remarkGithubAlerts, remarkMath],
+      rehypePlugins: [
+        [
+          rehypeCitation,
+          {
+            linkCitations: true,
+            csl: './src/csl/association-for-computing-machinery.csl',
+          },
+        ],
+        rehypeMathjax,
       ],
-      rehypeMathjax,
-    ],
+    }),
   },
   vite: viteConfig,
 });
