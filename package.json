@@ -14,12 +14,13 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.0",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@expressive-code/plugin-line-numbers": "^0.42.0",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.4.2",
-    "astro-expressive-code": "^0.42.0",
+    "astro": "^7.0.2",
+    "astro-expressive-code": "^0.44.0",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
     "remark-gemoji": "^8.0.0",
@@ -40,6 +41,7 @@
   },
   "allowScripts": {
     "esbuild": true,
+    "fsevents": true,
     "sharp": true
   }
 }
