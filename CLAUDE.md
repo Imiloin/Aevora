@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Aevora is a personal blog built with **Astro**(currently v6), deployed to Netlify. The site is at `imiloin.netlify.app`. Blog content (markdown posts) is maintained separately in another repo — the `src/content/blog/` directory here only has example posts.
+Aevora is a personal blog built with **Astro**(currently v7), deployed to Netlify. The site is at `imiloin.netlify.app`. Blog content (markdown posts) is maintained separately in another repo — the `src/content/blog/` directory here only has example posts.
 
 ## Commands
 

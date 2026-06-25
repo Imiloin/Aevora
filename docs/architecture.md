@@ -34,7 +34,7 @@ Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `sr
 
 ## Markdown Pipeline
 
-Processing chain configured in `astro.config.mjs`:
+Processing chain configured in `astro.config.mjs` through the `unified()` processor (`markdown.processor`). Since Astro v7 defaults to its native Satteri pipeline, `@astrojs/markdown-remark` is a required direct dependency to keep this remark/rehype processor available — without it the build fails to load the config.
 
 **Remark plugins** (operate on mdast):
 
