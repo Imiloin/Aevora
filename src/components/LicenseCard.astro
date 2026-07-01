@@ -17,7 +17,7 @@ const hasPageUrl = Boolean(currentPageUrl);
   .license-card__bg {
     position: absolute;
     right: -10px;
-    top: -30px;
+    top: -35px;
     opacity: 0.07;
     pointer-events: none;
   }
@@ -78,18 +78,18 @@ const hasPageUrl = Boolean(currentPageUrl);
           <a href={licenseUrl} target="_blank" rel="noopener noreferrer"> CC BY-NC-SA 4.0 </a>
         </span>
       </span>
+    </p>
 
-      <p class="my-[0.4rem] text-[0.9rem]">
-        {
-          hasPageUrl ? (
-            <a href={currentPageUrl} target="_blank" rel="noopener noreferrer">
-              {currentPageUrl}
-            </a>
-          ) : (
-            <span>Current page</span>
-          )
-        }
-      </p>
+    <p class="my-[0.4rem] text-[0.9rem]">
+      {
+        hasPageUrl ? (
+          <a href={currentPageUrl} target="_blank" rel="noopener noreferrer">
+            {currentPageUrl}
+          </a>
+        ) : (
+          <span>Current page</span>
+        )
+      }
     </p>
   </div>
 </section>
