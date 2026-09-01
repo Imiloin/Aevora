@@ -14,12 +14,12 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.2",
+    "@astrojs/markdown-remark": "^7.2.4",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@expressive-code/plugin-line-numbers": "^0.44.1",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.1.5",
+    "astro": "^7.2.9",
     "astro-expressive-code": "^0.44.1",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
