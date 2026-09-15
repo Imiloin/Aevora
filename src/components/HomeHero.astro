@@ -1,0 +1,10 @@
+<section class="home-hero" aria-label="Generative artwork">
+  <canvas id="cuboidal-quantum-canvas" aria-label="Animated abstract geometric form"></canvas>
+</section>
+
+<script>
+  import CuboidalQuantum from '@scripts/cuboidal-quantum.ts';
+  import homeConfig from '@configs/home.json';
+
+  new CuboidalQuantum('cuboidal-quantum-canvas', homeConfig.cuboidalQuantum);
+</script>

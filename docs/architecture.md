@@ -18,19 +18,25 @@ Frontmatter schema (Zod-validated):
 
 ## Page Routing
 
-| Route                              | Purpose                                                                                              |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `src/pages/index.astro`            | Homepage with interactive elements (custom cursor, 3D canvas animation, analog clock, typing effect) |
-| `src/pages/blog/[...slug].astro`   | Individual blog posts                                                                                |
-| `src/pages/blog/index.astro`       | Blog listing (first page)                                                                            |
-| `src/pages/blog/page/[page].astro` | Paginated blog listing                                                                               |
-| `src/pages/series/[series].astro`  | Archive pages by series tag                                                                          |
-| `src/pages/about.astro`            | About page                                                                                           |
-| `src/pages/search.astro`           | Pagefind search page                                                                                 |
-| `src/pages/rss.xml.ts`             | RSS feed                                                                                             |
-| `src/pages/404.astro`              | Custom 404 page                                                                                      |
+| Route                              | Purpose                                                              |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `src/pages/index.astro`            | Minimal homepage with a generative canvas cover and navigation index |
+| `src/pages/blog/[...slug].astro`   | Individual blog posts                                                |
+| `src/pages/blog/index.astro`       | Blog listing (first page)                                            |
+| `src/pages/blog/page/[page].astro` | Paginated blog listing                                               |
+| `src/pages/series/[series].astro`  | Archive pages by series tag                                          |
+| `src/pages/about.astro`            | About page                                                           |
+| `src/pages/search.astro`           | Pagefind search page                                                 |
+| `src/pages/rss.xml.ts`             | RSS feed                                                             |
+| `src/pages/404.astro`              | Custom 404 page                                                      |
 
 Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `src/configs/blog.json`).
+
+### Homepage
+
+`HomeHero.astro` fills the first screen with the existing CuboidalQuantum canvas. The homepage header is positioned at the top of the document; other pages retain the shared fixed header behavior.
+
+`HomeIndex.astro` provides a second section at least one viewport tall, with Blog, About, and Search links and the shared footer in its dark theme. `HomeBackdrop.astro` displays the selected static decorative background with centered `object-fit: cover` cropping on desktop and mobile.
 
 ## Markdown Pipeline
 
@@ -95,15 +101,15 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 
 ## Key Config Files
 
-| File                     | Purpose                                             |
-| ------------------------ | --------------------------------------------------- |
-| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins       |
-| `ec.config.mjs`          | Expressive Code theme and styling                   |
-| `vite.config.js`         | Tailwind plugin, path aliases                       |
-| `src/configs/site.json`  | Site title and description                          |
-| `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings        |
-| `src/configs/about.json` | Author info for about page                          |
-| `src/configs/home.json`  | Homepage config (canvas, typing effect, quote text) |
-| `src/configs/index.ts`   | Typed barrel re-export for all configs              |
-| `pagefind.yml`           | Search indexing configuration                       |
-| `netlify.toml`           | Netlify build and deploy settings                   |
+| File                     | Purpose                                       |
+| ------------------------ | --------------------------------------------- |
+| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins |
+| `ec.config.mjs`          | Expressive Code theme and styling             |
+| `vite.config.js`         | Tailwind plugin, path aliases                 |
+| `src/configs/site.json`  | Site title and description                    |
+| `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings  |
+| `src/configs/about.json` | Author info for about page                    |
+| `src/configs/home.json`  | Homepage generative canvas configuration      |
+| `src/configs/index.ts`   | Typed barrel re-export for all configs        |
+| `pagefind.yml`           | Search indexing configuration                 |
+| `netlify.toml`           | Netlify build and deploy settings             |
