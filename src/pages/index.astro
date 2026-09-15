@@ -1,17 +1,12 @@
 ---
 import BaseHead from '@components/BaseHead.astro';
-import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
-import StarShape from '@components/icons/StarShape.astro';
-import { homeConfig, siteConfig } from '@configs/index';
+import HomeHero from '@components/HomeHero.astro';
+import HomeIndex from '@components/HomeIndex.astro';
+import { siteConfig } from '@configs/index';
 
-import '@styles/chat-container.css';
-import '@styles/clock.css';
 import '@styles/cursor.css';
 import '@styles/home.css';
-import '@styles/link-button.css';
-import '@styles/quotation.css';
-import '@styles/typing-effect.css';
 ---
 
 <!doctype html>
@@ -20,98 +15,20 @@ import '@styles/typing-effect.css';
     <BaseHead title={siteConfig.title} description={siteConfig.description} />
   </head>
 
-  <div class="cursor">
-    <div class="cursor-outer"></div>
-    <div class="cursor-inner"></div>
-  </div>
-  <script>
-    import '@scripts/clock.ts';
-    import '@scripts/cursor.ts';
-    import '@scripts/typing-effect.ts';
+  <body class="home-page">
+    <div class="cursor" aria-hidden="true">
+      <div class="cursor-outer"></div>
+      <div class="cursor-inner"></div>
+    </div>
 
-    // Import CuboidalQuantum class
-    import CuboidalQuantum from '@scripts/cuboidal-quantum.ts';
-
-    // Initialize with config from home.json
-    import homeConfig from '@configs/home.json';
-    new CuboidalQuantum('cuboidal-quantum-canvas', homeConfig.cuboidalQuantum);
-  </script>
-
-  <body>
     <Header />
-    <section>
-      <canvas id="cuboidal-quantum-canvas"></canvas>
-    </section>
-    <section>
-      <div class="left-content">
-        <div class="chat-container">
-          <div class="type-container">
-            <h2>
-              <span
-                class="txt-type"
-                data-wait={homeConfig.typingEffect.wait.toString()}
-                data-words={JSON.stringify(homeConfig.typingEffect.words)}></span>
-            </h2>
-          </div>
-          <div class="chatbubble-left">{homeConfig.chatMessages.greeting}</div>
-          <div class="chatbubble-row">
-            <div class="chatbubble-left">{homeConfig.chatMessages.question}</div>
-            <div class="chatbubble-right">{homeConfig.chatMessages.answer}</div>
-          </div>
-          <div class="chatbubble-right">{homeConfig.chatMessages.action}</div>
-          <p>
-            Use the <a data-expand href="/search">search page</a> to find the blog you are looking for.
-            <br />
-            Check out <a data-expand href="/blog">all blogs</a> here.
-          </p>
-        </div>
-      </div>
-      <div class="centerDiv">
-        <div class="partDiv">
-          <div class="clock-container">
-            <div class="clock" id="clock">
-              <StarShape />
-              <div class="centerPoint">
-                <div class="sui" id="hour"></div>
-                <div class="sui" id="second"></div>
-                <div class="sui" id="minute"></div>
-              </div>
-            </div>
-          </div>
-          <div data-expand class="button-container">
-            <a class="link-button" href="/blog/">
-              <span class="top-key"></span>
-              <span class="text">{homeConfig.buttonText}</span>
-              <span class="bottom-key-1"></span>
-              <span class="bottom-key-2"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="content column">
-        <div class="quote-container">
-          <div class="text-section left">
-            <div class="small-text">{homeConfig.quote.label}</div>
-            <div class="line"></div>
-          </div>
-          <div class="mid-text-container">
-            <span class="main-text">{homeConfig.quote.lines[0]}</span>
-          </div>
-          <div class="text-section right">
-            <div class="small-text unselectable-spaces">{homeConfig.quote.number}</div>
-            <div class="line"></div>
-          </div>
-        </div>
-        <div class="right-align">
-          <span class="main-text">{homeConfig.quote.lines[1]}</span>
-        </div>
-        <div>
-          <span class="main-text">{homeConfig.quote.lines[2]}</span>
-        </div>
-      </div>
-    </section>
-    <Footer width="80%" />
+    <main class="home-main">
+      <HomeHero />
+      <HomeIndex />
+    </main>
+
+    <script>
+      import '@scripts/cursor.ts';
+    </script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+---
+import Footer from '@components/Footer.astro';
+import HomeBackdrop from '@components/HomeBackdrop.astro';
+import CircledArrowUpRight from '@components/icons/CircledArrowUpRight.astro';
+
+const destinations = [
+  { label: 'Blog', href: '/blog/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Search', href: '/search/' },
+];
+---
+
+<section class="home-index" aria-label="Explore">
+  <div class="home-index__backdrop pointer-events-none absolute inset-0">
+    <HomeBackdrop />
+  </div>
+
+  <div class="home-index__inner">
+    <nav class="home-index__nav" aria-label="Homepage destinations">
+      {
+        destinations.map(({ label, href }) => (
+          <a data-expand href={href}>
+            <span>{label}</span>
+            <CircledArrowUpRight />
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+
+  <Footer width="var(--home-content-width)" theme="dark" />
+</section>

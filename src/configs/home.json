@@ -9,21 +9,5 @@
     "color2": "#a8a8a8",
     "rotationSpeed": 0.005,
     "cameraSpeed": 0.002
-  },
-  "typingEffect": {
-    "wait": 4000,
-    "words": ["Pleasure to meet you", "Check my blogs"]
-  },
-  "chatMessages": {
-    "greeting": "Hi there!",
-    "question": "?",
-    "answer": "Ready",
-    "action": "Let's GO~"
-  },
-  "quote": {
-    "label": "BUILD YOUR WEB:",
-    "number": "#01",
-    "lines": ["\"KEEP IT", "SIMPLE AND", "STUPID\""]
-  },
-  "buttonText": "View Posts"
+  }
 }

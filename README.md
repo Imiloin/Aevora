@@ -67,7 +67,7 @@ For deployments to Netlify, use `netlify.toml` to configure the build process.
 
 ## License
 
-The content in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License.
+The code in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License.
 
 Uncut Sans and Cascadia Code font are licensed under the SIL Open Font License, Version 1.1. HarmonyOS Sans font is licensed under HarmonyOS Sans Fonts License Agreement.
 
@@ -81,11 +81,8 @@ The following projects and resources were referenced or borrowed from:
 
 - Cursor effect at index page: <https://codepen.io/team/keyframers/pen/zYZVOzr>
 - Cuboidal quantum at index page: <https://websim.ai/p/idlv9t1mcfkvn67ls8aj>
-- Typing effect: <https://codepen.io/bradtraversy/pen/jeNjwP>
-- Dynamic clock: <https://github.com/XengShi/materialYouNewTab>
 - Back to top component: <https://github.com/Spikeysanju/sanju.sh>
-- Button hover effect 1: <https://uiverse.io/cssbuttons-io/brown-otter-21>
-- Button hover effect 2: <https://codepen.io/aaroniker/pen/bGGVMbY>
-- Button hover effect 3: <https://codepen.io/glasha_ch/pen/pVjpVO>
+- Button hover effect at 404 page: <https://codepen.io/aaroniker/pen/bGGVMbY>
+- Button hover effect at about page: <https://codepen.io/glasha_ch/pen/pVjpVO>
 - Pagination: <https://github.com/zeon-studio/astroplate>
 - Details & summary styling: <https://codepen.io/wynandacademy/pen/zYMaxLq>
