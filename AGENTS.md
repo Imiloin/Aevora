@@ -2,7 +2,11 @@
 
 ## Project Overview
 
-Aevora is a personal blog built with **Astro**(currently v7), deployed to Netlify. The site is at `imiloin.netlify.app`. Blog content (markdown posts) is maintained separately in another repo — the `src/content/blog/` directory here only has example posts.
+Aevora is a personal blog template built with **[Astro](https://astro.build/)** (currently v7), deployed to Netlify. The site is at `imiloin.netlify.app`.
+
+<note applies-to="Aevora">
+  Blog content (markdown posts) is maintained separately in another repo — the `src/content/blog/` directory here only has example posts.
+</note>
 
 ## Commands
 
@@ -17,7 +21,7 @@ See [docs/commands.md](docs/commands.md) for full details.
 
 See [docs/architecture.md](docs/architecture.md) for full details including content schema, page routing, markdown pipeline, styling, and path aliases.
 
-Maintain a high-quality project architecture. Do not put all code into a single file; separate maintainable modules or components, and refactor as needed.
+Maintain a high-quality project architecture. Do not put all code into a single file. Separate maintainable modules or components, and refactor as needed.
 
 ## Naming Conventions
 
@@ -57,7 +61,7 @@ Don't assume. Don't hide confusion. Please think from first principles. Before i
 - Attempt to understand the user's intent. If uncertain, ask. If multiple interpretations exist, present them - don't pick silently.
 - Think through the requirements and the tradeoffs involved. If a simpler approach exists, say so. Push back when warranted.
 
-The user may not be a coding expert; in certain respects, you are more of an expert than the user. You must not always assume that the solutions and ideas the user provide are completely correct; always remain cautious. Start from the original requirements and problems. If the motivation or objective of any requirement is unclear, stop and ask the user. Feel free to ask any questions you have.
+The user may not be a coding expert, you are more of an expert than the user in certain respects. You must not always assume that the solutions and ideas the user provide are completely correct, always remain cautious. Start from the original requirements and problems. If the motivation or objective of any requirement is unclear, stop and ask the user. Feel free to ask any questions you have.
 
 ### Principles
 
@@ -67,7 +71,8 @@ At the same time, do not be overly constrained by backward compatibility. If a c
 
 When writing or editing code, follow these principles:
 
-- Avoid compatibility-driven or patch-style solutions; focus on making the codebase more robust in the long term
-- Do not reinvent the wheel; if a mature library, tool, or reusable implementation already exists in the project, use it directly
-- Do not introduce solutions beyond the stated requirements, such as fallback or degradation plans
-- Do not `git commit` after writing or editing code. Summarize the diff, and let the user decide
+- Avoid compatibility-driven or patch-style solutions. Focus on making the codebase more robust in the long term.
+- Do not reinvent the wheel. If a mature library, tool, or reusable implementation already exists in the project, use it directly.
+- Do not introduce solutions beyond the stated requirements, such as fallback or degradation plans.
+- Prefer git-ignored directories for temporary files, test scripts, scaffolding, and other artifacts unrelated to the project runtime.
+- Do not `git commit` after writing or editing code. Summarize the diff, and let the user decide.
