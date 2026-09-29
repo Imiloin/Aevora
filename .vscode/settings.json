@@ -7,17 +7,6 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
-  "markdownlint.lintWorkspaceGlobs": [
-    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
-    "!**/bower_components",
-    "!**/node_modules",
-    "!**/vendor",
-    "!**/.git",
-    "!**/.github"
-  ],
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
   "[bibtex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   }

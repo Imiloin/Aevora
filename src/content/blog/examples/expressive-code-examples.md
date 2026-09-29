@@ -14,7 +14,7 @@ Samples are copied from the [Expressive Code docs](https://expressive-code.com/)
 
 ```js
 function greet(name) {
-    console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!`);
 }
 
 greet('World');
@@ -40,30 +40,30 @@ except ValueError as e:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        h1 {
-            color: #007acc;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      h1 {
+        color: #007acc;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Hello, World!</h1>
     <p>This is a more complex HTML example with inline CSS.</p>
     <script>
-        document.querySelector('h1').addEventListener('click', () => {
-            alert('Hello, World!');
-        });
+      document.querySelector('h1').addEventListener('click', () => {
+        alert('Hello, World!');
+      });
     </script>
-</body>
+  </body>
 </html>
 ```
 
@@ -71,23 +71,23 @@ except ValueError as e:
 
 ```css
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    color: #007acc;
-    text-align: center;
-    margin-top: 20px;
+  color: #007acc;
+  text-align: center;
+  margin-top: 20px;
 }
 
 p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin: 20px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 20px;
 }
 ```
 
@@ -115,7 +115,7 @@ Text formatting: [1mBold[0m [2mDimmed[0m [3mItalic[0m [4mUnderline[0m
 ### Code editor frames
 
 ```js title="my-test-file.js"
-console.log('Title attribute example')
+console.log('Title attribute example');
 ```
 
 ```html
@@ -164,11 +164,11 @@ New-Alias tail Watch-Tail
 
 ```js title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
-  console.log('this line is marked as deleted')
+  console.log('this line is marked as deleted');
   // This line and the next one are marked as inserted
-  console.log('this is the second inserted line')
+  console.log('this is the second inserted line');
 
-  return 'this line uses the neutral default marker type'
+  return 'this line uses the neutral default marker type';
 }
 ```
 
@@ -184,9 +184,7 @@ function demo() {
   disabled={disabled}
   active={active}
 >
-  {children &&
-    !active &&
-    (typeof children === 'string' ? <span>{children}</span> : children)}
+  {children && !active && (typeof children === 'string' ? <span>{children}</span> : children)}
 </button>
 ```
 
@@ -202,10 +200,7 @@ function demo() {
   disabled={disabled}
   active={active}
 >
-
-  {children &&
-    !active &&
-    (typeof children === 'string' ? <span>{children}</span> : children)}
+  {children && !active && (typeof children === 'string' ? <span>{children}</span> : children)}
 </button>
 ```
 
@@ -251,10 +246,10 @@ function demo() {
 #### Regular expressions
 
 ```ts /ye[sp]/
-console.log('The words yes and yep will be marked.')
+console.log('The words yes and yep will be marked.');
 ```
 
-```sh /\/ho.*\//
+```sh //ho.*//
 echo "Test" > /home/test.txt
 ```
 
@@ -275,14 +270,14 @@ matching words "yes" and "yep" to be marked.
 ```js wrap
 // Example with wrap
 function getLongString() {
-  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide';
 }
 ```
 
 ```js wrap=false
 // Example with wrap=false
 function getLongString() {
-  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide';
 }
 ```
 
@@ -291,14 +286,14 @@ function getLongString() {
 ```js wrap preserveIndent
 // Example with preserveIndent (enabled by default)
 function getLongString() {
-  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide';
 }
 ```
 
 ```js wrap preserveIndent=false
 // Example with preserveIndent=false
 function getLongString() {
-  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide'
+  return 'This is a very long string that will most probably not fit into the available space unless the container is extremely wide';
 }
 ```
 
@@ -306,12 +301,12 @@ function getLongString() {
 
 ```js showLineNumbers
 // This code block will show line numbers
-console.log('Greetings from line 2!')
-console.log('I am on line 3')
+console.log('Greetings from line 2!');
+console.log('I am on line 3');
 ```
 
 ```js showLineNumbers=false
 // Line numbers are disabled for this block
-console.log('Hello?')
-console.log('Sorry, do you know what line I am on?')
+console.log('Hello?');
+console.log('Sorry, do you know what line I am on?');
 ```

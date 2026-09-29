@@ -12,6 +12,7 @@ This file is copied from the [rehype-citation](https://rehype-citation.netlify.a
 ## Welcome
 
 Choose from one of the multiple preconfigured CSLs[^1]
+
 [^1]: apa, vancouver, harvard1, chicago, mla
 
 or pass in a valid file path or url to the _csl_ argument.
