@@ -30,13 +30,15 @@ npm run clean      # Removes dist/, .astro/, public/_astro/, public/pagefind/
 ## Formatting
 
 ```bash
-npm run format     # Prettier — write fixes
-npm run check      # Prettier — check only (CI-friendly)
+npm run format     # Format code and apply Markdown fixes
+npm run check      # Check code and Markdown without writing (CI-friendly)
 ```
 
-Prettier config (`.prettierrc.mjs`): 100-char width, 2-space indent, single quotes, trailing commas (ES5), semicolons. Astro files use `prettier-plugin-astro`.
+Prettier formats code using `.prettierrc.mjs`: 100-char width, 2-space indent, single quotes, trailing commas (ES5), and semicolons. Astro files use `prettier-plugin-astro`.
 
-Husky pre-commit hook runs `lint-staged` to auto-format changed files.
+`markdownlint-cli2` formats Markdown using `.markdownlint.json`, including dash lists and compact tables. File exclusions are configured in `.markdownlint-cli2.jsonc`.
+
+Husky runs `lint-staged` to format staged files. The recommended VS Code extensions use the same formatter selection.
 
 ## Testing
 

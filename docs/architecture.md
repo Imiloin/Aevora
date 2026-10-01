@@ -6,29 +6,29 @@ Single Astro content collection (`blog`) defined in `src/content.config.ts`. Use
 
 Frontmatter schema (Zod-validated):
 
-| Field          | Type       | Required |
-| -------------- | ---------- | -------- |
-| `title`        | `string`   | Yes      |
-| `description`  | `string`   | Yes      |
-| `pubDate`      | `date`     | Yes      |
-| `heroImage`    | `image()`  | Yes      |
-| `updatedDate`  | `date`     | No       |
-| `bibliography` | `string`   | No       |
-| `series`       | `string[]` | No       |
+| Field | Type | Required |
+| --- | --- | --- |
+| `title` | `string` | Yes |
+| `description` | `string` | Yes |
+| `pubDate` | `date` | Yes |
+| `heroImage` | `image()` | Yes |
+| `updatedDate` | `date` | No |
+| `bibliography` | `string` | No |
+| `series` | `string[]` | No |
 
 ## Page Routing
 
-| Route                              | Purpose                                                              |
-| ---------------------------------- | -------------------------------------------------------------------- |
-| `src/pages/index.astro`            | Minimal homepage with a generative canvas cover and navigation index |
-| `src/pages/blog/[...slug].astro`   | Individual blog posts                                                |
-| `src/pages/blog/index.astro`       | Blog listing (first page)                                            |
-| `src/pages/blog/page/[page].astro` | Paginated blog listing                                               |
-| `src/pages/series/[series].astro`  | Archive pages by series tag                                          |
-| `src/pages/about.astro`            | About page                                                           |
-| `src/pages/search.astro`           | Pagefind search page                                                 |
-| `src/pages/rss.xml.ts`             | RSS feed                                                             |
-| `src/pages/404.astro`              | Custom 404 page                                                      |
+| Route | Purpose |
+| --- | --- |
+| `src/pages/index.astro` | Minimal homepage with a generative canvas cover and navigation index |
+| `src/pages/blog/[...slug].astro` | Individual blog posts |
+| `src/pages/blog/index.astro` | Blog listing (first page) |
+| `src/pages/blog/page/[page].astro` | Paginated blog listing |
+| `src/pages/series/[series].astro` | Archive pages by series tag |
+| `src/pages/about.astro` | About page |
+| `src/pages/search.astro` | Pagefind search page |
+| `src/pages/rss.xml.ts` | RSS feed |
+| `src/pages/404.astro` | Custom 404 page |
 
 Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `src/configs/blog.json`).
 
@@ -89,27 +89,30 @@ Two separate icon directories serve different purposes:
 
 Defined in both `tsconfig.json` and `vite.config.js`:
 
-| Alias           | Maps to           |
-| --------------- | ----------------- |
+| Alias | Maps to |
+| --- | --- |
 | `@components/*` | `src/components/` |
-| `@configs/*`    | `src/configs/`    |
-| `@icons/*`      | `src/icons/`      |
-| `@layouts/*`    | `src/layouts/`    |
-| `@styles/*`     | `src/styles/`     |
-| `@scripts/*`    | `src/scripts/`    |
-| `@utils/*`      | `src/utils/`      |
+| `@configs/*` | `src/configs/` |
+| `@icons/*` | `src/icons/` |
+| `@layouts/*` | `src/layouts/` |
+| `@styles/*` | `src/styles/` |
+| `@scripts/*` | `src/scripts/` |
+| `@utils/*` | `src/utils/` |
 
 ## Key Config Files
 
-| File                     | Purpose                                       |
-| ------------------------ | --------------------------------------------- |
-| `astro.config.mjs`       | Site URL, integrations, remark/rehype plugins |
-| `ec.config.mjs`          | Expressive Code theme and styling             |
-| `vite.config.js`         | Tailwind plugin, path aliases                 |
-| `src/configs/site.json`  | Site title and description                    |
-| `src/configs/blog.json`  | Pagination, layout, hero image, TOC settings  |
-| `src/configs/about.json` | Author info for about page                    |
-| `src/configs/home.json`  | Homepage generative canvas configuration      |
-| `src/configs/index.ts`   | Typed barrel re-export for all configs        |
-| `pagefind.yml`           | Search indexing configuration                 |
-| `netlify.toml`           | Netlify build and deploy settings             |
+| File | Purpose |
+| --- | --- |
+| `astro.config.mjs` | Site URL, integrations, remark/rehype plugins |
+| `ec.config.mjs` | Expressive Code theme and styling |
+| `vite.config.js` | Tailwind plugin, path aliases |
+| `src/configs/site.json` | Site title and description |
+| `src/configs/blog.json` | Pagination, layout, hero image, TOC settings |
+| `src/configs/about.json` | Author info for about page |
+| `src/configs/home.json` | Homepage generative canvas configuration |
+| `src/configs/index.ts` | Typed barrel re-export for all configs |
+| `pagefind.yml` | Search indexing configuration |
+| `netlify.toml` | Netlify build and deploy settings |
+| `.prettierrc.mjs` | Code formatting rules |
+| `.markdownlint.json` | Selected Markdown rules and warning levels |
+| `.markdownlint-cli2.jsonc` | Markdown file exclusions shared by the CLI and VS Code |

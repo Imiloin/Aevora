@@ -1,10 +1,32 @@
 {
+  "default": false,
+  "MD004": {
+    "style": "dash"
+  },
   "MD007": {
     "indent": 2
   },
-  "MD013": false,
-  "MD025": false,
-  "MD028": false,
-  "MD033": false,
-  "MD004": false
+  "MD009": {
+    "br_spaces": 2,
+    "code_blocks": false,
+    "strict": false
+  },
+  "MD012": {
+    "maximum": 2
+  },
+  "MD019": true,
+  "MD022": true,
+  "MD030": true,
+  "MD031": {
+    "list_items": false
+  },
+  "MD032": true,
+  "MD040": "warning",
+  "MD045": "warning",
+  "MD047": true,
+  "MD056": "warning",
+  "MD058": true,
+  "MD060": {
+    "style": "compact"
+  }
 }

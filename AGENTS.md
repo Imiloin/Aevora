@@ -15,7 +15,7 @@ See [docs/commands.md](docs/commands.md) for full details.
 - `npm run dev` — dev server (localhost:4321, run `npm run build` first for search)
 - `npm run build` — build site + Pagefind index
 - `npm run clean` — clean build artifacts
-- `npm run format` / `npm run check` — Prettier format / check
+- `npm run format` / `npm run check` — Prettier for code, markdownlint for Markdown
 
 ## Architecture
 
@@ -31,6 +31,7 @@ Maintain a high-quality project architecture. Do not put all code into a single 
 ## Syntax
 
 - Prettier: 100-char width, 2-space indent, single quotes, trailing commas (ES5), semicolons
+- Markdown: use the selected markdownlint rules in `.markdownlint.json`, including dash lists and compact tables. Preserve math, HTML, and prose layout; do not format Markdown with Prettier.
 - Husky pre-commit hook runs lint-staged (auto-formats changed files)
 - ESM (`"type": "module"` in package.json)
 - Do not include any non-ASCII characters in the code unless absolutely necessary

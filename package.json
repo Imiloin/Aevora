@@ -9,8 +9,8 @@
     "clean": "rm -rf dist/* public/_astro/ public/pagefind/ .astro/ node_modules/.astro/",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write .",
-    "check": "prettier --check .",
+    "format": "prettier --write . && markdownlint-cli2 --fix \"**/*.{md,markdown}\"",
+    "check": "prettier --check . && markdownlint-cli2 \"**/*.{md,markdown}\"",
     "prepare": "husky"
   },
   "dependencies": {
@@ -31,13 +31,15 @@
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
+    "markdownlint-cli2": "^0.23.3",
     "pagefind": "^1.5.2",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
     "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{md,markdown}": "markdownlint-cli2 --fix",
+    "!(*.md|*.markdown)": "prettier --write --ignore-unknown"
   },
   "allowScripts": {
     "esbuild": true,

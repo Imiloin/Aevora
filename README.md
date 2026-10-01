@@ -52,18 +52,21 @@ All commands should be run from the root of the project in your terminal.
 
 > It is recommended to **use Bash** for running these commands. If you are using Windows, consider installing Git Bash. Running `npm run build` in the Windows Command Prompt could lead to issues.
 
-| Command                   | Action                                                            |
-| :------------------------ | :---------------------------------------------------------------- |
-| `npm install`             | Installs project dependencies                                     |
-| `npm run dev`             | Starts the local development server at `localhost:4321`           |
-| `npm run build`           | Builds production site and outputs it to `dist/`                  |
-| `npm run clean`           | Removes the `dist/` directory and dumped cache in `public/`       |
-| `npm run format`          | Formats code using Prettier                                       |
-| `npm run preview`         | Previews build locally before deployment                          |
-| `npm run astro ...`       | Executes Astro CLI commands, such as `astro add` or `astro check` |
-| `npm run astro -- --help` | Displays help for using the Astro CLI                             |
+| Command | Action |
+| :--- | :--- |
+| `npm install` | Installs project dependencies |
+| `npm run dev` | Starts the local development server at `localhost:4321` |
+| `npm run build` | Builds production site and outputs it to `dist/` |
+| `npm run clean` | Removes the `dist/` directory and dumped cache in `public/` |
+| `npm run format` | Formats code with Prettier and Markdown with markdownlint |
+| `npm run check` | Checks code and Markdown formatting without modifying files |
+| `npm run preview` | Previews build locally before deployment |
+| `npm run astro ...` | Executes Astro CLI commands, such as `astro add` or `astro check` |
+| `npm run astro -- --help` | Displays help for using the Astro CLI |
 
 For deployments to Netlify, use `netlify.toml` to configure the build process.
+
+Formatting rules and file exclusions are shared with the recommended VS Code extensions and the pre-commit hook. Markdown uses a small rule set with dash lists and compact tables, preserving math and prose layout.
 
 ## License
 

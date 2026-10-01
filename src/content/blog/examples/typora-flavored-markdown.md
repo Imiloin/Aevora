@@ -78,9 +78,9 @@ Markdown 使用电子邮件样式 `>` 字符进行块引用。它们表示为：
 
 #### 无序列表
 
-* 红色
-* 绿色
-* 蓝色
+- 红色
+- 绿色
+- 蓝色
 
 #### 有序列表
 
@@ -177,8 +177,8 @@ $$
 
 | First Header | Second Header |
 | ------------ | ------------- |
-| Content Cell | Content Cell  |
-| Content Cell | Content Cell  |
+| Content Cell | Content Cell |
+| Content Cell | Content Cell |
 
 您还可以在表格中包括内联 markdown 语法，例如链接、粗体、斜体或删除线。
 
@@ -192,11 +192,11 @@ $$
 | zebra stripes |    are neat     |            $1 |
 ```
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
+| Left-Aligned | Center Aligned | Right Aligned |
 | :------------ | :-------------: | ------------: |
-| col 3 is      | some wordy text |         $1600 |
-| col 2 is      |    centered     |           $12 |
-| zebra stripes |    are neat     |            $1 |
+| col 3 is | some wordy text | $1600 |
+| col 2 is | centered | $12 |
+| zebra stripes | are neat | $1 |
 
 最左侧的冒号表示左对齐的列；最右侧的冒号表示右对齐的列；两侧的冒号表示中心对齐的列。
 
@@ -249,16 +249,16 @@ Markdown 支持两种类型的链接：内联和引用。
 要创建内联链接，请在链接文本的结束方括号后立即使用一组常规括号。在常规括号内，输入 URL 地址，以及可选的用引号括起来的链接标题。例如：
 
 ```markdown
-This is [an example](http://example.com/ 'Title') inline link.
+This is [an example](http://example.com/ "Title") inline link.
 
 [This link](http://example.net/) has no title attribute.
 ```
 
 将产生：
 
-This is [an example](http://example.com/"Title") inline link. (`<p>This is <a href="http://example.com/" title="Title">`)
+This is [an example](http://example.com/ "Title") inline link. (`<p>This is <a href="http://example.com/" title="Title">`)
 
-[This link](http://example.net/) has no title attribute. (`<p><a href="http://example.net/">This link</a> has no`)
+[This link](http://example.net/) has no title attribute. (`<p><a href="http://example.net/">This link</a> has no title attribute.</p>`)
 
 #### 内部链接
 
@@ -275,7 +275,7 @@ This is [an example][id] reference-style link.
 
 然后，在文档中的任何位置，您可以单独定义链接标签，如下所示：
 
-[id]: http://example.com/ 'Optional Title Here'
+[id]: http://example.com/ "Optional Title Here"
 ```
 
 在 Typora 中，它们将呈现为：
@@ -286,10 +286,13 @@ This is [an example](http://example.com/) reference-style link.
 
 ```markdown
 [Google][]
-然后定义链接：
 
 [Google]: http://google.com/
 ```
+
+[Google][]
+
+[Google]: http://google.com/
 
 在 Typora 中单击链接将其展开以进行编辑，<kbd>Command</kbd> + 单击将在 Web 浏览器中打开超链接。
 

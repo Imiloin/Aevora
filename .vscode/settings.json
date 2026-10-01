@@ -7,6 +7,12 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "never"
+    }
+  },
   "[bibtex]": {
     "editor.defaultFormatter": "James-Yu.latex-workshop"
   }
