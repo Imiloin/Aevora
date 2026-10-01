@@ -86,47 +86,41 @@ const hasToC = toc.length > 1;
   </Fragment>
 
   <div class="toc" id="toc">
-    {
-      hasToC && (
-        <nav>
-          {toc.map((heading) => (
-            <TOC heading={heading} />
-          ))}
-        </nav>
-      )
-    }
+    {hasToC && (
+      <nav>
+        {toc.map((heading) => (
+          <TOC heading={heading} />
+        ))}
+      </nav>
+    )}
   </div>
   <main data-pagefind-body>
     <article>
       <div class="hero-image relative" data-pagefind-ignore>
-        {
-          heroImage && (
-            <>
-              <Image width={heroWidth} height={heroHeight} src={heroImage} alt="" class="shadow" />
-              <Image
-                width={heroWidth}
-                height={heroHeight}
-                data-pagefind-meta="image[src]"
-                src={heroImage}
-                alt=""
-              />
-            </>
-          )
-        }
+        {heroImage && (
+          <>
+            <Image width={heroWidth} height={heroHeight} src={heroImage} alt="" class="shadow" />
+            <Image
+              width={heroWidth}
+              height={heroHeight}
+              data-pagefind-meta="image[src]"
+              src={heroImage}
+              alt=""
+            />
+          </>
+        )}
       </div>
       <div class="mx-auto mt-8 w-(--width) max-w-[calc(100%-2em)] text-center leading-none">
         <div class="inline-flex items-center gap-2 text-(--gray-700)">
           <FormattedDate date={pubDate} />
-          {
-            updatedDate && (
-              <>
-                <span class="text-(--gray-600) select-none">&bull;</span>
-                <span class="inline-flex items-center gap-[0.35em]">
-                  Updated on <FormattedDate date={updatedDate} />
-                </span>
-              </>
-            )
-          }
+          {updatedDate && (
+            <>
+              <span class="text-(--gray-600) select-none">&bull;</span>
+              <span class="inline-flex items-center gap-[0.35em]">
+                Updated on <FormattedDate date={updatedDate} />
+              </span>
+            </>
+          )}
         </div>
         <h1 class="title-h1 mt-4 mb-4 text-[2.488em]">{title}</h1>
         <div style="text-align: center;">

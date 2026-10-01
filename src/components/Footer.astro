@@ -13,13 +13,13 @@ const { width = '800px', theme = 'light' } = Astro.props as Props;
 
 <footer class:list={['site-footer flex justify-center', theme === 'dark' && 'site-footer--dark']}>
   <div class="footer-content">
-    <div class="text-left">
-      &copy; {today.getFullYear()} Imiloin. All rights reserved.
-    </div>
+    <div class="text-left">&copy; {today.getFullYear()} Imiloin. All rights reserved.</div>
     <div class="astro text-right">
-      Powered by<a data-shrink href="https://astro.build" aria-label="Astro website"
-        ><AstroLogo /></a
-      >.
+      Powered by
+      <a data-shrink href="https://astro.build" aria-label="Astro website">
+        <AstroLogo />
+      </a>
+      .
     </div>
   </div>
 </footer>

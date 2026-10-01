@@ -5,26 +5,24 @@ import { slugify } from '@utils/slug';
 const { series } = Astro.props;
 ---
 
-{
-  series && series.length > 0 && (
-    <div class="series m-[0.5rem_0_1.5rem_0] inline-flex items-center gap-2 rounded-3xl bg-(--gray-850) px-4 py-2 text-[0.9em]">
-      <Folder />
-      <div class="flex text-white">
-        {series.map((entry: string, index: number) => (
-          <>
-            <a
-              class="rounded-sm p-1 text-white no-underline shadow-none transition-all duration-300 ease-in-out hover:bg-(--gray-800) hover:shadow-none"
-              href={`/series/${slugify(entry)}/`}
-            >
-              {entry}
-            </a>
-            {index < series.length - 1 && <span class="p-1 text-white">/</span>}
-          </>
-        ))}
-      </div>
+{series && series.length > 0 && (
+  <div class="series m-[0.5rem_0_1.5rem_0] inline-flex items-center gap-2 rounded-3xl bg-(--gray-850) px-4 py-2 text-[0.9em]">
+    <Folder />
+    <div class="flex text-white">
+      {series.map((entry: string, index: number) => (
+        <>
+          <a
+            class="rounded-sm p-1 text-white no-underline shadow-none transition-all duration-300 ease-in-out hover:bg-(--gray-800) hover:shadow-none"
+            href={`/series/${slugify(entry)}/`}
+          >
+            {entry}
+          </a>
+          {index < series.length - 1 && <span class="p-1 text-white">/</span>}
+        </>
+      ))}
     </div>
-  )
-}
+  </div>
+)}
 
 <style>
   .series :global(svg) {

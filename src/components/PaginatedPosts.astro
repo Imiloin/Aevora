@@ -65,63 +65,56 @@ const hasNextPage = totalPages > currentPage;
 
 <section>
   <ul class="m-0 flex list-none flex-wrap gap-8 p-0 max-md:gap-2">
-    {
-      paginatedPosts.map((post, index) => (
-        <PostCard post={post} isFirstChild={currentPage === 1 && index === 0} />
-      ))
-    }
+    {paginatedPosts.map((post, index) => (
+      <PostCard post={post} isFirstChild={currentPage === 1 && index === 0} />
+    ))}
   </ul>
-  {
-    totalPages > 1 && (
-      <nav aria-label="Pagination" class="mt-8 flex items-center justify-center gap-2">
-        {/* previous */}
-        {hasPrevPage ? (
+  {totalPages > 1 && (
+    <nav aria-label="Pagination" class="mt-8 flex items-center justify-center gap-2">
+      {/* previous */}
+      {hasPrevPage ? (
+        <a href={indexPageLink ? `/blog/` : `/blog/page/${currentPage - 1}/`} class="arrow active">
+          <span class="sr-only">Previous</span>
+          <ChevronLeft />
+        </a>
+      ) : (
+        <span class="arrow inactive">
+          <span class="sr-only">Previous</span>
+          <ChevronLeft />
+        </span>
+      )}
+
+      {/* page index */}
+      {pageList.map((pagination, index) =>
+        pagination === '...' ? (
+          <span class="index index-dots">{pagination}</span>
+        ) : pagination === currentPage ? (
+          <span aria-current="page" class="index index-current">
+            {pagination}
+          </span>
+        ) : (
           <a
-            href={indexPageLink ? `/blog/` : `/blog/page/${currentPage - 1}/`}
-            class="arrow active"
+            href={pagination === 1 ? `/blog/` : `/blog/page/${pagination}/`}
+            aria-current="page"
+            class="index index-other"
           >
-            <span class="sr-only">Previous</span>
-            <ChevronLeft />
+            {pagination}
           </a>
-        ) : (
-          <span class="arrow inactive">
-            <span class="sr-only">Previous</span>
-            <ChevronLeft />
-          </span>
-        )}
+        )
+      )}
 
-        {/* page index */}
-        {pageList.map((pagination, index) =>
-          pagination === '...' ? (
-            <span class="index index-dots">{pagination}</span>
-          ) : pagination === currentPage ? (
-            <span aria-current="page" class="index index-current">
-              {pagination}
-            </span>
-          ) : (
-            <a
-              href={pagination === 1 ? `/blog/` : `/blog/page/${pagination}/`}
-              aria-current="page"
-              class="index index-other"
-            >
-              {pagination}
-            </a>
-          )
-        )}
-
-        {/* next page */}
-        {hasNextPage ? (
-          <a href={`/blog/page/${currentPage + 1}/`} class="arrow active">
-            <span class="sr-only">Next</span>
-            <ChevronRight />
-          </a>
-        ) : (
-          <span class="arrow inactive">
-            <span class="sr-only">Next</span>
-            <ChevronRight />
-          </span>
-        )}
-      </nav>
-    )
-  }
+      {/* next page */}
+      {hasNextPage ? (
+        <a href={`/blog/page/${currentPage + 1}/`} class="arrow active">
+          <span class="sr-only">Next</span>
+          <ChevronRight />
+        </a>
+      ) : (
+        <span class="arrow inactive">
+          <span class="sr-only">Next</span>
+          <ChevronRight />
+        </span>
+      )}
+    </nav>
+  )}
 </section>

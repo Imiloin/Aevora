@@ -7,5 +7,8 @@ package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
+# Soft Links
+CLAUDE.md
+
 # Example Blog Content
 src/content/blog/examples/

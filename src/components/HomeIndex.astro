@@ -17,14 +17,12 @@ const destinations = [
 
   <div class="home-index__inner">
     <nav class="home-index__nav" aria-label="Homepage destinations">
-      {
-        destinations.map(({ label, href }) => (
-          <a data-expand href={href}>
-            <span>{label}</span>
-            <CircledArrowUpRight />
-          </a>
-        ))
-      }
+      {destinations.map(({ label, href }) => (
+        <a data-expand href={href}>
+          <span>{label}</span>
+          <CircledArrowUpRight />
+        </a>
+      ))}
     </nav>
   </div>
 
