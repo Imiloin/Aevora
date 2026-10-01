@@ -66,8 +66,6 @@ All commands should be run from the root of the project in your terminal.
 
 For deployments to Netlify, use `netlify.toml` to configure the build process.
 
-Formatting rules and file exclusions are shared with the recommended VS Code extensions and the pre-commit hook. Markdown uses a small rule set with dash lists and compact tables, preserving math and prose layout.
-
 ## License
 
 The code in this repository is licensed under the MIT License. Additionally, some borrowed code is licensed under the Apache-2.0 License.
