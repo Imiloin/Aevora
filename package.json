@@ -14,13 +14,13 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/markdown-remark": "^7.3.1",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
-    "@expressive-code/plugin-line-numbers": "^0.44.1",
+    "@astrojs/sitemap": "^3.7.4",
+    "@expressive-code/plugin-line-numbers": "^0.44.2",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.9",
-    "astro-expressive-code": "^0.44.1",
+    "astro": "^7.3.5",
+    "astro-expressive-code": "^0.44.2",
     "rehype-citation": "^2.3.2",
     "rehype-mathjax": "^7.1.0",
     "remark-gemoji": "^8.0.0",
@@ -33,7 +33,7 @@
     "lint-staged": "^17.4.1",
     "pagefind": "^1.5.2",
     "prettier": "^3.9.6",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro": "^1.1.0",
     "prettier-plugin-tailwindcss": "^0.8.1"
   },
   "lint-staged": {
