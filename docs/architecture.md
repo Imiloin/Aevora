@@ -50,7 +50,7 @@ Processing chain configured in `astro.config.mjs` through the `satteri()` proces
 
 **HAST plugins** (operate on HTML nodes):
 
-- `satteri-callouts` — GitHub-style alert blocks and their theme stylesheet
+- `satteri-callouts` — GitHub-style alert blocks and their theme stylesheet, with border-box sizing in `prose.css` to keep padding within the article width
 - `astro-expressive-code` injects its Satteri code-block renderer
 - Astro collects images and headings for asset processing and the table of contents
 
