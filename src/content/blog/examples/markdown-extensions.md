@@ -130,3 +130,11 @@ The Transformer uses attention :cite[vaswani2017attention].
 BERT builds on Transformer encoders :cite[devlin2019bertpretrainingdeepbidirectional].
 Read both papers :cite[devlin2019bertpretrainingdeepbidirectional; vaswani2017attention],
 or a specific section :cite[vaswani2017attention]{locator="Section 3.2"}.
+
+To include the entire bibliography, add `::nocite[*]` on its own line. The uncited *Deep Learning* book appears after the cited papers in the generated References section.
+
+```markdown
+::nocite[*]
+```
+
+::nocite[*]

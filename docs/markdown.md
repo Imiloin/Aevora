@@ -23,6 +23,14 @@ A passage :cite[vaswani2017attention]{locator="pp. 3-4"}.
 - The `References` heading and list are generated automatically from cited entries. Unknown keys or a missing bibliography produce an error.
 - Citation syntax stays literal inside inline and fenced code.
 
+To include every entry in the `.bib` file, add this directive on its own line anywhere in the article:
+
+```markdown
+::nocite[*]
+```
+
+It produces no inline output. Cited entries keep their numbers, and uncited entries follow in `.bib` order. It also works without any `:cite` references.
+
 arXiv's exported `@misc` BibTeX works directly, including its URL. Separate `eprint`, `archivePrefix`, and `primaryClass` information is not displayed. See the [sample bibliography](../src/content/blog/examples/markdown-extensions.bib).
 
 ## Reference Style

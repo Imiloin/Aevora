@@ -44,7 +44,7 @@ Processing chain configured in `astro.config.mjs` through the `satteri()` proces
 
 **MDAST plugins** (operate on Markdown nodes):
 
-- `src/plugins/citations.ts` — handles `:cite[key]` directives, keeps a per-article numbering map, and appends the references heading and bibliography
+- `src/plugins/citations.ts` — handles `:cite[key]` and `::nocite[*]` directives, keeps a per-article numbering map, and appends the references heading and bibliography
 - `src/plugins/mathjax.ts` — renders parsed math with the existing MathJax 3 engine into SVG, with a separate MathJax document and stylesheet for each article
 - `satteri-emoji` — GitHub emoji shortcodes
 
@@ -56,9 +56,9 @@ Processing chain configured in `astro.config.mjs` through the `satteri()` proces
 
 **Bibliography formatting:**
 
-`src/utils/bibliography.ts` loads BibTeX through Citation.js and formats only cited records with `src/csl/biblatex-numeric.csl`. This local ACM-derived CSL approximates biblatex's standard numeric bibliography: full given-family names, titles before dates, type-specific publication details, and labeled DOI/URL links. Four or more authors are shortened to the first three followed by `et al.`. It is an approximation, not an official biblatex CSL. Rendering is synchronous because Citation.js shares a CSL engine per style. The MDAST plugin creates numbered links directly from the same ordered records used for the bibliography, preserving first-citation order.
+`src/utils/bibliography.ts` loads BibTeX through Citation.js and formats cited records with `src/csl/biblatex-numeric.csl`. With `::nocite[*]`, uncited records are appended in BibTeX order after all citations have been visited, so the directive's position does not affect citation numbers. This local ACM-derived CSL approximates biblatex's standard numeric bibliography: full given-family names, titles before dates, type-specific publication details, and labeled DOI/URL links. Four or more authors are shortened to the first three followed by `et al.`. It is an approximation, not an official biblatex CSL. Rendering is synchronous because Citation.js shares a CSL engine per style. The MDAST plugin creates numbered links directly from the same ordered records used for the bibliography, preserving first-citation order.
 
-Bibliography paths resolve against the article's `ctx.fileURL`; frontmatter is not rewritten. The formatter translates Citation.js's default BibTeX genre identifiers (`phdthesis`, `mastersthesis`, `techreport`) into readable labels before applying CSL. A `References` heading is generated only when citations exist, before Astro collects headings. See [Markdown and citations](markdown.md) for authoring and bibliography updates.
+Bibliography paths resolve against the article's `ctx.fileURL`; frontmatter is not rewritten. The formatter translates Citation.js's default BibTeX genre identifiers (`phdthesis`, `mastersthesis`, `techreport`) into readable labels before applying CSL. A `References` heading is generated when cited or explicitly included entries exist, before Astro collects headings. See [Markdown and citations](markdown.md) for authoring and bibliography updates.
 
 **Code blocks:**
 

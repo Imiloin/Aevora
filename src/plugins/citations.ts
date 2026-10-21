@@ -10,10 +10,30 @@ function citationError(ctx: MdastVisitorContext, message: string): never {
 export function citations() {
   // Factories run once per document, so numbering never leaks between articles.
   let bibliography: Map<string, CSL> | undefined;
+  let includeAll = false;
   const cited = new Map<string, { number: number; entry: CSL }>();
+
+  function loadBibliography(ctx: MdastVisitorContext) {
+    if (!bibliography) {
+      const path = ctx.data.astro?.frontmatter?.bibliography;
+      if (typeof path !== 'string' || !ctx.fileURL) {
+        citationError(ctx, 'Citations require a bibliography path in the article frontmatter.');
+      }
+      bibliography = readBibliography(new URL(path, ctx.fileURL));
+    }
+    return bibliography;
+  }
 
   return defineMdastPlugin({
     name: 'aevora-citations',
+    leafDirective(node, ctx) {
+      if (node.name !== 'nocite') return;
+      if (ctx.textContent(node).trim() !== '*') {
+        citationError(ctx, 'Use ::nocite[*] to include all bibliography entries.');
+      }
+      includeAll = true;
+      ctx.removeNode(node);
+    },
     textDirective(node, ctx) {
       if (node.name !== 'cite') return;
 
@@ -32,16 +52,8 @@ export function citations() {
         citationError(ctx, 'Use :cite[key] or :cite[key1; key2] with letters, digits, - and _.');
       }
 
-      if (!bibliography) {
-        const path = ctx.data.astro?.frontmatter?.bibliography;
-        if (typeof path !== 'string' || !ctx.fileURL) {
-          citationError(ctx, 'Citations require a bibliography path in the article frontmatter.');
-        }
-        bibliography = readBibliography(new URL(path, ctx.fileURL));
-      }
-
       for (const key of keys) {
-        const entry = bibliography.get(key);
+        const entry = loadBibliography(ctx).get(key);
         if (!entry) citationError(ctx, `Unknown bibliography key "${key}".`);
         if (!cited.has(key)) cited.set(key, { number: cited.size + 1, entry });
       }
@@ -63,6 +75,12 @@ export function citations() {
       ctx.replaceNode(node, children);
     },
     after(root, ctx) {
+      // Append uncited records after traversal so nocite never changes citation numbers.
+      if (includeAll) {
+        for (const [key, entry] of loadBibliography(ctx)) {
+          if (!cited.has(key)) cited.set(key, { number: cited.size + 1, entry });
+        }
+      }
       if (!cited.size) return;
 
       const entries = formatBibliography([...cited.values()].map(({ entry }) => entry));
