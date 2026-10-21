@@ -14,18 +14,20 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.1",
+    "@astrojs/markdown-satteri": "^0.4.4",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
+    "@citation-js/core": "^0.9.0",
+    "@citation-js/plugin-bibtex": "^0.9.0",
+    "@citation-js/plugin-csl": "^0.9.0",
     "@expressive-code/plugin-line-numbers": "^0.44.2",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
     "astro-expressive-code": "^0.44.2",
-    "rehype-citation": "^2.3.2",
-    "rehype-mathjax": "^7.1.0",
-    "remark-gemoji": "^8.0.0",
-    "remark-github-alerts": "^0.1.1",
-    "remark-math": "^6.0.0",
+    "mathjax-full": "^3.2.2",
+    "satteri": "^0.10.5",
+    "satteri-callouts": "^1.0.1",
+    "satteri-emoji": "^0.2.1",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {

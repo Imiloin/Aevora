@@ -4,7 +4,8 @@ import { defineCollection } from 'astro:content';
 
 const blogCollection = defineCollection({
   // Load Markdown files in the src/content/blog directory.
-  loader: glob({ base: './src/content/blog', pattern: '**/*.md' }),
+  // Render during the page build so external bibliography data is read on each build.
+  loader: glob({ base: './src/content/blog', pattern: '**/*.md', deferRender: true }),
   // Type-check frontmatter using a schema
   schema: ({ image }) =>
     z.object({

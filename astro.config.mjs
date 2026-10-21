@@ -2,18 +2,14 @@ import { defineConfig } from 'astro/config';
 
 import sitemap from '@astrojs/sitemap';
 import astroExpressiveCode from 'astro-expressive-code';
-import { unified } from '@astrojs/markdown-remark';
+import { satteri } from '@astrojs/markdown-satteri';
+import satteriCallouts from 'satteri-callouts';
+import { satteriEmoji } from 'satteri-emoji';
 
 import viteConfig from './vite.config.js';
 
-import { processBibliographyPath } from './src/plugins/process-bibliography-path.mjs';
-
-import remarkGemoji from 'remark-gemoji';
-import remarkGithubAlerts from 'remark-github-alerts';
-import remarkMath from 'remark-math';
-
-import rehypeCitation from 'rehype-citation';
-import rehypeMathjax from 'rehype-mathjax';
+import { citations } from './src/plugins/citations.ts';
+import { mathjax } from './src/plugins/mathjax.ts';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,18 +17,10 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [astroExpressiveCode(), sitemap()],
   markdown: {
-    processor: unified({
-      remarkPlugins: [processBibliographyPath, remarkGemoji, remarkGithubAlerts, remarkMath],
-      rehypePlugins: [
-        [
-          rehypeCitation,
-          {
-            linkCitations: true,
-            csl: './src/csl/association-for-computing-machinery.csl',
-          },
-        ],
-        rehypeMathjax,
-      ],
+    processor: satteri({
+      features: { math: true, directive: true },
+      mdastPlugins: [citations, mathjax, satteriEmoji({ shortcodes: ['github'] })],
+      hastPlugins: [satteriCallouts({ theme: 'github' })],
     }),
   },
   vite: viteConfig,

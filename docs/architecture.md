@@ -2,7 +2,7 @@
 
 ## Content System
 
-Single Astro content collection (`blog`) defined in `src/content.config.ts`. Uses glob loader for `**/*.md` files.
+Single Astro content collection (`blog`) defined in `src/content.config.ts`. Uses glob loader for `**/*.md` files with `deferRender: true`. Rendering during the page build avoids retaining bibliography output in the content store between builds.
 
 Frontmatter schema (Zod-validated):
 
@@ -40,19 +40,25 @@ Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `sr
 
 ## Markdown Pipeline
 
-Processing chain configured in `astro.config.mjs` through the `unified()` processor (`markdown.processor`). Since Astro v7 defaults to its native Satteri pipeline, `@astrojs/markdown-remark` is a required direct dependency to keep this remark/rehype processor available — without it the build fails to load the config.
+Processing chain configured in `astro.config.mjs` through the `satteri()` processor from `@astrojs/markdown-satteri`. Satteri is Astro v7's default processor; this project explicitly enables math and directive parsing. GFM and smart punctuation use Astro's defaults.
 
-**Remark plugins** (operate on mdast):
+**MDAST plugins** (operate on Markdown nodes):
 
-- `process-bibliography-path` — custom plugin (`src/plugins/`) that resolves bibliography file paths in frontmatter
-- `remark-gemoji` — GitHub emoji shortcodes
-- `remark-github-alerts` — GitHub-style alert blocks
-- `remark-math` — LaTeX math syntax
+- `src/plugins/citations.ts` — handles `:cite[key]` directives, keeps a per-article numbering map, and appends the references heading and bibliography
+- `src/plugins/mathjax.ts` — renders parsed math with the existing MathJax 3 engine into SVG, with a separate MathJax document and stylesheet for each article
+- `satteri-emoji` — GitHub emoji shortcodes
 
-**Rehype plugins** (operate on hast):
+**HAST plugins** (operate on HTML nodes):
 
-- `rehype-citation` — academic citations using CSL style (`src/csl/association-for-computing-machinery.csl`)
-- `rehype-mathjax` — renders math expressions
+- `satteri-callouts` — GitHub-style alert blocks and their theme stylesheet
+- `astro-expressive-code` injects its Satteri code-block renderer
+- Astro collects images and headings for asset processing and the table of contents
+
+**Bibliography formatting:**
+
+`src/utils/bibliography.ts` loads BibTeX through Citation.js and formats only cited records with `src/csl/biblatex-numeric.csl`. This local ACM-derived CSL approximates biblatex's standard numeric bibliography: full given-family names, titles before dates, type-specific publication details, and labeled DOI/URL links. Four or more authors are shortened to the first three followed by `et al.`. It is an approximation, not an official biblatex CSL. Rendering is synchronous because Citation.js shares a CSL engine per style. The MDAST plugin creates numbered links directly from the same ordered records used for the bibliography, preserving first-citation order.
+
+Bibliography paths resolve against the article's `ctx.fileURL`; frontmatter is not rewritten. The formatter translates Citation.js's default BibTeX genre identifiers (`phdthesis`, `mastersthesis`, `techreport`) into readable labels before applying CSL. A `References` heading is generated only when citations exist, before Astro collects headings. See [Markdown and citations](markdown.md) for authoring and bibliography updates.
 
 **Code blocks:**
 
@@ -75,6 +81,7 @@ Processing chain configured in `astro.config.mjs` through the `unified()` proces
 - Color system: CSS custom properties defined in `src/styles/color.css`
 - Fonts: Uncut Sans (body), Cascadia Code (monospace), HarmonyOS Sans (CJK fallback)
 - Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.)
+- Figure captions are numbered automatically; Expressive Code frame captions are excluded from the figure counter. See `src/content/blog/examples/markdown-extensions.md` for source and rendered examples of the article extensions.
 - All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
 
@@ -103,7 +110,7 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 
 | File | Purpose |
 | --- | --- |
-| `astro.config.mjs` | Site URL, integrations, remark/rehype plugins |
+| `astro.config.mjs` | Site URL, integrations, Satteri features and plugins |
 | `ec.config.mjs` | Expressive Code theme and styling |
 | `vite.config.js` | Tailwind plugin, path aliases |
 | `src/configs/site.json` | Site title and description |
