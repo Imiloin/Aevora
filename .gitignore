@@ -1,5 +1,7 @@
 # my stuff
 /imgs_projs/
+.github/copilot-instructions.md
+/.trae/
 
 # VSCode
 *.code-workspace
@@ -14,11 +16,9 @@ public/_astro/
 # playwright
 .playwright-mcp/
 
-# copilot
-.github/copilot-instructions.md
-
 # build output
 dist/
+
 # generated types
 .astro/
 
