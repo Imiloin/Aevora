@@ -10,6 +10,7 @@
       "@configs/*": ["./src/configs/*"],
       "@icons/*": ["./src/icons/*"],
       "@layouts/*": ["./src/layouts/*"],
+      "@plugins/*": ["./src/plugins/*"],
       "@styles/*": ["./src/styles/*"],
       "@scripts/*": ["./src/scripts/*"],
       "@utils/*": ["./src/utils/*"]

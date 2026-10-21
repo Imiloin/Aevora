@@ -8,8 +8,8 @@ import { satteriEmoji } from 'satteri-emoji';
 
 import viteConfig from './vite.config.js';
 
-import { citations } from './src/plugins/citations.ts';
-import { mathjax } from './src/plugins/mathjax.ts';
+import { citations } from '@plugins/citations';
+import { mathjax } from '@plugins/mathjax';
 
 // https://astro.build/config
 export default defineConfig({

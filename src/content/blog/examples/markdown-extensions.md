@@ -29,6 +29,26 @@ $$
 = \operatorname{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V.
 $$
 
+Long display formulas scroll horizontally within the article. This expression stays on one line so you can scroll to see the complete formula.
+
+```markdown
+$$
+\log p_\theta(x)
+= \log \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\frac{p_\theta(x,z)}{q_\phi(z \mid x)}\right]
+\ge \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\log\frac{p_\theta(x,z)}{q_\phi(z \mid x)}\right]
+= \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\log p_\theta(x \mid z)\right]
+- D_{\mathrm{KL}}\!\left(q_\phi(z \mid x)\,\|\,p_\theta(z)\right).
+$$
+```
+
+$$
+\log p_\theta(x)
+= \log \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\frac{p_\theta(x,z)}{q_\phi(z \mid x)}\right]
+\ge \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\log\frac{p_\theta(x,z)}{q_\phi(z \mid x)}\right]
+= \mathbb{E}_{z \sim q_\phi(z \mid x)}\!\left[\log p_\theta(x \mid z)\right]
+- D_{\mathrm{KL}}\!\left(q_\phi(z \mid x)\,\|\,p_\theta(z)\right).
+$$
+
 ## Alerts
 
 GitHub-style alerts support `NOTE`, `TIP`, `IMPORTANT`, `WARNING`, and `CAUTION`.

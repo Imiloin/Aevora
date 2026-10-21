@@ -45,7 +45,7 @@ Processing chain configured in `astro.config.mjs` through the `satteri()` proces
 **MDAST plugins** (operate on Markdown nodes):
 
 - `src/plugins/citations.ts` — handles `:cite[key]` and `::nocite[*]` directives, keeps a per-article numbering map, and appends the references heading and bibliography
-- `src/plugins/mathjax.ts` — renders parsed math with the existing MathJax 3 engine into SVG, with a separate MathJax document and stylesheet for each article
+- `src/plugins/mathjax.ts` — renders parsed math with MathJax 4 into SVG, with a separate MathJax document and stylesheet for each article. Uses the official `@mathjax/src` and `@mathjax/mathjax-tex-font` packages to retain the original TeX font and synchronous rendering. Long display formulas scroll horizontally via `displayOverflow: 'scroll'`. TeX extensions are loaded explicitly in `src/plugins/mathjax-tex-packages.ts`.
 - `satteri-emoji` — GitHub emoji shortcodes
 
 **HAST plugins** (operate on HTML nodes):
@@ -80,7 +80,7 @@ Bibliography paths resolve against the article's `ctx.fileURL`; frontmatter is n
   - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`
 - Fonts: Uncut Sans (body), Cascadia Code (monospace), HarmonyOS Sans (CJK fallback)
-- Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.)
+- Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.). Display math scrollbars use the same thumb colors, padding, and hover behavior as Expressive Code blocks.
 - Figure captions are numbered automatically; Expressive Code frame captions are excluded from the figure counter. See `src/content/blog/examples/markdown-extensions.md` for source and rendered examples of the article extensions.
 - All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
@@ -94,7 +94,7 @@ Two separate icon directories serve different purposes:
 
 ## Path Aliases
 
-Defined in both `tsconfig.json` and `vite.config.js`:
+Directory aliases are defined in `tsconfig.json` and resolved by Astro. `vite.config.js` also defines `@` for `src/`.
 
 | Alias | Maps to |
 | --- | --- |
@@ -102,6 +102,7 @@ Defined in both `tsconfig.json` and `vite.config.js`:
 | `@configs/*` | `src/configs/` |
 | `@icons/*` | `src/icons/` |
 | `@layouts/*` | `src/layouts/` |
+| `@plugins/*` | `src/plugins/` |
 | `@styles/*` | `src/styles/` |
 | `@scripts/*` | `src/scripts/` |
 | `@utils/*` | `src/utils/` |
