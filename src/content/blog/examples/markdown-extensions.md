@@ -1,7 +1,7 @@
 ---
 title: 'Markdown Extensions'
 description: 'Source and rendered examples of the Markdown extensions and custom styling available in Aevora.'
-pubDate: 'Oct 21 2026'
+pubDate: 'Sep 23, 2024'
 heroImage: './markdown-extensions.jpg'
 bibliography: './markdown-extensions.bib'
 series: ['Examples', 'Markdown']

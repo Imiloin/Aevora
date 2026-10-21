@@ -305,6 +305,11 @@
   margin-top: 0.5rem;
 }
 
+/* Keep full-width callouts inside prose when Tailwind Preflight is disabled. */
+.prose .callout {
+  box-sizing: border-box;
+}
+
 /* Horizontal rule */
 .prose hr {
   border: none;
