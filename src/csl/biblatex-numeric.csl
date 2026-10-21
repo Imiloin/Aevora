@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" default-locale="en-US" demote-non-dropping-particle="sort-only" page-range-format="expanded">
+  <info>
+    <title>Aevora Numeric (biblatex approximation)</title>
+    <id>https://imiloin.netlify.app/styles/biblatex-numeric</id>
+    <link href="https://imiloin.netlify.app/styles/biblatex-numeric" rel="self"/>
+    <link href="http://www.zotero.org/styles/association-for-computing-machinery" rel="template"/>
+    <link href="https://github.com/plk/biblatex/blob/dev/tex/latex/biblatex/bbx/standard.bbx" rel="documentation"/>
+    <author>
+      <name>Patrick O'Brien</name>
+    </author>
+    <contributor>
+      <name>Junliang Hu</name>
+    </contributor>
+    <category citation-format="numeric"/>
+    <category field="generic-base"/>
+    <summary>Local adaptation of the ACM CSL approximating biblatex's standard numeric bibliography with given-family names, giveninits=false, and plain paper titles. Book and venue titles use italics. Aevora manages first-citation order. This is not an official biblatex CSL.</summary>
+    <updated>2026-10-21T00:00:00+00:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name form="long" initialize="false" delimiter=", " and="text"/>
+      <substitute>
+        <names variable="editor">
+          <name form="long" initialize="false" delimiter=", " and="text"/>
+          <label form="short" prefix=", "/>
+        </names>
+      </substitute>
+    </names>
+  </macro>
+  <macro name="editor">
+    <names variable="editor">
+      <label form="verb-short" text-case="capitalize-first" suffix=" "/>
+      <name form="long" initialize="false" delimiter=", " and="text"/>
+    </names>
+  </macro>
+  <macro name="title">
+    <choose>
+      <if type="book">
+        <text variable="title" font-style="italic"/>
+      </if>
+      <else>
+        <text variable="title"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="year">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+  <macro name="edition">
+    <choose>
+      <if is-numeric="edition">
+        <group delimiter=" ">
+          <number variable="edition" form="ordinal"/>
+          <text term="edition" form="short"/>
+        </group>
+      </if>
+      <else>
+        <text variable="edition"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="publisher-year">
+    <group delimiter=", ">
+      <group delimiter=": ">
+        <text variable="publisher-place"/>
+        <text variable="publisher"/>
+      </group>
+      <text macro="year"/>
+    </group>
+  </macro>
+  <macro name="pages">
+    <group delimiter=" ">
+      <label variable="page" form="short"/>
+      <text variable="page"/>
+    </group>
+  </macro>
+  <macro name="volume">
+    <group delimiter=" ">
+      <label variable="volume" form="short" text-case="capitalize-first"/>
+      <text variable="volume"/>
+    </group>
+  </macro>
+  <macro name="journal">
+    <group delimiter=", ">
+      <group delimiter=" ">
+        <group delimiter=" ">
+          <text variable="container-title" font-style="italic" prefix="In: "/>
+          <group delimiter=".">
+            <text variable="volume"/>
+            <text variable="issue"/>
+          </group>
+        </group>
+        <text macro="year" prefix="(" suffix=")"/>
+      </group>
+      <text macro="pages"/>
+    </group>
+  </macro>
+  <macro name="publication">
+    <choose>
+      <if type="article-journal article-magazine article-newspaper" match="any">
+        <text macro="journal"/>
+      </if>
+      <else-if type="paper-conference chapter" match="any">
+        <group delimiter=". ">
+          <text variable="container-title" font-style="italic" prefix="In: "/>
+          <text macro="editor"/>
+          <text macro="edition"/>
+          <text macro="volume"/>
+          <group delimiter=" ">
+            <text variable="collection-title"/>
+            <text variable="collection-number"/>
+          </group>
+          <group delimiter=", ">
+            <text macro="publisher-year"/>
+            <text macro="pages"/>
+          </group>
+        </group>
+      </else-if>
+      <else-if type="book report" match="any">
+        <group delimiter=". ">
+          <group delimiter=" ">
+            <text variable="genre"/>
+            <choose>
+              <if type="report">
+                <text variable="number"/>
+              </if>
+            </choose>
+          </group>
+          <text macro="edition"/>
+          <text macro="volume"/>
+          <text variable="collection-title"/>
+          <text macro="publisher-year"/>
+        </group>
+      </else-if>
+      <else-if type="thesis">
+        <group delimiter=". ">
+          <text variable="genre"/>
+          <text macro="publisher-year"/>
+        </group>
+      </else-if>
+      <else-if type="speech">
+        <group delimiter=". ">
+          <text variable="event"/>
+          <text macro="publisher-year"/>
+        </group>
+      </else-if>
+      <else>
+        <group delimiter=". ">
+          <text variable="container-title" font-style="italic"/>
+          <text variable="genre"/>
+          <text variable="version"/>
+          <text macro="publisher-year"/>
+        </group>
+      </else>
+    </choose>
+  </macro>
+  <macro name="access">
+    <group delimiter=". ">
+      <text variable="DOI" prefix="DOI: https://doi.org/"/>
+      <text variable="URL" prefix="URL: "/>
+    </group>
+  </macro>
+  <citation collapse="citation-number">
+    <sort>
+      <key variable="citation-number"/>
+    </sort>
+    <layout prefix="[" suffix="]" delimiter=", ">
+      <text variable="citation-number"/>
+    </layout>
+  </citation>
+  <bibliography second-field-align="flush" entry-spacing="0" et-al-min="4" et-al-use-first="3">
+    <layout suffix=".">
+      <text variable="citation-number" prefix="[" suffix="]"/>
+      <group delimiter=". ">
+        <text macro="author"/>
+        <text macro="title"/>
+        <text macro="publication"/>
+        <text macro="access"/>
+      </group>
+    </layout>
+  </bibliography>
+</style>

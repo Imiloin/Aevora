@@ -21,6 +21,8 @@ This runs a multi-step process:
 2. `npx pagefind` — generates search index from `dist/`
 3. Copies `dist/pagefind/` and `dist/_astro/` into `public/` (so dev server can serve them)
 
+After changing only a `.bib` file, `npm run build` reads the updated bibliography because the content loader uses `deferRender: true`. In the dev server, save a change to the referring Markdown file or restart the server; bibliography files are not registered as live module dependencies. See [Markdown and citations](markdown.md).
+
 ## Clean
 
 ```bash
@@ -39,7 +41,3 @@ Prettier formats code using `.prettierrc.mjs`: 100-char width, 2-space indent, s
 `markdownlint-cli2` formats Markdown using `.markdownlint.json`, including dash lists and compact tables. File exclusions are configured in `.markdownlint-cli2.jsonc`.
 
 Husky runs `lint-staged` to format staged files. The recommended VS Code extensions use the same formatter selection.
-
-## Testing
-
-No test framework is currently configured.

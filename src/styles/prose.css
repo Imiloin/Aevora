@@ -161,7 +161,8 @@
   align-items: baseline;
 }
 
-.prose figcaption::before {
+/* Expressive Code frames also use figcaption; only number article figures. */
+.prose figure:not(.frame) > figcaption::before {
   counter-increment: figure-counter;
   content: 'Fig. ' counter(figure-counter) ' ';
   font-weight: 700;

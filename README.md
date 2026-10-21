@@ -18,7 +18,7 @@ In this Astro project, you will find the following folders and files:
 │   ├── icons/           # Raw SVG files imported as image assets
 │   ├── layouts/         # Page layouts (BaseLayout, BlogPost)
 │   ├── pages/           # Route pages
-│   ├── plugins/         # Custom remark/rehype plugins
+│   ├── plugins/         # Satteri citation and MathJax plugins
 │   ├── scripts/         # TypeScript client-side scripts
 │   ├── styles/          # Global CSS, Tailwind config, prose styles
 │   └── utils/           # Shared utilities (pagination, posts, slug)
