@@ -32,6 +32,8 @@ Frontmatter schema (Zod-validated):
 
 Pagination: first page shows 5 posts, subsequent pages show 6 (configured in `src/configs/blog.json`).
 
+Blog routes list entries in `getStaticPaths()` and call `render(post)` in the page body. During development, opening an article renders only that entry, avoiding compilation of the entire collection on the first article request.
+
 ### Homepage
 
 `HomeHero.astro` fills the first screen with the existing CuboidalQuantum canvas. The homepage header is positioned at the top of the document; other pages retain the shared fixed header behavior.

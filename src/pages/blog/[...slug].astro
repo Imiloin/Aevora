@@ -1,29 +1,21 @@
 ---
 import BlogPost from '@layouts/BlogPost.astro';
-import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
-import type { MarkdownHeading } from 'astro';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return Promise.all(
-    posts.map(async (post) => {
-      const { Content, headings } = await render(post);
-      return {
-        params: { slug: post.id },
-        props: { post, Content, headings },
-      };
-    })
-  );
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
 type Props = {
   post: CollectionEntry<'blog'>;
-  Content: AstroComponentFactory;
-  headings: MarkdownHeading[];
 };
 
-const { post, Content, headings } = Astro.props;
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
 ---
 
 <BlogPost {...post.data} headings={headings}>
