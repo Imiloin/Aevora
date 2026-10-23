@@ -30,14 +30,17 @@ Maintain a high-quality project architecture. Do not put all code into a single 
 
 ## Syntax
 
-- Prettier: 100-char width, 2-space indent, single quotes, trailing commas (ES5), semicolons
-- Markdown: use the selected markdownlint rules in `.markdownlint.json`, including dash lists and compact tables. Preserve math, HTML, and prose layout; do not format Markdown with Prettier.
-- Husky pre-commit hook runs lint-staged (auto-formats changed files)
-- ESM (`"type": "module"` in package.json)
-- Do not include any non-ASCII characters in the code unless absolutely necessary
-- Add appropriate code comments, and write all code comments in English
+### Conventions
 
-After writing code, run `npm run format` to format the code.
+- Use ESM (`"type": "module"` in `package.json`).
+- Prefer ASCII characters in code unless non-ASCII characters are necessary.
+- Add comments where appropriate, and write all code comments in English.
+
+### Formatting
+
+- Prettier: 100-character width, 2-space indentation, single quotes, ES5 trailing commas, and semicolons.
+- Markdown: follow the selected rules in `.markdownlint.json`, including dash lists and compact tables. Preserve math, HTML, and prose layout. Do not format Markdown with Prettier.
+- Run `npm run format` after writing code. The Husky pre-commit hook also runs lint-staged to automatically format changed files.
 
 ## Styling
 
@@ -49,7 +52,7 @@ After writing code, run `npm run format` to format the code.
 
 After modifying the code, check whether `README.md` and relevant documentation under `docs/` need to be updated. When adding new features or making significant changes, also create or update relevant documentation under `docs/`. ALWAYS let the documentation sync with the code.
 
-## Important Note
+## Principles
 
 ### Your Role
 
@@ -64,16 +67,20 @@ Don't assume. Don't hide confusion. Please think from first principles. Before i
 
 The user may not be a coding expert, you are more of an expert than the user in certain respects. You must not always assume that the solutions and ideas the user provide are completely correct, always remain cautious. Start from the original requirements and problems. If the motivation or objective of any requirement is unclear, stop and ask the user. Feel free to ask any questions you have.
 
-### Principles
+### Keep Changes Focused and Smart
 
-This is NOT a production-level project. There is no need to make the code 100% reliable or robust enough to handle every edge case. Don't over-engineer it; stick to the shortest implementation path.
+This is NOT a production-level project, so prioritize simplicity and practical results.
 
-At the same time, do not be overly constrained by backward compatibility. If a change genuinely improves the final outcome, it is acceptable to make significant adjustments to the design or implementation approach.
+- Take the shortest implementation path. Avoid over-engineering. There is no need to make the code 100% reliable or robust enough to handle every edge case.
+- Implement only what the request requires. Do not add speculative features, configurability, abstractions, or handling for impossible scenarios.
+- Do not let backward compatibility limit meaningful improvements. Significant design or implementation changes are acceptable when they genuinely improve the final outcome.
 
-When writing or editing code, follow these principles:
+### Important Note
+
+When writing or editing code, follow these rules:
 
 - Avoid compatibility-driven or patch-style solutions. Focus on making the codebase more robust in the long term.
-- Do not reinvent the wheel. If a mature library, tool, or reusable implementation already exists in the project, use it directly.
-- Do not introduce solutions beyond the stated requirements, such as fallback or degradation plans.
+- Do not reinvent the wheel. If a mature library, tool, or reusable implementation already exists, use it directly.
+- Do not introduce solutions beyond the stated requirements, such as fallback or degradation plans, unless necessary.
 - Prefer git-ignored directories for temporary files, test scripts, scaffolding, and other artifacts unrelated to the project runtime.
-- Do not `git commit` after writing or editing code. Summarize the diff, and let the user decide.
+- Do not `git commit` after editing code. Summarize the diff, and let the user decide.
