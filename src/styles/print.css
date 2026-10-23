@@ -16,6 +16,23 @@
     border-bottom: 1.2px solid var(--gray-600);
   }
 
+  /* Printed content must fit the page without scrollbars or clipped lines. */
+  .prose .expressive-code pre,
+  .prose mjx-container[display][overflow='scroll'] {
+    overflow: visible !important;
+  }
+
+  .prose .expressive-code .ec-line .code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  .prose mjx-container[display] > svg {
+    max-width: 100%;
+    height: auto;
+  }
+
   /* Avoid "bold" math formulas in print */
   mjx-container[jax='SVG'] :is(use[data-c], path[data-c]) {
     stroke-width: 0 !important;
