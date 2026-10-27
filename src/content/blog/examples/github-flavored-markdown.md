@@ -1,7 +1,7 @@
 ---
 title: Github Flavored Markdown
 description: Create sophisticated formatting for your prose and code on GitHub with simple syntax.
-pubDate: 'Sep 23, 2024'
+pubDate: '2024-09-23'
 heroImage: './github-flavored-markdown.jpg'
 series: ['Examples', 'Markdown']
 ---

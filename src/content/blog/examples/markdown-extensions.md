@@ -1,13 +1,52 @@
 ---
 title: 'Markdown Extensions'
 description: 'Source and rendered examples of the Markdown extensions and custom styling available in Aevora.'
-pubDate: 'Sep 23, 2024'
+pubDate: '2024-09-24'
+updatedDate: '2026-10-27'
 heroImage: './markdown-extensions.jpg'
 bibliography: './markdown-extensions.bib'
 series: ['Examples', 'Markdown']
 ---
 
-These examples cover Aevora's Markdown extensions and custom article styling. Each source block is followed by its rendered result.
+These examples cover Aevora's article metadata, Markdown extensions, and custom styling, with source blocks and rendered results.
+
+## Frontmatter
+
+Place YAML frontmatter at the very beginning of each Markdown post, between two `---` lines. Astro reads this block as article metadata.
+
+```yaml
+---
+title: 'Markdown Extensions'
+description: 'Examples of Markdown extensions and custom article styling.'
+pubDate: '2024-09-23'
+updatedDate: '2024-09-24'
+heroImage: './markdown-extensions.jpg'
+bibliography: './markdown-extensions.bib'
+series: ['Examples', 'Markdown']
+---
+```
+
+| Field | Required | Purpose |
+| --- | --- | --- |
+| `title` | Yes | Article title and page title. |
+| `description` | Yes | Short description used in page metadata. |
+| `pubDate` | Yes | Publication date, displayed in the article header and used to sort posts. |
+| `heroImage` | Yes | Path to an existing cover image. A 2\:1 aspect ratio is recommended. |
+| `updatedDate` | No | Last update date, displayed in the article header when provided. |
+| `bibliography` | No | Path to the BibTeX file used for citations. |
+| `series` | No | An array of series names, each linking to its archive page. |
+
+Use `YYYY-MM-DD` for dates. The `heroImage` and `bibliography` paths are relative to the Markdown file. Optional fields can be omitted.
+
+## Links
+
+Links have a subtle underline. Hover over a link to a heading on this page for a soft blue highlight, or an external link for a soft pink highlight.
+
+```markdown
+Jump to the [Frontmatter section](#frontmatter), or visit the [Astro documentation](https://docs.astro.build/).
+```
+
+Jump to the [Frontmatter section](#frontmatter), or visit the [Astro documentation](https://docs.astro.build/).
 
 ## Math
 

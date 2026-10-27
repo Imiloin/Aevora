@@ -1,7 +1,7 @@
 ---
 title: Code Block Examples
 description: Examples of code blocks with syntax highlighting.
-pubDate: 'Nov 13, 2024'
+pubDate: '2024-09-23'
 heroImage: './expressive-code-examples.jpg'
 series: ['Examples']
 ---

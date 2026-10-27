@@ -1,7 +1,7 @@
 ---
 title: 'Typora 的 Markdown 语法'
 description: 'Typora 的 Markdown 语法特性，用于测试中文博客支持。'
-pubDate: 'Jan 1, 2022'
+pubDate: '2022-01-01'
 heroImage: './typora-flavored-markdown.jpg'
 series: ['Examples', 'Markdown']
 ---
