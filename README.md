@@ -86,4 +86,3 @@ The following projects and resources were referenced or borrowed from:
 - Button hover effect at 404 page: <https://codepen.io/aaroniker/pen/bGGVMbY>
 - Button hover effect at about page: <https://codepen.io/glasha_ch/pen/pVjpVO>
 - Pagination: <https://github.com/zeon-studio/astroplate>
-- Details & summary styling: <https://codepen.io/wynandacademy/pen/zYMaxLq>

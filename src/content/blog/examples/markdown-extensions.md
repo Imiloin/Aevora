@@ -121,18 +121,26 @@ Wrap an image in `<figure>` and add a `<figcaption>`. The caption receives a fig
 
 ## Collapsible Details
 
-Use native HTML for a collapsible explanation. Select the summary to open it.
+Use native HTML for a collapsible explanation. Select the summary to toggle it.
 
 ```html
 <details>
   <summary>Why scale the attention scores?</summary>
   <p>Scaling helps keep dot products from growing with the key dimension.</p>
 </details>
+<details>
+  <summary>Can several explanations appear together?</summary>
+  <p>Yes. Each explanation opens independently, and adjacent items share the same simple layout.</p>
+</details>
 ```
 
 <details>
   <summary>Why scale the attention scores?</summary>
   <p>Scaling helps keep dot products from growing with the key dimension.</p>
+</details>
+<details>
+  <summary>Can several explanations appear together?</summary>
+  <p>Yes. Each explanation opens independently, and adjacent items share the same simple layout.</p>
 </details>
 
 ## Citations

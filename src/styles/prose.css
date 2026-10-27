@@ -340,49 +340,67 @@
 /* Details and Summary */
 .prose details {
   box-sizing: border-box;
-  transition: all 0.3s ease-out;
-  background: var(--gray-050);
-  border-radius: 10px;
-  overflow: hidden;
+  border-bottom: 1px solid var(--gray-300);
 
   &[open] {
-    background: var(--background);
-    summary {
-      &::before {
-        transform: rotate(-135deg) translate(-30%, 0%);
-      }
+    padding-bottom: 1rem;
+
+    > summary::after {
+      transform: rotate(225deg);
     }
   }
 
-  &:not(:first-child) {
-    margin-top: 10px;
+  > summary + * {
+    margin-top: 0;
+  }
+
+  > :last-child:not(summary) {
+    margin-bottom: 0;
   }
 }
 
-.prose summary {
-  display: flex;
-  align-items: center;
+.prose details > summary {
+  display: block;
   position: relative;
-  padding: 8px 16px;
-  color: var(--gray-750);
-  transition: margin 0.3s ease-out;
+  padding: 1rem 1.75rem 1rem 0;
+  color: var(--gray-850);
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: inherit;
+  list-style: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--gray-700);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
 
   &::-webkit-details-marker {
     display: none;
   }
 
-  &::before {
+  &::after {
     content: '';
-    display: block;
-    height: 6px;
-    flex: 0 0 6px;
-    margin-right: 16px;
-    border-right: 2px solid var(--gray-900);
-    border-bottom: 2px solid var(--gray-900);
-    transition: all 0.3s;
-    transform: rotate(45deg) translate(0, -30%);
+    position: absolute;
+    top: calc(1rem + 0.5em);
+    right: 0.2em;
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 1.5px solid var(--gray-700);
+    border-bottom: 1.5px solid var(--gray-700);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prose details > summary,
+  .prose details > summary::after {
+    transition: none;
   }
 }
 
