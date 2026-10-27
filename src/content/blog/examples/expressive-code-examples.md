@@ -174,7 +174,7 @@ function demo() {
 
 ### Adding labels to line markers
 
-```jsx {"1":5} del={"2":7-8} ins={"3":10-12}
+```jsx {"1":5} del={"2":7-8} ins={"3":10}
 // labeled-line-markers.jsx
 <button
   role="button"
@@ -188,7 +188,7 @@ function demo() {
 </button>
 ```
 
-```jsx {"1. Provide the value prop here:":5-6} del={"2. Remove the disabled and active states:":8-10} ins={"3. Add this to render the children inside the button:":12-15}
+```jsx {"1. Provide the value prop here:":5-6} del={"2. Remove the disabled and active states:":8-10} ins={"3. Add this to render the children inside the button:":12-13}
 // labeled-line-markers.jsx
 <button
   role="button"
@@ -200,6 +200,7 @@ function demo() {
   disabled={disabled}
   active={active}
 >
+
   {children && !active && (typeof children === 'string' ? <span>{children}</span> : children)}
 </button>
 ```

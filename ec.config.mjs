@@ -21,13 +21,13 @@ export default defineEcConfig({
     // override styles
     borderColor: 'transparent',
     borderRadius: '8px',
-    borderWidth: '0px',
     scrollbarThumbColor: 'var(--gray-300)',
     scrollbarThumbHoverColor: 'var(--gray-500)',
     frames: {
       copyIcon: createInlineSvgUrl(customCopyIcon),
-      editorActiveTabBackground: 'var(--white)',
+      editorActiveTabBackground: 'var(--gray-300)',
       editorActiveTabBorderColor: 'transparent',
+      editorActiveTabIndicatorBottomColor: 'var(--blue-300)',
       editorActiveTabIndicatorTopColor: 'transparent',
       editorTabBarBackground: 'var(--gray-300)',
       editorTabBarBorderBottomColor: 'transparent',
@@ -40,6 +40,7 @@ export default defineEcConfig({
       terminalTitlebarBackground: 'var(--gray-300)',
       terminalTitlebarBorderBottomColor: 'var(--white)',
       terminalTitlebarDotsForeground: 'var(--black)',
+      terminalTitlebarDotsOpacity: '0.25',
     },
     textMarkers: {
       inlineMarkerBorderWidth: '0px',
