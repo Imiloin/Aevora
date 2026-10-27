@@ -6,10 +6,8 @@ This repository holds the open-source codebase for my blog's structure and desig
 
 ## Project Structure
 
-In this Astro project, you will find the following folders and files:
-
 ```text
-├── docs/                # Architecture and command documentation
+├── docs/                # Documentation
 ├── public/
 ├── src/
 │   ├── components/      # Astro components (includes icons/ subdirectory)
@@ -18,7 +16,7 @@ In this Astro project, you will find the following folders and files:
 │   ├── icons/           # Raw SVG files imported as image assets
 │   ├── layouts/         # Page layouts (BaseLayout, BlogPost)
 │   ├── pages/           # Route pages
-│   ├── plugins/         # Satteri citation and MathJax plugins
+│   ├── plugins/         # Custom Satteri Markdown plugins
 │   ├── scripts/         # TypeScript client-side scripts
 │   ├── styles/          # Global CSS, Tailwind config, prose styles
 │   └── utils/           # Shared utilities (pagination, posts, slug)
@@ -42,13 +40,13 @@ npm install
 npm run dev
 ```
 
-This will start a local development server that you can access at [localhost:4321](http://localhost:4321/).
+This will start a local development server at [localhost:4321](http://localhost:4321/).
 
 > Note: To ensure the search feature works properly, you might need to run `npm run build` before `npm run dev` to generate the index for Pagefind.
 
 ## Commands
 
-All commands should be run from the root of the project in your terminal.
+Run all commands from the project root in your terminal.
 
 > It is recommended to **use Bash** for running these commands. If you are using Windows, consider installing Git Bash. Running `npm run build` in the Windows Command Prompt could lead to issues.
 

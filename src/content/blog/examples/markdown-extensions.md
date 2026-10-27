@@ -31,7 +31,7 @@ series: ['Examples', 'Markdown']
 | `title` | Yes | Article title and page title. |
 | `description` | Yes | Short description used in page metadata. |
 | `pubDate` | Yes | Publication date, displayed in the article header and used to sort posts. |
-| `heroImage` | Yes | Path to an existing cover image. A 2\:1 aspect ratio is recommended. |
+| `heroImage` | Yes | Path to an existing cover image. A 2:1 aspect ratio is recommended. |
 | `updatedDate` | No | Last update date, displayed in the article header when provided. |
 | `bibliography` | No | Path to the BibTeX file used for citations. |
 | `series` | No | An array of series names, each linking to its archive page. |
@@ -205,3 +205,15 @@ To include the entire bibliography, add `::nocite[*]` on its own line. The uncit
 ```
 
 ::nocite[*]
+
+## Directives
+
+Inline directives require `[]` or `{}`, including empty pairs. Bare single-colon forms stay literal, so ratios, times, and ports need no escaping.
+
+```markdown
+A 16:9 ratio, a meeting at 12:30, and localhost:4321 all keep their colons.
+The bare :note form also stays literal.
+```
+
+A 16:9 ratio, a meeting at 12:30, and localhost:4321 all keep their colons.
+The bare :note form also stays literal.

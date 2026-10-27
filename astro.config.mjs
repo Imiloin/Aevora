@@ -8,6 +8,7 @@ import { satteriEmoji } from 'satteri-emoji';
 
 import viteConfig from './vite.config.js';
 
+import { bareTextDirectives } from '@plugins/bare-text-directives';
 import { citations } from '@plugins/citations';
 import { mathjax } from '@plugins/mathjax';
 
@@ -19,7 +20,12 @@ export default defineConfig({
   markdown: {
     processor: satteri({
       features: { math: true, directive: true },
-      mdastPlugins: [citations, mathjax, satteriEmoji({ shortcodes: ['github'] })],
+      mdastPlugins: [
+        bareTextDirectives,
+        citations,
+        mathjax,
+        satteriEmoji({ shortcodes: ['github'] }),
+      ],
       hastPlugins: [satteriCallouts({ theme: 'github' })],
     }),
   },

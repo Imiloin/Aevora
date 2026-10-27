@@ -21,7 +21,7 @@ This runs a multi-step process:
 2. `npx pagefind` — generates search index from `dist/`
 3. Copies `dist/pagefind/` and `dist/_astro/` into `public/` (so dev server can serve them)
 
-After changing only a `.bib` file, `npm run build` reads the updated bibliography because the content loader uses `deferRender: true`. In the dev server, save a change to the referring Markdown file or restart the server; bibliography files are not registered as live module dependencies. See [Markdown and citations](markdown.md).
+After changing only a `.bib` file, `npm run build` reads the updated bibliography because the content loader uses `deferRender: true`. In the dev server, save a change to the referring Markdown file or restart the server; bibliography files are not registered as live module dependencies. See the [citation plugin](plugins.md#citations).
 
 ## Clean
 
