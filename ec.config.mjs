@@ -1,6 +1,5 @@
-import { createInlineSvgUrl } from '@expressive-code/core';
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
-import { defineEcConfig } from 'astro-expressive-code';
+import { createInlineSvgUrl, defineEcConfig } from 'astro-expressive-code';
 
 // SVG content for a copy icon
 const customCopyIcon = `
