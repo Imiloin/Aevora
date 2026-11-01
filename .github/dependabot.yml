@@ -16,7 +16,8 @@ updates:
         applies-to: version-updates
         patterns:
           - '*astro*'
-          - '@expressive-code*'
+          - '@expressive-code/*'
+          - 'satteri*'
       other-dependencies:
         # group other dependencies in one PR
         applies-to: version-updates
@@ -24,8 +25,9 @@ updates:
           - '*'
         exclude-patterns:
           - '*astro*'
-          - '@expressive-code*'
+          - '@expressive-code/*'
+          - 'satteri*'
     open-pull-requests-limit: 5
     versioning-strategy: 'auto'
     commit-message:
-      prefix: 'chore'
+      prefix: 'chore(deps)'
