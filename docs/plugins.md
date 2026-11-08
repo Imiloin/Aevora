@@ -33,6 +33,6 @@ Formatting is synchronous because Citation.js shares a CSL engine per style. The
 
 The plugin creates a MathJax document on the first formula in each article, isolating macros, equation state, and SVG IDs between posts. Its `inlineMath` and `math` visitors render formulas, and its `after` hook appends the required stylesheet only when math is present.
 
-The original TeX font includes all glyph data, allowing synchronous rendering. [mathjax-tex-packages.ts](../src/plugins/mathjax-tex-packages.ts) is a supporting module that explicitly imports and enables TeX extensions for the direct MathJax API.
+The official New Computer Modern (NewCM) font provides SVG glyphs for double-struck digits and lowercase letters. Its font data is preloaded from the installed package in the `before` hook, sharing one initialization Promise and font instance across articles. Formula conversion stays synchronous after initialization. Characters outside the font's coverage, such as Chinese text, use SVG text with browser font fallback. [mathjax-tex-packages.ts](../src/plugins/mathjax-tex-packages.ts) explicitly imports and enables TeX extensions for the direct MathJax API.
 
 Display formulas use `displayOverflow: 'scroll'` to contain long expressions, while inline formulas stay unbroken. [prose.css](../src/styles/prose.css) aligns formula scrollbars with code blocks, and [print.css](../src/styles/print.css) scales display SVGs to the printable width.
