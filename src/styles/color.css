@@ -15,24 +15,16 @@
   /* Surfaces: page, quiet elements, and interactive states. */
   --bg-page: var(--gray-1);
   --bg-surface: var(--white);
-  --bg-subtle: var(--gray-3);
+  --bg-subtle: color-mix(in srgb, var(--gray-3) 75%, var(--bg-page));
   --bg-hover: var(--gray-4);
   --bg-inverse: var(--gray-12);
   --bg-home-index: color-mix(in srgb, var(--gray-12) 25%, var(--black));
   --bg-inverse-hover: color-mix(in srgb, var(--bg-inverse) 90%, var(--white));
   --bg-overlay: color-mix(in srgb, var(--bg-page) 60%, transparent);
-  --bg-code: color-mix(in srgb, var(--gray-3) 75%, var(--bg-page));
-  --bg-code-mark: var(--blue-4);
-  --bg-code-insert: var(--green-3);
-  --bg-code-delete: var(--red-3);
-  --bg-license: color-mix(in srgb, var(--bg-subtle) 80%, transparent);
-  --bg-mark: var(--amber-4);
-  --bg-contact-hover: var(--green-4);
 
   /* Use text steps for readable labels, including captions and metadata. */
   --text-primary: var(--gray-12);
   --text-secondary: var(--gray-11);
-  --text-toc-inactive: var(--gray-7);
   --text-inverse: var(--white);
   --text-inverse-secondary: var(--gray-8);
   --text-disabled: var(--gray-8);
@@ -50,7 +42,6 @@
   --accent-nav: var(--orange-11);
   --bg-link-internal: color-mix(in srgb, var(--blue-9) 20%, transparent);
   --bg-link-external: color-mix(in srgb, var(--crimson-9) 20%, transparent);
-  --progress-fill: var(--green-9);
   --feedback-success: var(--green-11);
   --feedback-error: var(--red-11);
 

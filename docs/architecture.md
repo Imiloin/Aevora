@@ -93,9 +93,9 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
 
 `src/styles/color.css` imports the color scales from `@radix-ui/colors`. Radix supplies the color values, including Display P3 variants on supported displays.
 
-Use the semantic variables in component CSS and Tailwind classes. Define shared colors and transparent mixtures in `color.css`. Add a dedicated variable only when a use needs independent tuning, such as `--bg-code` or `--bg-license`.
+`color.css` defines shared UI roles, coordinated states, color mixtures, and third-party theme hooks. Components can use Radix scales directly for simple local choices. Use local CSS variables for component-specific effects, and add global semantic variables when uses need coordinated changes.
 
-Code syntax highlighting uses the `github-light` theme, and image assets retain their own colors.
+Code syntax highlighting uses the `github-light` theme. Image assets and the CuboidalQuantum illustration retain their own colors.
 
 ## Icons
 

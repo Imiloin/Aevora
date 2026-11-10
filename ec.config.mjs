@@ -8,7 +8,7 @@ const customCopyIcon = `
   </svg>
 `;
 
-const codeBackground = 'var(--bg-code)';
+const codeBackground = 'var(--bg-subtle)';
 
 export default defineEcConfig({
   themes: ['github-light'],
@@ -56,12 +56,12 @@ export default defineEcConfig({
       lineMarkerAccentWidth: '0px',
       lineMarkerLabelPaddingInline: '0.3rem',
       lineMarkerLabelColor: 'var(--text-inverse)',
-      markBackground: 'var(--bg-code-mark)',
+      markBackground: 'var(--blue-4)',
       markBorderColor: 'var(--accent)',
-      insBackground: 'var(--bg-code-insert)',
+      insBackground: 'var(--green-3)',
       insBorderColor: 'var(--feedback-success)',
       insDiffIndicatorColor: 'var(--feedback-success)',
-      delBackground: 'var(--bg-code-delete)',
+      delBackground: 'var(--red-3)',
       delBorderColor: 'var(--feedback-error)',
       delDiffIndicatorColor: 'var(--feedback-error)',
     },

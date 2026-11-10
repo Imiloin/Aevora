@@ -184,7 +184,7 @@
 
 .prose th,
 .prose td {
-  padding: 8px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -313,7 +313,7 @@
 /* Inline code */
 .prose :not(pre) > code {
   padding: 1px 3px;
-  background-color: var(--bg-code);
+  background-color: var(--bg-subtle);
   border-radius: 3px;
   font-family: var(--mono-font-family);
   font-size: 0.875em;
@@ -460,7 +460,7 @@
 
 /* Highlighted text */
 .prose mark {
-  background-color: var(--bg-mark);
+  background-color: var(--amber-4);
   color: var(--text-primary);
   vertical-align: baseline;
 }
