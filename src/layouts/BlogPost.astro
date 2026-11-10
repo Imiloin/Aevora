@@ -15,8 +15,6 @@ import blogConfig from '@configs/blog.json';
 
 import '@styles/toc.css';
 
-import 'satteri-callouts/theme/github';
-
 type Props = CollectionEntry<'blog'>['data'] & {
   headings: MarkdownHeading[];
 };
@@ -109,11 +107,11 @@ const hasToC = toc.length > 1;
         )}
       </div>
       <div class="mx-auto mt-8 w-(--width) max-w-[calc(100%-2em)] text-center leading-none">
-        <div class="inline-flex items-center gap-2 text-(--gray-700)">
+        <div class="inline-flex items-center gap-2 text-(--text-secondary)">
           <FormattedDate date={pubDate} />
           {updatedDate && (
             <>
-              <span class="text-(--gray-600) select-none">&bull;</span>
+              <span class="text-(--fg-muted) select-none">&bull;</span>
               <span class="inline-flex items-center gap-[0.35em]">
                 Updated on <FormattedDate date={updatedDate} />
               </span>

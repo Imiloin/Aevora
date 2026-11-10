@@ -55,7 +55,7 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
 
 **HAST plugins** (operate on HTML nodes):
 
-- `satteri-callouts` — GitHub-style alert blocks and their theme stylesheet, with border-box sizing in `prose.css` to keep padding within the article width
+- `satteri-callouts` — GitHub-style alert blocks, with the theme stylesheet imported through `prose.css` and border-box sizing to keep padding within the article width
 - `astro-expressive-code` injects its Satteri code-block renderer
 - Astro collects images and headings for asset processing and the table of contents
 
@@ -77,17 +77,25 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
   - Use `max-sm:`, `max-md:`, `max-lg:`, `max-xl:`, `max-2xl:` variants — no arbitrary breakpoints
   - Use canonical classes:
     - Spacing: `p-4` (16px), `m-6` (24px), etc. — no arbitrary values like `p-[18px]`
-    - Vars: `text-(--gray-700)` — no arbitrary values like `text-[var(--gray-700)]`
+    - Vars: `text-(--text-secondary)` — no arbitrary values like `text-[var(--text-secondary)]`
     - Sizes: `m-[0.5rem_0_1.5rem_0]` — no arbitrary values like `[margin:0.5rem_0_1.5rem_0]`
     - etc.
   - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
   - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
-- Color system: CSS custom properties defined in `src/styles/color.css`
+- Color system: Radix Colors and semantic CSS custom properties defined in `src/styles/color.css`
 - Fonts: Uncut Sans (body), Cascadia Mono (inline code at `0.875em`, weight `375`), Cascadia Code (code blocks at `0.8rem`), HarmonyOS Sans (CJK fallback). Inline code inherits the surrounding weight in headings, bold text, and table headers.
 - Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.).
 - Figure captions are numbered automatically; Expressive Code frame captions are excluded from the figure counter. See `src/content/blog/examples/markdown-extensions.md` for source and rendered examples of the article extensions.
 - All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`
+
+### Colors
+
+`src/styles/color.css` imports the color scales from `@radix-ui/colors`. Radix supplies the color values, including Display P3 variants on supported displays.
+
+Use the semantic variables in component CSS and Tailwind classes. Define shared colors and transparent mixtures in `color.css`. Add a dedicated variable only when a use needs independent tuning, such as `--bg-code` or `--bg-license`.
+
+Code syntax highlighting uses the `github-light` theme, and image assets retain their own colors.
 
 ## Icons
 

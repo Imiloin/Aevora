@@ -1,7 +1,7 @@
 /* Print page styles */
 @page {
   margin: 2em;
-  background: var(--background) !important;
+  background: var(--bg-page) !important;
 }
 
 @media print {
@@ -13,7 +13,7 @@
   /* Replace box-shadow with border-bottom to avoid PDF rendering artifacts */
   .prose a {
     box-shadow: none !important;
-    border-bottom: 1.2px solid var(--gray-600);
+    border-bottom: 1.2px solid var(--link-underline);
   }
 
   /* Printed content must fit the page without scrollbars or clipped lines. */

@@ -40,7 +40,7 @@ const { post, isFirstChild } = Astro.props;
     margin-right: auto;
   }
   li.first-child img {
-    box-shadow: 0 4px 8px rgba(var(--shadow), 25%);
+    box-shadow: 0 4px 8px var(--shadow-medium);
   }
   li.first-child .title {
     font-size: 1.728em;
@@ -49,7 +49,7 @@ const { post, isFirstChild } = Astro.props;
     height: auto;
     margin-bottom: 0.5rem;
     border-radius: 12px;
-    box-shadow: 0 0 8px rgba(var(--shadow), 50%);
+    box-shadow: 0 0 8px var(--shadow-strong);
     &:hover {
       transform: scale(1.02);
       box-shadow: none;
@@ -60,13 +60,13 @@ const { post, isFirstChild } = Astro.props;
   }
   li .title {
     margin: 0;
-    color: var(--gray-850);
+    color: var(--text-primary);
     line-height: 1.2;
     font-size: 1.3em;
   }
   .date {
     margin: 0;
-    color: var(--gray);
+    color: var(--text-secondary);
   }
   li a:hover h5,
   li a:hover .date {

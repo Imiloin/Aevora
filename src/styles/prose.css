@@ -4,17 +4,19 @@
   from interfering with UI components elsewhere.
 */
 
+@import 'satteri-callouts/theme/github';
+
 /* Prose container */
 .prose {
   width: var(--width);
   max-width: calc(100% - 2em);
   margin: auto;
-  color: var(--text);
+  color: var(--text-primary);
 }
 
 /* Heading */
 .prose :where(h1, h2, h3, h4, h5, h6) {
-  color: var(--gray-850);
+  color: var(--text-primary);
 }
 
 .prose :where(h1, h2) {
@@ -93,21 +95,21 @@
 
 .prose a[href^='#'] {
   /* Internal link style */
-  box-shadow: 0px -1.2px 0px var(--gray-600) inset;
+  box-shadow: 0px -1.2px 0px var(--link-underline) inset;
   transition: all 0.2s ease;
 
   &:hover {
-    box-shadow: 0px calc(-1rem * 1) 0px var(--internal-link-color) inset;
+    box-shadow: 0px calc(-1rem * 1) 0px var(--bg-link-internal) inset;
   }
 }
 
 .prose a:not([href^='#']) {
   /* External link style */
-  box-shadow: 0px -1.2px 0px var(--gray-600) inset;
+  box-shadow: 0px -1.2px 0px var(--link-underline) inset;
   transition: all 0.3s ease;
 
   &:hover {
-    box-shadow: 0px calc(-1rem * 1) 0px var(--external-link-color) inset;
+    box-shadow: 0px calc(-1rem * 1) 0px var(--bg-link-external) inset;
   }
 }
 
@@ -155,7 +157,7 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 0.9em;
-  color: var(--gray-700);
+  color: var(--text-secondary);
   line-height: 1.5;
   max-width: 100%;
   align-items: baseline;
@@ -202,19 +204,19 @@
 }
 
 .prose thead {
-  background-color: var(--gray-200);
+  background-color: var(--bg-subtle);
 }
 
 .prose tr {
-  border-bottom: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .prose thead > tr {
-  border-top: 1px solid var(--gray-400);
+  border-top: 1px solid var(--border-default);
 }
 
 .prose tbody > tr:last-child {
-  border-bottom: 1px solid var(--gray-400);
+  border-bottom: 1px solid var(--border-default);
 }
 
 /* List item */
@@ -265,6 +267,28 @@
   }
 }
 
+.prose li.task-list-item input[type='checkbox']:checked {
+  /* Disabled native checkboxes ignore accent-color in some browsers. */
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  border: none;
+  border-radius: 2px;
+  background-color: var(--text-secondary);
+
+  &::before {
+    content: '';
+    width: 7px;
+    height: 4px;
+    border: solid var(--text-inverse);
+    border-width: 0 0 2px 2px;
+    transform: translateY(-1px) rotate(-45deg);
+  }
+}
+
 /* Display math scrollbar */
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar,
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar-track {
@@ -272,14 +296,14 @@
 }
 
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar-thumb {
-  background-color: var(--gray-300);
+  background-color: var(--scrollbar-subtle);
   border: 4px solid transparent;
   background-clip: content-box;
   border-radius: 10px;
 }
 
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar-thumb:hover {
-  background-color: var(--gray-500);
+  background-color: var(--scrollbar-subtle-hover);
 }
 
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar-corner {
@@ -289,7 +313,7 @@
 /* Inline code */
 .prose :not(pre) > code {
   padding: 1px 3px;
-  background-color: var(--gray-050);
+  background-color: var(--bg-code);
   border-radius: 3px;
   font-family: var(--mono-font-family);
   font-size: 0.875em;
@@ -345,8 +369,8 @@
 
 /* Blockquote */
 .prose blockquote {
-  border-left: 0.25em solid var(--gray-500);
-  color: var(--gray-700);
+  border-left: 0.25em solid var(--border-strong);
+  color: var(--text-secondary);
   padding: 0 1rem;
   margin: 1rem 0;
 }
@@ -356,6 +380,7 @@
 }
 
 .prose .callout {
+  --rc-color-default: var(--text-secondary);
   /* Keep full-width callouts inside prose when Tailwind Preflight is disabled. */
   box-sizing: border-box;
 }
@@ -363,13 +388,13 @@
 /* Horizontal rule */
 .prose hr {
   border: none;
-  border-top: 1px solid var(--gray-300);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* Details and Summary */
 .prose details {
   box-sizing: border-box;
-  border-bottom: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--border-subtle);
 
   &[open] {
     padding-bottom: 1rem;
@@ -392,18 +417,18 @@
   display: block;
   position: relative;
   padding: 1rem 1.75rem 1rem 0;
-  color: var(--gray-850);
+  color: var(--text-primary);
   cursor: pointer;
   font-size: inherit;
   list-style: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--gray-700);
+    color: var(--text-secondary);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--blue-500);
+    outline: 2px solid var(--focus-ring);
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -419,8 +444,8 @@
     right: 0.2em;
     width: 0.5em;
     height: 0.5em;
-    border-right: 1.5px solid var(--gray-700);
-    border-bottom: 1.5px solid var(--gray-700);
+    border-right: 1.5px solid var(--text-secondary);
+    border-bottom: 1.5px solid var(--text-secondary);
     transform: rotate(45deg);
     transition: transform 0.2s ease;
   }
@@ -435,8 +460,8 @@
 
 /* Highlighted text */
 .prose mark {
-  background-color: var(--mark-background-color);
-  color: var(--mark-color);
+  background-color: var(--bg-mark);
+  color: var(--text-primary);
   vertical-align: baseline;
 }
 
@@ -445,14 +470,13 @@
   margin: 0 0.2em;
   padding: 0.1em 0.4em 0 0.4em;
   border-radius: 3px;
-  border: 1px solid var(--gray-500);
-  color: var(--gray-800);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
   line-height: 1.3;
   font-family: 'Cascadia Mono', monospace;
   font-size: 0.8em;
   display: inline-block;
-  --shadow-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 1px 0px var(--shadow-color);
+  box-shadow: 0px 1px 0px var(--shadow-strong);
 }
 
 /* Citation */
@@ -479,7 +503,7 @@
 
 /* Footnote */
 .prose .footnotes {
-  border-top: 1px solid var(--gray-300);
+  border-top: 1px solid var(--border-subtle);
   margin-top: 2em;
   padding-top: 0.5em;
 }

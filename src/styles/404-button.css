@@ -1,8 +1,7 @@
 button {
-  --background: var(--gray-850);
   --font-size: 1em;
   --duration: 0.44s;
-  --shadow-hover: 0 3px 8px -3px var(--gray-850);
+  --shadow-hover: 0 3px 8px -3px var(--shadow-strong);
   --font-shadow: var(--font-size);
   padding: 16px 32px;
   font-weight: 500;
@@ -15,8 +14,8 @@ button {
   text-decoration: none;
   font-size: var(--font-size);
   letter-spacing: 0.5px;
-  background: var(--background);
-  color: var(--white);
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
   transform: translateY(var(--y)) translateZ(0);
   transition:
     transform var(--duration) ease,
@@ -26,7 +25,7 @@ button {
   div {
     display: flex;
     overflow: hidden;
-    text-shadow: 0 var(--font-shadow) 0 var(--white);
+    text-shadow: 0 var(--font-shadow) 0 var(--text-inverse);
 
     span {
       display: block;

@@ -42,8 +42,8 @@ body.home-page {
   box-sizing: border-box;
   flex-direction: column;
   overflow: hidden;
-  background: var(--gray-850);
-  color: var(--gray-100);
+  background: var(--bg-home-index);
+  color: var(--text-inverse);
 }
 
 .home-index__inner {
@@ -60,7 +60,7 @@ body.home-page {
 }
 
 .home-index__nav {
-  border-top: 1px solid var(--gray-750);
+  border-top: 1px solid var(--border-inverse);
 }
 
 .home-index__nav > a {
@@ -69,7 +69,7 @@ body.home-page {
   justify-content: space-between;
   overflow: hidden;
   padding: clamp(0.65rem, 1.5vh, 1.25rem) 0;
-  border-bottom: 1px solid var(--gray-750);
+  border-bottom: 1px solid var(--border-inverse);
   color: inherit;
   font-size: clamp(3.5rem, 8vw, 8rem);
   font-weight: 500;
@@ -92,9 +92,9 @@ body.home-page {
   justify-content: center;
   overflow: hidden;
   box-sizing: border-box;
-  border: 2px solid var(--gray-600);
+  border: 2px solid var(--text-inverse-secondary);
   border-radius: 50%;
-  color: var(--gray-100);
+  color: var(--text-inverse);
   transition:
     border-color 240ms ease,
     background-color 240ms ease;
@@ -114,13 +114,13 @@ body.home-page {
 .home-index__nav > a:hover {
   padding-right: clamp(0.75rem, 1.5vw, 1.5rem);
   padding-left: clamp(0.75rem, 1.5vw, 1.5rem);
-  background: var(--gray-100);
-  color: var(--gray-850);
+  background: var(--bg-surface);
+  color: var(--text-primary);
 }
 
 .home-index__nav > a:hover .circled-arrow {
-  border-color: var(--gray-850);
-  background: var(--gray-850);
+  border-color: var(--bg-inverse);
+  background: var(--bg-inverse);
 }
 
 .home-index__nav > a:hover .circled-arrow__icon--departing {
