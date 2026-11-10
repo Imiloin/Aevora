@@ -8,8 +8,9 @@ const customCopyIcon = `
   </svg>
 `;
 
+const codeBackground = 'var(--gray-050)';
+
 export default defineEcConfig({
-  // set expressive-code configuration options here
   themes: ['github-light'],
   plugins: [pluginLineNumbers()],
   defaultProps: {
@@ -17,29 +18,28 @@ export default defineEcConfig({
     showLineNumbers: false,
   },
   styleOverrides: {
-    // override styles
     borderColor: 'transparent',
+    borderWidth: '0px',
     borderRadius: '8px',
-    scrollbarThumbColor: 'var(--gray-300)',
-    scrollbarThumbHoverColor: 'var(--gray-500)',
+    codeBackground,
+    codePaddingInline: '20px',
+    scrollbarThumbColor: 'var(--gray-400)',
+    scrollbarThumbHoverColor: 'var(--gray-600)',
     frames: {
       copyIcon: createInlineSvgUrl(customCopyIcon),
-      editorActiveTabBackground: 'var(--gray-300)',
-      editorActiveTabBorderColor: 'transparent',
-      editorActiveTabIndicatorBottomColor: 'var(--blue-300)',
-      editorActiveTabIndicatorTopColor: 'transparent',
-      editorTabBarBackground: 'var(--gray-300)',
+      editorActiveTabBackground: 'transparent',
+      editorActiveTabForeground: 'var(--gray-700)',
+      editorActiveTabIndicatorHeight: '0px',
+      editorTabBarBackground: codeBackground,
       editorTabBarBorderBottomColor: 'transparent',
-      editorTabBarBorderColor: 'transparent',
-      editorTabBorderRadius: '8px',
-      frameBoxShadowCssValue: 'var(--gray-300) 0.1rem 0.1rem 0.2rem',
+      frameBoxShadowCssValue: 'none',
       inlineButtonBackgroundHoverOrFocusOpacity: '0.1',
       inlineButtonBorder: '0px',
-      terminalBackground: 'var(--white)',
-      terminalTitlebarBackground: 'var(--gray-300)',
-      terminalTitlebarBorderBottomColor: 'var(--white)',
-      terminalTitlebarDotsForeground: 'var(--black)',
-      terminalTitlebarDotsOpacity: '0.25',
+      terminalBackground: codeBackground,
+      terminalTitlebarBackground: codeBackground,
+      terminalTitlebarForeground: 'var(--gray-700)',
+      terminalTitlebarBorderBottomColor: 'transparent',
+      terminalTitlebarDotsOpacity: '0',
     },
     textMarkers: {
       inlineMarkerBorderWidth: '0px',
@@ -50,8 +50,9 @@ export default defineEcConfig({
     },
     codeFontFamily: 'var(--code-font-family)',
     codeFontSize: '0.8rem',
-    // uiLineHeight: '1.5',
     uiFontFamily: 'var(--default-font-family)',
-    uiPaddingBlock: '0.25rem',
+    uiFontSize: '0.75rem',
+    uiLineHeight: '1.5',
+    uiPaddingInline: '20px',
   },
 });

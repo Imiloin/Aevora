@@ -67,6 +67,7 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
 
 - `astro-expressive-code` with `github-light` theme, configured in `ec.config.mjs`
 - Optional line numbers via `@expressive-code/plugin-line-numbers`
+- Code blocks use a soft gray background and plain filename captions. Caption layout and copy-button positioning are defined in `src/styles/prose.css`.
 
 ## Styling
 
@@ -82,8 +83,8 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
   - Font tokens mapped to existing design tokens (`--font-sans`, `--font-mono`)
   - Scoped `<style>` blocks in Astro components need `@reference` to access Tailwind theme variables
 - Color system: CSS custom properties defined in `src/styles/color.css`
-- Fonts: Uncut Sans (body), Cascadia Code (monospace), HarmonyOS Sans (CJK fallback)
-- Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.). Display math scrollbars use the same thumb colors, padding, and hover behavior as Expressive Code blocks.
+- Fonts: Uncut Sans (body), Cascadia Mono (inline code at `0.875em`, weight `375`), Cascadia Code (code blocks at `0.8rem`), HarmonyOS Sans (CJK fallback). Inline code inherits the surrounding weight in headings, bold text, and table headers.
+- Blog content typography: `src/styles/prose.css` — scoped under `.prose` to prevent leaking into UI components (headings, links, paragraphs, images, tables, code, blockquotes, etc.).
 - Figure captions are numbered automatically; Expressive Code frame captions are excluded from the figure counter. See `src/content/blog/examples/markdown-extensions.md` for source and rendered examples of the article extensions.
 - All styles are plain CSS (no SCSS preprocessor)
 - Print stylesheet: `src/styles/print.css`

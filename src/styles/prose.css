@@ -12,7 +12,7 @@
   color: var(--text);
 }
 
-/* Heading styles for blog content */
+/* Heading */
 .prose :where(h1, h2, h3, h4, h5, h6) {
   color: var(--gray-850);
 }
@@ -85,7 +85,7 @@
   margin-top: 0.5em;
 }
 
-/* Link styles for blog content */
+/* Link */
 .prose a {
   color: inherit;
   text-decoration: none;
@@ -116,7 +116,7 @@
   margin-bottom: 1em;
 }
 
-/* Image styles */
+/* Image */
 .prose img {
   max-width: 100%;
   height: auto;
@@ -161,8 +161,8 @@
   align-items: baseline;
 }
 
-/* Expressive Code frames also use figcaption; only number article figures. */
 .prose figure:not(.frame) > figcaption::before {
+  /* Expressive Code frames also use figcaption; only number article figures. */
   counter-increment: figure-counter;
   content: 'Fig. ' counter(figure-counter) ' ';
   font-weight: 700;
@@ -173,7 +173,7 @@
   margin: 0;
 }
 
-/* Table styles */
+/* Table */
 .prose table {
   font-size: 0.9em;
   width: 100%;
@@ -217,7 +217,7 @@
   border-bottom: 1px solid var(--gray-400);
 }
 
-/* List item styles */
+/* List item */
 .prose ol li,
 .prose ul li {
   margin-top: 0.5rem;
@@ -265,7 +265,7 @@
   }
 }
 
-/* Match Expressive Code scrollbars for display math. */
+/* Display math scrollbar */
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar,
 .prose mjx-container[display][overflow='scroll']::-webkit-scrollbar-track {
   background-color: inherit;
@@ -287,12 +287,17 @@
 }
 
 /* Inline code */
-.prose code {
-  padding: 2px 5px;
-  background-color: var(--gray-300);
-  border-radius: 2px;
+.prose :not(pre) > code {
+  padding: 1px 3px;
+  background-color: var(--gray-050);
+  border-radius: 3px;
   font-family: var(--mono-font-family);
-  font-size: 0.9em;
+  font-size: 0.875em;
+  font-weight: 375;
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6, strong, b, th) code {
+  font-weight: inherit;
 }
 
 /* Code blocks */
@@ -301,9 +306,33 @@
   margin-bottom: 1rem;
 }
 
+.prose .expressive-code figure.frame .header {
+  /* Present frame titles as captions on the code background. */
+  justify-content: flex-start;
+  padding: 0;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.prose .expressive-code figure.frame .header .title {
+  padding: 12px 54px 0 var(--ec-uiPadInl);
+}
+
+.prose .expressive-code .frame.is-terminal:not(.has-title) .header {
+  display: none;
+}
+
+.prose .expressive-code .frame.is-terminal:not(.has-title) pre {
+  border-radius: var(--ec-brdRad);
+}
+
+.prose .expressive-code .copy {
+  inset-block-start: 6px;
+}
+
 .prose .expressive-code .copy button {
-  width: 1.6rem !important;
-  height: 1.6rem !important;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 
 .prose .expressive-code .copy .feedback {
@@ -311,7 +340,7 @@
 }
 
 .prose .expressive-code .copy button::after {
-  margin: 0.3rem !important;
+  margin: 0.3rem;
 }
 
 /* Blockquote */
@@ -326,8 +355,8 @@
   margin-top: 0.5rem;
 }
 
-/* Keep full-width callouts inside prose when Tailwind Preflight is disabled. */
 .prose .callout {
+  /* Keep full-width callouts inside prose when Tailwind Preflight is disabled. */
   box-sizing: border-box;
 }
 
@@ -426,7 +455,7 @@
   box-shadow: 0px 1px 0px var(--shadow-color);
 }
 
-/* Citation styles */
+/* Citation */
 .prose .csl-bib-body {
   display: table;
 }
@@ -448,7 +477,7 @@
   width: auto;
 }
 
-/* Footnote styles */
+/* Footnote */
 .prose .footnotes {
   border-top: 1px solid var(--gray-300);
   margin-top: 2em;
