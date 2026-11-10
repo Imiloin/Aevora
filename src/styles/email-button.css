@@ -29,8 +29,7 @@
     width: var(--bg-size);
     height: var(--bg-size);
     border-radius: 50%;
-    background-color: var(--olive-highlight);
-    opacity: 0.4;
+    background-color: var(--green-4);
     transform-origin: center;
     transform: translate(-50%, -50%) scale(0);
     transition: 0.3s ease-out;

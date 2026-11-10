@@ -15,9 +15,11 @@ const isActive =
   data-expand
   href={href}
   class:list={[
-    'inline-flex h-[2.2em] items-center justify-center rounded-full bg-(--systemGray-6) px-[1em] text-center whitespace-nowrap text-(--gray-850) no-underline shadow-none! outline-none hover:text-(--orange-neon)',
+    'inline-flex h-[2.2em] items-center justify-center rounded-full px-[1em] text-center whitespace-nowrap no-underline shadow-none outline-none',
     className,
-    isActive && 'bg-(--orange-neon)! text-white!',
+    isActive
+      ? 'bg-(--accent-nav) text-(--text-inverse)'
+      : 'bg-(--gray-3) text-(--text-primary) hover:text-(--accent-nav)',
   ]}
   {...props}
 >

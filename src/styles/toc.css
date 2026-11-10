@@ -7,7 +7,7 @@
   top: 8em;
   max-height: 70%;
   overflow-y: auto;
-  background: var(--translucent);
+  background: var(--bg-overlay);
   transition: opacity 0.3s;
   /* Hide scrollbar for Firefox */
   scrollbar-width: 8px;
@@ -40,12 +40,12 @@
 
 .toc:hover::-webkit-scrollbar-track {
   border-radius: 4px;
-  background-color: var(--background);
+  background-color: var(--bg-page);
 }
 
 .toc:hover::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background-color: var(--toc-scrollbar);
+  background-color: var(--scrollbar-subtle);
 }
 
 /* Hide TOC on narrow screens */

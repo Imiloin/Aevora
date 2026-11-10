@@ -78,6 +78,7 @@ This project is adapted from the official [Blog](https://astro.build/themes/deta
 
 The following projects and resources were referenced or borrowed from:
 
+- UI color palette: <https://www.radix-ui.com/colors>
 - Cursor effect at index page: <https://codepen.io/team/keyframers/pen/zYZVOzr>
 - Cuboidal quantum at index page: <https://websim.ai/p/idlv9t1mcfkvn67ls8aj>
 - Back to top component: <https://github.com/Spikeysanju/sanju.sh>
