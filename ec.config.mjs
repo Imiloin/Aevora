@@ -1,5 +1,5 @@
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers';
-import { createInlineSvgUrl, defineEcConfig } from 'astro-expressive-code';
+import { createInlineSvgUrl, defineEcConfig, LanguageGroups } from 'astro-expressive-code';
 
 // SVG content for a copy icon
 const customCopyIcon = `
@@ -8,11 +8,32 @@ const customCopyIcon = `
   </svg>
 `;
 
+const terminalIcon = `
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="m3 4 4 4-4 4M9 12h4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+`;
+
 const codeBackground = 'var(--bg-subtle)';
 
 export default defineEcConfig({
   themes: ['github-light'],
-  plugins: [pluginLineNumbers()],
+  plugins: [
+    pluginLineNumbers(),
+    {
+      name: 'Terminal Titles',
+      hooks: {
+        postprocessAnnotations: ({ codeBlock }) => {
+          // Add the fallback after Frames has extracted filenames and resolved frame overrides.
+          const { frame = 'auto', title } = codeBlock.props;
+          const isTerminal =
+            frame === 'terminal' ||
+            (frame === 'auto' && LanguageGroups.terminal.includes(codeBlock.language));
+          if (isTerminal && !title) codeBlock.props.title = 'Terminal';
+        },
+      },
+    },
+  ],
   defaultProps: {
     // Disable line numbers by default
     showLineNumbers: false,
@@ -34,6 +55,7 @@ export default defineEcConfig({
     scrollbarThumbHoverColor: 'var(--scrollbar-code-hover)',
     frames: {
       copyIcon: createInlineSvgUrl(customCopyIcon),
+      terminalIcon: createInlineSvgUrl(terminalIcon),
       editorActiveTabBackground: 'transparent',
       editorActiveTabForeground: 'var(--text-secondary)',
       editorActiveTabIndicatorHeight: '0px',
@@ -49,7 +71,7 @@ export default defineEcConfig({
       terminalTitlebarBackground: codeBackground,
       terminalTitlebarForeground: 'var(--text-secondary)',
       terminalTitlebarBorderBottomColor: 'transparent',
-      terminalTitlebarDotsOpacity: '0',
+      terminalTitlebarDotsOpacity: '1',
     },
     textMarkers: {
       inlineMarkerBorderWidth: '0px',

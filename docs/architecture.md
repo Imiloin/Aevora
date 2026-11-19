@@ -67,7 +67,7 @@ See [Custom Markdown Plugins](plugins.md) for the purpose and design of the loca
 
 - `astro-expressive-code` with `github-light` theme, configured in `ec.config.mjs`
 - Optional line numbers via `@expressive-code/plugin-line-numbers`
-- Code blocks use a soft gray background and plain filename captions. Caption layout and copy-button positioning are defined in `src/styles/prose.css`.
+- Code blocks use a soft gray background and plain filename captions. Terminal frames show a small icon and a custom title or `Terminal` by default. Caption layout and copy-button positioning are defined in `src/styles/prose.css`.
 
 ## Styling
 

@@ -342,12 +342,22 @@
   padding: 12px 54px 0 var(--ec-uiPadInl);
 }
 
-.prose .expressive-code .frame.is-terminal:not(.has-title) .header {
-  display: none;
+.prose .expressive-code .frame.is-terminal .header {
+  gap: 8px;
+  padding: 12px 54px 0 var(--ec-uiPadInl);
 }
 
-.prose .expressive-code .frame.is-terminal:not(.has-title) pre {
-  border-radius: var(--ec-brdRad);
+.prose .expressive-code .frame.is-terminal .header::before {
+  position: static;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  mask-size: contain;
+}
+
+.prose .expressive-code .frame.is-terminal .header .title {
+  min-width: 0;
+  padding: 0;
 }
 
 .prose .expressive-code .copy {
